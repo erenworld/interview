@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DatabaseStory</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div>
+          <a class="brand" href="/">DatabaseStory</a>
+        </div>
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="/">Home</a>
+          <a class="menu-card" href="/#interviews">Interviews</a>
+          <a class="menu-card" href="/jobs.html">Jobs</a>
+        </nav>
+      </header>
+
+      <div class="page-layout">
+        <main class="content-stack">
+          <section class="intro-block">
+            <p>
+              DatabaseStory highlights engineers, open source contributors, and
+              data specialists building databases, distributed engines, and the
+              tooling around them.
+            </p>
+          </section>
+
+          <section id="interviews">
+            <div class="filter-row">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="PostgreSQL" style="--c:#19b8ff">PostgreSQL</button>
+              <button class="filter-btn" data-filter="MongoDB" style="--c:#00ba34">MongoDB</button>
+              <button class="filter-btn" data-filter="Open Source" style="--c:#ff4400">Open Source</button>
+              <button class="filter-btn" data-filter="Cloud" style="--c:#a286ff">Cloud</button>
+              <button class="filter-btn" data-filter="Databases" style="--c:#ff7082">Databases</button>
+            </div>
+            <p class="section-label">Interviews</p>
+            <div class="article-list">
+              <a class="article-card" href="/articles/bertrand-drouvot.html">
+                <div class="article-card-header">
+                  <img
+                    class="article-avatar"
+                    src="/assets/bertrand.jpeg"
+                    alt="Portrait of Bertrand Drouvot"
+                  />
+                  <h2>Bertrand Drouvot</h2>
+                </div>
+                <p class="article-meta">March 23, 2026 by Eren Turkoglu</p>
+                <div class="tag-row">
+                  <span class="tag">Interviews</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Open Source</span>
+                  <span class="tag">AWS</span>
+                </div>
+                <p class="article-excerpt">
+                  Bertrand reflects on his journey from Oracle to PostgreSQL,
+                  his open source work at AWS, and his deep debugging approach.
+                </p>
+              </a>
+
+              <a class="article-card" href="/articles/franck-pachot.html">
+                <div class="article-card-header">
+                  <img
+                    class="article-avatar"
+                    src="/assets/franck.jpeg"
+                    alt="Portrait of Franck Pachot"
+                  />
+                  <h2>Franck Pachot</h2>
+                </div>
+                <p class="article-meta">April 29, 2026 by Eren Turkoglu</p>
+                <div class="tag-row">
+                  <span class="tag">Interviews</span>
+                  <span class="tag">Databases</span>
+                  <span class="tag">Postgres</span>
+                  <span class="tag">Cloud</span>
+                </div>
+                <p class="article-excerpt">
+                  A conversation about database engineering, open source
+                  contributions, and the role of AI in a senior engineer’s
+                  day-to-day work.
+                </p>
+              </a>
+            </div>
+          </section>
+        </main>
+
+        <aside class="sidebar" aria-label="Job openings">
+          <div>
+            <p class="sidebar-section-title">Job Openings</p>
+          </div>
+
+          <div class="sidebar-card">
+            <p>
+              A curated set of ParadeDB openings for people working around
+              databases and infrastructure.
+            </p>
+            <a class="sidebar-link" href="/jobs.html">See all jobs</a>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >ParadeDB</a
+            >
+            <a
+              class="job-title"
+              href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Database Engineer — Postgres Internals
+            </a>
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >ParadeDB</a
+            >
+            <a
+              class="job-title"
+              href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >Database Engineer — OLAP Internals</a
+            >
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >ParadeDB</a
+            >
+            <a
+              class="job-title"
+              href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >Infrastructure Engineer — Postgres Platform</a
+            >
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://www.thenile.dev/careers/founding-engineer-database-internals"
+              target="_blank"
+              rel="noreferrer"
+              >Nile</a
+            >
+            <a
+              class="job-title"
+              href="https://www.thenile.dev/careers/founding-engineer-database-internals"
+              target="_blank"
+              rel="noreferrer"
+              >Founding Engineer — Database Internals</a
+            >
+            <div class="tag-row">
+              <span class="tag">Nile</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
+              target="_blank"
+              rel="noreferrer"
+              >Nile</a
+            >
+            <a
+              class="job-title"
+              href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
+              target="_blank"
+              rel="noreferrer"
+              >Founding Engineer — Cloud Infrastructure</a
+            >
+            <div class="tag-row">
+              <span class="tag">Nile</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
+              target="_blank"
+              rel="noreferrer"
+              >turbopuffer</a
+            >
+            <a
+              class="job-title"
+              href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
+              target="_blank"
+              rel="noreferrer"
+              >Database Engineer</a
+            >
+            <div class="tag-row">
+              <span class="tag">turbopuffer</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009"
+              target="_blank"
+              rel="noreferrer"
+              >PlanetScale</a
+            >
+            <a
+              class="job-title"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009"
+              target="_blank"
+              rel="noreferrer"
+              >Software Engineer — Infrastructure</a
+            >
+            <div class="tag-row">
+              <span class="tag">PlanetScale</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009"
+              target="_blank"
+              rel="noreferrer"
+              >PlanetScale</a
+            >
+            <a
+              class="job-title"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009"
+              target="_blank"
+              rel="noreferrer"
+              >Solutions Engineer</a
+            >
+            <div class="tag-row">
+              <span class="tag">PlanetScale</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="site-footer">
+        <a href="mailto:erenxturkoglu@gmail.com">Contact</a>
+        <a
+          href="https://www.linkedin.com/in/erenturkoglu/"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/erenworld" target="_blank" rel="noreferrer"
+          >GitHub</a
+        >
+      </footer>
+    </div>
+    <script>
+      const btns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.article-card');
+    
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          cards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = '';
+            } else {
+              const tags = [...card.querySelectorAll('.tag')].map(t => t.textContent);
+              card.style.display = tags.includes(filter) ? '' : 'none';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
