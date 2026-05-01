@@ -8,3 +8,7 @@
 - [ ] Guillaume Lelarge
 - [ ] Dimitri Fontaine
 - [ ] Jean-Paul Argudo
+- [ ] Flora Barriele
+- [ ] Ludovico Caldara
+- [ ] Julien Riou 
+- [ ] Philippe Noël
