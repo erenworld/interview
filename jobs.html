@@ -10,6 +10,14 @@
     <div class="site-shell">
       <header class="topbar">
         <a class="brand" href="./index.html">DatabaseStory</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-lines"><span></span></span>
+        </button>
         <nav class="topnav" aria-label="Main navigation">
           <a class="menu-card" href="./index.html">Home</a>
           <a class="menu-card" href="./index.html#interviews">Interviews</a>
@@ -221,5 +229,15 @@
         <a href="https://github.com/erenworld" target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </div>
+    <script>
+      document.querySelectorAll('.nav-toggle').forEach(toggle => {
+        const nav = toggle.nextElementSibling;
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('is-open', !expanded);
+        });
+      });
+    </script>
   </body>
 </html>

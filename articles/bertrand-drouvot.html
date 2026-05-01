@@ -10,6 +10,14 @@
     <div class="site-shell article-page">
       <header class="topbar">
         <a class="brand" href="/">DatabaseStory</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-lines"><span></span></span>
+        </button>
         <nav class="topnav" aria-label="Main navigation">
           <a class="menu-card" href="/">Home</a>
           <a class="menu-card" href="/#interviews">Interviews</a>
@@ -42,14 +50,6 @@
               main activity.
             </p>
 
-            <h2>Did PostgreSQL contributions help you join AWS?</h2>
-            <p>
-              No. I first joined AWS as a consultant helping customers migrate
-              their databases to AWS. Then I moved into an RDS service team.
-              About three and a half years ago, a dedicated PostgreSQL
-              contribution team was created. I applied and got in.
-            </p>
-
             <h2>What is your academic background?</h2>
             <p>
               I studied mathematics first, then continued in math and computer
@@ -70,6 +70,14 @@
               systems, networking, security, and software development. It is a
               very cross-functional domain where you can invest in several
               aspects at once.
+            </p>
+
+            <h2>Did PostgreSQL contributions help you join AWS?</h2>
+            <p>
+              No. I first joined AWS as a consultant helping customers migrate
+              their databases to AWS. Then I moved into an RDS service team.
+              About three and a half years ago, a dedicated PostgreSQL
+              contribution team was created. I applied and got in.
             </p>
 
             <h2>How did you get into open source?</h2>
@@ -305,5 +313,15 @@
         <a href="https://github.com/erenworld" target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </div>
+    <script>
+      document.querySelectorAll('.nav-toggle').forEach(toggle => {
+        const nav = toggle.nextElementSibling;
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('is-open', !expanded);
+        });
+      });
+    </script>
   </body>
 </html>
