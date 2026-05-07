@@ -3,10 +3,10 @@
   --sans-serif: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Helvetica, sans-serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
   --ink: #000000;
-  --muted: #666666;
-  --line: #d9d9d9;
-  --soft: #f3f3f3;
-  --soft-2: #fafafa;
+  --muted: #5f5f5f;
+  --line: #d7d2c8;
+  --soft: #f4f1eb;
+  --soft-2: #fbf8f2;
   --accent: #111111;
   --accent-dark: #111111;
   --link: #000000;
@@ -20,7 +20,7 @@
 }
 
 html {
-  background: #f7f2e8;
+  background: #f6f1e8;
 }
 
 body {
@@ -165,8 +165,8 @@ h6 {
 
 .menu-card:hover {
   text-decoration: none;
-  background: var(--ink);
-  color: var(--page);
+  background: var(--soft);
+  color: var(--ink);
   border-color: var(--ink);
 }
 
@@ -218,17 +218,17 @@ h6 {
   border: 1px solid var(--ink);
   background: var(--panel);
   color: var(--ink);
-  transition: opacity 180ms ease, border-color 180ms ease;
-  box-shadow: 8px 8px 0 rgba(22, 18, 15, 0.06);
+  transition: opacity 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
 .article-card:hover {
   text-decoration: none;
   border-color: var(--ink);
+  background: var(--soft-2);
 }
 
 .article-list:hover .article-card {
-  opacity: 0.5;
+  opacity: 0.68;
 }
 
 .article-list:hover .article-card:hover {
@@ -314,7 +314,6 @@ h6 {
   padding: 28px;
   border: 1px solid var(--ink);
   background: var(--panel);
-  box-shadow: 8px 8px 0 rgba(22, 18, 15, 0.05);
 }
 
 .sidebar-card p,
@@ -404,7 +403,6 @@ h6 {
   padding: 28px;
   border: 1px solid var(--ink);
   background: var(--panel);
-  box-shadow: 8px 8px 0 rgba(22, 18, 15, 0.05);
 }
 
 .readme-card p {
@@ -480,7 +478,6 @@ h6 {
   .job-card,
   .sidebar-card {
     padding: 20px;
-    box-shadow: 5px 5px 0 rgba(22, 18, 15, 0.05);
   }
 
   .article-card-header {
@@ -526,8 +523,8 @@ h6 {
 
 .filter-btn {
   background: transparent;
-  border: 1px solid color-mix(in srgb, var(--c, var(--ink)) 30%, var(--ink));
-  color: var(--c, var(--ink));
+  border: 1px solid var(--line);
+  color: var(--ink);
   padding: 0.5rem 0.7rem;
   cursor: pointer;
   font-family: var(--sans-serif);
@@ -540,7 +537,8 @@ h6 {
 }
 
 .filter-btn:hover {
-  background: color-mix(in srgb, var(--c, var(--ink)) 12%, transparent);
+  background: var(--soft);
+  border-color: var(--ink);
 }
 
 .filter-btn[data-filter="all"] {
