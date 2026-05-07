@@ -1,13 +1,18 @@
 :root {
   --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans-serif: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Helvetica, sans-serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  --ink: #111111;
-  --muted: #707070;
-  --line: #d7d7d7;
-  --soft: #f3f3f3;
-  --link: #1530ff;
-  --page: #ffffff;
+  --ink: #16120f;
+  --muted: #6e6259;
+  --line: #cfc3b8;
+  --soft: #efe3d6;
+  --soft-2: #f7f0e8;
+  --accent: #175c4c;
+  --accent-dark: #0f4338;
+  --link: #145648;
+  --page: #fffaf4;
+  --page-edge: #f2e7da;
+  --panel: #fffdf9;
 }
 
 * {
@@ -15,7 +20,7 @@
 }
 
 html {
-  background: #fafafa;
+  background: #f4ece2;
 }
 
 body {
@@ -59,7 +64,7 @@ h6 {
 }
 
 .site-shell {
-  max-width: 1440px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 24px 28px 72px;
 }
@@ -69,13 +74,15 @@ h6 {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
+  padding: 20px 0 22px;
+  border-bottom: 2px solid var(--ink);
 }
 
 .brand {
   font-family: var(--serif);
-  font-size: clamp(2rem, 3vw, 3.4rem);
+  display: inline-block;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  letter-spacing: -0.04em;
   color: var(--ink);
 }
 
@@ -143,20 +150,24 @@ h6 {
 
 .menu-card {
   display: block;
-  padding: 13px 18px;
-  border: 1px solid var(--line);
+  padding: 12px 18px;
+  border: 1px solid var(--ink);
   border-radius: 0;
-  background: #fff;
+  background: transparent;
   color: var(--ink);
   font-family: var(--sans-serif);
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
 }
 
 .menu-card:hover {
   text-decoration: none;
-  border-color: #bcbcbc;
+  background: var(--ink);
+  color: var(--page);
+  border-color: var(--ink);
 }
 
 .page-layout {
@@ -173,20 +184,26 @@ h6 {
 }
 
 .intro-block {
-  padding: 0 0 10px;
+  position: relative;
+  padding: 8px 0 20px;
+  border-bottom: 1px solid var(--line);
 }
 
 .intro-block p {
-  max-width: 80ch;
+  max-width: 26ch;
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.35;
+  color: var(--ink);
 }
 
 .section-label {
-  margin-bottom: 14px;
-  color: var(--muted);
+  margin-bottom: 18px;
+  color: var(--accent);
   font-family: var(--sans-serif);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
@@ -198,15 +215,17 @@ h6 {
 .article-card {
   display: block;
   padding: 28px;
-  border: 1px solid var(--line);
-  background: #fff;
+  border: 1px solid var(--ink);
+  border-left: 10px solid var(--ink);
+  background: var(--panel);
   color: var(--ink);
   transition: opacity 180ms ease, border-color 180ms ease;
+  box-shadow: 8px 8px 0 rgba(22, 18, 15, 0.06);
 }
 
 .article-card:hover {
   text-decoration: none;
-  border-color: #c3c3c3;
+  border-color: var(--ink);
 }
 
 .article-list:hover .article-card {
@@ -228,23 +247,25 @@ h6 {
   width: 68px;
   height: 68px;
   border-radius: 999px;
-  border: 1px solid var(--line);
+  border: 2px solid var(--ink);
   object-fit: cover;
   flex: 0 0 auto;
 }
 
 .article-card h2 {
   color: var(--ink);
-  font-size: clamp(1.6rem, 2.2vw, 2.6rem);
+  font-size: clamp(1.8rem, 2.3vw, 2.85rem);
   margin-bottom: 0;
 }
 
 .article-meta {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-family: var(--sans-serif);
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   line-height: 1.5;
-  color: var(--ink);
+  color: var(--accent-dark);
 }
 
 .tag-row {
@@ -256,21 +277,23 @@ h6 {
 
 .tag {
   display: inline-block;
-  padding: 8px 12px;
-  background: var(--soft);
-  color: var(--muted);
+  padding: 8px 11px;
+  background: #f1ebe4;
+  color: var(--ink);
+  border: 1px solid var(--line);
   font-family: var(--sans-serif);
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .article-excerpt {
   margin: 0;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  line-height: 1.55;
+  font-size: clamp(0.98rem, 1.1vw, 1.14rem);
+  line-height: 1.7;
   color: var(--ink);
+  max-width: 58ch;
 }
 
 .sidebar {
@@ -279,19 +302,20 @@ h6 {
 }
 
 .sidebar-section-title {
-  color: var(--muted);
+  color: var(--accent);
   font-family: var(--sans-serif);
-  font-size: 0.95rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
 }
 
 .job-card,
 .sidebar-card {
   padding: 28px;
-  border: 1px solid var(--line);
-  background: #fff;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  box-shadow: 8px 8px 0 rgba(22, 18, 15, 0.05);
 }
 
 .sidebar-card p,
@@ -302,18 +326,22 @@ h6 {
 .job-company {
   display: inline-block;
   margin-bottom: 10px;
-  color: var(--ink);
+  color: var(--accent-dark);
   font-family: var(--sans-serif);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
 
 .job-title {
   display: block;
-  margin-bottom: 6px;
-  font-size: 1.2rem;
-  line-height: 1.3;
+  margin-bottom: 0;
+  font-size: 1.16rem;
+  line-height: 1.35;
+  color: var(--ink);
 }
 
 .job-location {
@@ -330,14 +358,15 @@ h6 {
 
 .article-page .article-header {
   margin-bottom: 28px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  border-bottom: 2px solid var(--ink);
 }
 
 .article-page h1,
 .page-title {
-  font-size: clamp(2.4rem, 4vw, 4.6rem);
+  font-size: clamp(2.8rem, 4.4vw, 5rem);
   margin-bottom: 12px;
+  letter-spacing: -0.04em;
 }
 
 .back-link {
@@ -351,9 +380,10 @@ h6 {
 }
 
 .article-body h2 {
-  margin-top: 34px;
-  margin-bottom: 10px;
-  font-size: 1.7rem;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  font-size: 1.62rem;
+  color: var(--accent-dark);
 }
 
 .article-body p {
@@ -376,10 +406,12 @@ h6 {
   gap: 14px;
   margin-top: 44px;
   padding-top: 18px;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--ink);
   color: var(--muted);
   font-family: var(--sans-serif);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .site-footer a {
@@ -432,6 +464,7 @@ h6 {
   .job-card,
   .sidebar-card {
     padding: 20px;
+    box-shadow: 5px 5px 0 rgba(22, 18, 15, 0.05);
   }
 
   .article-card-header {
@@ -456,45 +489,60 @@ h6 {
   .article-excerpt {
     font-size: 1.05rem;
   }
+
+  .intro-block p {
+    max-width: none;
+    font-size: 1.22rem;
+  }
+
+  .article-card h2 {
+    background-image: none;
+  }
 }
 
 .filter-row {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.7rem;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
 .filter-btn {
-  background: none;
-  border: none;
-  color: var(--c, #fff);
-  padding: 0.2rem 0.5rem;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--c, var(--ink)) 30%, var(--ink));
+  color: var(--c, var(--ink));
+  padding: 0.5rem 0.7rem;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-family: var(--sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   border-radius: 0;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .filter-btn:hover {
-  background: color-mix(in srgb, var(--c, #fff) 15%, transparent);
+  background: color-mix(in srgb, var(--c, var(--ink)) 12%, transparent);
 }
 
 .filter-btn[data-filter="all"] {
-  color: #000;
-  background: #fff;
-  padding: 0.2rem 0.5rem;
+  color: var(--ink);
+  background: transparent;
   font-weight: 600;
+  border-color: var(--ink);
 }
 
-.filter-btn[data-filter="all"] {
-  background: #ddd;
+.filter-btn.active {
+  background: var(--ink);
+  color: var(--page);
+  border-color: var(--ink);
 }
 
 .article-card h2 {
   display: inline;
-  background-image: linear-gradient(#808080, #808080);
+  background-image: linear-gradient(var(--ink), var(--ink));
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: left bottom;
