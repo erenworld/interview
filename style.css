@@ -246,7 +246,7 @@ h6 {
   width: 68px;
   height: 68px;
   border-radius: 999px;
-  border: 2px solid var(--ink);
+  border: 2px solid #b9b9b9;
   object-fit: cover;
   flex: 0 0 auto;
 }
@@ -277,7 +277,7 @@ h6 {
 .tag {
   display: inline-block;
   padding: 8px 11px;
-  background: #f5f5f5;
+  background: var(--soft);
   color: var(--ink);
   border: 1px solid var(--line);
   font-family: var(--sans-serif);
