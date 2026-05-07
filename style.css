@@ -2,17 +2,17 @@
   --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --sans-serif: "Avenir Next Condensed", "Arial Narrow", "Helvetica Neue", Helvetica, sans-serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  --ink: #16120f;
-  --muted: #6e6259;
-  --line: #cfc3b8;
-  --soft: #efe3d6;
-  --soft-2: #f7f0e8;
-  --accent: #175c4c;
-  --accent-dark: #0f4338;
-  --link: #145648;
-  --page: #fffaf4;
-  --page-edge: #f2e7da;
-  --panel: #fffdf9;
+  --ink: #000000;
+  --muted: #666666;
+  --line: #d9d9d9;
+  --soft: #f3f3f3;
+  --soft-2: #fafafa;
+  --accent: #111111;
+  --accent-dark: #111111;
+  --link: #000000;
+  --page: #fffdf7;
+  --page-edge: #f6f1e4;
+  --panel: #fffef9;
 }
 
 * {
@@ -20,7 +20,7 @@
 }
 
 html {
-  background: #f4ece2;
+  background: #f7f2e8;
 }
 
 body {
@@ -190,9 +190,9 @@ h6 {
 }
 
 .intro-block p {
-  max-width: 26ch;
+  max-width: 42ch;
   margin: 0;
-  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-size: clamp(1.45rem, 2.35vw, 2.45rem);
   line-height: 1.35;
   color: var(--ink);
 }
@@ -216,7 +216,6 @@ h6 {
   display: block;
   padding: 28px;
   border: 1px solid var(--ink);
-  border-left: 10px solid var(--ink);
   background: var(--panel);
   color: var(--ink);
   transition: opacity 180ms ease, border-color 180ms ease;
@@ -278,7 +277,7 @@ h6 {
 .tag {
   display: inline-block;
   padding: 8px 11px;
-  background: #f1ebe4;
+  background: #f5f5f5;
   color: var(--ink);
   border: 1px solid var(--line);
   font-family: var(--sans-serif);
@@ -398,6 +397,23 @@ h6 {
 .jobs-page-intro {
   max-width: 72ch;
   margin-bottom: 24px;
+}
+
+.readme-card {
+  margin-top: 34px;
+  padding: 28px;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  box-shadow: 8px 8px 0 rgba(22, 18, 15, 0.05);
+}
+
+.readme-card p {
+  max-width: 78ch;
+  margin: 0 0 12px;
+}
+
+.readme-card p:last-child {
+  margin-bottom: 0;
 }
 
 .site-footer {
@@ -542,13 +558,4 @@ h6 {
 
 .article-card h2 {
   display: inline;
-  background-image: linear-gradient(var(--ink), var(--ink));
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  transition: background-size 0.5s ease;
-}
-
-.article-card:hover h2 {
-  background-size: 100% 2px;
 }
