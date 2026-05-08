@@ -31,7 +31,9 @@
 
           <div class="article-header">
             <h1>Bertrand Drouvot</h1>
-            <p class="article-meta">March 23, 2026 by <a href="/">Eren Turkoglu</a></p>
+            <p class="article-meta">
+              March 23, 2026 by <a href="/">Eren Turkoglu</a>
+            </p>
             <div class="tag-row">
               <span class="tag">Interviews</span>
               <span class="tag">PostgreSQL</span>
@@ -39,96 +41,310 @@
               <span class="tag">AWS</span>
             </div>
           </div>
-
           <div class="article-body">
             <h2>Can you introduce yourself?</h2>
             <p>
               My name is Bertrand Drouvot. I have been working around databases
               for about 25 years. I spent a long time with Oracle, then fell in
-              love with Postgres 6 or 7 years ago. Since then, I joined an AWS
-              team dedicated to PostgreSQL contributions, and that is now my
-              main activity.
+              love with PostgreSQL around 6 or 7 years ago. Since then, I joined
+              an AWS team fully dedicated to PostgreSQL contributions, and that
+              is now my main activity.
             </p>
 
             <h2>What is your academic background?</h2>
             <p>
-              I studied mathematics first, then continued in math and computer
-              science through a postgraduate degree.
+              I first studied mathematics, then continued in mathematics and
+              computer science through a postgraduate degree.
             </p>
 
             <h2>Do you still use things you learned at university?</h2>
             <p>
-              Yes. During that program I learned database fundamentals, and that
-              still matters. I also learned C.
+              Yes. During that program, I learned database fundamentals, and
+              that still matters a lot today. I also learned C, which is useful
+              because PostgreSQL is written in C.
             </p>
 
             <h2>How did you discover databases?</h2>
             <p>
-              It was my first assignment at the beginning of my career while
-              working at a services company. I enjoyed it, so I stayed in the
-              field. What makes it interesting is that it touches everything:
-              systems, networking, security, and software development. It is a
-              very cross-functional domain where you can invest in several
-              aspects at once.
+              Databases were actually my first assignment when I started working
+              at a services company. I enjoyed it, so I stayed in that field.
+            </p>
+
+            <p>
+              What makes databases interesting is that they touch everything:
+              operating systems, networking, security, and software development.
+              It is a very cross-functional domain where you can invest yourself
+              in several areas at once. You never really get bored.
             </p>
 
             <h2>Did PostgreSQL contributions help you join AWS?</h2>
             <p>
-              No. I first joined AWS as a consultant helping customers migrate
-              their databases to AWS. Then I moved into an RDS service team.
+              No. I initially joined AWS as a consultant helping customers
+              migrate their databases to AWS. Then I moved into an RDS service
+              team.
+            </p>
+
+            <p>
               About three and a half years ago, a dedicated PostgreSQL
-              contribution team was created. I applied and got in.
+              contribution team was created internally. I applied and got
+              accepted into the team.
             </p>
 
             <h2>How did you get into open source?</h2>
+            <p>It happened through both chance and interest.</p>
+
             <p>
-              It happened through both chance and interest. I worked with Oracle
-              for a long time, but the black-box side of it wore me out. I
-              already enjoyed sharing scripts with the Oracle community. When I
-              discovered Postgres, I got serious about it and started building
-              extensions. Later, at AWS, I was in database engineering, the last
-              line of support, so we sometimes hit bugs directly. My first
-              PostgreSQL contribution was a bug fix, and most of my work has
-              been around logical decoding.
+              I worked with Oracle for a very long time, but eventually I got
+              tired of the black-box aspect of it. I already enjoyed sharing
+              scripts with the Oracle community before moving to PostgreSQL.
             </p>
 
-            <h2>What impact does open source have on your work?</h2>
             <p>
-              Today it is 100% of my work. I only contribute to PostgreSQL. I
-              sometimes contribute to Linux when we identify bugs elsewhere, but
-              overall my work is fully centered on open source.
+              When I discovered PostgreSQL, I became much more serious about it
+              and started building extensions.
+            </p>
+
+            <p>
+              Later at AWS, I worked in database engineering, which was
+              basically the last line of support. Sometimes we would directly
+              encounter PostgreSQL bugs, and I became interested in trying to
+              fix them.
+            </p>
+
+            <p>
+              My first PostgreSQL contribution was a bug fix. Most of my work
+              ended up being around logical decoding.
+            </p>
+
+            <blockquote>
+              “One advantage of starting with bug fixes is that you do not
+              really have to justify the idea itself. A bug obviously needs to
+              be fixed.”
+            </blockquote>
+
+            <h2>What impact does open source have on your work?</h2>
+            <p>Today, it represents 100% of my work.</p>
+
+            <p>
+              I only contribute to PostgreSQL. Sometimes I also contribute to
+              Linux when we identify bugs elsewhere in the stack, but overall my
+              work is entirely centered around open source software.
             </p>
 
             <h2>What is your advice for getting started in open source?</h2>
             <p>
               The most important thing is to find a domain you genuinely care
-              about, not to contribute just for the sake of it. When you work
-              with a product, you will inevitably run into bugs or things to
-              improve, and that is the best place to start.
+              about, not to contribute just for the sake of contributing.
             </p>
+
+            <p>
+              If you work enough with a product, you will inevitably run into
+              bugs or things you would like to improve. That is usually the best
+              place to start.
+            </p>
+
+            <blockquote>
+              “If you do not care about the subject, you probably will not have
+              the motivation to keep going.”
+            </blockquote>
+
+            <h2>What was one of the hardest problems you had to solve?</h2>
+            <p>
+              The hardest problems are usually the ones where you do not have a
+              reproducible case.
+            </p>
+
+            <p>
+              When you already have a reproduction, debugging becomes much
+              easier. Without it, the first challenge is creating one.
+            </p>
+
+            <p>
+              I worked on an issue related to logical decoding where we had to
+              analyze WAL logs, event sequences, and checkpoint timing in order
+              to finally reproduce the issue. Once we had the reproduction,
+              fixing the bug became much easier.
+            </p>
+
+            <blockquote>
+              “The hardest part is usually the repro itself.”
+            </blockquote>
 
             <h2>What does your debugging toolbox look like?</h2>
             <p>
-              I use `git bisect` to identify the commit that introduced a bug.
-              For memory issues, Valgrind is useful. I also use GDB with
-              breakpoints and especially watchpoints. My environment is built
-              around tmux, provisioning scripts, and NeoVim with clang tools.
+              I use <code>git bisect</code> a lot to identify which commit
+              introduced a bug.
+            </p>
+
+            <p>For memory issues, Valgrind is extremely useful.</p>
+
+            <p>
+              I also use GDB with breakpoints and especially watchpoints.
+              Watchpoints are very useful when a bug comes from an incorrect
+              variable value because they let you see exactly when that value
+              changes.
+            </p>
+
+            <p>My environment is pretty simple overall:</p>
+
+            <ul>
+              <li><code>tmux</code></li>
+              <li>Provisioning scripts</li>
+              <li><code>NeoVim</code></li>
+              <li>Clang tooling</li>
+              <li><code>GDB</code></li>
+              <li><code>Valgrind</code></li>
+            </ul>
+
+            <h2>What skills matter the most for database engineering?</h2>
+            <p>The most important thing is probably the mindset.</p>
+
+            <p>
+              You need a scientific approach based on facts. You need curiosity
+              and the willingness to investigate problems deeply.
+            </p>
+
+            <p>
+              Technically, fundamentals matter a lot. Understanding systems,
+              networking, debugging, and being able to challenge assumptions is
+              extremely important.
             </p>
 
             <h2>What do you think about the impact of AI?</h2>
+            <p>There are positives and negatives.</p>
+
             <p>
-              There are positives and negatives. On the positive side, it boosts
-              productivity for small functions, test scripts, or reading
-              assembly code. On the negative side, we also see patches generated
-              without real understanding, which is a problem in open source.
+              On the positive side, AI can significantly improve productivity
+              for small functions, test scripts, or even reading assembly code.
+              I personally use it for small C experiments and testing ideas
+              quickly.
+            </p>
+
+            <p>
+              For performance investigations, it can also help interpret
+              assembly better than I can in some cases.
+            </p>
+
+            <p>
+              The negative side is that we now see patches generated without
+              real understanding behind them. In open source, that can become a
+              problem.
+            </p>
+
+            <blockquote>
+              “The important thing is not whether you use AI or not. The
+              important thing is being able to understand what you submit or
+              review.”
+            </blockquote>
+
+            <h2>Do you think AI impacts junior developers?</h2>
+            <p>I think it currently impacts juniors more than seniors.</p>
+
+            <p>
+              Senior engineers are still often viewed as the people validating
+              and reviewing what AI generates. For juniors, however, I do think
+              there is a real impact on hiring today.
+            </p>
+
+            <p>
+              What matters more than ever is having strong fundamentals and
+              being able to distinguish between hallucinations and correct
+              information.
+            </p>
+
+            <h2>What do you think can help young developers today?</h2>
+            <p>
+              Experience matters, but even without experience, people should
+              focus on understanding fundamentals and learning how to challenge
+              AI-generated content.
+            </p>
+
+            <p>
+              I also think AI can help people create their own products or
+              companies more easily now. It has become much faster to build
+              something and validate whether an idea works or not.
+            </p>
+
+            <h2>Have you worked on projects outside PostgreSQL?</h2>
+            <p>Yes. I worked on a project called Biflix with a friend.</p>
+
+            <p>
+              The idea was to build a monitoring platform capable of aggregating
+              multiple database systems into a single interface.
+            </p>
+
+            <p>
+              We also added tagging systems so companies could group database
+              resources by products or internal departments and potentially use
+              that information for cost allocation and billing.
+            </p>
+
+            <h2>What is your opinion on remote work?</h2>
+            <p>For me, remote work is great.</p>
+
+            <p>
+              Before that, I spent around 20 years commuting between places like
+              Luxembourg and Paris, so working remotely feels much better now.
+            </p>
+
+            <p>
+              That said, remote work is not for everyone. You need to be
+              comfortable with the social aspect of it and staying organized.
             </p>
 
             <h2>How do you spend your free time?</h2>
+            <p>I enjoy TV series quite a lot.</p>
+
             <p>
-              I enjoy TV series, I watch a lot of basketball, especially
-              European and French leagues, and I go on motorcycle rides with
-              friends.
+              I also watch a lot of basketball, especially European and French
+              leagues.
             </p>
+
+            <p>And I enjoy motorcycle rides with friends.</p>
+
+            <h2>Any final advice?</h2>
+            <p>Stay curious.</p>
+
+            <p>
+              Find something you genuinely care about and go deep into it. That
+              curiosity is what gives you the energy to keep learning and
+              contributing over time.
+            </p>
+            <h2>Links</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/bdrouvot"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/bdrouvot/"
+                  target="_blank"
+                  rel="noreferrer"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                href="https://bdrouvot.github.io/"
+                target="_blank"
+                rel="noreferrer"
+                >Blog</a
+              >           
+              </li>
+              <li>
+                <a
+                href="https://x.com/BertrandDrouvot"
+                target="_blank"
+                rel="noreferrer"
+                >Twitter</a
+              >           
+              </li>
+            </ul>
           </div>
         </main>
 
@@ -309,12 +525,19 @@
 
       <footer class="site-footer">
         <a href="mailto:erenxturkoglu@gmail.com">Contact</a>
-        <a href="https://www.linkedin.com/in/erenturkoglu/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/erenworld" target="_blank" rel="noreferrer">GitHub</a>
+        <a
+          href="https://www.linkedin.com/in/erenturkoglu/"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/erenworld" target="_blank" rel="noreferrer"
+          >GitHub</a
+        >
       </footer>
     </div>
     <script>
-      document.querySelectorAll('.nav-toggle').forEach(toggle => {
+      document.querySelectorAll('.nav-toggle').forEach((toggle) => {
         const nav = toggle.nextElementSibling;
         toggle.addEventListener('click', () => {
           const expanded = toggle.getAttribute('aria-expanded') === 'true';
