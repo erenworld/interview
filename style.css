@@ -1146,7 +1146,7 @@ html[data-theme="dark"] .hero-logo-item {
 }
 
 .home-page .article-card-header {
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   margin-bottom: 16px;
 }
