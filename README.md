@@ -9,12 +9,13 @@
 
 ## Découverte des bases de données
 
-- Qu’est-ce qui t’a attiré vers les bases de données et les systèmes distribués ?
-- Comment tu t'es formé ? des ressources à conseiller pour un/une jeune qui veut apprendre le monde des bases de données?
+- Qu’est-ce qui t’a attiré vers les bases de données ?
+- Comment tu t'es formé ? des ressources à conseiller ?
 - Y a-t-il un projet qui, selon toi, permettrait à un débutant de maîtriser rapidement les fondamentaux des bases de données ?
 
 ## Carrière
 
+- La différence entre turso et sqlite ?
 - Comment as-tu rejoint Turso ?
 - Quel a été l’un des problèmes techniques les plus difficiles que tu as rencontrés ?
 - Comment abordes-tu généralement un problème ?
@@ -38,7 +39,6 @@
 
 - Quel est le meilleur conseil qu’on t’ait donné ?
 - Quel conseil donnerais-tu aujourd’hui aux jeunes ingénieurs ?
-- Si tu pouvais parler à ton “toi” plus jeune, que lui dirais-tu ?
 
 ## Personnel
 - Quels sont tes 3 livres tech préférés ?
