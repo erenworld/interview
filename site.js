@@ -55,6 +55,61 @@ document.querySelectorAll(".nav-toggle").forEach((toggle) => {
   });
 });
 
+document.querySelectorAll("[data-beehiiv-form]").forEach((form) => {
+  const status = document.querySelector("[data-beehiiv-status]");
+  const button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const email = String(formData.get("email") || "").trim();
+    if (!email) {
+      if (status) {
+        status.textContent = "Enter a valid email.";
+      }
+      return;
+    }
+
+    if (button) {
+      button.disabled = true;
+    }
+    if (status) {
+      status.textContent = "Submitting...";
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new URLSearchParams({ email }),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        mode: "cors",
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      form.reset();
+      if (status) {
+        status.textContent = "Subscribed.";
+      }
+    } catch (error) {
+      if (status) {
+        status.textContent =
+          "Beehiiv likely needs a public subscribe endpoint or API key. This settings URL usually won't accept a browser signup directly.";
+      }
+      console.error(error);
+    } finally {
+      if (button) {
+        button.disabled = false;
+      }
+    }
+  });
+});
+
 const btns = document.querySelectorAll(".filter-btn");
 const cards = document.querySelectorAll(".article-card");
 
