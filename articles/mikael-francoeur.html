@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mikaël Francoeur</title>
+    <script>
+      (() => {
+        const stored = localStorage.getItem("databasestory-theme");
+        const theme =
+          stored ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="../style.css?v=20260515a" />
+  </head>
+  <body>
+    <div class="site-shell article-page">
+      <header class="topbar">
+        <div class="topbar-brand">
+          <a class="brand" href="../index.html">DatabaseStory</a>
+        </div>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-lines"><span></span></span>
+        </button>
+        <div class="topbar-tools">
+          <nav class="topnav" aria-label="Main navigation">
+            <a class="menu-card" href="../about.html">About</a>
+            <a class="menu-card" href="../index.html#interviews">Interviews</a>
+            <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+            <a class="menu-card" href="../index.html#podcast">Podcast</a>
+            <a class="menu-card" href="../jobs.html">Jobs</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.89998 0.499976C2.89998 0.279062 2.72089 0.0999756 2.49998 0.0999756C2.27906 0.0999756 2.09998 0.279062 2.09998 0.499976V1.09998H1.49998C1.27906 1.09998 1.09998 1.27906 1.09998 1.49998C1.09998 1.72089 1.27906 1.89998 1.49998 1.89998H2.09998V2.49998C2.09998 2.72089 2.27906 2.89998 2.49998 2.89998C2.72089 2.89998 2.89998 2.72089 2.89998 2.49998V1.89998H3.49998C3.72089 1.89998 3.89998 1.72089 3.89998 1.49998C3.89998 1.27906 3.72089 1.09998 3.49998 1.09998H2.89998V0.499976ZM5.89998 3.49998C5.89998 3.27906 5.72089 3.09998 5.49998 3.09998C5.27906 3.09998 5.09998 3.27906 5.09998 3.49998V4.09998H4.49998C4.27906 4.09998 4.09998 4.27906 4.09998 4.49998C4.09998 4.72089 4.27906 4.89998 4.49998 4.89998H5.09998V5.49998C5.09998 5.72089 5.27906 5.89998 5.49998 5.89998C5.72089 5.89998 5.89998 5.72089 5.89998 5.49998V4.89998H6.49998C6.72089 4.89998 6.89998 4.72089 6.89998 4.49998C6.89998 4.27906 6.72089 4.09998 6.49998 4.09998H5.89998V3.49998ZM1.89998 6.49998C1.89998 6.27906 1.72089 6.09998 1.49998 6.09998C1.27906 6.09998 1.09998 6.27906 1.09998 6.49998V7.09998H0.499976C0.279062 7.09998 0.0999756 7.27906 0.0999756 7.49998C0.0999756 7.72089 0.279062 7.89998 0.499976 7.89998H1.09998V8.49998C1.09998 8.72089 1.27906 8.89997 1.49998 8.89997C1.72089 8.89997 1.89998 8.72089 1.89998 8.49998V7.89998H2.49998C2.72089 7.89998 2.89998 7.72089 2.89998 7.49998C2.89998 7.27906 2.72089 7.09998 2.49998 7.09998H1.89998V6.49998ZM8.54406 0.98184L8.24618 0.941586C8.03275 0.917676 7.90692 1.1655 8.02936 1.34194C8.17013 1.54479 8.29981 1.75592 8.41754 1.97445C8.91878 2.90485 9.20322 3.96932 9.20322 5.10022C9.20322 8.37201 6.82247 11.0878 3.69887 11.6097C3.45736 11.65 3.20988 11.6772 2.96008 11.6906C2.74563 11.702 2.62729 11.9535 2.77721 12.1072C2.84551 12.1773 2.91535 12.2458 2.98667 12.3128L3.05883 12.3795L3.31883 12.6045L3.50684 12.7532L3.62796 12.8433L3.81491 12.9742L3.99079 13.089C4.11175 13.1651 4.23536 13.2375 4.36157 13.3059L4.62496 13.4412L4.88553 13.5607L5.18837 13.6828L5.43169 13.7686C5.56564 13.8128 5.70149 13.8529 5.83857 13.8885C5.94262 13.9155 6.04767 13.9401 6.15405 13.9622C6.27993 13.9883 6.40713 14.0109 6.53544 14.0298L6.85241 14.0685L7.11934 14.0892C7.24637 14.0965 7.37436 14.1002 7.50322 14.1002C11.1483 14.1002 14.1032 11.1453 14.1032 7.50023C14.1032 7.25044 14.0893 7.00389 14.0623 6.76131L14.0255 6.48407C13.991 6.26083 13.9453 6.04129 13.8891 5.82642C13.8213 5.56709 13.7382 5.31398 13.6409 5.06881L13.5279 4.80132L13.4507 4.63542L13.3766 4.48666C13.2178 4.17773 13.0353 3.88295 12.8312 3.60423L12.6782 3.40352L12.4793 3.16432L12.3157 2.98361L12.1961 2.85951L12.0355 2.70246L11.8134 2.50184L11.4925 2.24191L11.2483 2.06498L10.9562 1.87446L10.6346 1.68894L10.3073 1.52378L10.1938 1.47176L9.95488 1.3706L9.67791 1.2669L9.42566 1.1846L9.10075 1.09489L8.83599 1.03486L8.54406 0.98184ZM10.4032 5.30023C10.4032 4.27588 10.2002 3.29829 9.83244 2.40604C11.7623 3.28995 13.1032 5.23862 13.1032 7.50023C13.1032 10.593 10.596 13.1002 7.50322 13.1002C6.63646 13.1002 5.81597 12.9036 5.08355 12.5522C6.5419 12.0941 7.81081 11.2082 8.74322 10.0416C8.87963 10.2284 9.10028 10.3497 9.34928 10.3497C9.76349 10.3497 10.0993 10.0139 10.0993 9.59971C10.0993 9.24256 9.84965 8.94373 9.51535 8.86816C9.57741 8.75165 9.63653 8.63334 9.6926 8.51332C9.88358 8.63163 10.1088 8.69993 10.35 8.69993C11.0403 8.69993 11.6 8.14028 11.6 7.44993C11.6 6.75976 11.0406 6.20024 10.3505 6.19993C10.3853 5.90487 10.4032 5.60464 10.4032 5.30023Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="page-layout">
+        <main>
+          <a class="back-link" href="../index.html">← Back</a>
+
+          <div class="article-header">
+            <h1>Mikaël Francoeur</h1>
+            <p class="article-meta">
+              May 16, 2026 by <a href="../index.html">Eren Turkoglu</a>
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">Databases</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">SQLite</span>
+            </div>
+          </div>
+
+          <div class="article-body">
+            <h2>Feel free to introduce yourself</h2>
+            <p>
+              My name is Mikaël. I've been working at Turso for six months now.
+              I have an atypical background. I started as a musician. I did a
+              master's in piano. Then I did a PhD in musicology. I finished at
+              29. And in parallel I was a semi-professional musician. I worked
+              in the naval reserve in Canada. I was a reservist from age 16 to
+              32, for 16 years part-time. I also had occasional short-term
+              contracts, often during the summer.
+            </p>
+
+            <h2>How did you go from being a musician to becoming a programmer?</h2>
+            <p>
+              During my PhD, I needed a digital tool, so I decided to build it
+              myself. I already knew some programming from teaching myself as a
+              kid, but that project is what really got me hooked.
+            </p>
+            <p>
+              I realized I loved solving problems, constantly learning, and the
+              puzzle-like aspect of programming. At the same time, I already saw
+              my PhD as a finishing point rather than the start of an academic
+              career in musicology.
+            </p>
+            <p>
+              When I finished my PhD, the pandemic hit a few months later. I
+              was working as a musician for the navy, but suddenly there wasn't
+              much work anymore. So I decided to fully commit to a career
+              transition. I studied from morning to night for months, and seven
+              months later, someone hired me for my first programming job after
+              finding my resume in the trash.
+            </p>
+
+            <h2>They found your resume in the trash?</h2>
+            <p>
+              Yes, literally in the trash. What I think happened is that I had
+              sent my resume and the HR person must have printed all the
+              resumes and thrown them in the trash when it wasn't the profile
+              they expected. Naturally, at the time, nobody wanted to hire a
+              musicology PhD to do web development.
+            </p>
+
+            <h2>What was your first job in tech?</h2>
+            <p>
+              My first job was at a small medical equipment manufacturer. That's
+              where I started.
+            </p>
+
+            <h2>Did you have any regrets about your musicology PhD?</h2>
+            <p>
+              No, my life is already very full. People often ask me what would
+              have happened if I had studied computer science from the start,
+              but I don’t think you can really answer “what if” questions.
+            </p>
+            <p>
+              In Quebec, we say those questions can take you around the world,
+              because once you start imagining different paths, the
+              possibilities become endless.
+            </p>
+
+            <h2>
+              You said you took seven months to train intensively in
+              development. How did you organize your learning?
+            </h2>
+            <p>
+              My strategy was: I'm going to get my Spring certification.
+              Spring, which is the most widely used development framework in
+              Java. So I did everything I could to get that. It's called Spring
+              Certified Professional. It's a very substantial certification. I
+              was lucky because it's a really well-designed certification.
+              Because beyond learning the Spring product itself, it also covers
+              everything around it: HTTP, how to write tests, things like
+              that.
+            </p>
+            <p>
+              My introduction to Spring development was a Udemy course that
+              was, from memory, 60 hours long, which I completed from start to
+              finish. It was by a guy who calls himself Spring Framework Guru.
+              For me, it was a great introduction.
+            </p>
+
+            <h2>After your first web development job, did you join Ticketmaster directly?</h2>
+            <p>
+              No, I joined them directly, there was no gap in between. At
+              Ticketmaster, I worked on back-end systems and microservices,
+              mainly using Java and Go, with very little front-end work.
+            </p>
+            <p>
+              I also worked with technologies like Kafka, Elasticsearch, Redis,
+              MySQL, and DynamoDB, tools that are more adapted to large-scale
+              systems. Compared to my previous company, the scale was much
+              bigger.
+            </p>
+
+            <h2>how old were you when you became a developer?</h2>
+            <p>30 years old.</p>
+
+            <h2>How did you end up in databases?</h2>
+            <p>
+              When I was working at Ticketmaster, we had pretty strict
+              performance constraints on our MySQL databases. So I started
+              reading as much of the MySQL documentation as I could to
+              understand transaction isolation, query plans,
+              <code>EXPLAIN</code>, query optimization, and how data is
+              structured on disk.
+            </p>
+            <p>
+              At some point, I submitted a talk about MySQL transactions to a
+              conference in Montreal called ConFoo. Preparing for that talk
+              pushed me to study even more.
+            </p>
+            <p>
+              There was also a well-known person from the database world there
+              who told me, “You should submit this talk to SCALE in Los
+              Angeles.” So I did, and I got accepted there as well. For that
+              conference, I kept digging deeper: reading source code, exploring
+              internals, and trying to really understand how things worked.
+              That’s roughly how I became deeply interested in databases.
+            </p>
+            <p>
+              What attracted me most was the level of complexity and technical
+              depth. I don’t want to speak badly about enterprise applications
+              because they can also be extremely complex and meaningful. But I
+              once heard an analogy that resonated with me: some domains are
+              broad and shallow, like web or mobile development, while others
+              are narrow but very deep, like databases or distributed systems.
+              Those deep technical domains are what really interested me.
+            </p>
+
+            <h2>Did books also play an important role in your learning journey?</h2>
+            <p>
+              Yes. I'm somewhat self-taught by accident, but it's also in my
+              personality. I like to go find information on my own. So yes,
+              books are a very good source of knowledge.
+            </p>
+
+            <h2>Do you publish your reading list somewhere, like an online bookshelf?</h2>
+            <p>
+              No, not really. The book I’m deeply into right now is
+              <em>Database System Concepts</em>, and it’s massive, around
+              pages. I’m only about 400 pages in, so it’s going to take me a
+              long time to finish.
+            </p>
+            <p>
+              That’s also part of the downside of going deep into a narrow
+              field: you’re less likely to read a 300-page book over a weekend
+              and move on. These subjects require a lot more time and depth.
+            </p>
+
+            <h2>
+              Have any side projects or experiments helped you deepen your
+              understanding of databases?
+            </h2>
+            <p>
+              Yes, actually. Recently, I built a B-Tree visualizer because we
+              had a real issue to investigate at Turso.
+            </p>
+            <p>
+              A database had become corrupted because of a bug we’ve since
+              fixed, and I wanted to inspect the exact structure of the
+              B-Trees: where pages were located, how cells were organized
+              inside them, and how everything was laid out.
+            </p>
+            <p>
+              That project was also one of the ways I experimented with AI. I
+              often use AI for proofs of concept or disposable tools: things
+              that don’t need to be perfect and that you might even throw away
+              the next day.
+            </p>
+            <p>
+              So I opened Anthropic’s Claude and asked it to generate a
+              visualization tool for the B-Tree with all my specific
+              requirements. Surprisingly, it worked really well. If there are
+              bugs, either I haven’t noticed them or they haven’t affected the
+              functionality. We’ve actually reused that tool several times
+              since then.
+            </p>
+
+            <h2>So it's kind of a debugging tool?</h2>
+            <p>
+              Exactly. And honestly, I think this is something a lot of people
+              are realizing right now with AI coding agents: they’re
+              incredibly good for experimentation and rapid prototyping because
+              they drastically reduce the cost of trying things.
+            </p>
+            <p>
+              For example, at Turso, we have many fuzz tests that work in a
+              loop. Inside that loop, we take the modulo of a random number,
+              and depending on the result, we execute different actions. If the
+              modulo is 1, maybe we do an insert; if it’s 2, we do a delete,
+              and so on.
+            </p>
+            <p>
+              Recently, I read about something called swarm testing. The idea
+              is that for these kinds of randomized tests, you can sometimes
+              find bugs more effectively by disabling certain branches during a
+              given execution. For example, one run might randomly allow only
+              inserts, while another allows only deletes.
+            </p>
+            <p>
+              So I asked Anthropic’s Claude to build a prototype that could
+              transform our fuzz tests into swarm tests. I let it work in the
+              background while I focused on other tasks.
+            </p>
+            <p>
+              It generated a few thousand lines of code that I only skimmed
+              through, but that wasn’t really the point. The important part was
+              that, with very little effort, I quickly had a proof of concept
+              that helped me determine whether the idea was feasible and
+              whether we could integrate an API for it without heavily
+              impacting our existing tests.
+            </p>
+
+            <h2>What is Turso?</h2>
+            <p>
+              Turso is building a SQLite-compatible database, which in our case
+              happens to be written in Rust, although it could have been
+              implemented in another language as well.
+            </p>
+            <p>
+              The goal is to push beyond some of SQLite’s current limitations.
+              We also provide a cloud platform that lets users host
+              SQLite-compatible databases and synchronize them with clients.
+            </p>
+            <p>
+              The database itself is fully open source. Last time I checked,
+              the project had more than 18,000 GitHub stars and over 230 open
+              source contributors, so it’s a very active ecosystem.
+            </p>
+            <p>
+              One thing we’re especially proud of is support for multi-writer
+              capabilities. That means multiple users can write to the database
+              simultaneously, which SQLite does not support. That limitation is
+              one of the main reasons SQLite can be difficult to adopt for
+              certain larger-scale use cases.
+            </p>
+
+            <h2>How did you join Turso?</h2>
+            <p>
+              I need to go back about three years, because what I really want
+              to show with this story is that there’s definitely an element of
+              luck, but there’s also a huge part about putting yourself in a
+              position where luck can happen, giving yourself opportunities to
+              get lucky.
+            </p>
+            <p>
+              Around 2022 or 2023, I attended QCon San Francisco in San
+              Francisco. During the conference, I went to an Ask Me Anything
+              session with people from Microsoft’s Cosmos DB team.
+            </p>
+            <p>
+              There were only two attendees there: me, and a director from
+              another company. We started talking and exchanged contact
+              information.
+            </p>
+            <p>
+              A couple of years later, that company’s CEO made a typical
+              anniversary post on LinkedIn saying how proud he was of what the
+              company had achieved. I commented on the post saying that I
+              really admired what they were building and wished them success.
+            </p>
+            <p>
+              A little later, the director I had met at QCon reached out to me
+              and said: “Thanks for your message. I forwarded it to our CEO,
+              and he really appreciated it. Would you be interested in
+              attending a conference we’re organizing called Bug Bash?”
+            </p>
+            <p>
+              Of course, I accepted. And during that conference, I met Glauber
+              Costa, the CEO of Turso.
+            </p>
+            <p>
+              One evening during the conference, Glauber and I went for a walk
+              around the city and talked about many different things. That’s
+              when he started telling me more about Turso’s open source
+              project. I already knew about it from places like Hacker News,
+              but during that conversation he told me something that really
+              stayed with me:
+            </p>
+            <blockquote>
+              “I can’t promise anything, but if we ever hire more people, we’ll
+              probably hire from among our contributors.”
+            </blockquote>
+            <p>I kept that in the back of my mind.</p>
+            <p>
+              A few months later, I was starting to feel a bit too comfortable
+              in my current job. I wanted to challenge myself and explore
+              something new. So I quit my job and went back into intense study
+              mode, just like I had done years earlier. I didn’t really know
+              what would happen next, but I felt that whatever came after would
+              be more interesting than staying where I was.
+            </p>
+            <p>
+              At that point, I decided to focus heavily on contributing to
+              Turso. First, because it was a highly visible open source
+              project, and contributing to a database project like that would
+              be an incredible learning opportunity and a strong signal on my
+              resume. Second, because I knew that if they ever decided to hire,
+              contributors would naturally be the first people they looked at.
+            </p>
+            <p>
+              So for about five months, I was unemployed and studying full
+              time, contributing and learning as much as I could without really
+              knowing where it would lead.
+            </p>
+            <p>Eventually, Turso hired me.</p>
+            <p>
+              It was definitely my number one goal, but I think it would have
+              been reckless to make it my only possible outcome. What I knew
+              for sure was that contributing to Turso would open many doors,
+              and Turso itself just happened to be one of them.
+            </p>
+
+            <h2>So before receiving the offer, you had already been contributing to Turso.</h2>
+            <p>
+              Yes. Before being hired, I had already contributed quite a bit to
+              Turso.
+            </p>
+            <p>
+              For example, I was the person who added the table-valued
+              functions <code>JSON_EACH</code> and <code>JSON_TREE</code>. I
+              also extended the table-valued functions API and contributed to
+              both the JavaScript and Rust bindings.
+            </p>
+            <p>
+              At the time, the database was still very much in beta, so it was
+              easier to uncover issues. I also started using artificial
+              intelligence to help find bugs in Turso, and before joining the
+              company, I had already identified over one hundred bugs.
+            </p>
+
+            <h2>What does a typical day look like at Turso today?</h2>
+            <p>
+              We work with a tremendous amount of autonomy. I don't have set
+              hours. Nobody does. Nobody either… we're all aware of the
+              company's direction. We're all aware of the company's priorities.
+              And it's each person's responsibility to spend their time on what
+              has the most impact.
+            </p>
+
+            <h2>Do you think opensource still a good path today to get hired at a company?</h2>
+            <p>
+              Absolutely. What I'd add, though, is that contributing to open
+              source specifically to get hired by that project, I think that's
+              putting blinders on. I think the best way to use open source,
+              whether you're learning or job searching, is to contribute in a
+              way that puts your capabilities in the spotlight, by doing things
+              that require a lot of knowledge and skill.
+            </p>
+            <p>
+              Especially now with AI, it's so easy to open a pull request that
+              fixes a non-trivial problem that in itself, paradoxically, it
+              becomes trivial. So what I'd suggest to someone who wants to use
+              open source to position themselves on the job market is to do
+              things that aren't yet accessible through that trivial mode of
+              contribution. For example, things that require a lot of
+              expertise. At Turso, for instance, we know there are parts of
+              the database we'd like to verify using formal verification
+              languages, and do model testing to ensure our database has
+              certain safety properties. Those are things AI isn't yet capable
+              of doing.
+            </p>
+            <p>
+              And if I were still in the position of thinking: "I want to prove
+              my worth," I'd make it my business to become an expert in that
+              area, and have a positive impact on the project my name is going
+              to be attached to.
+            </p>
+
+            <h2>I noticed your frustration lately around open source, about AI PRs flooding Turso. What are your predictions for open source?</h2>
+            <p>
+              Yes. I know that Glauber Costa published an article on this exact
+              topic, explaining that there’s still plenty of room for open
+              source contributions, but that the definition of a valuable
+              contribution is changing.
+            </p>
+            <p>
+              In the past, simply writing code had a lot of intrinsic value
+              because it was harder to produce than it is today.
+            </p>
+            <p>
+              I think open source has always fundamentally been about adding
+              value. If writing code alone becomes less valuable, then the way
+              people contribute also has to evolve. What still matters are
+              contributions that demonstrate real effort and expertise.
+            </p>
+            <p>
+              There’s actually a proposal currently being discussed in the Rust
+              ecosystem called “No low effort contributions.” It explores
+              whether projects should stop accepting contributions that require
+              little to no effort.
+            </p>
+            <p>
+              It’s similar to what I was saying earlier about formal
+              verification. I think the future of open source will
+              increasingly revolve around contributions that not only create
+              value, but also reflect genuine technical depth and professional
+              expertise.
+            </p>
+
+            <h2>What do you think of Rust?</h2>
+            <p>
+              I’m interested in Rust because it’s my main professional tool
+              today.
+            </p>
+            <p>
+              My perspective is probably biased, though, because most of the
+              work I did in Java was enterprise application development, while
+              most of my work in Rust has been systems programming. So the
+              complexity often comes more from the domain itself than from the
+              language.
+            </p>
+            <p>
+              What I can say is that Rust introduces a lot of ceremony around
+              memory management, lifetimes, and ownership. Sometimes that can
+              feel frustrating when the problem you’re trying to solve isn’t
+              specifically low-level or technical in nature.
+            </p>
+            <p>
+              But I can also phrase that more positively: in my opinion, Java
+              is a beautiful language for enterprise applications. It’s simply
+              designed for different kinds of problems, and that’s perfectly
+              fine.
+            </p>
+            <p>
+              That said, as projects like Apache Cassandra have shown, Java can
+              also reach certain limits when you start building very low-level
+              systems software.
+            </p>
+
+            <h2>How do you use AI?</h2>
+            <p>
+              There’s something Kris Jenkins once posted on LinkedIn that
+              really stuck with me. He said that when something becomes twice
+              as easy to do, it often becomes ten times more useful. I think
+              that idea applies very well to AI.
+            </p>
+            <p>
+              Where AI really shines is in automating tedious and
+              time-consuming tasks. Once those tasks become easier, you
+              naturally start doing them more often because the cognitive
+              barrier becomes much lower.
+            </p>
+            <p>
+              For example, I built a skill, which I shared on Discord and will
+              probably publish soon on GitHub, that asks an AI to
+              automatically create a GitHub issue. It goes through the
+              documentation, builds a minimal reproducer, and even suggests
+              where the bug might come from.
+            </p>
+            <p>
+              Several times a week, I’ll notice a small issue in Turso: maybe
+              a compatibility problem, maybe behavior that feels incorrect.
+              Instead of manually writing everything myself, I run the skill in
+              the background. It opens the issue, I quickly verify that
+              everything is accurate, and then I submit it.
+            </p>
+            <p>
+              At this point, I think I have more than 500 issues under my name
+              in the Turso repository. And I’d say they’re high-quality issues,
+              actionable reports that engineers can genuinely work from.
+            </p>
+
+            <h2>Does AI replace juniors?</h2>
+            <p>
+              I don't know. I don't think I'm the best person to answer that.
+              But what I can say is that what has always had a lot of value,
+              and I think will have even more, is reliability, a sense of
+              initiative, taking a problem and saying: "I'm going to solve
+              this." Becoming someone who is dependable, responsible, someone
+              people can count on. I think that's maybe a quality that was more
+              associated with leadership positions before.
+            </p>
+            <p>
+              In my opinion, that will continue to be important, or even
+              become more important, for someone who wants to prove their
+              worth. And again, going back to open source: going into an open
+              source project and working with the mindset of: "I'm going to
+              solve this problem, I'm going to see it through to the end,
+              regardless of the tools, whether that's AI, asking colleagues,
+              reading books. I'm going to become the reliable person this
+              project can depend on, and I'm going to see it through." I say
+              project, but it can be something smaller. I think for a
+              professional, that will continue to matter and perhaps matter
+              even more.
+            </p>
+
+            <h2>What's the specific advice for juniors?</h2>
+            <p>
+              It would be to become the reliable person. The person people can
+              say: "We have a problem, we'll hand it to them and they'll see it
+              through." Becoming someone who is responsible, who projects a
+              professional image. I'm not talking about wearing a suit and tie,
+              but being the person on whom non-trivial things can rest.
+            </p>
+
+            <h2>Have you received advice that changed you, that really helped you in life?</h2>
+            <p>
+              My number one piece of advice, something someone told me that
+              has stayed with me for the last ten years, is: sometimes in
+              life, a door opens, and when it closes, it doesn't reopen. It
+              doesn't reopen after that. So that's how I live my life. I live
+              by seeing doors open and saying: "Oh, I'm going to go see what's
+              behind that door." For me, it's always been a quality I try to
+              develop, the quality of serendipity, of finding things you
+              weren't looking for. And saying: "Look, there's something
+              interesting in that direction. Let me go see what it is.”
+            </p>
+
+            <h2>Do you have a top 3 books?</h2>
+            <p>
+              One book that took me probably a year and a half to finish was
+              <em>Crafting Interpreters</em>. It’s an incredibly accessible and
+              well-written book. Much like the formal verification material I
+              mentioned earlier, it’s not just about interpreters or
+              programming languages. It also takes many interesting detours
+              into how computers and programming work in general. I really
+              loved that aspect of it.
+            </p>
+            <p>
+              The second one is <em>Cracking the Coding Interview</em>. It’s
+              not really a book you read cover to cover, but it’s stayed with
+              me over the years. It’s basically a classic for interview
+              preparation. If you don’t want to spend a lot of money on
+              LeetCode Premium, this book contains a huge amount of very
+              well-explained material on algorithms and data structures. I
+              think there’s even a section related to databases.
+            </p>
+            <p>
+              The third book is
+              <em>Growing Object-Oriented Software, Guided by Tests</em> by
+              Steve Freeman and Nat Pryce. It focuses more on software
+              engineering and how to properly build applications. It covers
+              topics like test-driven development, software design philosophy,
+              encapsulation, and modularization.
+            </p>
+            <p>
+              I read it after already working professionally as a developer for
+              around five years, and I still learned an enormous amount from
+              it. That’s why I think it’s valuable both for beginners and for
+              more experienced engineers.
+            </p>
+
+            <h2>How do you spend your free time?</h2>
+            <p>
+              Not much free time lately. But otherwise, in my free time, I try
+              to improve, to keep studying databases. That's what's occupying
+              me right now. Soon I'm going to start learning a new language.
+              This year, it'll be Georgian.
+            </p>
+
+            <h2>How do you organize yourself to learn a new language?</h2>
+            <p>
+              It takes work, it takes time. You need to work every single day.
+              If you or anyone else ever wants to learn another language, I
+              would advise against apps like Duolingo because they're games.
+              They're good for knowing how to say a meal in Arabic, but after
+              that, to be able to get by in a conversation, you need something
+              more engaging.
+            </p>
+
+            <h2>What's your toolbox?</h2>
+            <p>
+              I'm on Mac because that's what works for me. Otherwise, I use the
+              JetBrains suite. I have IntelliJ Ultimate. But I think that's
+              something you shouldn't attach too much importance to. I have
+              colleagues who… in fact, all the developers at Turso are
+              extremely competent. We have people on VS Code. People on
+              NeoVim. People on JetBrains. Everyone has their own way of
+              working. Everyone manages to be productive. So I wouldn't tell
+              someone to use my tools because they'll be more productive with
+              them.
+            </p>
+
+            <h2>If someone has no background in databases and wants to become a database or systems developer, where would you recommend they start?</h2>
+            <p>
+              I think the Andy Pavlo CMU database course is a very good
+              introduction, not only to databases themselves, but also to the
+              level of rigor the field requires. It’s a demanding domain.
+            </p>
+            <p>
+              Even today, there are still many things I haven’t mastered yet,
+              things I’ll eventually learn and become more comfortable with. To
+              become a database developer, you really need to build knowledge
+              across many different areas. Honestly, that’s also one of the
+              things that attracted me to the field.
+            </p>
+            <p>
+              But there’s no single way to learn. I once asked someone who ran
+              their own database company how they learned, and they simply told
+              me: “I read code.” They said they didn’t really read books or
+              follow courses. They just read code.
+            </p>
+            <p>
+              Another person told me almost the same thing: “I barely read
+              technical books. I just read code.”
+            </p>
+            <p>
+              That said, I still think there’s a foundational knowledge base
+              you need first. Courses and books can help build that foundation,
+              and after that, reading real production code becomes much more
+              valuable.
+            </p>
+
+            <h2>We briefly mentioned conferences. Do you think it's a good way to meet people?</h2>
+            <p>
+              Absolutely. Over the past few years, I’ve attended maybe three,
+              four, sometimes five conferences a year, conferences,
+              congresses, events like that, and not always as a speaker.
+            </p>
+            <p>
+              One thing I’ve realized over time is that most conference talks
+              end up on YouTube a week later anyway. So when you pay $1,000 or
+              €600 for a ticket, you have to ask yourself what you’re really
+              going there for.
+            </p>
+            <p>
+              Are you expecting the same experience you’d get sitting on your
+              couch for three days watching videos online? Probably not.
+            </p>
+            <p>
+              What conferences really provide is a community experience. You
+              meet people you would probably never encounter otherwise. You
+              build connections, discuss technical problems, exchange ideas,
+              and ask questions like: “How do you handle this problem on your
+              side?”
+            </p>
+            <p>
+              Those relationships can become incredibly valuable later in your
+              career. Sometimes you meet people who can help you in the future,
+              and sometimes you become useful to them as well. That human
+              aspect is, in my opinion, one of the most valuable parts of
+              conferences.
+            </p>
+
+            <h2>You also give talks. You did one recently on SQLite. How do you prepare for a talk? Do you have tips, a system, a methodology?</h2>
+            <p>
+              When you teach something, you really have to master the material
+              deeply. If your understanding is only partial, sooner or later,
+              maybe thirty minutes into the talk, someone will ask a question
+              you can’t answer.
+            </p>
+            <p>
+              For me, giving talks is a way of forcing myself to grow. I think,
+              like most people, I can be lazy if I don’t have a concrete goal.
+              So I give myself deadlines and tell myself: “By this date, I need
+              to truly understand this subject.” Preparing a conference talk
+              forces me to reach that level.
+            </p>
+            <p>
+              And presenting something well also requires a lot of practice.
+              Usually, I start by rehearsing the talk while timing myself. If
+              it’s supposed to be a 45-minute presentation, the first rehearsal
+              often lasts an hour and a half because I still don’t know exactly
+              what to say, how to phrase things, or how to transition smoothly
+              between topics.
+            </p>
+            <p>
+              Then I repeat it over and over, the next day, the day after
+              that. And with each repetition, I refine and condense the
+              material until it fits perfectly within the allotted time while
+              still delivering as much value as possible to the audience.
+            </p>
+
+            <h2>How do you know when you've reached that level? How do you know you're truly in mastery?</h2>
+            <p>
+              It’s a bit philosophical, but how do you discover the things you
+              don’t even know you’re missing?
+            </p>
+            <p>
+              There have been several times when I was discussing a topic and
+              someone asked me a question that made me realize: “Actually, I
+              don’t know the answer to that.” And that happens to everyone,
+              even very experienced people.
+            </p>
+            <p>
+              But those moments are valuable because they expose blind spots
+              you weren’t aware of before. Once you realize there’s something
+              you don’t understand, you go learn it. And usually, while
+              learning that specific thing, you also end up exploring the
+              surrounding concepts and expanding your understanding of the
+              whole area.
+            </p>
+            <p>
+              So maybe that’s part of the process: putting yourself out there
+              and saying, “I’m going to share the things I understand well.”
+              And if someone asks a question you can’t answer, that’s fine too.
+              At least you’ve created an opportunity to improve and pushed
+              yourself into situations that expand your knowledge further.
+            </p>
+
+            <h2>Is there anything you'd like to share?</h2>
+            <p>
+              Last year, I was having dinner with someone whose specialty was
+              databases, a university professor. At one point during the
+              conversation, I told him: “I’d really love to work in
+              databases.”
+            </p>
+            <p>
+              Right there at the table, he opened his laptop and said: “Let me
+              show you how to work inside the PostgreSQL source code.”
+            </p>
+            <p>
+              In about fifteen minutes, he walked me through the codebase. He
+              showed me where specific functions were implemented and said:
+              “Look, this function does this. Try modifying it, then recompile
+              the database and you’ll see the behavior change.”
+            </p>
+            <p>
+              For me, that moment was incredibly inspiring. First, because it
+              reminded me that in this field there are people who are both
+              extremely skilled and genuinely willing to share their knowledge.
+              Second, because it made me realize that experimenting with
+              database internals is actually far more accessible than people
+              imagine.
+            </p>
+            <p>
+              There’s often this perception that working on databases requires
+              exceptional technical ability or that the barrier to entry is
+              impossibly high. But honestly, that’s not really true.
+            </p>
+            <p>
+              You can simply clone a project, modify the code, refactor
+              things, experiment, and see what happens. And if it breaks? It
+              doesn’t matter. Nobody’s going to know. That freedom to explore
+              is incredibly valuable.
+            </p>
+            <p>
+              I think the entry barrier is much lower than people believe.
+              Playing with source code, trying things, observing the results,
+              all of that builds autonomy and curiosity. It exposes you to
+              concepts and ideas you would never encounter otherwise. It’s one
+              of the best ways to learn.
+            </p>
+            <p>
+              There’s a phrase people often say in English: “You can just do
+              things.” And honestly, that mindset matters a lot. Just try it.
+              The worst-case scenario is that it doesn’t work, but even then,
+              you’ll still have learned something valuable. That’s how we grow
+              as engineers.
+            </p>
+
+            <h2>What's the best way to reach you if someone wants to get in touch?</h2>
+            <p>LinkedIn.</p>
+
+          </div>
+        </main>
+
+        <aside class="sidebar" aria-label="Job openings">
+          <div>
+            <p class="sidebar-section-title">Job Openings</p>
+          </div>
+
+          <div class="sidebar-card">
+            <p>
+              Current ParadeDB openings stay visible from each interview page.
+            </p>
+            <a class="sidebar-link" href="../jobs.html">Visit the jobs page</a>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >ParadeDB</a
+            >
+            <a
+              class="job-title"
+              href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Database Engineer Postgres Internals
+            </a>
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >ParadeDB</a
+            >
+            <a
+              class="job-title"
+              href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >Database Engineer OLAP Internals</a
+            >
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >ParadeDB</a
+            >
+            <a
+              class="job-title"
+              href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
+              target="_blank"
+              rel="noreferrer"
+              >Infrastructure Engineer Postgres Platform</a
+            >
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://www.thenile.dev/careers/founding-engineer-database-internals"
+              target="_blank"
+              rel="noreferrer"
+              >Nile</a
+            >
+            <a
+              class="job-title"
+              href="https://www.thenile.dev/careers/founding-engineer-database-internals"
+              target="_blank"
+              rel="noreferrer"
+              >Founding Engineer Database Internals</a
+            >
+            <div class="tag-row">
+              <span class="tag">Nile</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
+              target="_blank"
+              rel="noreferrer"
+              >Nile</a
+            >
+            <a
+              class="job-title"
+              href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
+              target="_blank"
+              rel="noreferrer"
+              >Founding Engineer Cloud Infrastructure</a
+            >
+            <div class="tag-row">
+              <span class="tag">Nile</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
+              target="_blank"
+              rel="noreferrer"
+              >turbopuffer</a
+            >
+            <a
+              class="job-title"
+              href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
+              target="_blank"
+              rel="noreferrer"
+              >Database Engineer</a
+            >
+            <div class="tag-row">
+              <span class="tag">turbopuffer</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009"
+              target="_blank"
+              rel="noreferrer"
+              >PlanetScale</a
+            >
+            <a
+              class="job-title"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009"
+              target="_blank"
+              rel="noreferrer"
+              >Software Engineer Infrastructure</a
+            >
+            <div class="tag-row">
+              <span class="tag">PlanetScale</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a
+              class="job-company"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009"
+              target="_blank"
+              rel="noreferrer"
+              >PlanetScale</a
+            >
+            <a
+              class="job-title"
+              href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009"
+              target="_blank"
+              rel="noreferrer"
+              >Solutions Engineer</a
+            >
+            <div class="tag-row">
+              <span class="tag">PlanetScale</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <script src="../site.js?v=20260515a"></script>
+  </body>
+</html>
