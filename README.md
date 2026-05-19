@@ -1,48 +1,67 @@
-# Parcours
+# Interview — Matt Cornillon
 
-- Est-ce que tu peux te présenter et nous parler un peu de ton parcours ?  
-- Comment es-tu entré dans le monde des bases de données et de PostgreSQL ?  
-- Quels ont été les grands tournants de ta carrière ?  
+## Parcours
 
-# Découverte des bases de données
+- Est-ce que tu peux te présenter et revenir sur ton parcours dans l’écosystème database ?
+- Comment es-tu entré dans le monde de PostgreSQL ?
+- Quels ont été les grands tournants de ta carrière, de consultant DBA à Google aujourd’hui ?
 
-- Qu’est-ce qui t’a attiré vers les bases de données ?  
-- Comment tu t’es formé techniquement ? Des ressources à conseiller ?  
-- Pour quelqu’un qui débute, quels sujets ou projets recommanderais-tu pour comprendre les fondamentaux des bases de données ?  
-- Qu’est-ce qui te passionne encore aujourd’hui dans PostgreSQL après autant d’années ?  
+---
 
-# Carrière
+# PostgreSQL & Databases
 
-- Comment est née Data Bene ?  
-- Quel a été l’un des problèmes techniques les plus difficiles que tu as rencontrés ?  
-- À quoi ressemble une journée typique dans ton travail aujourd’hui ?  
-- Quels conseils donnerais-tu à quelqu’un qui veut rejoindre une entreprise spécialisée dans les bases de données ?  
+- Qu’est-ce qui t’a attiré vers les bases de données au départ ?
+- Qu’est-ce qui te passionne encore aujourd’hui dans PostgreSQL ?
+- Comment t’es-tu formé techniquement au fil des années ?
+- Quels conseils donnerais-tu à quelqu’un qui veut devenir un bon ingénieur PostgreSQL ?
+- Quels sont aujourd’hui les plus grands défis autour des bases de données cloud et distribuées ?
 
-# Open Source
+---
 
-- Quel impact l’open source a-t-il eu sur ta carrière ?  
-- Tu te souviens de ta première contribution open source ?  
-- Que penses-tu de l’avenir de l’open source et des bases de données ?  
+# Open Source & Communauté
+
+- Quel impact l’open source a-t-il eu sur ta carrière ?
+- Tu te souviens de ta première contribution PostgreSQL ?
+- Comment es-tu devenu Significant PostgreSQL Contributor ?
+- Quel rôle joue PostgreSQLFr dans l’écosystème français aujourd’hui ?
+- Pourquoi est-ce important selon toi de participer à une communauté technique ?
+
+---
+
+# Cloud & Carrière
+
+- Tu as travaillé chez Aiven, ADEO et maintenant Google. Quelles différences t’ont le plus marqué ?
+- À quoi ressemble une journée typique en tant que Customer Engineer Database Specialist chez Google ?
+- Quels problèmes techniques rencontres-tu le plus souvent avec les clients aujourd’hui ?
+- Comment vois-tu l’évolution du métier d’ingénieur database avec le cloud et l’IA ?
+
+---
 
 # IA
 
-- Utilises-tu des outils d’IA dans ton travail quotidien ?  
-- Est-ce que l’IA a changé ta manière de travailler ou d’apprendre ?  
-- Quel impact penses-tu que l’IA aura sur les métiers liés aux bases de données ?  
+- Utilises-tu des outils d’IA dans ton travail quotidien ?
+- Est-ce que l’IA change la manière dont les ingénieurs databases travaillent ?
+- Quelles compétences resteront indispensables malgré l’évolution rapide de l’IA ?
+
+---
 
 # Réflexion
 
-- Quel est le meilleur conseil qu’on t’ait donné ?  
-- Quel conseil donnerais-tu aujourd’hui aux jeunes ingénieurs ?  
+- Quel est le meilleur conseil qu’on t’ait donné ?
+- Quel conseil donnerais-tu aujourd’hui à un jeune ingénieur qui veut travailler dans les bases de données ?
+- Avec le recul, qu’aurais-tu aimé savoir plus tôt dans ta carrière ?
+
+---
 
 # Personnel
 
-- Quels sont tes 3 livres tech préférés ?  
-- Comment passes-tu ton temps libre ?  
-- Comment apprends-tu quelque chose de nouveau ?  
-- Quels sont tes outils préférés au quotidien ?  
+- Quels livres ou ressources tech t’ont le plus marqué ?
+- Comment continues-tu à apprendre aujourd’hui ?
+- Quels sont tes outils préférés au quotidien ?
+
+---
 
 # Conclusion
 
-- Y a-t-il quelque chose d’autre que tu aimerais partager aux lecteurs ?  
-- Peut-on te contacter ? Si oui, quel est le meilleur moyen ?  
+- Y a-t-il quelque chose que tu aimerais partager aux lecteurs ?
+- Où peut-on te suivre ou te contacter ?
