@@ -1,48 +1,46 @@
-# Interview — Matt Cornillon
+# Interview
 
-## Parcours
+## Kariyer Yolculuğu
 
-- Est-ce que tu peux te présenter et revenir sur ton parcours dans l’écosystème database ?
-- Comment es-tu entré dans le monde des bases de données ?
-- Quels ont été les grands tournants de ta carrière, de consultant DBA à Google aujourd’hui ?
+- Kendini kısaca tanıtabilir misin?
+- Bilgisayar dünyasına geçmeden önce hukuk okudun. Bu geçiş nasıl gerçekleşti?
+- Teknoloji alanında kariyer yapmak istediğini ne zaman fark ettin?
+- Percona’da Technical Team Lead olmana kadar kariyerindeki en önemli dönüm noktaları nelerdi?
 
-# PostgreSQL & Databases
+# PostgreSQL & Veritabanları
 
-- Qu’est-ce qui t’a attiré vers les bases de données au départ ?
-- Qu’est-ce qui te passionne encore aujourd’hui dans PostgreSQL ?
-- Comment t’es-tu formé techniquement au fil des années ?
-- Quels conseils donnerais-tu à quelqu’un qui veut devenir un bon ingénieur DB ?
+- Veritabanları ve altyapı dünyasına nasıl girdin?
+- Seni ilk başta bu alana çeken şey neydi?
+- Yıllar boyunca teknik olarak kendini nasıl geliştirdin?
+- İyi bir infrastructure/database mühendisi olmak isteyen birine ne tavsiye edersin?
 
-# Open Source & Communauté
+# Percona
 
-- Quel impact l’open source a-t-il eu sur ta carrière ?
-- Tu te souviens de ta première contribution PostgreSQL ?
-- Pourquoi est-ce important selon toi de participer à une communauté technique ?
+- Percona’yı nasıl tanımlarsın?
+- Technical Team Lead olarak tipik bir günün nasıl geçiyor?
+- Şu anda üzerinde çalıştığınız en ilginç teknik problemler veya zorluklar neler?
 
-# Cloud & Carrière
+# Open Source & Topluluk
 
-- Tu as travaillé chez Aiven, ADEO et maintenant Google. Quelles différences t’ont le plus marqué ?
-- À quoi ressemble une journée typique en tant que Customer Engineer chez Google ?
-- Quels problèmes techniques rencontres-tu le plus souvent avec les clients aujourd’hui ?
+- Open source’un kariyerine nasıl bir etkisi oldu?
+- İlk katkını hatırlıyor musun?
 
-# IA
+# Yapay Zeka
 
-- Utilises-tu des outils d’IA dans ton travail quotidien ?
-- Est-ce que l’IA change la manière dont les ingénieurs databases travaillent ?
+- Günlük iş hayatında yapay zeka araçları kullanıyor musun? Kullanıyorsan nasıl?
 
-# Réflexion
+# Düşünceler
 
-- Quel est le meilleur conseil qu’on t’ait donné ?
-- Quel conseil donnerais-tu aujourd’hui à un jeune ingénieur qui veut travailler dans les bases de données ?
-- Avec le recul, qu’aurais-tu aimé savoir plus tôt dans ta carrière ?
+- Hayatında aldığın en iyi tavsiye neydi?
+- Geriye dönüp baktığında gelişiminde en büyük etkiyi ne yaptı?
+- Bugün veritabanı veya altyapı alanında çalışmak isteyen genç bir mühendise ne tavsiye verirdin?
 
-# Personnel
+# Kişisel
 
-- Quels livres ou ressources tech t’ont le plus marqué ?
-- Comment continues-tu à apprendre aujourd’hui ?
-- Quels sont tes outils préférés au quotidien ?
+- Seni en çok etkileyen kitaplar, bloglar veya teknik kaynaklar hangileri oldu?
+- Boş zamanlarını nasıl geçiriyorsun?
 
-# Conclusion
+# Sonuç
 
-- Y a-t-il quelque chose que tu aimerais partager aux lecteurs ?
-- Où peut-on te suivre ou te contacter ?
+- Okuyucularla paylaşmak istediğin başka bir şey var mı?
+- Seni nereden takip edebilir veya sana nasıl ulaşabiliriz?
