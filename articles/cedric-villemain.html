@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cedric Villemain</title>
+    <script>
+      (() => {
+        const stored = localStorage.getItem("databasestory-theme");
+        const theme =
+          stored ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="../style.css?v=20260515a" />
+  </head>
+  <body>
+    <div class="site-shell article-page">
+      <header class="topbar">
+        <div class="topbar-brand">
+          <a class="brand" href="../index.html">DatabaseStory</a>
+        </div>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-lines"><span></span></span>
+        </button>
+        <div class="topbar-tools">
+          <nav class="topnav" aria-label="Main navigation">
+            <a class="menu-card" href="../about.html">About</a>
+            <a class="menu-card" href="../index.html#interviews">Interviews</a>
+            <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+            <a class="menu-card" href="../index.html#podcast">Podcast</a>
+            <a class="menu-card" href="../jobs.html">Jobs</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.89998 0.499976C2.89998 0.279062 2.72089 0.0999756 2.49998 0.0999756C2.27906 0.0999756 2.09998 0.279062 2.09998 0.499976V1.09998H1.49998C1.27906 1.09998 1.09998 1.27906 1.09998 1.49998C1.09998 1.72089 1.27906 1.89998 1.49998 1.89998H2.09998V2.49998C2.09998 2.72089 2.27906 2.89998 2.49998 2.89998C2.72089 2.89998 2.89998 2.72089 2.89998 2.49998V1.89998H3.49998C3.72089 1.89998 3.89998 1.72089 3.89998 1.49998C3.89998 1.27906 3.72089 1.09998 3.49998 1.09998H2.89998V0.499976ZM5.89998 3.49998C5.89998 3.27906 5.72089 3.09998 5.49998 3.09998C5.27906 3.09998 5.09998 3.27906 5.09998 3.49998V4.09998H4.49998C4.27906 4.09998 4.09998 4.27906 4.09998 4.49998C4.09998 4.72089 4.27906 4.89998 4.49998 4.89998H5.09998V5.49998C5.09998 5.72089 5.27906 5.89998 5.49998 5.89998C5.72089 5.89998 5.89998 5.72089 5.89998 5.49998V4.89998H6.49998C6.72089 4.89998 6.89998 4.72089 6.89998 4.49998C6.89998 4.27906 6.72089 4.09998 6.49998 4.09998H5.89998V3.49998ZM1.89998 6.49998C1.89998 6.27906 1.72089 6.09998 1.49998 6.09998C1.27906 6.09998 1.09998 6.27906 1.09998 6.49998V7.09998H0.499976C0.279062 7.09998 0.0999756 7.27906 0.0999756 7.49998C0.0999756 7.72089 0.279062 7.89998 0.499976 7.89998H1.09998V8.49998C1.09998 8.72089 1.27906 8.89997 1.49998 8.89997C1.72089 8.89997 1.89998 8.72089 1.89998 8.49998V7.89998H2.49998C2.72089 7.89998 2.89998 7.72089 2.89998 7.49998C2.89998 7.27906 2.72089 7.09998 2.49998 7.09998H1.89998V6.49998ZM8.54406 0.98184L8.24618 0.941586C8.03275 0.917676 7.90692 1.1655 8.02936 1.34194C8.17013 1.54479 8.29981 1.75592 8.41754 1.97445C8.91878 2.90485 9.20322 3.96932 9.20322 5.10022C9.20322 8.37201 6.82247 11.0878 3.69887 11.6097C3.45736 11.65 3.20988 11.6772 2.96008 11.6906C2.74563 11.702 2.62729 11.9535 2.77721 12.1072C2.84551 12.1773 2.91535 12.2458 2.98667 12.3128L3.05883 12.3795L3.31883 12.6045L3.50684 12.7532L3.62796 12.8433L3.81491 12.9742L3.99079 13.089C4.11175 13.1651 4.23536 13.2375 4.36157 13.3059L4.62496 13.4412L4.88553 13.5607L5.18837 13.6828L5.43169 13.7686C5.56564 13.8128 5.70149 13.8529 5.83857 13.8885C5.94262 13.9155 6.04767 13.9401 6.15405 13.9622C6.27993 13.9883 6.40713 14.0109 6.53544 14.0298L6.85241 14.0685L7.11934 14.0892C7.24637 14.0965 7.37436 14.1002 7.50322 14.1002C11.1483 14.1002 14.1032 11.1453 14.1032 7.50023C14.1032 7.25044 14.0893 7.00389 14.0623 6.76131L14.0255 6.48407C13.991 6.26083 13.9453 6.04129 13.8891 5.82642C13.8213 5.56709 13.7382 5.31398 13.6409 5.06881L13.5279 4.80132L13.4507 4.63542L13.3766 4.48666C13.2178 4.17773 13.0353 3.88295 12.8312 3.60423L12.6782 3.40352L12.4793 3.16432L12.3157 2.98361L12.1961 2.85951L12.0355 2.70246L11.8134 2.50184L11.4925 2.24191L11.2483 2.06498L10.9562 1.87446L10.6346 1.68894L10.3073 1.52378L10.1938 1.47176L9.95488 1.3706L9.67791 1.2669L9.42566 1.1846L9.10075 1.09489L8.83599 1.03486L8.54406 0.98184ZM10.4032 5.30023C10.4032 4.27588 10.2002 3.29829 9.83244 2.40604C11.7623 3.28995 13.1032 5.23862 13.1032 7.50023C13.1032 10.593 10.596 13.1002 7.50322 13.1002C6.63646 13.1002 5.81597 12.9036 5.08355 12.5522C6.5419 12.0941 7.81081 11.2082 8.74322 10.0416C8.87963 10.2284 9.10028 10.3497 9.34928 10.3497C9.76349 10.3497 10.0993 10.0139 10.0993 9.59971C10.0993 9.24256 9.84965 8.94373 9.51535 8.86816C9.57741 8.75165 9.63653 8.63334 9.6926 8.51332C9.88358 8.63163 10.1088 8.69993 10.35 8.69993C11.0403 8.69993 11.6 8.14028 11.6 7.44993C11.6 6.75976 11.0406 6.20024 10.3505 6.19993C10.3853 5.90487 10.4032 5.60464 10.4032 5.30023Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="page-layout">
+        <main>
+          <a class="back-link" href="../index.html">← Back</a>
+
+          <div class="article-header">
+            <h1>Cedric Villemain</h1>
+            <p class="article-meta">
+              May 30, 2026 by <a href="../index.html">Eren Turkoglu</a>
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Databases</span>
+            </div>
+          </div>
+
+          <div class="article-body">
+            <h2>Can you introduce yourself and tell us a bit about your background?</h2>
+            <p>
+              My name is Cedric Villemain. I'm turning 50 this year. I'm a family
+              man, married, life is good. And I work in IT.
+            </p>
+            <p>
+              I got into computers very early. I was lucky because I went to a
+              school that had a computer when I was in first grade, so around age
+              5. I did Logo on an Apple II at 5 years old, that old thing with the
+              little turtle you moved around, the first algorithmic tool for kids.
+            </p>
+            <p>
+              In middle school, I came back to the Apple II and did Apple Soft and
+              Apple Pascal. Then Turbo Pascal, then C. I went through a lot of
+              things in development over the years, while following a course of
+              studies that wasn't necessarily focused on IT. I did some, but it was
+              on the side.
+            </p>
+            <p>
+              My journey was realizing that IT was what I enjoyed most and probably
+              what came most naturally to me. I really threw myself into it in my
+              late twenties.
+            </p>
+            <p>
+              I did a program through AFPA because I wanted to move fast. I had
+              missed the Internet bubble and wanted to get back into IT on a very
+              short cycle, just to get in the door.
+            </p>
+
+            <h2>How did you end up in databases?</h2>
+            <p>
+              I got my first job in web, at a company called JFG Network, an
+              obscure name for a company that ran a site called Overblog, one of
+              the first major French blogging platforms. I was the first employee
+              of that startup, which was really fun. I came in as a developer,
+              around 2004 to 2007.
+            </p>
+            <p>
+              We faced major challenges, big projects with heavy loads. It ended
+              up being a big deal: Médiamétrie called us asking us to agree to be
+              counted in their ratings because we were disrupting their counters.
+            </p>
+            <p>
+              Those were great challenges and they pushed me to work with very
+              large databases. We were on MySQL and had to move to PostgreSQL
+              because we needed something more robust. I had the opportunity to
+              work with Oleg Bartunov and Teodor Sigaev, the two PostgreSQL
+              developers who now run PostgreSQL Pro.
+            </p>
+            <p>
+              The company I was at sponsored the completion of tsearch
+              development in PostgreSQL, the full text search engine. For six
+              months to a year, I worked with Teodor and Oleg to build a full
+              text search engine for the site. Those were my first steps in the
+              open source community, specifically the support for French-language
+              vector search in PostgreSQL, around 2006-2007.
+            </p>
+            <p>
+              At the time, tsearch didn't support French. Since Overblog was in
+              France with a lot of French content, I improved the stemmer and text
+              vectorization mechanisms in PostgreSQL so we could index vector text
+              with tsearch.
+            </p>
+            <p>
+              That's how I got into it. PostgreSQL and databases were for me a
+              great bridge between the developer side and the operational side,
+              plus the algorithmic, mathematical, logical aspects. With
+              PostgreSQL, you can touch everything. If you only like SQL, you do
+              SQL. If you like the operational side, you do that. I like touching
+              everything.
+            </p>
+
+            <h2>How did you train yourself during that time?</h2>
+            <p>
+              I did take some theoretical courses at university: IT management,
+              computer science fundamentals.
+            </p>
+            <p>
+              But the core of my knowledge and training came from learning on the
+              job. When you're in a startup and you're taking hits, you're forced
+              to react. Beyond that, it came a lot through social networks. Back
+              then it was IRC, a great way to do Q&amp;A and be involved on both
+              sides, which helps you progress.
+            </p>
+            <p>
+              Then there's project documentation. PostgreSQL's documentation is so
+              rich that it already lets you understand and go very far. And then
+              the source code. People always say RTFM, but the source code, when
+              it's well written, and PostgreSQL is well written, lets you see how
+              things actually work. That helps a lot.
+            </p>
+            <p>
+              For most of the projects I use, before using them I'll quickly look
+              at the source code just to get a feel for it. If it's written like a
+              mess, it's not worth it.
+            </p>
+
+            <h2>What is Data Bene?</h2>
+            <p>
+              Data Bene is the commercial name for the company officially called
+              ABCSQL. It's a PostgreSQL expertise firm. We're really focused on
+              the notion of data: relational, graph, semantic. We aim to be in a
+              project-oriented relationship with our clients. It's very often
+              PostgreSQL, but not exclusively.
+            </p>
+            <p>
+              Data Bene grew out of the first company I founded, called
+              2ndQuadrant France, which was affiliated with 2ndQuadrant, a
+              well-known name in the PostgreSQL community. We operated for about
+              ten years doing consulting and R&amp;D. We developed PostgreSQL
+              extensions in France. If extensions exist in PostgreSQL today, it's
+              partly because we built them here with Dimitri Fontaine. That's
+              pretty cool.
+            </p>
+            <p>
+              After about ten years, the brand was sold. 2ndQuadrant was acquired
+              and we had to change our name. We had the option to become a
+              software publisher or something else, but we preferred to stay on an
+              open source path with a services-driven dynamic, which matched our
+              values. A broad, ecosystem-level approach is what defines us, what
+              we've kept, and what I believe makes us strong today.
+            </p>
+
+            <h2>How big is the team at Data Bene?</h2>
+            <p>
+              It fluctuates, but we're around fifteen people right now. We can't
+              hire as fast as we'd like to. Ideally we'd bring on one person a
+              month on average. We should double in size within the year.
+            </p>
+
+            <h2>Do you have any open source projects you're maintaining?</h2>
+            <p>
+              We have a project called <code>pg_benchmark</code>, an audit
+              solution. From a technical standpoint, there's no huge innovation.
+              The key point is that it lets us collect information from our
+              clients' servers and databases. It handles information system
+              security, specifically classifying the data we work with. We work
+              with hospitals on medical databases, for instance, and we can
+              characterize whether we're allowed to access, read, or process
+              certain data.
+            </p>
+            <p>
+              Beyond that, we mostly use what exists and propose innovations. I
+              have an extension, <code>pgfincore</code>, that I've maintained for
+              about fifteen years with great help from Christoph Berg, who
+              maintains the Debian buildfarm for community projects and is a
+              committer on <code>pgfincore</code>. Christoph also frequently
+              provides fixes whenever a major PostgreSQL release introduces a
+              regression.
+            </p>
+            <p>
+              But I don't consider these major projects; they're accessory tools
+              in an ecosystem that has thousands of others. We prefer to position
+              ourselves the way we were at 2ndQuadrant: really focused on
+              development and R&amp;D for Postgres. We're very active contributors
+              to Citus Data and IvorySQL. That's what we aspire to.
+            </p>
+
+            <h2>And today as CEO, what does a typical day look like for you at Data Bene?</h2>
+            <p>
+              My day will sound scary. I do a lot of things that aren't
+              PostgreSQL. I have to run a company, so there's sales, marketing,
+              HR, etc. I tend to have long days. I get up very early.
+            </p>
+            <p>
+              Roughly from 5am to 7am, I do my review. Morning is quiet, almost
+              nobody around. Sometimes as I have colleagues in Asia, it's a good
+              moment to connect with them. After that it's very variable: lots of
+              exchanges with colleagues on various projects, unblocking
+              situations, strategic discussions around sales. But I try to spend a
+              big chunk of my time on R&amp;D, monitoring, and new development
+              directions.
+            </p>
+            <p>
+              There are plenty of things I know how to do at this point, but
+              plenty I no longer want to do. I'm really glad we've grown and that
+              everyone has been able to take on more and more, taking things off
+              my plate completely. That's great.
+            </p>
+
+            <h2>What advice would you give a young person who wants to join a database company?</h2>
+            <p>
+              PostgreSQL databases drew me in because they're very central, and
+              that centrality let me touch all the surrounding elements they
+              depend on to work well. And we're in a major era of change.
+            </p>
+            <p>
+              Data, information management, access and processing, all of that is
+              becoming more important than it has ever been. The new agentic
+              development models are exciting and will touch databases across
+              multiple domains.
+            </p>
+            <p>
+              There's still an expertise, a control, a capacity to understand
+              what's happening, and that's the interesting point. The ability to
+              understand, to ask questions, to be critical. In databases, our
+              expert perspective is often very critical because with SQL there are
+              many ways to do something. There are multiple normal forms for a
+              reason, because you can reach your goal by different paths. You need
+              to be able to step back and look at things critically.
+            </p>
+            <p>
+              Maybe the best advice would be to develop your critical thinking and
+              stay relevant. PostgreSQL is great. It's a relational database, very
+              well built. Today it's also a graph database, a semantic database.
+              If you want to be in innovation, it's a great place to be. If you
+              want something purely operational and industrial, it's a great place
+              to work too.
+            </p>
+
+            <h2>You've been active in open source for many years. What has been the impact on your development?</h2>
+            <p>
+              In terms of my professional career, it's led to an enormous number
+              of things. My first job wasn't at an open source company, but I only
+              stayed three years and after that I worked exclusively in open
+              source. Even in those first three years, we were already on open
+              source software.
+            </p>
+            <p>
+              For me, open source was mainly a great way to understand what was
+              happening and to learn IT. A good lever not just for reading
+              documentation to figure out how to use some tool that seems magical,
+              but for understanding how the tool actually works.
+            </p>
+            <p>
+              When I left Overblog, I looked for work in open source because it
+              seemed much more interesting to build tools that could keep
+              improving without running into the same problems over and over
+              again.
+            </p>
+
+            <h2>Do you remember your first contribution?</h2>
+            <p>
+              I think my first contribution was French-language support for
+              tsearch in PostgreSQL. It was patched into the module in version 8.1
+              and I think it was integrated in 8.2.
+            </p>
+            <p>
+              A few years ago I started receiving little PostgreSQL contributor
+              badges from time to time, which was cool. I've had the feeling of
+              participating for 16 years. I was really happy to get those badges,
+              though I don't make huge numbers of contributions in my own name.
+            </p>
+
+            <h2>What do you think about the future of open source?</h2>
+            <p>
+              I think that question has been settled for a long time. I'd be
+              surprised if things evolved in a direction that reversed open source
+              dynamics. As things stand, open source code is already hard to
+              guarantee as reliable or well written. I don't think that confidence
+              is going to increase for closed source publishers, and even they
+              have almost entirely switched. When you look at the PostgreSQL
+              codebase, it's solid.
+            </p>
+            <p>
+              Databases are probably the most omnipresent thing still in human
+              hands, so to speak. The entire layer of interfacing between users
+              and the information in databases is being handled with far fewer
+              resources, fewer people, less brain power, and a lot is being
+              automated.
+            </p>
+            <p>
+              But the database is what contains the information. How we authorize
+              information to be shared, how we encrypt it, track it, authenticate
+              it, ensure it's relevant at a given point in time. I think the
+              reasoning mechanisms around data remain, and the database is the
+              right tool for expressing that. I'd say we still have a long time
+              ahead of us managing this.
+            </p>
+
+            <h2>Do you use AI in your day-to-day work?</h2>
+            <p>
+              Like many people I suppose, I started with ChatGPT. We had a company
+              account, that was great. But for the past six months, the work I do
+              runs on AI systems we administer directly on GPUs, not our own
+              models, but open source models we use.
+            </p>
+            <p>
+              There's the classic chat side, which lets you do quick discovery,
+              faster than Google. But there's also all the agentic development
+              across different agentic strategies. At the developer level within
+              the team, everything around code generation is clearly a massive
+              time-saver, including doc generation.
+            </p>
+            <p>
+              A few years back when it was just starting, I put my
+              <code>pgfincore</code> code into the chat and said go ahead, write
+              me the docs. It wrote the whole thing, impeccable, the readme, all
+              the technical content. It was so good that it had added an option
+              that wasn't in the code yet but that I had wanted to implement.
+            </p>
+            <p>
+              That illustrates the thing. You still need to check quality. But
+              it's very good, it's exciting, it predigests a lot of work.
+            </p>
+            <p>
+              There are real cognitive dangers in AI use depending on how it's
+              used. MIT studies have shown that within a few months, you can see
+              cognitive impact, not a permanent reduction in cognitive ability,
+              but significantly less activation than before. There are also other
+              efforts aimed at making AI stimulate learning rather than replace
+              it, and that's part of the work we're doing.
+            </p>
+            <p>
+              Since we work with PostgreSQL, and PostgreSQL is the database of all
+              AI, we cover vector databases, graph databases, semantic databases.
+              At the same location you have historical relational data on one
+              side, and all the new LLM needs on the other. We just have new key
+              players in the database, heavy users with different requirements,
+              and that brings new challenges. That's a big part of how I see it.
+            </p>
+
+            <h2>Do you think AI will replace junior developers?</h2>
+            <p>
+              Juniors specifically, I don't think so. A friend put it well using
+              an agriculture analogy. He said: back when it was harvest time, you
+              needed thirty people in the field and you had to be done by the end
+              of the day. Then came the combine harvester. You went from thirty
+              people to one. Now there are multiple harvesters in the field,
+              guided by satellite systems, while the farmer supervises the
+              operation and focuses on higher-level decisions.
+            </p>
+            <p>
+              The combine harvesters have arrived in the developer's field. A
+              growing share of the work that consists of translating
+              well-understood requirements into code and tests is being automated.
+              In my experience, this has little to do with whether someone is
+              junior or senior. It has more to do with what motivates people,
+              where they find fulfillment, and the kinds of problems they enjoy
+              solving.
+            </p>
+            <p>
+              People who primarily enjoy implementing solutions may find that
+              their day-to-day work evolves. People who enjoy understanding why
+              those lines of code exist, why those tests are there, what
+              trade-offs are being made, and how a system should behave still have
+              plenty of work ahead of them, whether they're juniors or seniors.
+            </p>
+            <p>
+              AI can generate code, but it doesn't yet provide the broader
+              perspective, judgment, and critical thinking that software
+              development often requires. Those remain necessary, and likely will
+              for quite some time.
+            </p>
+
+            <h2>Has AI changed how you work?</h2>
+            <p>
+              The impact on work is that there are many things we'll no longer
+              need to write, think through, or reason about ourselves. We'll be
+              much more focused on formal approaches. We're going back to
+              fundamentals that we may have let slip a bit in IT.
+            </p>
+            <p>
+              When I started, we talked about methods, UML, a lot about
+              formulations and specifications, things that are actually major
+              drivers of progress with the agentic world. You need to train people
+              in IT to use these tools well. But it's easy to consume them just
+              for copy-paste.
+            </p>
+            <p>
+              On the database side, I'm fairly confident. On the developer side,
+              it's different. We see it clearly at Data Bene in the requests
+              coming in from dev companies, in India but not only India, where
+              they had huge coding capacity. The job is fundamentally changing,
+              the engagements are different, because it's a trade that's being
+              disrupted.
+            </p>
+
+            <h2>How could a junior developer counter that?</h2>
+            <p>
+              Maybe we need to go back to the analyst-programmer world, I'm not
+              sure. But yes, that's kind of it: the analyst side. Soft skills,
+              definitely.
+            </p>
+            <p>
+              Managing our projects well, deeply understanding what we want to
+              build or what the people behind our projects and products want to
+              get out of them, and being able to transmit that clearly, put it on
+              paper. That's going to matter.
+            </p>
+            <p>
+              I had planned to give a talk in China explaining to developers how
+              to add a feature to PostgreSQL and IvorySQL, specifically what the
+              steps were. But now you just ask a reasoning-capable LLM, you give
+              it the source code, and in five minutes it's unpacked the whole
+              thing, given you the full stack, explained how it works. And it's
+              all correct.
+            </p>
+            <p>
+              I'm not going to have people sit through an hour talk on something
+              they'll have the answer to in three minutes the day they need it.
+              Full-stack web devs probably have more to worry about if their main
+              job was PHP or Node.js. But there's a whole world of development
+              that still exists, thankfully.
+            </p>
+
+            <h2>What's the best piece of advice you've ever received?</h2>
+            <p>
+              I talked about it with my wonderful wife. She gave me the French
+              version, but I've kept the English one. It's pretty much "Just do
+              it."
+            </p>
+            <p>
+              It's advice that has helped me and kept coming up at moments in life
+              where there were choices to make and you think, do I do this or not.
+              At some point you just have to do it to find out if it works. If
+              you want to know whether something is possible, you do it and you'll
+              see.
+            </p>
+
+            <h2>And what's your own advice for young people?</h2>
+            <p>
+              If you believe it's possible, do it. My advice would be to go where
+              you think it's worth going. I'm 50, but the years go by fast. If you
+              wait to do the things you want to do, you might not get to them.
+            </p>
+            <p>
+              A good way to do what you want is to tell yourself "I can get there,
+              I can do this, so I'm going to do it." Once it's decided, you make
+              it work.
+            </p>
+            <p>
+              But for something a lot less philosophical, I'd say: keep your
+              critical thinking, don't swallow things whole, systematically
+              question things. There's the umbrella theorem, which illustrates
+              that things aren't necessarily binary, not just black and white,
+              zero and one. There are multiple facets, multiple angles. It's
+              interesting to try to look at things from different perspectives.
+            </p>
+            <p>
+              With AI it's even more glaring. The initial message from an AI is
+              very easy to absorb. The intellectual effort required to
+              systematically question the output at every moment is heavy. When
+              you talk with AI and you know that half the time it's telling you
+              something wrong, it takes a lot of work to keep reminding yourself
+              of that.
+            </p>
+
+            <h2>How do you spend your free time outside of databases?</h2>
+            <p>
+              I spend some of my free time on IT as well because I enjoy it, and
+              I have plenty of other projects that drive me. The rest of the time
+              is my private life. And that's how it should be.
+            </p>
+
+            <h2>Do you read tech books?</h2>
+            <p>
+              I'm not even sure I've actually read three tech books in my life.
+              I've never read a tech book from cover to cover. I have some that I
+              browse through.
+            </p>
+            <p>
+              The two books on my shelf are TCP/IP and <em>Design Patterns</em>.
+              And I think the more interesting one is <em>Design Patterns</em>, by
+              Eric Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
+            </p>
+            <p>
+              Computing is actually very simple. It's zeros and ones. And at the
+              software and developer level, there are just a few development
+              patterns. Not many, and they're enough to do everything you want. At
+              the database level it's almost the same thing: there are patterns
+              for information. The key is knowing which one to use and when.
+            </p>
+
+            <h2>Are there any projects you'd recommend reimplementing or building on top of PostgreSQL?</h2>
+            <p>
+              Tons. The well-known one right now is Andy Pavlo, one of the
+              professors at Carnegie Mellon.
+            </p>
+            <p>
+              Unfortunately he's doing it through a Carnegie spin-off. It's really
+              disappointing that it's not open source, because the work he's
+              putting together is extremely promising, specifically around the
+              eBPF layer. There's a kernel-level part to bring into PostgreSQL
+              that could be very interesting. Beautiful things to do there.
+            </p>
+            <p>
+              Another aspect is that PostgreSQL, despite many improvements, has a
+              major threshold it has never crossed: everything around the WAL and
+              data durability. Pavlo's work makes it possible to have an
+              ACID-native base at the eBPF level. And if you have that, the WAL or
+              the PostgreSQL heap could effectively just be an ACID-native base at
+              the eBPF level, which could give a huge efficiency gain.
+            </p>
+            <p>
+              The other aspect, which I discussed at length with Simon Riggs, the
+              original founder of 2ndQuadrant, is memory guarantee. We still have
+              terms like checkpoints that date back to when we were talking about
+              magnetic storage. Now we have memory that is guaranteed to still be
+              there when a service crashes. That means we might not need to sync
+              to disk all the time. And maybe there are things to rethink at the
+              low-level layer of the database to gain back efficiency there.
+            </p>
+            <p>
+              PostgreSQL has no RDMA support, no remote memory support. Every time
+              we do non-procedural things, data gets copied three or four times in
+              server memory and then copied again over the network. One of the
+              likely evolutions is having much more direct access between clients
+              and server memory, and stopping that repeated copying. There's a lot
+              to do.
+            </p>
+
+            <h2>What are the criteria at Data Bene for hiring the best people?</h2>
+            <p>
+              Clearly, PostgreSQL knowledge is very important. The interest in it,
+              the involvement, the intellectual approach to databases, that
+              matters a lot.
+            </p>
+            <p>
+              But it's not only that. Let me share the experience of a friend who
+              was recently hired by a large US company. He went through five or
+              seven intense technical interviews. At the end they said "you're
+              hired." He asked: what language do I code in? The guys said we don't
+              care, pick whatever language you want, that's not our problem.
+            </p>
+            <p>
+              Writing code is no longer a hiring criterion. What matters is the
+              ability to understand why that code was written. Is it relevant?
+              Does this ready-made solution work? Great, it works. But is it the
+              right solution? Not necessarily.
+            </p>
+            <p>
+              And that's what makes the difference, for us too. We need people who
+              can look at an apparent PostgreSQL expertise recommendation and ask
+              whether it's actually the right call.
+            </p>
+
+            <h2>Do you have resources to recommend for learning PostgreSQL?</h2>
+            <p>
+              It's worth reading Dimitri Fontaine's book,
+              <em>Mastering PostgreSQL</em>. I co-founded 2ndQuadrant with him,
+              and he developed a huge part of what PostgreSQL extensions are
+              today. It's a very good book for people oriented toward
+              development.
+            </p>
+            <p>
+              The other resource I find really great is Markus Winand. He's
+              Austrian and has two sites: Modern SQL and Use the Index, Luke. Use
+              the Index is about optimization. Modern SQL is about SQL and it's
+              not PostgreSQL-specific. His courses are excellent. If you want to
+              get into SQL, Modern SQL is probably one of the best entry points.
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../site.js"></script>
+  </body>
+</html>
