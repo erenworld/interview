@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matt Cornillon</title>
+  <script>
+    (() => {
+      const stored = localStorage.getItem("databasestory-theme");
+      const theme =
+        stored ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css?v=20260515a" />
+</head>
+
+<body>
+  <div class="site-shell article-page">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <a class="brand" href="../index.html">DatabaseStory</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-lines"><span></span></span>
+      </button>
+      <div class="topbar-tools">
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="../about.html">About</a>
+          <a class="menu-card" href="../index.html#interviews">Interviews</a>
+          <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+          <a class="menu-card" href="../index.html#podcast">Podcast</a>
+          <a class="menu-card" href="../jobs.html">Jobs</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <main>
+        <a class="back-link" href="../index.html">&larr; Back</a>
+
+        <div class="article-header">
+          <h1>Matt Cornillon</h1>
+          <p class="article-meta">
+            June 1, 2026 by <a href="../index.html">Eren Turkoglu</a>
+          </p>
+          <div class="tag-row">
+            <span class="tag">Interviews</span>
+            <span class="tag">Google</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Cloud</span>
+          </div>
+        </div>
+
+        <div class="article-body">
+          <h2>Can you introduce yourself?</h2>
+          <p>
+            My name is Matt. Since my studies, I have been immersed in the
+            world of databases, and I have no intention of letting that subject
+            go.
+          </p>
+          <p>
+            I have explored several engines, with a strong appetite for
+            PostgreSQL and its open source ecosystem. I contribute a lot to
+            the community, both as part of my work and in my personal time.
+          </p>
+          <p>
+            For the past three years, I have been vice president of the
+            Postgres association in France. We organize PGDay France in
+            particular, and I help organize the PostgreSQL meetup in Lille. I
+            am also a regular speaker at conferences around PostgreSQL, in
+            France and abroad.
+          </p>
+
+          <h2>Did you follow a traditional education path?</h2>
+          <p>
+            I followed a generalist curriculum at SUPINFO, with development,
+            infrastructure, and also more cross-functional topics such as law
+            related to IT. After that, students could get more deeply involved
+            in certain areas through internal communities, especially around
+            databases.
+          </p>
+          <p>
+            Another thing that really shaped my path was the opportunity for
+            students in their final years to teach first-year students. It may
+            sound anecdotal, but it was extremely formative.
+          </p>
+          <p>
+            First, because it was a win-win situation: more advanced students
+            already had one foot in the professional world and could share very
+            concrete experience, while also understanding exactly where
+            first-year students struggled. And second, because it taught me
+            something completely different from writing code or managing
+            projects: explaining things simply. Explaining concepts, speaking
+            in front of 30 to 50 people, transmitting information clearly...
+            those are completely different skills, but they are essential in
+            IT.
+          </p>
+          <p>
+            It helped me a lot. I was not especially shy, but I was not
+            necessarily very comfortable speaking either. Today I give talks in
+            front of 100 to 200 people, and it all started there.
+          </p>
+
+          <h2>Did SUPINFO help you with databases?</h2>
+          <p>
+            I have not really followed how the school has evolved today, but
+            at the time, SUPINFO had specialized communities on certain topics,
+            including databases. I had a very good friend who was already
+            deeply involved in that area, with a few database-related
+            assignments, and he suggested that I join a rather original
+            project.
+          </p>
+          <p>
+            The idea was to create a web interface embedded directly inside an
+            Oracle engine. We generated all the HTML through PL/SQL stored
+            procedures to expose different websites. That was how I really got
+            my foot in the door.
+          </p>
+          <p>
+            Then I started wanting to understand how a database engine works in
+            depth, beyond simple SQL. I really connected with the internal side
+            of engines. I first became very interested in Oracle, then a bit in
+            MySQL, before naturally turning toward PostgreSQL after SUPINFO.
+          </p>
+
+          <h2>What was your first job?</h2>
+          <p>
+            My first real job started while I was still at school. At SUPINFO,
+            we had to do internships and work-study placements, and in my third
+            year I joined a company now called Cloud Temple, an infrastructure
+            and IT services provider.
+          </p>
+          <p>
+            At the time, they mainly managed infrastructure for their clients,
+            with a strong Oracle specialization. There was also a bit of SQL
+            Server and open source, but Oracle represented most client needs. I
+            joined their DBA team directly as an intern.
+          </p>
+          <p>
+            Very quickly, it clicked, because they could feel that I was
+            passionate, even though of course, in third year, you do not know
+            much yet. That is really where I learned a huge amount. School gave
+            me the necessary foundations, but the internship confronted me with
+            the reality of the field.
+          </p>
+          <p>
+            I learned very technical things, but also the whole production
+            side: best practices, stress management during critical periods,
+            and the philosophy of the job. We did a lot of maintenance and run
+            work, with a consulting dimension too, where you had to understand
+            client needs and sometimes guide them toward certain solutions.
+            Those are things you do not really learn at school, but they helped
+            me progress enormously.
+          </p>
+
+          <h2>Before Google, what were the most important moments in your career?</h2>
+          <p>
+            After that first consulting experience in Paris, I went back to
+            Lille and joined Sogeti, although it did not last very long. From
+            the first days, I was sent on assignment to Decathlon, where I
+            ultimately stayed for three years.
+          </p>
+          <p>
+            I worked in a team responsible for the company's data warehouses
+            and data marts, mainly around Oracle. That experience was very
+            important for me because, unlike classic consulting where you see
+            many different contexts without really building over the long term,
+            here I had a real scope to evolve from end to end. I worked both
+            on the technical side and on exchanges with business users and data
+            platform strategy.
+          </p>
+          <p>
+            Then I joined Easy Team, an IT services company specialized in
+            databases. Very quickly, I started an assignment at Adeo, where I
+            stayed for several years, first as a contractor and then directly
+            in-house. I continued working around databases, automation, and
+            best practices, with a broader and broader scope. That is also
+            where I really moved from Oracle to PostgreSQL.
+          </p>
+          <p>
+            The key moment at Adeo was the beginning of the company's cloud
+            transformation, around 2015 and 2016. Very early on, the company
+            started migrating massively toward cloud providers, which raised a
+            lot of questions around databases: migration, managed services, new
+            operating models, technical strategy... I gradually took the lead
+            on these subjects and became tech lead of the team. Alongside the
+            daily technical work, I helped teams build skills and contributed
+            to strategy with managers and PMs.
+          </p>
+          <p>
+            After several years on the client side, I wanted to discover the
+            other side: the service provider side. I joined Aiven, a startup
+            specialized in managed open source databases across multiple
+            clouds. My role changed completely because I moved into a technical
+            pre-sales position. I supported sales teams by understanding
+            customer needs and showing how our solutions could answer their
+            problems. It was still very technical, but with a strong
+            relationship and business dimension, in an environment completely
+            different from what I had known before.
+          </p>
+          <p>
+            In the continuity of that experience, I then had the opportunity
+            to join Google in a fairly similar role, but at a completely
+            different scale. And I am still there today.
+          </p>
+
+          <h2>What attracts you to PostgreSQL?</h2>
+          <p>
+            The first answer, the obvious one, is the open source aspect. I
+            have always had a strong appetite for open source, especially for
+            everything related to sharing and community. It is something I have
+            always recognized myself in.
+          </p>
+          <p>
+            Even back at SUPINFO, before PostgreSQL was even part of the
+            picture, there was already that spirit of mutual help and knowledge
+            sharing in the internal communities. And that is exactly what I
+            find today in the Postgres ecosystem. You go to a meetup or a
+            conference, you meet passionate people, you discover new topics,
+            and you can go extremely deep technically. Of course, there is also
+            a business aspect around Postgres, with companies building services
+            and products on top of it, but that is precisely what makes it
+            interesting: seeing how value can be created while staying
+            connected to open source.
+          </p>
+          <p>
+            And technically, PostgreSQL is an extremely interesting engine. It
+            mixes a lot of concepts from other databases, with real functional
+            and architectural richness. It almost feels like a big melting pot
+            of relational systems, but with all the power of open source behind
+            it.
+          </p>
+          <p>
+            At the same time, PostgreSQL was taking more and more space in
+            companies. You could clearly see it gradually becoming the
+            reference OLTP relational database. So there was also a strategic
+            aspect in that choice. Everything naturally aligned around
+            PostgreSQL.
+          </p>
+
+          <h2>How did you train yourself on PostgreSQL?</h2>
+          <p>
+            One thing has always been important in my own personal learning,
+            even as part of my job: trying things and building things. That is
+            what helps you improve the most on a subject. You do not know
+            something, you want to implement something for yourself, so you
+            start that personal project, pick the technology, learn it, get
+            your hands dirty, run into errors, realize you do not know how to
+            do certain things, ask people around you for help. That is how you
+            get into it.
+          </p>
+          <p>
+            I have never been the kind of person who says, "I will read a book
+            and that will allow me to learn and level up." I am not saying that
+            is a bad thing to do, of course. But my thing has always been to
+            get hands-on. I do not know the topic, I want to build something,
+            and I will do everything I can to make it work. That is often the
+            first step.
+          </p>
+          <p>
+            Then I often have a second step where I take a step back, and
+            there I will deep dive. I will read documentation, and sometimes I
+            will read books. But I do not want that to be the first thing I do.
+            I always start by trying to build something concrete, getting
+            hands-on, and encountering the first difficulties. Then I go into
+            the theory.
+          </p>
+
+          <h2>Are there projects that helped you master something?</h2>
+          <p>
+            The very first project I did around databases goes back to my time
+            at SUPINFO. With other students, we created a sort of intranet for
+            students: course sharing, information about exams, timetable
+            changes... a kind of mini social network focused on the school. We
+            worked with very different profiles, from front end to development
+            to databases, and it quickly taught me to think about concrete and
+            evolving data models.
+          </p>
+          <p>
+            Even today, I still learn a lot that way, by building concrete
+            projects. Recently, for example, my wife, who runs a board game bar
+            in Lille, needed an application to manage card game tournaments:
+            registrations, rankings, points, and so on. I used that project as
+            a playground to mix AI and PostgreSQL. I connected AI agents to MCP
+            servers connected to Postgres, which allowed me both to build
+            something useful and to improve on those topics.
+          </p>
+          <p>
+            I also give a lot of talks, and often my talks become learning
+            projects themselves. For a recent conference, for example, I built
+            a sort of role-playing game master based on an AI agent and
+            PostgreSQL. At the beginning, you only have a general idea, but
+            building the demo gradually feeds the content of the talk. In the
+            end, preparing a conference also becomes a way to go even deeper on
+            the subject you initially wanted to share.
+          </p>
+
+          <h2>How long have you been giving talks?</h2>
+          <p>
+            It really started when I joined Aiven. Before that, I was already
+            doing quite a few internal presentations at Adeo, but it is really
+            since Aiven that I started speaking more in the community and on
+            different media. So it has now been around three to four years.
+          </p>
+
+          <h2>Is that your way of contributing to open source?</h2>
+          <p>
+            Yes, totally. At the beginning, conferences were even my main way
+            of contributing. I started by giving talks in the French community,
+            then pretty quickly in other events. Over time, you meet
+            organizers, other speakers, people from the community, and you
+            naturally get more and more involved.
+          </p>
+          <p>
+            That is how I quickly joined Postgres France and started taking
+            part more actively in the ecosystem. This year, I was lucky enough
+            to be recognized as a contributor. It is not something you
+            necessarily look for at the start, but it comes quite naturally
+            over time.
+          </p>
+          <p>
+            The PostgreSQL community increasingly recognizes contributions
+            that do not only happen through code. Giving talks, organizing
+            conferences, or keeping the community alive are also part of
+            contribution.
+          </p>
+
+          <h2>Did talks open doors in your career?</h2>
+          <p>
+            Yes, clearly. It opens discussions with a lot of people, sometimes
+            even future clients, even if that is not necessarily the initial
+            goal. It also allows people who only knew you from one angle to
+            identify you differently.
+          </p>
+          <p>
+            And of course, there is an internal impact inside the company. At
+            Google, for example, it shows that you do advocacy on certain
+            topics, that you exchange with the community, and that you bring
+            back field feedback that can help improve products or guide certain
+            decisions.
+          </p>
+          <p>
+            I would not say conferences directly opened doors for me in terms
+            of recruitment, because neither Aiven nor Google hired me for that.
+            But in the end, those things clearly bring a lot to a career.
+          </p>
+
+          <h2>How can someone join Postgres FR?</h2>
+          <p>
+            It is very simple. Today we have an email address,
+            contact@postgresql.fr, and we accept every type of contribution,
+            whatever the frequency or impact. Anyone who wants to participate
+            can do it.
+          </p>
+          <p>
+            The best example is PGDay France, which is the association's main
+            event. The organization relies on around twenty people. Some are
+            officially part of the association, but many are simply volunteers
+            who help occasionally: helping on the day of the event, suggesting
+            ideas, finding venues or restaurants, helping with logistics, and
+            so on.
+          </p>
+          <p>
+            The community works a lot through personal initiative. When I
+            arrived, nobody assigned me a precise role. I simply said, "I want
+            to help, here is what I know how to do, and here are the topics I
+            would like to contribute to." And that is still how it works today.
+          </p>
+          <p>
+            We are really open to all profiles, technical or non-technical. Any
+            help or initiative is welcome.
+          </p>
+
+          <h2>Are PGDay events only in Paris?</h2>
+          <p>
+            There are two different events. PGDay Paris is organized by
+            PostgreSQL Europe and remains very internationally oriented, with
+            talks mainly in English and an audience from all over Europe.
+          </p>
+          <p>
+            Alongside that, there is PGDay France, historically more focused on
+            the French-speaking community. Most talks are in French, even
+            though we are starting to welcome some English-speaking speakers.
+          </p>
+          <p>
+            Another specific feature of PGDay France is that it changes city
+            every year: Strasbourg, Lille, Mons in Belgium, Toulouse this
+            year... The two events are not in competition; they are rather
+            complementary and attract different audiences.
+          </p>
+
+          <h2>How did you join Google?</h2>
+          <p>
+            Honestly, joining Google was mostly a matter of timing and
+            encounters.
+          </p>
+          <p>
+            At that time, I was already at Aiven in a technical pre-sales role
+            focused on databases, covering the French market. I knew the
+            ecosystem well, and I was often facing Google Cloud solutions. In
+            parallel, Google was investing massively in data and databases,
+            with the arrival of AlloyDB in particular and the first signals
+            around AI and Gemini.
+          </p>
+          <p>
+            In the French team, there was someone I had crossed paths with
+            years earlier at Easy Team. He had seen my path at Adeo and then at
+            Aiven, and he contacted me about a role that matched my profile
+            exactly.
+          </p>
+          <p>
+            The timing was perfect, because I was also starting to want to
+            discover something else. I went through the interviews very
+            quickly, I think in two weeks, then accepted the offer shortly
+            after. Three months later, I joined Google.
+          </p>
+
+          <h2>What does a typical day at Google look like?</h2>
+          <p>
+            I do not think I really have a typical day, because the role is
+            very varied. My main work is to support sales teams on technical
+            topics related to databases. I do not directly own a customer
+            portfolio, but sales teams and customer engineers call on us when
+            topics become more complex or very specialized.
+          </p>
+          <p>
+            Our role is then to understand where the customer is in their
+            transformation, what their needs and problems are, and how Google's
+            solutions can answer them.
+          </p>
+          <p>
+            Alongside that, there is a whole advocacy part: conferences, talks,
+            community events or Google-organized events, to present
+            technologies and share feedback. We also do a lot of internal
+            training on new features, possible use cases, and related customer
+            problems.
+          </p>
+          <p>
+            And then there is also the whole monitoring and personal learning
+            part. Technologies evolve enormously. Between Google Cloud Next,
+            Google I/O, and product announcements, you constantly have to stay
+            up to date, understand what is new, and see how it fits into
+            customer needs.
+          </p>
+          <p>
+            Some weeks, I will be very focused on a specific customer or
+            project. Others, I will mostly prepare conferences or train myself
+            on new topics. It changes a lot from one period to another.
+          </p>
+
+          <h2>How do you use AI day to day?</h2>
+          <p>
+            Today, AI is absolutely everywhere in my daily life at Google,
+            especially around Gemini. We have access to public products, such
+            as the Gemini app or Workspace integrations, but also to many
+            internal tools, sometimes still prototypes, developed for our own
+            use cases.
+          </p>
+          <p>
+            Concretely, my day often starts with automatically generated briefs
+            in Gmail, summarizing the important topics I need to handle based
+            on my recent activity. We also use tools that can analyze our
+            current tasks and help us organize or prepare certain actions.
+          </p>
+          <p>
+            AI has especially changed the way we prepare demos and
+            presentations. Before, demos were often very generic. Today, we can
+            build something much more adapted to the customer's context. A demo
+            for a bank will not look at all like a demo for a retailer or a
+            telecom company.
+          </p>
+          <p>
+            AI helps enormously with that, especially to quickly understand an
+            industry, its problems, and its use cases. It allows us to create
+            demos that are much more relevant and impactful. There is obviously
+            a huge productivity gain, but above all, we can now do things that
+            are much more advanced and qualitative than before. For me, it is
+            clearly a game changer.
+          </p>
+
+          <h2>Do you think AI impacts juniors?</h2>
+          <p>
+            Yes, of course. We welcome many apprentices every year, so we see
+            their concerns and questions about AI very clearly. And I totally
+            understand them. Today, many juniors wonder what value they can
+            still bring.
+          </p>
+          <p>
+            But we also have to be careful about how we use AI, especially
+            when learning. I see many students using it for absolutely
+            everything, sometimes without really trying to understand what they
+            are doing. And the long-term risk is that we stop training future
+            seniors.
+          </p>
+          <p>
+            If nobody truly masters the foundations, the tools, or how
+            computing works in depth anymore, we will inevitably have a
+            problem. For me, AI will clearly transform the way we work, but it
+            will not replace competent people. We will always need people able
+            to understand, steer, and make decisions. In the end, an AI is only
+            as good as the person using it.
+          </p>
+
+          <h2>Will AI replace juniors?</h2>
+          <p>
+            It is a bit difficult today to have a clear view of what will
+            happen even in six months or a year. Still, historically, IT has
+            always been made of structural changes, shocks, and technological
+            revolutions that force us to adapt.
+          </p>
+          <p>
+            If there is one thing juniors need to learn today, it is the
+            ability to adapt. So maybe today's juniors will not be replaced by
+            AI. But they may potentially be replaced by juniors who use AI
+            better than they do. That is how I see it.
+          </p>
+          <p>
+            If we draw a parallel with other things, it is the same as when the
+            cloud arrived. Some people very likely said: that is it, our jobs
+            are over, I will no longer be the one installing VMs, and so on.
+            And in fact, we saw the opposite effect. People simply built skills
+            on cloud technologies. They had other problems to solve. We could
+            do different things, better things, maybe more interesting things,
+            and sometimes go further. It completely changed the way we work,
+            but it did not necessarily replace the people who had historically
+            worked on those topics.
+          </p>
+
+          <h2>What is the best advice you have been given?</h2>
+          <p>
+            I would say there are two essential things. The first is curiosity.
+            IT evolves constantly, technologies change all the time, and I do
+            not think you can really do this job without wanting to keep
+            learning and understanding. That curiosity is indispensable, not
+            only to progress, but also to keep enjoying what you do over the
+            long term.
+          </p>
+          <p>
+            The second is daring. Daring to try things, launch projects, speak
+            publicly, change jobs, step out of your comfort zone. Today we have
+            access to incredible tools that make it much easier to create and
+            experiment than before. Even when it does not work, failure is part
+            of learning.
+          </p>
+          <p>
+            Personally, some of the most important moments in my career came
+            precisely because I dared to make decisions that sometimes seemed
+            risky. And in the end, it is often by trying, sometimes failing, or
+            discovering that a goal you thought was unreachable was not so
+            unreachable after all, that you make the most progress.
+          </p>
+
+          <h2>If you started again, would you change anything?</h2>
+          <p>
+            Honestly, I think I would do the same thing. Again, it connects to
+            what I just said. Even the things I consider not necessarily ideal
+            shaped me both personally and professionally. And I regret none of
+            my choices, because they always brought me something, whether
+            through failure or success.
+          </p>
+          <p>
+            So honestly, I would follow the same path again, and I really like
+            the shape my resume has today, because I had the chance to do very
+            different things that now give me varied perspectives.
+          </p>
+          <p>
+            When I talk to a customer, I know what they have experienced
+            because I have been in their place. When I talk to a partner, I
+            know what they have experienced because I was in their place. When
+            I compete with a vendor, I know how they will present their value
+            because I know how they do it. Maybe one day I will do something
+            else and go back directly to a customer. Same thing: I will have
+            the perspective of how things work at a hyperscaler, and that will
+            help me in my new mission.
+          </p>
+
+          <h2>Are there resources that helped you a lot?</h2>
+          <p>
+            One thing that brought me a lot is meetups and conferences. I
+            learned an enormous amount there, both during the talks and in
+            informal discussions with people during networking.
+          </p>
+          <p>
+            It is often in those exchanges that you discover topics, feedback,
+            or ways of thinking you would not have found elsewhere. So if there
+            is one piece of advice I would give, it would be to go to these
+            kinds of events, on the topics that interest you.
+          </p>
+          <p>
+            And it is not limited to open source. Many companies and vendors
+            also organize very interesting events. For me, conferences and
+            meetups remain among the best catalysts for knowledge and learning.
+          </p>
+
+          <h2>Are Postgres meetups accessible to juniors?</h2>
+          <p>
+            Completely. Most of my talks are actually designed to be accessible
+            to people with an intermediate level. If you know a bit of
+            PostgreSQL, you can usually follow and leave with something useful.
+          </p>
+          <p>
+            What I particularly like is making technical topics that may seem
+            intimidating or complex at first more accessible. And that is also
+            true of many people in the community. So yes, conferences are
+            generally very accessible. Of course, some sessions will be much
+            deeper and require real technical background. But in that case,
+            there are often other talks or tracks that are more accessible. And
+            even when you do not understand everything, you almost always leave
+            with something interesting.
+          </p>
+
+          <h2>Do you want to add anything?</h2>
+          <p>
+            Yes. One of the topics I have been talking about a lot recently in
+            my conferences, especially with the arrival of AI, is that the
+            database has never really been seen as the "sexiest" topic in IT. I
+            am setting aside analytics, big data, and data engineering, which
+            have a different image. But the operational database, classic OLTP,
+            is often still seen as a commodity: an infrastructure brick where
+            data is stored.
+          </p>
+          <p>
+            As a result, I have seen many DBAs stay locked inside their own
+            scope: making sure the database is performant, stable, and
+            available, without really being interested in the rest. Not in
+            development, not in cloud, not in AI. And I think that is a
+            mistake.
+          </p>
+          <p>
+            Today, if you want to work with databases in a relevant way, you
+            need to understand the needs of the users of those databases: the
+            developers, product teams, and people building applications or AI
+            agents. We are not only here to provide infrastructure; we are an
+            integral part of the whole IT chain.
+          </p>
+          <p>
+            For me, it is essential to get out of the database-only perimeter:
+            talk to developers, understand their problems, and sometimes even
+            train them. And of course, take an interest in AI: how it changes
+            their daily work, how it can improve ours, and how it can showcase
+            databases.
+          </p>
+          <p>
+            For example, I recently talked about vibe coding around PostgreSQL
+            and AI. Everyone talks about vibe coding today, but how does it
+            work when there is a real database behind it? How can we make those
+            usages more interesting, more solid, more useful? I find it
+            fascinating to mix these subjects instead of staying isolated
+            inside one specialty.
+          </p>
+          <p>
+            It is something I often repeat at the end of my talks: AI concerns
+            everyone, including DBAs and people working around databases. It
+            will transform our daily work as much as the daily work of the
+            users of our platforms. So we need to take an interest in it,
+            understand what is happening, and find our place in that evolution.
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../site.js"></script>
+</body>
+
+</html>

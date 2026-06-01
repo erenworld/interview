@@ -503,6 +503,10 @@ html[data-theme="dark"] .theme-icon-moon {
   margin-bottom: 0;
 }
 
+.readme-card .hero-button {
+  margin-top: 8px;
+}
+
 @media (max-width: 1080px) {
   .page-layout {
     grid-template-columns: 1fr;
@@ -1000,17 +1004,17 @@ html[data-theme="dark"] .topbar::before {
   object-position: center;
 }
 
-.hero-logo-image-microsoft,
-.hero-logo-image-postgres {
+.hero-logo-image-google,
+.hero-logo-image-microsoft {
   height: 64px;
+}
+
+.hero-logo-image-google {
+  height: 44px;
 }
 
 .hero-logo-image-microsoft {
   height: 74px;
-}
-
-.hero-logo-image-postgres {
-  height: 70px;
 }
 
 html[data-theme="dark"] .hero-device-shell {
@@ -1817,7 +1821,7 @@ html[data-theme="dark"] .hero-logo-item {
   }
 
   .hero-logo-item:nth-last-child(-n + 2) {
-    border-bottom: none;
+    border-bottom: 1px solid var(--line);
   }
 }
 
@@ -1914,7 +1918,7 @@ html[data-theme="dark"] .hero-logo-item {
   }
 
   .hero-logo-item:nth-last-child(-n + 2) {
-    border-bottom: none;
+    border-bottom: 1px solid var(--line);
   }
 
   .hero-logo-image {
@@ -1922,26 +1926,32 @@ html[data-theme="dark"] .hero-logo-item {
     max-width: 78%;
   }
 
-  .hero-logo-image-microsoft,
-  .hero-logo-image-postgres {
+  .hero-logo-image-google,
+  .hero-logo-image-microsoft {
     height: 50px;
+  }
+
+  .hero-logo-image-google {
+    height: 36px;
   }
 
   .hero-logo-image-microsoft {
     height: 56px;
   }
 
-  .hero-logo-image-postgres {
-    height: 56px;
-  }
-
-  .hero-logo-item:has(.hero-logo-image-rds),
-  .hero-logo-item:has(.hero-logo-image-postgres) {
+  .hero-logo-item:has(.hero-logo-image-rds) {
     display: none;
   }
 
-  .hero-logo-strip {
-    grid-template-columns: 1fr 1fr;
+  .hero-logo-item:has(.hero-logo-image-mongodb) {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-logo-item:last-child {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
   }
 
   html[data-theme="dark"] .hero-logo-strip {
