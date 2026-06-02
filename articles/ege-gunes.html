@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ege Güneş</title>
+  <script>
+    (() => {
+      const stored = localStorage.getItem("databasestory-theme");
+      const theme =
+        stored ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css?v=20260515a" />
+</head>
+
+<body>
+  <div class="site-shell article-page">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <a class="brand" href="../index.html">DatabaseStory</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-lines"><span></span></span>
+      </button>
+      <div class="topbar-tools">
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="../about.html">About</a>
+          <a class="menu-card" href="../index.html#interviews">Interviews</a>
+          <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+          <a class="menu-card" href="../index.html#podcast">Podcast</a>
+          <a class="menu-card" href="../jobs.html">Jobs</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <main>
+        <a class="back-link" href="../index.html">&larr; Back</a>
+
+        <div class="article-header">
+          <h1>Ege Güneş</h1>
+          <p class="article-meta">
+            June 2, 2026 by <a href="../index.html">Eren Turkoglu</a>
+          </p>
+          <div class="tag-row">
+            <span class="tag">Interviews</span>
+            <span class="tag">Percona</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Databases</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+
+        <div class="article-body">
+          <h2>Can you briefly introduce yourself?</h2>
+          <p>
+            I'm Ege Güneş. I've been working in software for about 10 years,
+            having started my career in early 2017.
+          </p>
+          <p>
+            I began as a Web Developer, but I quickly became interested in
+            systems administration and gradually shifted my focus in that
+            direction. I spent around three and a half years at my first
+            company, then worked in a DevOps role for about a year before
+            joining Percona.
+          </p>
+          <p>
+            I've now been at Percona for five years and currently serve as the
+            Team Lead for our Kubernetes Operators team.
+          </p>
+
+          <h2>How did the transition from law to software happen?</h2>
+          <p>
+            Well, I was actually pushed toward law by my family. I read a lot
+            of books growing up, so everyone kept telling me, "You should study
+            law." At the time, my relationship with math wasn't great, and
+            nobody expected me to become an engineer. So I followed that path
+            and enrolled in law school.
+          </p>
+          <p>
+            I grew up in Izmir and later moved to Istanbul. There, a friend of
+            mine named Hakan, who had done a bit of programming in middle
+            school, suggested that we build websites and try to sell them. We
+            were students and had no money, so the idea sounded appealing. I
+            started learning some JavaScript and experimenting with web
+            development, but nothing serious came from it.
+          </p>
+          <p>
+            The real turning point happened when I came across Richard Stallman
+            and the Free Software movement. His ideas had a huge impact on me.
+            I installed Linux on my computer and started tinkering with it, and
+            that's when I discovered something I genuinely enjoyed. At that
+            stage, I still had no intention of becoming a software developer. I
+            thought I would become a lawyer and keep technology as a hobby.
+          </p>
+          <p>
+            I was writing all of my lecture notes in Vim and committing them to
+            GitHub. I still have some of those notes online today. That was
+            simply how I had fun.
+          </p>
+          <p>
+            Then one day I realized that I genuinely enjoyed these things and
+            wanted to see where they could take me. I started looking for
+            internships while I was in my second year of law school. I
+            interviewed with a company in Izmir, and they liked me enough to
+            offer me a position. When I asked about compensation, however, they
+            told me it was completely unpaid. I even asked whether they could
+            at least provide some pocket money, but they said no. So I declined
+            the offer.
+          </p>
+          <p>
+            Around the same time, my father, who is a doctor, was using an old
+            patient management application written in Visual Basic. He wanted
+            to turn it into a web application so he could access it from both
+            his computer and his phone. I told him I would build it.
+          </p>
+          <p>
+            The truth is, I knew almost nothing at that point. I didn't even
+            understand how to deploy a web application properly. For example,
+            whenever I pushed new code to GitHub, I would delete the repository
+            on the server and clone it again because I didn't know I could
+            simply pull the changes. That's how inexperienced I was.
+          </p>
+          <p>
+            Still, I kept working on it. Over the course of three or four
+            months, I built the application using Python and Django. The only
+            thing I asked from my father was permission to make the project
+            open source. I didn't want any money for it. He agreed, and the
+            code is still publicly available today, even though nobody really
+            uses it.
+          </p>
+          <p>
+            That project became the reason I got hired by my first company. It
+            gave me something real to show, and it opened the door to my first
+            professional role as a Python web developer.
+          </p>
+          <p>
+            I built that application in 2016, and at the beginning of 2017, I
+            joined my first company in Istanbul. That's how my software career
+            began.
+          </p>
+
+          <h2>Do you have any regrets about having studied law?</h2>
+          <p>
+            Actually, no. Honestly, if I had studied computer engineering, I'm
+            not sure I would have enjoyed computers as much as I do today.
+          </p>
+          <p>
+            When something becomes coursework, it's easy to start thinking, "I
+            don't feel like doing this," or "I'm struggling with it, maybe I'll
+            skip it." For me, software was never like that. It was something I
+            discovered on my own and genuinely enjoyed. It was always fun.
+          </p>
+          <p>
+            So I don't really regret studying law. Of course, there are still
+            gaps in my knowledge. I never had the traditional computer science
+            education, so there are areas like algorithms and data structures
+            where I'm not as strong as someone who studied them formally.
+          </p>
+          <p>
+            The difference is that I tend to learn things when I actually need
+            them. If a problem requires a specific concept, I'll go and learn
+            it. But I don't spend time studying things that aren't relevant to
+            what I'm working on.
+          </p>
+          <p>
+            For example, I've never reversed a binary tree. I've never needed
+            to, and realistically, I probably never will. If I had gone through
+            a computer science program, I would have done that exercise because
+            it was part of the curriculum. Instead, I've taken a much more
+            practical path.
+          </p>
+          <p>
+            That creates certain gaps, but honestly, they don't make my life
+            significantly harder. I've been able to learn what I need, when I
+            need it, and that approach has worked well for me so far.
+          </p>
+
+          <h2>How did you develop yourself?</h2>
+          <p>
+            Well, I never learned something just for the sake of learning it. I
+            always had a problem at hand. For example, when I was writing the
+            patient tracking software, I kept running into all kinds of
+            problems. I always learned by doing.
+          </p>
+          <p>
+            I learned everything by trying to write code, by trying to solve a
+            problem on Linux. I'm a person who takes good notes. So I always
+            took notes of what I learned, and that was a useful process. There
+            were some books of course, and they taught me a lot. The most
+            critical book I probably read was "Advanced Programming in the Unix
+            Environment". It explains all the system calls of Linux, all the
+            file structures, and so on. Reading that book from cover to cover
+            was important. There's also a book called "Designing Data-Intensive
+            Applications". It was more about distributed systems.
+          </p>
+
+          <h2>How did you get into databases?</h2>
+          <p>
+            After my first company, I moved into a DevOps role where I managed
+            an existing large-scale infrastructure. That was my first exposure
+            to technologies like MySQL, NDB Cluster, and Cassandra.
+          </p>
+          <p>
+            At the time, I wasn't particularly interested in databases. After
+            about a year, I started missing software development. My work had
+            become mostly operational: something would break, I'd fix it, and
+            move on. I wanted to build things again.
+          </p>
+          <p>
+            While looking for a new role, I found a job posting for an "Open
+            Source Go Developer." The website looked a bit sketchy, but the
+            open source aspect caught my attention. A recruiter later told me
+            the company was Percona.
+          </p>
+          <p>
+            I already knew Percona from their MySQL blog posts, so I applied,
+            went through the interviews, and joined the company.
+          </p>
+          <p>
+            When I started at Percona, I didn't know much about databases. But
+            I was surrounded by people who did. Working there pushed me to
+            learn, and over the years I developed strong knowledge of
+            PostgreSQL, MongoDB, and MySQL.
+          </p>
+
+          <h2>What is a Kubernetes operator?</h2>
+          <p>
+            An operator is essentially automation software for running
+            applications on Kubernetes that require special care, such as
+            databases.
+          </p>
+          <p>
+            For example, if you want to run PostgreSQL on Kubernetes, an
+            operator creates and manages all the necessary Kubernetes resources
+            for you, including StatefulSets, Services, and other components. At
+            the same time, it continuously monitors the PostgreSQL cluster to
+            ensure everything is running properly.
+          </p>
+          <p>
+            If a backup needs to be taken, the operator handles it correctly.
+            If you need to restore from a backup, it takes care of the
+            restoration process. It uses the Kubernetes API to automate these
+            operations, but the key difference is that it understands how
+            databases work.
+          </p>
+          <p>
+            Without an operator, you could deploy PostgreSQL using standard
+            Kubernetes resources and it would work. However, as soon as you
+            need advanced operations such as backups, restores, upgrades,
+            failover, or troubleshooting, a lot of manual work is required. An
+            operator provides a higher-level API that simplifies these tasks
+            and automates much of the operational complexity.
+          </p>
+          <p>
+            In many ways, this sits at the intersection of DevOps and software
+            engineering. You need a strong understanding of Linux, distributed
+            systems, Kubernetes, and databases, while also writing and
+            maintaining software.
+          </p>
+          <p>
+            That's one of the reasons I enjoy this role so much. Throughout my
+            career, I've always worked somewhere between operations and
+            development. I've never been someone who only enjoyed writing code.
+            This field is really where those two worlds meet.
+          </p>
+
+          <h2>How would you describe Percona?</h2>
+          <p>
+            I think it's the meeting place of database experts.
+          </p>
+          <p>
+            Meaning, anyone whose path has crossed databases has somehow ended
+            up there whether through the community, within the company, or at a
+            conference. I honestly don't know anyone who works with databases
+            and doesn't know Percona or hasn't benefited from Percona in some
+            way.
+          </p>
+
+          <h2>Is Percona more of a monitoring tool?</h2>
+          <p>
+            Percona is actually the name of the company, not a single product.
+          </p>
+          <p>
+            Many people know Percona through PMM (Percona Monitoring and
+            Management), our monitoring platform, but that's only one part of
+            what we do.
+          </p>
+          <p>
+            We build and maintain several open source database products. For
+            example, Percona XtraBackup is one of the most widely used backup
+            solutions for MySQL. We also maintain our own MySQL and MongoDB
+            distributions, bringing open source alternatives to features that
+            are often only available in enterprise editions.
+          </p>
+          <p>
+            Beyond software, Percona provides database support and consulting
+            services. If a company is running into issues with MySQL,
+            PostgreSQL, or MongoDB, our support engineers help diagnose and
+            solve problems in production environments. In fact, some of the
+            deepest database expertise in the company comes from the support
+            team because they're constantly working on real-world issues at
+            scale.
+          </p>
+          <p>
+            We also help companies design architectures, plan migrations,
+            optimize performance, and deliver critical database projects.
+          </p>
+          <p>
+            So, at its core, Percona is a database company that combines open
+            source software, expert support, and consulting services.
+          </p>
+
+          <h2>How does a typical day go as a Team Lead?</h2>
+          <p>
+            I've been a team lead for the past three years. Before that, I
+            spent two years at Percona as a software engineer.
+          </p>
+          <p>
+            My day usually starts with code reviews. Since we're an open source
+            company, that also means reviewing community contributions,
+            responding to GitHub issues, and answering questions on our
+            community forum. I spend about an hour every morning going through
+            pull requests, issues, and anything that needs follow-up.
+          </p>
+          <p>
+            After that, I block a few hours on my calendar specifically for
+            coding. I write less code than I used to because my role involves
+            more coordination, and the team is now very capable on its own.
+            Still, I try to spend at least two or three hours a day writing
+            code.
+          </p>
+          <p>
+            Later in the morning, we have our team stand-up. From there, my
+            focus gradually shifts toward communication. As a lead, a big part
+            of my job is working with other teams, helping unblock people,
+            answering questions, and coordinating projects.
+          </p>
+          <p>
+            The afternoons are usually filled with discussions on Slack,
+            meetings with other teams, and conversations with customers,
+            including some of our larger clients.
+          </p>
+          <p>
+            So, in general, my mornings are focused on engineering work and my
+            afternoons are focused on communication and coordination.
+          </p>
+
+          <h2>What do you recommend to become a good database engineer?</h2>
+          <p>
+            I think the first thing to focus on is Linux and the terminal.
+            They're closely related, but they're not the same thing. You can
+            know a lot about Linux and still struggle with the command line. If
+            you want to work with databases, a solid foundation in both is
+            essential. Without it, you'll quickly run into limitations. More
+            than anything, you need to develop the right mindset for working
+            with systems.
+          </p>
+          <p>
+            The second area is distributed systems. You should understand
+            concepts like replication, caching, proxies, consistency, and the
+            CAP theorem. These ideas are fundamental and apply across almost
+            every database technology.
+          </p>
+          <p>
+            Once you have that foundation, database-specific concepts become
+            much easier to understand. Things like MySQL replication, the MySQL
+            binlog, or PostgreSQL's Write-Ahead Log start to make much more
+            sense because you already understand the underlying principles.
+            That's why I always recommend learning the systems first. The
+            database details become much easier to pick up afterward.
+          </p>
+
+          <h2>How do you find answers to technical questions?</h2>
+          <p>
+            My primary sources are the official MySQL and PostgreSQL
+            documentation. Those are usually the first places I go when I need
+            reliable information.
+          </p>
+          <p>
+            We also have an internal knowledge base at Percona, which can be
+            very useful, and the Percona blog contains a huge amount of
+            high-quality content on databases and operations.
+          </p>
+          <p>
+            Beyond that, I still use Google extensively. To be honest, I don't
+            rely heavily on AI tools for learning or research. I'm happy to use
+            AI as a thinking partner, but I don't really like treating it as a
+            replacement for search or documentation.
+          </p>
+          <p>
+            Recently, our company released an internal MCP integration that
+            allows tools like Claude Code to query our documentation, blog
+            posts, and knowledge base directly. That's been quite useful
+            because it can point you straight to the relevant sources and
+            references.
+          </p>
+          <p>
+            But in general, my approach hasn't changed much. Most of the time,
+            I go directly to the documentation or search for the information
+            myself.
+          </p>
+
+          <h2>How do you use AI yourself?</h2>
+          <p>
+            I was actually quite skeptical of AI at first, and to some extent I
+            still am. But around the end of last year, the quality improved
+            significantly. Before that, it often produced poor code. Today,
+            that's much less true.
+          </p>
+          <p>
+            Like most companies in the industry, Percona is encouraging people
+            to use AI tools, so I decided to give them a serious try.
+            Initially, I mostly used AI to generate tests. Over the last couple
+            of months, I've also started using it for coding tasks, and the
+            results have been surprisingly good.
+          </p>
+          <p>
+            The key is knowing how to use it. AI works best on small,
+            well-defined problems. When you give it a large or complex task, it
+            tends to get confused and make questionable decisions. But if you
+            can break problems down and carefully review the output, it can be
+            a very effective tool.
+          </p>
+          <p>
+            That said, I think the value you get from AI depends heavily on
+            your experience level. For senior engineers, it's a powerful
+            productivity tool because they can quickly identify mistakes and
+            judge whether the solution is correct.
+          </p>
+          <p>
+            For junior engineers, I'm much more cautious. If you're still
+            learning the fundamentals, relying too heavily on AI can
+            short-circuit the learning process. You might get an answer, but
+            you won't necessarily understand why it works. That's why I think
+            it's far more beneficial for experienced developers than for people
+            who are just starting out.
+          </p>
+
+          <h2>Will juniors be replaced by AI?</h2>
+          <p>
+            To be honest, yes, AI can already write better code than many
+            junior developers, and it requires far less guidance than a junior
+            would. That's a real change in the industry.
+          </p>
+          <p>
+            Will junior developers disappear? I don't think so. But I do think
+            breaking into the industry will become more difficult. Junior
+            engineers will need to demonstrate much stronger fundamentals than
+            before.
+          </p>
+          <p>
+            At the same time, AI also creates an opportunity. In the past, a
+            lot of people spent years grinding syntax and implementation
+            details in languages like Java or C++. Today, that's less valuable
+            than it used to be. Instead, I'd encourage people to focus on
+            Linux, distributed systems, databases, networking, and the core
+            principles of software engineering.
+          </p>
+          <p>
+            Once you understand those concepts, writing code becomes much
+            easier. AI can help with implementation, but it can't replace a
+            solid understanding of how systems work.
+          </p>
+          <p>
+            That's why I think students need to start building those
+            foundations early, ideally during their first years at university.
+            I'm not sure educational programs have fully adapted to this shift
+            yet, and I think there's going to be a transition period where a
+            lot of people struggle to adjust.
+          </p>
+          <p>
+            So it's really a double-edged sword. On one hand, AI raises the bar
+            for entry-level developers. On the other hand, it removes some of
+            the barriers that used to slow people down and allows them to focus
+            more on the fundamentals that truly matter.
+          </p>
+
+          <h2>What were the biggest technical challenges at Percona?</h2>
+          <p>
+            Databases are already complex systems on their own. When you add
+            Kubernetes on top, things become even more challenging.
+          </p>
+          <p>
+            One of the biggest technical challenges is building reliable
+            automation. We constantly deal with timing issues, race conditions,
+            and state management. A database has its own internal state that
+            must be protected, while Kubernetes also maintains state through
+            its resources. Our job is to keep those two worlds synchronized at
+            all times.
+          </p>
+          <p>
+            The hardest technical trade-off is between availability and data
+            safety. As a database company, protecting data always comes first.
+            At the same time, we need to minimize downtime and ensure the
+            system remains available. Finding the right balance between those
+            two goals is a constant challenge.
+          </p>
+          <p>
+            There's also a social side to the problem. Running databases on
+            Kubernetes has been controversial for years, and even within
+            Percona there has been skepticism about it. Some people are still
+            unconvinced.
+          </p>
+          <p>
+            I've found that it's important to listen to those concerns rather
+            than dismiss them. In many cases, the people who are skeptical
+            raise legitimate issues. Understanding why they're opposed often
+            reveals weaknesses or gaps that we still need to address.
+          </p>
+          <p>
+            So while the technical challenges are difficult, I think the
+            hardest part is often building trust. You need to understand the
+            concerns, address them, and demonstrate that the technology can
+            solve real problems safely and reliably.
+          </p>
+
+          <h2>Why are they against it?</h2>
+          <p>
+            Part of the resistance comes from the fact that Kubernetes is still
+            relatively new compared to traditional infrastructure. Databases
+            hold critical data, so many people feel uncomfortable running them
+            on a platform that appears dynamic and constantly changing. The
+            instinctive reaction is often: "Why not just run databases on
+            dedicated Linux virtual machines where everything is predictable?"
+          </p>
+          <p>
+            The reality is a bit more nuanced. Kubernetes itself isn't
+            inherently unstable, but it's very easy to use it in ways that
+            create instability. On top of that, Kubernetes can feel like a
+            black box, and operators add another layer of abstraction.
+          </p>
+          <p>
+            Operators have opinions. They observe the state of the system and
+            make decisions automatically. That's exactly what they're designed
+            to do. The problem is that database administrators and system
+            administrators often have strong opinions of their own, and they
+            don't necessarily trust automation making those decisions on their
+            behalf.
+          </p>
+          <p>
+            That's why transparency is so important. An operator needs to
+            behave in a way that matches the expectations of the people running
+            the database. It should be predictable, explain its actions, and
+            give administrators confidence that it's making the right
+            decisions.
+          </p>
+          <p>
+            In my experience, that's where most of the skepticism comes from.
+            Part of it is simply that the technology is new. Part of it is that
+            databases are too valuable to take risks with. And part of it is
+            justified concern, because these systems can absolutely cause
+            problems if they're designed poorly. The challenge is proving that,
+            when built correctly, they can be both reliable and safe.
+          </p>
+
+          <h2>What role has Open Source played in your career?</h2>
+          <p>
+            Open source is what started my career.
+          </p>
+          <p>
+            I discovered software through the ideas of Open Source and Free
+            Software, and that's ultimately what motivated me to become a
+            developer in the first place. Without that, I probably wouldn't be
+            where I am today.
+          </p>
+          <p>
+            That's why working at an open source company is especially
+            meaningful to me. The fact that the products I work on are open
+            source gives me a strong sense of purpose and satisfaction. I'm
+            contributing to software that people can use, study, modify, and
+            build upon.
+          </p>
+          <p>
+            Looking back, open source has been a constant throughout my entire
+            career. It's not just something I work with, it's one of the main
+            reasons I entered the industry in the first place. In many ways,
+            it's the foundation of my career.
+          </p>
+
+          <h2>Do you remember your first Open Source contribution?</h2>
+          <p>
+            If I remember correctly, my first open source contribution was
+            either to Django REST Framework or Supervisor.
+          </p>
+          <p>
+            In Django REST Framework, I fixed a bug. Around the same time, I
+            also contributed documentation improvements to Supervisor, a Python
+            process management tool. Both happened so close together that I
+            honestly can't remember which one came first.
+          </p>
+          <p>
+            What I do remember is that those early contributions showed me that
+            open source projects were much more accessible than I had imagined.
+            You didn't need to be an expert to get involved. You could start by
+            fixing a bug, improving documentation, or helping with small
+            issues, and gradually build from there.
+          </p>
+
+          <h2>What's the best advice you've received in your life?</h2>
+          <p>
+            I've been thinking about this question since this morning, trying
+            to come up with the best piece of advice I could share.
+          </p>
+          <p>
+            To be honest, one thing keeps coming back to me. It's not advice
+            that someone personally gave me. It's a saying that comes up often
+            in Agile environments:
+          </p>
+          <p>
+            "If you want to go fast, go alone. If you want to go far, go
+            together."
+          </p>
+          <p>
+            That idea has had a huge impact on me and has shaped much of my
+            career philosophy.
+          </p>
+          <p>
+            What we do as engineers is rarely a solo effort. Yes, if you want
+            to move quickly, you can work alone and avoid the overhead of
+            collaboration. But if you want to build something meaningful,
+            something that lasts, or something larger than yourself, you need
+            other people. You need to work with other engineers, learn from
+            them, support them, and let them support you.
+          </p>
+          <p>
+            The biggest achievements in my career have never come from working
+            in isolation. They've come from collaboration, trust, and shared
+            effort.
+          </p>
+          <p>
+            So while this wasn't advice given directly to me, it's probably the
+            piece of advice that has influenced me the most throughout my
+            career.
+          </p>
+
+          <h2>Looking back, what had the biggest impact on your development from law to software?</h2>
+          <p>
+            The first major turning point in my career was joining my first
+            company. They took me from knowing almost nothing professionally to
+            becoming a real software engineer.
+          </p>
+          <p>
+            It was a small and somewhat chaotic environment, which turned out
+            to be a great learning experience. I had to do a bit of everything:
+            write code, talk to customers, take on leadership responsibilities,
+            and solve problems across different areas. That breadth of
+            experience accelerated my growth more than anything else.
+          </p>
+          <p>
+            The second major turning point was leaving my second company.
+          </p>
+          <p>
+            I was very comfortable there. I felt safe, I knew the environment
+            well, and things were going smoothly. But I started wondering
+            whether I was actually a good engineer, or whether I was only
+            successful within that specific context.
+          </p>
+          <p>
+            So I decided to take the risk and move on. Joining a new company
+            forced me to prove myself again in a completely different
+            environment. When I succeeded there as well, it gave me a level of
+            confidence I didn't have before.
+          </p>
+          <p>
+            Looking back, joining my first company and having the courage to
+            leave my second one were probably the two most important decisions
+            of my career.
+          </p>
+
+          <h2>What do you recommend to junior developers?</h2>
+          <p>
+            One thing I often notice is poor Git usage. Git is an incredibly
+            important tool, and while it's not easy to master, understanding
+            how to use it properly is a fundamental skill for any developer.
+          </p>
+          <p>
+            In particular, commit messages matter much more than people think.
+            A good commit should clearly explain what changed and why. Many
+            junior developers treat commit messages as an afterthought, and it
+            immediately shows. In my experience, poorly written commits are one
+            of the strongest signals that someone is still early in their
+            career.
+          </p>
+          <p>
+            The second thing is simply writing a lot of code. Early in your
+            career, volume matters. You need to build projects, experiment,
+            make mistakes, and learn from them. It's almost as if everyone has
+            a certain amount of bad code they need to write before they can
+            consistently write good code.
+          </p>
+          <p>
+            As your career progresses, you spend less time coding and more time
+            making architectural and technical decisions. That's why the early
+            years are so valuable. It's the best time to go deep, write as much
+            code as possible, and build a strong foundation through practice.
+          </p>
+
+          <h2>Have you always worked remotely?</h2>
+          <p>
+            At the beginning of my career, I didn't work remotely. That changed
+            when I joined Percona.
+          </p>
+          <p>
+            Percona is a fully remote company. We don't have offices at all.
+            The team is distributed across roughly 30 to 40 countries, and
+            everyone works remotely.
+          </p>
+          <p>
+            I've been working in that environment for the past five years. At
+            this point, remote work feels completely natural to me. It's how
+            I've collaborated with colleagues, built products, and led teams
+            throughout most of my time at Percona.
+          </p>
+
+          <h2>How is working remotely in Istanbul?</h2>
+          <p>
+            I don't think living in Istanbul creates any special advantages or
+            disadvantages when it comes to remote work.
+          </p>
+          <p>
+            Remote work has its own challenges, such as isolation and the lack
+            of day-to-day in-person interaction. But in a city like Istanbul,
+            that's often less of an issue because you're surrounded by people
+            and activity all the time.
+          </p>
+          <p>
+            One thing I enjoy is the flexibility. If I need a break in the
+            middle of the day, I can simply step outside, grab a coffee, take a
+            walk, and then come back to work. There's something very nice about
+            having that freedom while still being productive. So the challenges
+            I experience are mostly the normal challenges of remote work rather
+            than anything specific to Istanbul.
+          </p>
+
+          <h2>How do you spend your free time?</h2>
+          <p>
+            I'm married, so a lot of my free time is spent with my wife.
+          </p>
+          <p>
+            I also enjoy sculpture and have a personal ambition of becoming a
+            sculptor someday. It's a completely different creative outlet from
+            software, and I find that balance important.
+          </p>
+          <p>
+            Reading is another big part of my life. I've always loved books,
+            and I spend a lot of time reading across a wide range of topics.
+          </p>
+          <p>
+            And, of course, I enjoy spending time with friends. Those are
+            probably the main things I do.
+          </p>
+
+          <h2>Can you share your three favorite books?</h2>
+          <p>
+            My favorite book is actually a relatively lesser-known one called
+            <em>Unsong</em> by Scott Alexander. It's available online and can
+            be read through a website. That's probably my all-time favorite
+            book.
+          </p>
+          <p>
+            For the second, I'd mention <em>The Dark Tower</em> series by
+            Stephen King. That series has had a lasting impact on me and has
+            remained one of my favorites for years.
+          </p>
+          <p>
+            For the third, I'd choose <em>The Death Gate Cycle</em> by Margaret
+            Weis and Tracy Hickman. It's another series that has always been
+            very special to me.
+          </p>
+          <p>
+            That said, it's hard to limit the list to just three. <em>The
+            Brothers Karamazov</em> by Dostoevsky is a book I deeply admire,
+            and <em>The Time Regulation Institute</em> (<em>Saatleri Ayarlama
+            Enstitüsü</em>) by Ahmet Hamdi Tanpınar is another one that I love
+            very much.
+          </p>
+
+          <h2>You mentioned you enjoy taking notes and you use Obsidian. What's your workflow like?</h2>
+          <p>
+            My note-taking system is complete chaos, honestly. I have around
+            five or six thousand notes in Obsidian, and what I care about most
+            is being able to capture ideas quickly. For that, I use both
+            Obsidian and an app called Drafts on macOS and iOS. Whenever I'm
+            reading, working, or simply have an idea, I immediately write it
+            down. Later, I move those notes into Obsidian, clean them up a
+            little, and expand on them.
+          </p>
+          <p>
+            Inside Obsidian, I don't organize much. I don't really use folders.
+            Almost everything lives in the root of my vault.
+          </p>
+          <p>
+            The one habit I do follow consistently is daily notes. Every day I
+            create a note where I record what I'm working on, what happened
+            during the day, and who I talked to. At the end of the day, I
+            usually write a short summary.
+          </p>
+          <p>
+            That's probably my favorite part of the system. Three years later,
+            I can go back to any specific day and see exactly what I was doing,
+            what I was thinking about, and who I interacted with. I find that
+            incredibly valuable.
+          </p>
+          <p>
+            Beyond that, though, I don't have a particularly sophisticated
+            workflow. It's mostly about capturing ideas quickly and trusting
+            that I'll be able to find them later.
+          </p>
+
+          <h2>What are your most-used tools?</h2>
+          <p>
+            My laptop is a Mac, but I actually do most of my development on a
+            Debian server. I have a dedicated machine with 64 GB of RAM and a
+            16-core CPU, and I connect to it over SSH. That's where I write and
+            run most of my code.
+          </p>
+          <p>
+            For editing, I use Helix. I switched to it recently after spending
+            nearly ten years using Vim. A friend recommended it, I gave it a
+            try, and I ended up liking it. It shares many ideas with Vim but
+            takes a somewhat different approach.
+          </p>
+          <p>
+            Outside of coding, Obsidian is one of my most important tools for
+            note-taking and knowledge management. I also use Drafts for quickly
+            capturing ideas before moving them into my notes.
+          </p>
+          <p>
+            For my terminal, I use Ghostty, and for reading articles and
+            following RSS feeds, I use Readwise Reader. Those are probably the
+            tools I interact with the most on a daily basis.
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../site.js"></script>
+</body>
+
+</html>
