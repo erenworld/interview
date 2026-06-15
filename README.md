@@ -33,7 +33,6 @@
 
 ## Réflexions & conseils
 
-- Quel est le meilleur conseil que tu aies reçu ?
 - Y a-t-il un conseil ou une rencontre qui t'a marqué au point de le transmettre encore aujourd'hui ?
 - Que dirais-tu à quelqu'un qui veut contribuer aux bases de données (PostgreSQL) mais ne sait pas par où commencer ?
 - Quels sont les critères qui te font retenir un profil junior ?
