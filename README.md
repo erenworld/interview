@@ -3,7 +3,7 @@
 ## Parcours
 - Peux-tu te présenter ?
 - As-tu fait des études universitaires ? Si oui, étaient-elles liées à l'informatique ? Et est-ce que ça t'a aidé dans ton parcours professionnel ?
-- Tu as une formation réseau/systèmes au CNAM - comment es-tu arrivé vers les bases de données ?
+- Comment es-tu arrivé vers les bases de données ?
 - Tu as travaillé chez Dassault Systèmes, Digora, AWS et maintenant Google : quels sont les moments clés de ta carrière ?
 - Comment rejoint-on des entreprises comme AWS ou Google ?
 
