@@ -10,11 +10,9 @@
 ## Google & Customer Engineering
 - Tu es Customer Engineer chez Google. Concrètement, tu fais quoi au quotidien ?
 - Qu'est-ce qui t'a attiré vers ce rôle, après des années côté conseil ?
-- Quels sont les défis les plus intéressants que tu rencontres en ce moment ?
 
 ## Communauté PostgreSQL
 - Tu es impliqué dans l'organisation du PGDay France et dans la communauté PostgreSQLFr. Comment es-tu entré dans cet écosystème ?
-- Qu'est-ce que ces événements apportent concrètement, aux participants comme aux organisateurs ?
 - Tu te souviens de ta toute première contribution à la communauté open source ?
 - Y a-t-il d'autres projets open source auxquels tu contribues ou qui t'intéressent particulièrement ?
 
@@ -26,10 +24,10 @@
 - Y a-t-il un conseil ou une rencontre qui t'a marqué au point de le transmettre encore aujourd'hui ?
 - Que dirais-tu à quelqu'un qui veut se lancer dans les bases de données sans savoir par où commencer ?
 - Quels sont les critères qui te font retenir un profil junior ?
-- Avec plus de 30 ans d'expérience, quels sont selon toi les traits ou habitudes que partagent les meilleurs professionnels du secteur ?
+- Avec plus de 20 ans d'expérience, quels sont selon toi les traits ou habitudes que partagent les meilleurs DBA ?
 
 ## Personnel
-- Des livres ou ressources à recommander ?
+- Des livres ou ressources à recommander pour maitriser les bases de données ?
 - Comment occupes-tu ton temps libre ?
 
 ## Conclusion
