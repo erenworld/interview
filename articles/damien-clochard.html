@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damien Clochard</title>
+  <script>
+    (() => {
+      const stored = localStorage.getItem("databasestory-theme");
+      const theme =
+        stored ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css?v=20260515a" />
+</head>
+
+<body>
+  <div class="site-shell article-page">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <a class="brand" href="../index.html">DatabaseStory</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-lines"><span></span></span>
+      </button>
+      <div class="topbar-tools">
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="../about.html">About</a>
+          <a class="menu-card" href="../index.html#interviews">Interviews</a>
+          <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+          <a class="menu-card" href="../index.html#podcast">Podcast</a>
+          <a class="menu-card" href="../jobs.html">Jobs</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <main>
+        <a class="back-link" href="../index.html">&larr; Back</a>
+
+        <div class="article-header">
+          <h1>Damien Clochard</h1>
+          <p class="article-meta">
+            June 23, 2026 by <a href="../index.html">Eren Turkoglu</a>
+          </p>
+          <div class="tag-row">
+            <span class="tag">Interviews</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Databases</span>
+          </div>
+        </div>
+
+        <div class="article-body">
+          <h2>Can you introduce yourself?</h2>
+          <p>
+            My name is Damien Clochard, I'm 47 years old and I've been working on Postgres for about twenty years. I do different things at different levels in the community, but notably I'm involved in the PostgreSQL.FR association, which brings together PostgreSQL users, both individuals and companies. I work for a company I co-founded called Dalibo, which has been a Postgres specialist in France for about 20 years. I also manage the postgresql.fr platform, the French-speaking Postgres website where the documentation lives, kind of the community's toolbox. And on top of that, I maintain open source projects, the most well-known being an extension called PostgreSQL Anonymizer, which helps protect people's privacy in databases and achieve compliance with regulations like GDPR.
+          </p>
+
+          <h2>Did you follow a traditional education path?</h2>
+          <p>
+            I have a very classic background, a two-year technical degree in computer science and then an engineering school. That was in the late 90s, where I first discovered databases. I had a first contact with Postgres in the late 90s, which I really didn't like. I wasn't ready for it at all at that point. It was about ten years later, in the mid-2000s, when we created Dalibo, that I came back to it. But I had to understand the full usefulness and power of databases before I really got interested. It wasn't natural at first, to say the least.
+          </p>
+
+          <h2>What were you doing before PostgreSQL?</h2>
+          <p>
+            I was already doing quite a bit of open source, but I had kind of veered off. I was working more on cartography projects, or networking projects, Wi-Fi, back when Wi-Fi was just getting started, in the early 2000s. So I had a bit of a detour. After graduating from engineering school, I went 180 degrees in a different direction.
+          </p>
+
+          <h2>How did the four Dalibo co-founders connect?</h2>
+          <p>
+            Through friendship. Three of the four of us went to the same engineering school, so it started from that. And then it came from a shared observation: we all had some early work experience and a common sense of frustration, particularly around open source and the place it had. It's a bit of an old soldier's tale, but it's true that today open source is much more recognized and we don't have to fight as hard. But back then it wasn't valued much, and we struggled to get people to recognize its worth in our various jobs. So there was a shared desire among those four people to do open source and actually make a living from it. We set off with that bet: all this time we spend on forums, developing, helping people, translating docs, going to stands at conferences, sharing our open source knowledge, let's try to build a business model around it.
+          </p>
+
+          <h2>Speaking of business models, I saw that Dalibo is a cooperative, a SCOP. Can you explain the model?</h2>
+          <p>
+            We weren't a SCOP right away. In the early years we were finding our footing and we weren't immediately focused on Postgres either. We started as a classic LLC (SARL in France) and that came later. A SCOP is simply a cooperative, meaning a company owned by the workers who make it up. We're about fifty people at Dalibo now. Of those fifty, around twenty are associates on a volontary basis. That allows everyone to collectively decide the choices we make: do we grow, do we go into this or that technology, what are our ambitions? It works through democratic tools. For instance, managers and executives are elected every three years in our case. And instead of a pyramidal structure, we have small working groups that form around specific topics. Right now, for example, there's a lot of internal discussion about AI: what do we do with it, what don't we do? A small group formed around that. The other big advantage is that we have no shareholders. Practically speaking, that means profits are redistributed to employees. It also guarantees the company can't be acquired, so no risk of an American firm buying us out or dissolving us. And finally, it creates great stability and job security since decisions are made collectively and we share responsibility for them.
+          </p>
+
+          <h2>Did it take a long time to put that model in place?</h2>
+          <p>
+            Yeah, it wasn't straightforward at first. We started as a classic LLC, just founders and employees. It took a few years before we asked the question, and then we transformed the company into a cooperative. Literally, we sold the company to our employees. That happened in the early 2010s, about five years after founding. It came from several realizations. First, creating a company was never a goal in itself. We didn't particularly want to be executives or business leaders. What we really wanted was a business model that let us work on things we care about. But as the company grew, founders naturally get pulled upward and you quickly find yourself disconnected from the reality on the ground, from the technical work.
+          </p>
+          <p>
+            You end up doing accounting, marketing, sales, which are interesting, I'm not dismissing those roles, but it wasn't what we wanted at the start. So as Postgres took off and the company grew fast, we asked ourselves: how do we keep growing without becoming completely detached? And the cooperative model has real advantages. It gets everyone in the same boat, which makes management much easier. In return for the power you give employees, you get peace of mind and mutual trust. And it actually aligns well with open source philosophy, the same values: transparency. To trust a piece of software, you need the source code to be open. It's the same in a company: to trust the decisions being made, the accounts need to be accessible to everyone, decisions need to be made collectively. That's also a principle of open source governance. At least in the Postgres community, there's a multiplicity of voices and a lot of debate. So the cooperative model fits well with the principles of the Postgres community itself.
+          </p>
+
+          <h2>Why isn't this model more common in France?</h2>
+          <p>
+            Good question. I think we're a bit obsessed with a few things. First, capital naturally flows toward startup-type structures. In the capitalist system, there's no point investing in a cooperative since it won't be resold. You can't make money from a buyout. And most structures being created are built on the promise of growing and then selling at some point, which creates plenty of problems, including a vision of technology where growth is the fundamental goal rather than actually improving users' lives.
+          </p>
+          <p>
+            The other point is that cooperative models aren't promoted much because we have this idea that innovation must be driven by leaders. Steve Jobs, Bill Gates, whichever big names you pick, these visionary figures we create around ourselves. In reality, those are a bit of a legend, things we tell ourselves that don't really hold up. You can see today that innovation, especially in open source, obviously involves individuals, but you don't necessarily need a leader pointing the way or a visionary who figured everything out ten years in advance. That's a bit of a fable.
+          </p>
+          <p>
+            But it's hard to break out of that mindset and believe you can work without a chief, without a charismatic leader. So those are the two big biases right now. It's funny, because we have democracy in associations, in cities, at all kinds of levels. But somehow a company is supposed to be a place where democracy shouldn't exist. That's a bit of a rut we're in.
+          </p>
+
+          <h2>You went from co-founder back to Product Owner. It seems like you got closer to the code again. What drove that change?</h2>
+          <p>
+            That's what's great about this kind of organization, everyone is free to find their place. My path has been a bit winding. I did a lot of sales, I managed internal tools, accounting, and so on. And at some point I decided I no longer wanted to be an executive and stepped back. Today I'm still an associate, but I no longer have a leadership role, I handed that off. So I'm returning to what I loved doing originally, which is being a kind of an interface. My definition of Product Owner is being the real link between the development teams building the open source tools we produce, the users and clients who use those tools, and our integration teams who deploy them. Whenever we need to make a decision about the future, a development choice, a feature request, I bridge all those people: the ones working on it daily, the ones developing it, the ones who depend on it. I'm kind of at the center of all that.
+          </p>
+
+          <h2>Do you have a typical day?</h2>
+          <p>
+            Not really, which is the great part. There are recurring meetings, quick check-ins on where we are with the products. But mostly it's meetings with clients or prospective clients, either understanding their needs or explaining what we do in an innovative way. My focus is on how to manage a fleet of PostgreSQL instances, hundreds or thousands of them, in a homogeneous, secure way. Helping large companies scale with PostgreSQL. That means automation, whether through Ansible or Terraform, and providing tools so that teams can be autonomous in deploying and operating all those instances.
+          </p>
+
+          <h2>What were the key milestones for Dalibo?</h2>
+          <p>
+            We were founded in 2005. The first major shift came pretty quickly, in 2007-2008, when the PostgreSQL wave really started. That was around the time Oracle acquired Sun and therefore MySQL, which really opened the doors for Postgres. At that point MySQL dominated the open source database market, and Postgres was seen as a bit more complex, heavier, less accessible. Oracle's acquisition of MySQL showed, first, that something like that couldn't happen to Postgres since it can't be acquired that way. And over time it proved that the open source dynamic is far more productive when you have a completely decentralized community like this one.
+          </p>
+          <p>
+            For us, it was a breath of fresh air. We were doing PostgreSQL but not exclusively, and in 2007 we decided to focus 100% on PostgreSQL, even turning away other work despite having other skills. It was a deliberate choice: let's become PostgreSQL experts and do nothing else for the next several years. That was a winning bet. Then 2010-2011 was when we transitioned to a cooperative, the company transforming from the inside, working out how to implement democracy within a business. And then there are other milestones: moments of handover when founders leave, which are always significant, or the moment I stepped down from my leadership role, which I think is also an interesting and good moment in a company's story.
+          </p>
+
+          <h2>What were the main challenges you faced at Dalibo?</h2>
+          <p>
+            There are several phases. Today it's hard to see it because PostgreSQL has genuinely become the default database, there's no real debate anymore and no need to convince people. But back in 2005 the challenge was really about fixing the brand's image. It was software with no positive reputation in the industry. We had a real challenge changing people's perception of it. And we were up against Oracle and SQL Server, the two biggest software companies of the time, aggressive marketing, sometimes a bit unfair. We had to be creative because you can't fight those companies on equal terms. You have to do things differently to get recognized. And the hardest part is that this approach means making very long-term bets. That's often what open source is: investing a lot of time in a project and believing that at some point it'll click. But you can't know, and the return on investment can take a very long time. With PostgreSQL Anonymizer, for example, I think we spent 4-5 years working on it before it was truly recognized and became a widespread solution adopted beyond just ourselves. So you have to hold on. That's one of the core challenges: keeping faith in what you're doing and in the long-term payoff.
+          </p>
+
+          <h2>Does the whole team share that long-term vision?</h2>
+          <p>
+            It varies a lot. Not everyone is on board with it. In the company, there are people without a technical background. They may not understand fully how the software works, but they have other skills, and they have just as much right to make decisions as anyone else. That's the principle of democracy. So you have to explain things. And really, everyone has their own perspective. Some people are resistant to change, others want to change everything radically. It's a constant debate. It's like open source: the richness comes from the multiplicity of viewpoints. The goal is not to have 50 people aligned, saying the same thing. That looks impressive, 50 people moving forward in lockstep, but it's not very resilient, because you can be 50 people wrong at the same time.
+          </p>
+          <p>
+            What's more interesting is having 50 different viewpoints.
+          </p>
+          <p>
+            The challenge is finding agreement and making decisions from that. I'd say it's a culture of compromise rather than consensus. At 50 people, consensus isn't possible. But compromise is: being able to say things like "I see the majority wants to go in this direction; I have doubts, I'm not sure it'll work, but I'll trust you and let you do it." Working on that kind of compromise is what matters. And it's not easy every day. I often say that in a cooperative, and this is also true of open source communities, what counts isn't that everyone agrees with each other. It's actually about accepting that there can be conflicts, disagreements, even sharp binary oppositions. But it's about having a collective culture that allows you to resolve those conflicts: not leaving people stuck in opposition, but collectively finding compromises and space for everyone to work.
+          </p>
+          <p>
+            It's not easy every day. People who come in excited about what a cooperative is often spend the first few months a bit taken aback, like seeing the backstage: lots of debate, the feeling that things aren't moving, it seems a bit messy, you don't always know who's deciding what. But ultimately it's quite resilient. If someone's missing, the group can manage without them. There's no chief who needs to come and settle every decision. It's more of a big organized mess, but it moves forward, and it's much more creative and effective in the long run.
+          </p>
+
+          <h2>What's been the impact of open source on your life?</h2>
+          <p>
+            Today it's my job and I make a living from it, which is obviously a great privilege, being able to work in a field where everything you produce is made available to others. Having both of those things, doing open source, giving away the code you write, and also getting a salary for it, is extremely satisfying. It frees up creativity. And it's brought me into contact with a lot of very interesting people and taken me to places I never would have gone if I hadn't made that bet on open source from the start.
+          </p>
+
+          <h2>Do you remember your first open source contribution?</h2>
+          <p>
+            Honestly, I'm not sure. I'm not very nostalgic and I don't really keep track of what I was doing. I imagine it was in the early 2000s. There was one of the very first CMSs called Spip, which worked but had bugs. I think that's how I started getting into it, making early PHP bug fixes. I don't really remember what I was doing back then. Which is a shame, actually.
+          </p>
+
+          <h2>You were president of PostgreSQLfr?</h2>
+          <p>
+            I was president. Today I'm vice-treasurer, so I'm still on the board, just no longer president.
+          </p>
+
+          <h2>What can this kind of community bring to someone?</h2>
+          <p>
+            Originally, in the 2000s, there were very few of us wanting to work on Postgres, and the association's real role was to connect people. Today it has other roles. First, it protects the community's assets: web servers, domain names, the shared commons of the PostgreSQL community, ensuring neutrality and that no company takes control of those community tools. It also has an educational role, promoting the software by organizing conferences, connecting people and supporting those who organize local meetups in Lille, Paris, Nantes, Lyon. And finally, there's what we call an inter-company working group, a kind of business club where member companies can meet once a month in a shared space to exchange experiences. Inside it you have companies that have been full-PostgreSQL for 15 years, others just starting, some ultra-specialized in things like geomatics. They all work with the same common resource that is Postgres, but they can't always talk publicly about what they do internally. So this closed, cooptation-based club gives them space to share. It's been really helpful for advancing PostgreSQL in France, because beyond expert advice, people also want examples. The power of examples matters. Being able to say "there's a company that looks a bit like where I am; they made this move to Postgres 2-3 years ago," that's reassuring. That's really the association's role: connecting people within the community.
+          </p>
+
+          <h2>Can a junior participate in this kind of association?</h2>
+          <p>
+            Yes, of course. It's an association with open, pay-what-you-want membership. And the best way to get involved is through the community's most concrete annual project: organizing the national conference called PGDay France. We change cities every year, this year it was Toulouse. It's organized by volunteers, about a dozen each year who rotate. It's a great way to meet the community and learn a lot.
+          </p>
+
+          <h2>What's the next city for PGDay France?</h2>
+          <p>
+            Not decided yet. We just finished Toulouse, that was 15 days ago, so we're taking a small break. The next destination will be announced in the fall, I think.
+          </p>
+
+          <h2>You gave a talk in Toulouse on PGRX. Why PGRX?</h2>
+          <p>
+            PGRX, in a nutshell, is a framework that lets you write PostgreSQL extensions in Rust, code that runs inside PostgreSQL itself is written in C, so it seems surprising to run Rust inside C. But it's extremely powerful because with that Rust code you can access PostgreSQL's entire internal interface directly, calling PostgreSQL functions, hooks, and so on, things you couldn't do with external code. What brought me there was PostgreSQL Anonymizer: I'd written a version 1 in C, which you can obviously do for PostgreSQL extensions. But after 5-6 years I'd kind of hit the ceiling with that C extension, lots of code written but limited in terms of features: encryption capabilities, fake data generation, etc. I was looking for a way to let the project keep evolving. And I didn't know Rust at all. But I found this framework and decided to just try, make a POC, see what would happen if I rewrote it in Rust.
+          </p>
+          <p>
+            Back then there were no LLMs, so I did it by hand, I didn't ask an AI to do it in two hours. But it let me learn Rust along the way, little by little.
+          </p>
+          <p>
+            The advantage of PGRX is that it brings all of Rust's strengths: a very rich ecosystem with lots of libraries, very dynamic. And much safer memory management than C. With C you have to manage pointers and be very careful. With Rust, there's a very strict compiler, a bit like Postgres actually, that refuses bad syntax, bad habits, shortcuts, and forces you to handle errors properly. You can't leave edge cases unhandled. And for PostgreSQL extensions specifically this is crucial, because the code runs inside PostgreSQL, and if an extension is poorly written and crashes, it's not just the connection that goes down, it's the whole server. Writing a PostgreSQL extension is a serious stability risk for users. Rust solves that: if there's a bug in the Rust code, you don't get an instance crash, you just get a rollback, the transaction is cancelled, and the data and the instance itself stay safe. That's really why I got into Rust. And it happened the way many things do: someone in a conference hallway saw a presentation I was giving and came up to me afterward saying "you should do this in Rust." I don't remember who it was, but that's how it happened.
+          </p>
+
+          <h2>Is Rust the successor to C?</h2>
+          <p>
+            It's a big debate. I think there's no good reason to start a new project in C today. There's still an enormous amount of code written in C, Postgres is written in C and will stay that way for many years to come. But for a new project, Rust gives you comparable performance with guarantees and safety that are really not negligible. It's mainly a radically different way of writing code that constantly forces you to ask the right questions. There's a recurring joke: when you discover Rust, you discover everything you were doing wrong before that other languages let you get away with, and that Rust simply won't accept.
+          </p>
+
+          <h2>What do you think about everything that's happened in the last 5 years with AI?</h2>
+          <p>
+            It's clearly one of the biggest changes of my career. I've rarely seen such a disruption. For me, it's simply going to radically change the profession. The code itself, open source or not, will be worth less. Producing code has less value when you have tools to do it at scale, very fast. So it's going to bring us, in terms of the profession, much closer to the data. Because what will remain is the data: protecting it, making it meaningful, keeping it durable, clean, well-managed. A database always outlives the code that came before it. When you launch an application, you launch the database alongside it. And chances are the application code gets rewritten once, twice, three times over 10-15 years, while the database stays. And that will be even more true now, since refactoring and rewriting will be easier than ever. That's going to push more people toward the data side, toward the DBA role. The DevOps trend was already asking developers to pay more attention to their environments and the database behind them, I think that will accelerate.
+          </p>
+
+          <h2>What's your AI workflow?</h2>
+          <p>
+            I'm kind of old school, I don't use LLMs much. Out of curiosity I explore a bit, but I don't really code with them, partly because what I do is very specific: Rust code running inside C that rewrites SQL on the fly. It's a domain with so many layers that the answers are... not necessarily irrelevant, but it takes me almost as much time to rewrite everything anyway. Maybe I just don't know how to use them well. For now it's mostly curiosity. And as I said, we have a working group at Dalibo exploring these questions, what does it mean for our work, since we do training and support, and how will it change those in the years ahead.
+          </p>
+
+          <h2>Will AI replace junior developers?</h2>
+          <p>
+            I think it's genuinely one of the difficulties of our time. I don't think it replaces juniors at all. In fact I actively push internally for hiring younger profiles with fresh ideas, different dynamics and, as we said, different points of view. As a group gets older it also gets cut off from new ideas and trends. In terms of creativity, juniors have an enormous amount to contribute. Saying that AI will replace juniors is a reductive viewpoint, and it often reflects a very hierarchical vision of things: the fallacy that veterans hold the truth and must "pour knowledge" into juniors until they gradually level up.
+          </p>
+          <p>
+            But in any organization, in any group, an association, a football club, the person who's been there for 15 days is just as relevant as the person who's been there for 15 years. Not in the same ways, obviously. 15 years brings knowledge, experience, seniority. But 15 days brings fresh eyes. You can pull old things out of the closet and ask "why don't we try that again?" That kind of creativity, that freedom, which people who've done the same thing for 15 years often lose under layers of blind spots, assumed knowledge, and ego. So the people who say juniors are replaceable by LLMs have a very top-down vision; they see themselves as the grand conductor. That's not my view of the profession. It is a dominant view, though.
+          </p>
+          <p>
+            My advice would be to be creative and not go head-on into the most obvious paths. The pure developer role will unfortunately be less valued. But there are enormous numbers of emerging roles in tech: security, data, monitoring, and so on. There will always be a need for new ideas and novelty, because at bottom, AI isn't capable of creating. It recombines and reprocesses what's already been done. And don't forget: it's also a trend. The future isn't a straight line. There can be structural shifts. So yes, nurture your creativity, get involved in open source projects, see what's happening out there and try to find your angle.
+          </p>
+
+          <h2>How can a junior stand out in your eyes?</h2>
+          <p>
+            It's a bit of a bad example because, as I said, I fight for us to hire more juniors, but we hardly do. Partly because of a specific constraint: we're almost entirely full remote, which makes it really hard to onboard people in their first job. We can't offer them the environment to develop and learn. Starting out in remote work is genuinely hard. We just don't know how to do it well. So today we end up setting those profiles aside not by choice, but as a practical reality. That said, and this goes for any candidate, any company, the ability to participate in an open source project is huge. It demonstrates the ability to interact with other developers, to compromise, because you'll make a proposal, it'll get rejected, revised, asked to change. And it's not just about code, any kind of involvement in an open source community. It shows a desire to collaborate and work with others.
+          </p>
+          <p>
+            The other thing is knowledge-sharing: if someone gives conference talks, participates in associations, translates documents, writes a blog, anything in the realm of sharing information, that's a posture that matters enormously to us. Rather than saying "I'm an expert and a specialist in such-and-such technology," it's about coming down to people's level and thinking about how to explain something to someone without your background or culture. That has enormous value to me. People who can explain what they do to a 5-year-old, that's really important. Because people who say things nobody understands, I know plenty of them. And it doesn't really serve much purpose. Impressive, sure, but not people you can actually work with in a pleasant way.
+          </p>
+
+          <h2>Is there a piece of advice or an encounter that marked you?</h2>
+          <p>
+            I'd say... very early on, someone told me: fail, you need to fail as fast as possible. It's counterintuitive, but it's really true. You can't be afraid of mistakes. Building a real culture of the right to fail is hugely important. What I try to do every day is: when something goes wrong, don't pile on people, don't point fingers, treat every mistake, every blunder as a way to learn. When you're creating a company, you often get paralyzed, "I can't mess up, I can't mess up." But actually you should be trying lots of things and seeing very quickly what doesn't work, and of course learning from it. Just don't be afraid of failure. That's really the lesson I learned very early on.
+          </p>
+
+          <h2>Are there resources, books, blogs, that helped you master PostgreSQL?</h2>
+          <p>
+            Not really. I'd say there are enormous amounts of resources out there, so I wouldn't point to one specific place, what you can do with Postgres is just immense. I'd rather suggest going into a domain that genuinely interests you, whether that's vectors, geospatial, anonymization. It's vast, these are whole worlds. Even within the Postgres community, there's no single specialist who knows everything. So I'd say: go find the zones that interest you. Each little world has its own resources.
+          </p>
+
+          <h2>Outside of tech, how do you spend your time?</h2>
+          <p>
+            I live in a small village in the middle of France, so I have quite a few community activities. Notably I'm involved with a château where we run cultural activities and initiatives around food, specifically what's called food social security: how do we make sure everyone can eat their fill with healthy products while farmers are properly compensated. So that has nothing to do with tech. I deliberately try to do something other than computing in my free time.
+          </p>
+
+          <h2>Is there anything you'd like to share with readers, a project, a reflection?</h2>
+          <p>
+            Yes, I wanted to wrap up with a bit of promotion for a project we just launched called The Cryptic Elephant, which aims to encrypt data in PostgreSQL. It's a big, important topic. We're working on transparent encryption, what's called TDE. A lot of people have tried this over the last ten years, but we're taking a somewhat different, more innovative approach. If anyone's interested, it's a niche market, primarily banks, insurance companies, and government organizations, but it's still a significant niche. We're in a phase of development and creativity on this project and we're very open to anyone who'd like to contribute or help move it forward. The link is on GitLab: <a href="https://gitlab.com/dalibo/the_cryptic_elephant" target="_blank" rel="noreferrer">gitlab.com/dalibo/the_cryptic_elephant</a>.
+          </p>
+
+          <h2>Links</h2>
+          <ul>
+            <li>
+              <a href="https://gitlab.com/dalibo/the_cryptic_elephant" target="_blank" rel="noreferrer">The Cryptic Elephant</a>
+            </li>
+            <li>
+              <a href="https://labs.dalibo.com/" target="_blank" rel="noreferrer">Dalibo Labs</a>
+            </li>
+            <li>
+              <a href="https://labs.dalibo.com/postgresql_anonymizer" target="_blank" rel="noreferrer">PostgreSQL Anonymizer</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/watch?v=8wJsEgTT8Y4" target="_blank" rel="noreferrer">Damien's latest talk</a>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../site.js"></script>
+</body>
+
+</html>
