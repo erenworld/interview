@@ -1,513 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DatabaseStory</title>
-    <script>
-      (() => {
-        const stored = localStorage.getItem("databasestory-theme");
-        const theme =
-          stored ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
-    <link rel="stylesheet" href="./style.css?v=20260515a" />
-  </head>
-  <body class="home-page">
-    <div class="site-shell">
-      <header class="topbar">
-        <div class="topbar-brand">
-          <a class="brand" href="./index.html">DatabaseStory</a>
-        </div>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-        >
-          <span class="nav-toggle-lines"><span></span></span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DatabaseStory</title>
+  <script>
+    (() => {
+      const stored = localStorage.getItem("databasestory-theme");
+      const theme =
+        stored ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="./style.css?v=20260515a" />
+</head>
+
+<body class="home-page">
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <a class="brand" href="./index.html">DatabaseStory</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-lines"><span></span></span>
+      </button>
+      <div class="topbar-tools">
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="./about.html">About</a>
+          <a class="menu-card" href="./index.html#interviews">Interviews</a>
+          <a class="menu-card" href="./index.html#newsletter">Newsletter</a>
+          <a class="menu-card" href="./index.html#podcast">Podcast</a>
+          <a class="menu-card" href="./jobs.html">Jobs</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.89998 0.499976C2.89998 0.279062 2.72089 0.0999756 2.49998 0.0999756C2.27906 0.0999756 2.09998 0.279062 2.09998 0.499976V1.09998H1.49998C1.27906 1.09998 1.09998 1.27906 1.09998 1.49998C1.09998 1.72089 1.27906 1.89998 1.49998 1.89998H2.09998V2.49998C2.09998 2.72089 2.27906 2.89998 2.49998 2.89998C2.72089 2.89998 2.89998 2.72089 2.89998 2.49998V1.89998H3.49998C3.72089 1.89998 3.89998 1.72089 3.89998 1.49998C3.89998 1.27906 3.72089 1.09998 3.49998 1.09998H2.89998V0.499976ZM5.89998 3.49998C5.89998 3.27906 5.72089 3.09998 5.49998 3.09998C5.27906 3.09998 5.09998 3.27906 5.09998 3.49998V4.09998H4.49998C4.27906 4.09998 4.09998 4.27906 4.09998 4.49998C4.09998 4.72089 4.27906 4.89998 4.49998 4.89998H5.09998V5.49998C5.09998 5.72089 5.27906 5.89998 5.49998 5.89998C5.72089 5.89998 5.89998 5.72089 5.89998 5.49998V4.89998H6.49998C6.72089 4.89998 6.89998 4.72089 6.89998 4.49998C6.89998 4.27906 6.72089 4.09998 6.49998 4.09998H5.89998V3.49998ZM1.89998 6.49998C1.89998 6.27906 1.72089 6.09998 1.49998 6.09998C1.27906 6.09998 1.09998 6.27906 1.09998 6.49998V7.09998H0.499976C0.279062 7.09998 0.0999756 7.27906 0.0999756 7.49998C0.0999756 7.72089 0.279062 7.89998 0.499976 7.89998H1.09998V8.49998C1.09998 8.72089 1.27906 8.89997 1.49998 8.89997C1.72089 8.89997 1.89998 8.72089 1.89998 8.49998V7.89998H2.49998C2.72089 7.89998 2.89998 7.72089 2.89998 7.49998C2.89998 7.27906 2.72089 7.09998 2.49998 7.09998H1.89998V6.49998ZM8.54406 0.98184L8.24618 0.941586C8.03275 0.917676 7.90692 1.1655 8.02936 1.34194C8.17013 1.54479 8.29981 1.75592 8.41754 1.97445C8.91878 2.90485 9.20322 3.96932 9.20322 5.10022C9.20322 8.37201 6.82247 11.0878 3.69887 11.6097C3.45736 11.65 3.20988 11.6772 2.96008 11.6906C2.74563 11.702 2.62729 11.9535 2.77721 12.1072C2.84551 12.1773 2.91535 12.2458 2.98667 12.3128L3.05883 12.3795L3.31883 12.6045L3.50684 12.7532L3.62796 12.8433L3.81491 12.9742L3.99079 13.089C4.11175 13.1651 4.23536 13.2375 4.36157 13.3059L4.62496 13.4412L4.88553 13.5607L5.18837 13.6828L5.43169 13.7686C5.56564 13.8128 5.70149 13.8529 5.83857 13.8885C5.94262 13.9155 6.04767 13.9401 6.15405 13.9622C6.27993 13.9883 6.40713 14.0109 6.53544 14.0298L6.85241 14.0685L7.11934 14.0892C7.24637 14.0965 7.37436 14.1002 7.50322 14.1002C11.1483 14.1002 14.1032 11.1453 14.1032 7.50023C14.1032 7.25044 14.0893 7.00389 14.0623 6.76131L14.0255 6.48407C13.991 6.26083 13.9453 6.04129 13.8891 5.82642C13.8213 5.56709 13.7382 5.31398 13.6409 5.06881L13.5279 4.80132L13.4507 4.63542L13.3766 4.48666C13.2178 4.17773 13.0353 3.88295 12.8312 3.60423L12.6782 3.40352L12.4793 3.16432L12.3157 2.98361L12.1961 2.85951L12.0355 2.70246L11.8134 2.50184L11.4925 2.24191L11.2483 2.06498L10.9562 1.87446L10.6346 1.68894L10.3073 1.52378L10.1938 1.47176L9.95488 1.3706L9.67791 1.2669L9.42566 1.1846L9.10075 1.09489L8.83599 1.03486L8.54406 0.98184ZM10.4032 5.30023C10.4032 4.27588 10.2002 3.29829 9.83244 2.40604C11.7623 3.28995 13.1032 5.23862 13.1032 7.50023C13.1032 10.593 10.596 13.1002 7.50322 13.1002C6.63646 13.1002 5.81597 12.9036 5.08355 12.5522C6.5419 12.0941 7.81081 11.2082 8.74322 10.0416C8.87963 10.2284 9.10028 10.3497 9.34928 10.3497C9.76349 10.3497 10.0993 10.0139 10.0993 9.59971C10.0993 9.24256 9.84965 8.94373 9.51535 8.86816C9.57741 8.75165 9.63653 8.63334 9.6926 8.51332C9.88358 8.63163 10.1088 8.69993 10.35 8.69993C11.0403 8.69993 11.6 8.14028 11.6 7.44993C11.6 6.75976 11.0406 6.20024 10.3505 6.19993C10.3853 5.90487 10.4032 5.60464 10.4032 5.30023Z"
+                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg></span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z"
+                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg></span>
         </button>
-        <div class="topbar-tools">
-          <nav class="topnav" aria-label="Main navigation">
-            <a class="menu-card" href="./about.html">About</a>
-            <a class="menu-card" href="./index.html#interviews">Interviews</a>
-            <a class="menu-card" href="./index.html#newsletter">Newsletter</a>
-            <a class="menu-card" href="./index.html#podcast">Podcast</a>
-            <a class="menu-card" href="./jobs.html">Jobs</a>
-          </nav>
-          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-            <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.89998 0.499976C2.89998 0.279062 2.72089 0.0999756 2.49998 0.0999756C2.27906 0.0999756 2.09998 0.279062 2.09998 0.499976V1.09998H1.49998C1.27906 1.09998 1.09998 1.27906 1.09998 1.49998C1.09998 1.72089 1.27906 1.89998 1.49998 1.89998H2.09998V2.49998C2.09998 2.72089 2.27906 2.89998 2.49998 2.89998C2.72089 2.89998 2.89998 2.72089 2.89998 2.49998V1.89998H3.49998C3.72089 1.89998 3.89998 1.72089 3.89998 1.49998C3.89998 1.27906 3.72089 1.09998 3.49998 1.09998H2.89998V0.499976ZM5.89998 3.49998C5.89998 3.27906 5.72089 3.09998 5.49998 3.09998C5.27906 3.09998 5.09998 3.27906 5.09998 3.49998V4.09998H4.49998C4.27906 4.09998 4.09998 4.27906 4.09998 4.49998C4.09998 4.72089 4.27906 4.89998 4.49998 4.89998H5.09998V5.49998C5.09998 5.72089 5.27906 5.89998 5.49998 5.89998C5.72089 5.89998 5.89998 5.72089 5.89998 5.49998V4.89998H6.49998C6.72089 4.89998 6.89998 4.72089 6.89998 4.49998C6.89998 4.27906 6.72089 4.09998 6.49998 4.09998H5.89998V3.49998ZM1.89998 6.49998C1.89998 6.27906 1.72089 6.09998 1.49998 6.09998C1.27906 6.09998 1.09998 6.27906 1.09998 6.49998V7.09998H0.499976C0.279062 7.09998 0.0999756 7.27906 0.0999756 7.49998C0.0999756 7.72089 0.279062 7.89998 0.499976 7.89998H1.09998V8.49998C1.09998 8.72089 1.27906 8.89997 1.49998 8.89997C1.72089 8.89997 1.89998 8.72089 1.89998 8.49998V7.89998H2.49998C2.72089 7.89998 2.89998 7.72089 2.89998 7.49998C2.89998 7.27906 2.72089 7.09998 2.49998 7.09998H1.89998V6.49998ZM8.54406 0.98184L8.24618 0.941586C8.03275 0.917676 7.90692 1.1655 8.02936 1.34194C8.17013 1.54479 8.29981 1.75592 8.41754 1.97445C8.91878 2.90485 9.20322 3.96932 9.20322 5.10022C9.20322 8.37201 6.82247 11.0878 3.69887 11.6097C3.45736 11.65 3.20988 11.6772 2.96008 11.6906C2.74563 11.702 2.62729 11.9535 2.77721 12.1072C2.84551 12.1773 2.91535 12.2458 2.98667 12.3128L3.05883 12.3795L3.31883 12.6045L3.50684 12.7532L3.62796 12.8433L3.81491 12.9742L3.99079 13.089C4.11175 13.1651 4.23536 13.2375 4.36157 13.3059L4.62496 13.4412L4.88553 13.5607L5.18837 13.6828L5.43169 13.7686C5.56564 13.8128 5.70149 13.8529 5.83857 13.8885C5.94262 13.9155 6.04767 13.9401 6.15405 13.9622C6.27993 13.9883 6.40713 14.0109 6.53544 14.0298L6.85241 14.0685L7.11934 14.0892C7.24637 14.0965 7.37436 14.1002 7.50322 14.1002C11.1483 14.1002 14.1032 11.1453 14.1032 7.50023C14.1032 7.25044 14.0893 7.00389 14.0623 6.76131L14.0255 6.48407C13.991 6.26083 13.9453 6.04129 13.8891 5.82642C13.8213 5.56709 13.7382 5.31398 13.6409 5.06881L13.5279 4.80132L13.4507 4.63542L13.3766 4.48666C13.2178 4.17773 13.0353 3.88295 12.8312 3.60423L12.6782 3.40352L12.4793 3.16432L12.3157 2.98361L12.1961 2.85951L12.0355 2.70246L11.8134 2.50184L11.4925 2.24191L11.2483 2.06498L10.9562 1.87446L10.6346 1.68894L10.3073 1.52378L10.1938 1.47176L9.95488 1.3706L9.67791 1.2669L9.42566 1.1846L9.10075 1.09489L8.83599 1.03486L8.54406 0.98184ZM10.4032 5.30023C10.4032 4.27588 10.2002 3.29829 9.83244 2.40604C11.7623 3.28995 13.1032 5.23862 13.1032 7.50023C13.1032 10.593 10.596 13.1002 7.50322 13.1002C6.63646 13.1002 5.81597 12.9036 5.08355 12.5522C6.5419 12.0941 7.81081 11.2082 8.74322 10.0416C8.87963 10.2284 9.10028 10.3497 9.34928 10.3497C9.76349 10.3497 10.0993 10.0139 10.0993 9.59971C10.0993 9.24256 9.84965 8.94373 9.51535 8.86816C9.57741 8.75165 9.63653 8.63334 9.6926 8.51332C9.88358 8.63163 10.1088 8.69993 10.35 8.69993C11.0403 8.69993 11.6 8.14028 11.6 7.44993C11.6 6.75976 11.0406 6.20024 10.3505 6.19993C10.3853 5.90487 10.4032 5.60464 10.4032 5.30023Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></span>
-            <span class="theme-icon theme-icon-sun" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.2239 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></span>
-          </button>
-        </div>
-      </header>
+      </div>
+    </header>
 
-      <main class="home-main">
-        <section class="home-hero">
-          <div class="home-hero-copy">
-            <h1 class="home-title">
-              Interviews with the people who build the tools we use every day.
-            </h1>
-            <p class="home-description">
-              Interviews with the people building databases and the tools around them.
-            </p>
-            <div class="hero-actions">
-              <a class="hero-button primary" href="./index.html#interviews">Read articles</a>
-            </div>
+    <main class="home-main">
+      <section class="home-hero">
+        <div class="home-hero-copy">
+          <h1 class="home-title">
+            Interviews with the people who build the tools we use every day.
+          </h1>
+          <p class="home-description">
+            Interviews with the people building databases and the tools around them.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-button primary" href="./index.html#interviews">Read articles</a>
+          </div>
           <p class="hero-subscribe-status" data-beehiiv-status aria-live="polite"></p>
-          </div>
-          <div class="hero-device" aria-hidden="true">
-            <div class="hero-device-shell">
-              <div class="hero-device-notch">
-                <span class="hero-device-speaker"></span>
-                <span class="hero-device-camera"></span>
-              </div>
-              <div class="hero-device-screen">
-                <div class="hero-article-preview">
-                  <p class="hero-article-kicker">Interview</p>
-                  <h2 class="hero-article-title">Franck Pachot</h2>
-                  <p class="hero-article-meta">April 29, 2026 by Eren Turkoglu</p>
-                  <div class="hero-article-tags">
-                    <span>Interviews</span>
-                    <span>Databases</span>
-                    <span>Postgres</span>
-                    <span>MongoDB</span>
-                  </div>
-                  <div class="hero-article-section">
-                    <p class="hero-article-question">Can you introduce yourself?</p>
-                    <p class="hero-article-excerpt">
-                      My name is Franck Pachot, I have been a Developer Advocate
-                      at MongoDB for a little over a year. I will be at Microsoft
-                      starting in June 2026.
-                    </p>
-                  </div>
-                  <div class="hero-article-section">
-                    <p class="hero-article-question">Did you follow a formal education?</p>
-                    <p class="hero-article-excerpt">
-                      I studied MIAGE at Paris-Sud, a master’s degree combining
-                      computer science, information systems, and business
-                      management.
-                    </p>
-                  </div>
+        </div>
+        <div class="hero-device" aria-hidden="true">
+          <div class="hero-device-shell">
+            <div class="hero-device-notch">
+              <span class="hero-device-speaker"></span>
+              <span class="hero-device-camera"></span>
+            </div>
+            <div class="hero-device-screen">
+              <div class="hero-article-preview">
+                <p class="hero-article-kicker">Interview</p>
+                <h2 class="hero-article-title">Franck Pachot</h2>
+                <p class="hero-article-meta">April 29, 2026 by Eren Turkoglu</p>
+                <div class="hero-article-tags">
+                  <span>Interviews</span>
+                  <span>Databases</span>
+                  <span>Postgres</span>
+                  <span>MongoDB</span>
+                </div>
+                <div class="hero-article-section">
+                  <p class="hero-article-question">Can you introduce yourself?</p>
+                  <p class="hero-article-excerpt">
+                    My name is Franck Pachot, I have been a Developer Advocate
+                    at MongoDB for a little over a year. I will be at Microsoft
+                    starting in June 2026.
+                  </p>
+                </div>
+                <div class="hero-article-section">
+                  <p class="hero-article-question">Did you follow a formal education?</p>
+                  <p class="hero-article-excerpt">
+                    I studied MIAGE at Paris-Sud, a master’s degree combining
+                    computer science, information systems, and business
+                    management.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="hero-logo-strip" aria-label="Technologies covered">
-          <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-google" src="./assets/google.png" alt="Google logo" /></span>
-          <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-microsoft" src="./assets/microsoft.png" alt="Microsoft logo" /></span>
-          <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-aws" src="./assets/aws.png" alt="AWS logo" /></span>
-          <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-rds" src="./assets/turso-logo-dark.svg" alt="Turso logo" /></span>
-          <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-mongodb" src="./assets/MongoDB-Logo.svg.png" alt="MongoDB logo" /></span>
-          <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-yuga" src="./assets/yuga.svg" alt="Yuga logo" /></span>
-        </section>
+      <section class="hero-logo-strip" aria-label="Technologies covered">
+        <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-google" src="./assets/google.png"
+            alt="Google logo" /></span>
+        <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-microsoft" src="./assets/microsoft.png"
+            alt="Microsoft logo" /></span>
+        <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-aws" src="./assets/aws.png"
+            alt="AWS logo" /></span>
+        <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-rds" src="./assets/turso-logo-dark.svg"
+            alt="Turso logo" /></span>
+        <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-mongodb"
+            src="./assets/MongoDB-Logo.svg.png" alt="MongoDB logo" /></span>
+        <span class="hero-logo-item"><img class="hero-logo-image hero-logo-image-yuga" src="./assets/yuga.svg"
+            alt="Yuga logo" /></span>
+      </section>
 
-        <section class="home-section" id="interviews">
-          <p class="section-label">Topics</p>
-          <div class="filter-row">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="PostgreSQL">PostgreSQL</button>
-            <button class="filter-btn" data-filter="MongoDB">MongoDB</button>
-            <button class="filter-btn" data-filter="Open Source">Open Source</button>
-            <button class="filter-btn" data-filter="Cloud">Cloud</button>
-            <button class="filter-btn" data-filter="Databases">Databases</button>
-          </div>
-        </section>
+      <section class="home-section" id="interviews">
+        <p class="section-label">Topics</p>
+        <div class="filter-row">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="PostgreSQL">PostgreSQL</button>
+          <button class="filter-btn" data-filter="MongoDB">MongoDB</button>
+          <button class="filter-btn" data-filter="Open Source">Open Source</button>
+          <button class="filter-btn" data-filter="Cloud">Cloud</button>
+          <button class="filter-btn" data-filter="Databases">Databases</button>
+        </div>
+      </section>
 
-        <section class="home-section">
-          <p class="section-label">Interviews</p>
-          <div class="article-list">
-            <a class="article-card" href="./articles/damien-clochard.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/damien_clochard.jpg"
-                  alt="Portrait of Damien Clochard"
-                />
-                <div>
-                  <h2>Damien Clochard</h2>
-                  <p class="article-role">Co-founder &amp; Product Owner @ Dalibo</p>
-                  <p class="article-meta">June 23, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Damien talks about twenty years of PostgreSQL, building Dalibo
-                as a cooperative, PostgreSQL.FR, open source governance, Rust,
-                PGRX, and the future of data in the AI era.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Open Source</span>
-                <span class="tag">Databases</span>
-              </div>
-            </a>
-
-            <a class="article-card" href="./articles/ege-gunes.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/ege.jpeg"
-                  alt="Portrait of Ege Güneş"
-                />
-                <div>
-                  <h2>Ege Güneş</h2>
-                  <p class="article-role">Team Lead, Kubernetes Operators @ Percona</p>
-                  <p class="article-meta">June 2, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Ege talks about moving from law to software, discovering open
-                source, building database operators at Percona, and why Linux
-                and distributed systems matter for database engineers.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">Percona</span>
-                <span class="tag">Kubernetes</span>
-                <span class="tag">Databases</span>
-                <span class="tag">Open Source</span>
-              </div>
-            </a>
-
-            <a class="article-card" href="./articles/matt-cornillon.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/matt.png"
-                  alt="Portrait of Matt Cornillon"
-                />
-                <div>
-                  <h2>Matt Cornillon</h2>
-                  <p class="article-role">Data Cloud &amp; AI Specialist @ Google</p>
-                  <p class="article-meta">June 1, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Matt talks about his path through Oracle and PostgreSQL, his
-                work with Postgres France, joining Google, and why database
-                people need to engage with AI.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">Google</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Cloud</span>
-                <span class="tag">Open Source</span>
-              </div>
-            </a>
-
-            <a class="article-card" href="./articles/cedric-villemain.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/cedric2.jpg"
-                  alt="Portrait of Cedric Villemain"
-                />
-                <div>
-                  <h2>Cedric Villemain</h2>
-                  <p class="article-role">President / CEO @Data bene</p>
-                  <p class="article-meta">May 30, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Cedric talks about growing into PostgreSQL through Overblog,
-                building Data Bene after 2ndQuadrant France, and why critical
-                thinking matters even more in the AI era.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Open Source</span>
-                <span class="tag">Databases</span>
-              </div>
-            </a>
-
-            <a class="article-card" href="./articles/mikael-francoeur.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/mikael.jpg"
-                  alt="Portrait of Mikaël Francoeur"
-                />
-                <div>
-                  <h2>Mikaël Francoeur</h2>
-                  <p class="article-role">Software Engineer @ Turso</p>
-                  <p class="article-meta">May 16, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Mikaël talks about his unusual path from musicology to
-                databases, how open source helped him join Turso, and why
-                reliability matters even more in the AI era.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">Databases</span>
-                <span class="tag">Open Source</span>
-                <span class="tag">SQLite</span>
-              </div>
-            </a>
-
-            <a class="article-card" href="./articles/franck-pachot.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/franck.jpeg"
-                  alt="Portrait of Franck Pachot"
-                />
-                <div>
-                  <h2>Franck Pachot</h2>
-                  <p class="article-role">Developer Advocate @ MongoDB</p>
-                  <p class="article-meta">April 29, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Franck talks about his career across databases, his work as a
-                Developer Advocate, and his move from YugabyteDB to MongoDB.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">Databases</span>
-                <span class="tag">Postgres</span>
-                <span class="tag">MongoDB</span>
-              </div>
-            </a>
-
-            <a class="article-card" href="./articles/bertrand-drouvot.html">
-              <div class="article-card-header">
-                <img
-                  class="article-avatar"
-                  src="./assets/bertrand.jpeg"
-                  alt="Portrait of Bertrand Drouvot"
-                />
-                <div>
-                  <h2>Bertrand Drouvot</h2>
-                  <p class="article-role">Senior Database Engineer @ AWS</p>
-                  <p class="article-meta">March 23, 2026 by Eren Turkoglu</p>
-                </div>
-              </div>
-              <p class="article-excerpt">
-                Bertrand talks about his career, his move from Oracle to
-                PostgreSQL, and how he joined AWS.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Interviews</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Open Source</span>
-                <span class="tag">AWS</span>
-              </div>
-            </a>
-
-          </div>
-        </section>
-
-        <section class="home-section">
-          <div class="home-section-head">
-            <p class="section-label">Job Openings</p>
-            <a class="sidebar-link" href="./jobs.html">See all jobs</a>
-          </div>
-          <div class="jobs-preview">
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
-                target="_blank"
-                rel="noreferrer"
-                >ParadeDB</a
-              >
-              <a
-                class="job-title"
-                href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Database Engineer — Postgres Internals
-              </a>
-              <div class="tag-row">
-                <span class="tag">ParadeDB</span>
+      <section class="home-section">
+        <p class="section-label">Interviews</p>
+        <div class="article-list">
+          <a class="article-card" href="./articles/yves-colin.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/yves.jpeg" alt="Portrait of Yves Colin" />
+              <div>
+                <h2>Yves Colin</h2>
+                <p class="article-role">Customer Engineer Data Management</p>
+                <p class="article-meta">July 3, 2026 by Eren Turkoglu</p>
               </div>
             </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
-                target="_blank"
-                rel="noreferrer"
-                >ParadeDB</a
-              >
-              <a
-                class="job-title"
-                href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
-                target="_blank"
-                rel="noreferrer"
-                >Database Engineer — OLAP Internals</a
-              >
-              <div class="tag-row">
-                <span class="tag">ParadeDB</span>
-              </div>
-            </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
-                target="_blank"
-                rel="noreferrer"
-                >ParadeDB</a
-              >
-              <a
-                class="job-title"
-                href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
-                target="_blank"
-                rel="noreferrer"
-                >Infrastructure Engineer — Postgres Platform</a
-              >
-              <div class="tag-row">
-                <span class="tag">ParadeDB</span>
-              </div>
-            </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://www.thenile.dev/careers/founding-engineer-database-internals"
-                target="_blank"
-                rel="noreferrer"
-                >Nile</a
-              >
-              <a
-                class="job-title"
-                href="https://www.thenile.dev/careers/founding-engineer-database-internals"
-                target="_blank"
-                rel="noreferrer"
-                >Founding Engineer — Database Internals</a
-              >
-              <div class="tag-row">
-                <span class="tag">Nile</span>
-              </div>
-            </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
-                target="_blank"
-                rel="noreferrer"
-                >Nile</a
-              >
-              <a
-                class="job-title"
-                href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
-                target="_blank"
-                rel="noreferrer"
-                >Founding Engineer — Cloud Infrastructure</a
-              >
-              <div class="tag-row">
-                <span class="tag">Nile</span>
-              </div>
-            </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
-                target="_blank"
-                rel="noreferrer"
-                >turbopuffer</a
-              >
-              <a
-                class="job-title"
-                href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
-                target="_blank"
-                rel="noreferrer"
-                >Database Engineer</a
-              >
-              <div class="tag-row">
-                <span class="tag">turbopuffer</span>
-              </div>
-            </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009"
-                target="_blank"
-                rel="noreferrer"
-                >PlanetScale</a
-              >
-              <a
-                class="job-title"
-                href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009"
-                target="_blank"
-                rel="noreferrer"
-                >Software Engineer — Infrastructure</a
-              >
-              <div class="tag-row">
-                <span class="tag">PlanetScale</span>
-              </div>
-            </div>
-
-            <div class="job-card">
-              <a
-                class="job-company"
-                href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009"
-                target="_blank"
-                rel="noreferrer"
-                >PlanetScale</a
-              >
-              <a
-                class="job-title"
-                href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009"
-                target="_blank"
-                rel="noreferrer"
-                >Solutions Engineer</a
-              >
-              <div class="tag-row">
-                <span class="tag">PlanetScale</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="home-section" id="newsletter">
-          <p class="section-label">Newsletter</p>
-          <div class="readme-card">
-            <p>
-              Get new DatabaseStory interviews, notes, and database links in
-              your inbox.
+            <p class="article-excerpt">
+              Yves talks about thirty years in databases, his path from DBA and architecture roles to AWS and Google,
+              his involvement with PostgreSQL France, AI, and advice for juniors.
             </p>
-            <a
-              class="hero-button primary"
-              href="https://databasestory.substack.com/subscribe"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Subscribe
-            </a>
-          </div>
-        </section>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">Google</span>
+              <span class="tag">AWS</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Databases</span>
+            </div>
+          </a>
 
-        <section class="home-section" id="podcast">
-          <p class="section-label">Podcast</p>
-          <div class="readme-card">
-            <p>
-              Long-form audio conversations are planned here, centered on
-              database engineering, systems work, and the people behind them.
+          <a class="article-card" href="./articles/damien-clochard.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/damien_clochard.jpg" alt="Portrait of Damien Clochard" />
+              <div>
+                <h2>Damien Clochard</h2>
+                <p class="article-role">Co-founder &amp; Product Owner @ Dalibo</p>
+                <p class="article-meta">June 23, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Damien talks about twenty years of PostgreSQL, building Dalibo
+              as a cooperative, PostgreSQL.FR, open source governance, Rust,
+              PGRX, and the future of data in the AI era.
             </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Databases</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="./articles/ege-gunes.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/ege.jpeg" alt="Portrait of Ege Güneş" />
+              <div>
+                <h2>Ege Güneş</h2>
+                <p class="article-role">Team Lead, Kubernetes Operators @ Percona</p>
+                <p class="article-meta">June 2, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Ege talks about moving from law to software, discovering open
+              source, building database operators at Percona, and why Linux
+              and distributed systems matter for database engineers.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">Percona</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Databases</span>
+              <span class="tag">Open Source</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="./articles/matt-cornillon.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/matt.png" alt="Portrait of Matt Cornillon" />
+              <div>
+                <h2>Matt Cornillon</h2>
+                <p class="article-role">Data Cloud &amp; AI Specialist @ Google</p>
+                <p class="article-meta">June 1, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Matt talks about his path through Oracle and PostgreSQL, his
+              work with Postgres France, joining Google, and why database
+              people need to engage with AI.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">Google</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Cloud</span>
+              <span class="tag">Open Source</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="./articles/cedric-villemain.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/cedric2.jpg" alt="Portrait of Cedric Villemain" />
+              <div>
+                <h2>Cedric Villemain</h2>
+                <p class="article-role">President / CEO @Data bene</p>
+                <p class="article-meta">May 30, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Cedric talks about growing into PostgreSQL through Overblog,
+              building Data Bene after 2ndQuadrant France, and why critical
+              thinking matters even more in the AI era.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Databases</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="./articles/mikael-francoeur.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/mikael.jpg" alt="Portrait of Mikaël Francoeur" />
+              <div>
+                <h2>Mikaël Francoeur</h2>
+                <p class="article-role">Software Engineer @ Turso</p>
+                <p class="article-meta">May 16, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Mikaël talks about his unusual path from musicology to
+              databases, how open source helped him join Turso, and why
+              reliability matters even more in the AI era.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">Databases</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">SQLite</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="./articles/franck-pachot.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/franck.jpeg" alt="Portrait of Franck Pachot" />
+              <div>
+                <h2>Franck Pachot</h2>
+                <p class="article-role">Developer Advocate @ MongoDB</p>
+                <p class="article-meta">April 29, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Franck talks about his career across databases, his work as a
+              Developer Advocate, and his move from YugabyteDB to MongoDB.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">Databases</span>
+              <span class="tag">Postgres</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </a>
+
+          <a class="article-card" href="./articles/bertrand-drouvot.html">
+            <div class="article-card-header">
+              <img class="article-avatar" src="./assets/bertrand.jpeg" alt="Portrait of Bertrand Drouvot" />
+              <div>
+                <h2>Bertrand Drouvot</h2>
+                <p class="article-role">Senior Database Engineer @ AWS</p>
+                <p class="article-meta">March 23, 2026 by Eren Turkoglu</p>
+              </div>
+            </div>
+            <p class="article-excerpt">
+              Bertrand talks about his career, his move from Oracle to
+              PostgreSQL, and how he joined AWS.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Interviews</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">AWS</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="home-section">
+        <div class="home-section-head">
+          <p class="section-label">Job Openings</p>
+          <a class="sidebar-link" href="./jobs.html">See all jobs</a>
+        </div>
+        <div class="jobs-preview">
+          <div class="job-card">
+            <a class="job-company" href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
+              target="_blank" rel="noreferrer">ParadeDB</a>
+            <a class="job-title" href="https://paradedb.notion.site/?p=14eea4ce9deb803480e3f468d24caa20&pm=s"
+              target="_blank" rel="noreferrer">
+              Database Engineer — Postgres Internals
+            </a>
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
           </div>
-        </section>
 
-            </main>
+          <div class="job-card">
+            <a class="job-company" href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
+              target="_blank" rel="noreferrer">ParadeDB</a>
+            <a class="job-title" href="https://paradedb.notion.site/?p=172ea4ce9deb80898ef5d5097bd65544&pm=s"
+              target="_blank" rel="noreferrer">Database Engineer — OLAP Internals</a>
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
 
-    </div>
-    <script src="./site.js?v=20260515a"></script>
-  </body>
+          <div class="job-card">
+            <a class="job-company" href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
+              target="_blank" rel="noreferrer">ParadeDB</a>
+            <a class="job-title" href="https://paradedb.notion.site/?p=1a5ea4ce9deb80aeb0ddd5cbbd10f654&pm=s"
+              target="_blank" rel="noreferrer">Infrastructure Engineer — Postgres Platform</a>
+            <div class="tag-row">
+              <span class="tag">ParadeDB</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a class="job-company" href="https://www.thenile.dev/careers/founding-engineer-database-internals"
+              target="_blank" rel="noreferrer">Nile</a>
+            <a class="job-title" href="https://www.thenile.dev/careers/founding-engineer-database-internals"
+              target="_blank" rel="noreferrer">Founding Engineer — Database Internals</a>
+            <div class="tag-row">
+              <span class="tag">Nile</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a class="job-company" href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
+              target="_blank" rel="noreferrer">Nile</a>
+            <a class="job-title" href="https://www.thenile.dev/careers/founding-engineer-cloud-infrastructure"
+              target="_blank" rel="noreferrer">Founding Engineer — Cloud Infrastructure</a>
+            <div class="tag-row">
+              <span class="tag">Nile</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a class="job-company" href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
+              target="_blank" rel="noreferrer">turbopuffer</a>
+            <a class="job-title" href="https://turbopuffer.com/jobs?ashby_jid=317f14bf-49dc-46ae-a4d8-6aea3fa41ecc"
+              target="_blank" rel="noreferrer">Database Engineer</a>
+            <div class="tag-row">
+              <span class="tag">turbopuffer</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a class="job-company" href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009" target="_blank"
+              rel="noreferrer">PlanetScale</a>
+            <a class="job-title" href="https://job-boards.greenhouse.io/planetscale/jobs/4036240009" target="_blank"
+              rel="noreferrer">Software Engineer — Infrastructure</a>
+            <div class="tag-row">
+              <span class="tag">PlanetScale</span>
+            </div>
+          </div>
+
+          <div class="job-card">
+            <a class="job-company" href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009" target="_blank"
+              rel="noreferrer">PlanetScale</a>
+            <a class="job-title" href="https://job-boards.greenhouse.io/planetscale/jobs/4052805009" target="_blank"
+              rel="noreferrer">Solutions Engineer</a>
+            <div class="tag-row">
+              <span class="tag">PlanetScale</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section" id="newsletter">
+        <p class="section-label">Newsletter</p>
+        <div class="readme-card">
+          <p>
+            Get new DatabaseStory interviews, notes, and database links in
+            your inbox.
+          </p>
+          <a class="hero-button primary" href="https://databasestory.substack.com/subscribe" target="_blank"
+            rel="noreferrer">
+            Subscribe
+          </a>
+        </div>
+      </section>
+
+      <section class="home-section" id="podcast">
+        <p class="section-label">Podcast</p>
+        <div class="readme-card">
+          <p>
+            Long-form audio conversations are planned here, centered on
+            database engineering, systems work, and the people behind them.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+  <script src="./site.js?v=20260515a"></script>
+</body>
+
 </html>

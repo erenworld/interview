@@ -596,6 +596,15 @@ html[data-theme="dark"] .theme-icon-moon {
   .article-card h2 {
     background-image: none;
   }
+
+  .article-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .article-nav-card + .article-nav-card {
+    margin-top: -1px;
+    margin-left: 0;
+  }
 }
 
 .filter-row {
@@ -1432,8 +1441,63 @@ html[data-theme="dark"] .hero-logo-item {
   letter-spacing: 0.002em;
 }
 
+.article-page .article-body a {
+  color: #1f6feb;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
 .article-page .article-body ul {
   padding-left: 22px;
+}
+
+.article-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  max-width: 760px;
+  margin-top: 48px;
+}
+
+.article-nav-card {
+  min-height: 132px;
+  padding: 22px;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+}
+
+.article-nav-card + .article-nav-card {
+  margin-left: -1px;
+}
+
+.article-nav-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.article-nav-title {
+  display: block;
+  color: var(--ink);
+  font-family: var(--sans-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.article-nav-card a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.article-nav-card a:hover .article-nav-title {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
 }
 
 .article-page .article-body blockquote {
