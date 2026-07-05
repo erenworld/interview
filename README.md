@@ -16,6 +16,7 @@
 ## Intelligence artificielle
 - Comment utilises-tu les outils d'IA dans ton travail au quotidien ?
 - Quelles sont tes prédictions sur l'impact de l'IA sur l'avenir des bases de données ?
+- L'IA va t-elle remplacer les juniors ?
 
 ## Réflexions & conseils
 - Que dirais-tu à quelqu'un qui veut se lancer dans les bases de données sans savoir par où commencer ?
