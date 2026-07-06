@@ -9,7 +9,6 @@
 
 ## Carrière
 - À quoi ressemble une journée typique ?
-- Qu'est-ce qui t'a attirée vers ce rôle, après des années côté opérationnel en tant que DBA ?
 - Tu te souviens d'un projet ou d'une migration qui a marqué un vrai tournant dans ta carrière technique ?
 - Y a-t-il d'autres sujets ou communautés (Oracle, AWS, autres) auxquels tu contribues ou qui t'intéressent particulièrement ?
 
