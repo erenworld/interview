@@ -12,7 +12,6 @@
 - Tu es passée d'un rôle de DBA à la gestion d'équipes : qu'est-ce qui a motivé cette évolution ?
 - Après plusieurs années à mettre en place des services de monitoring et à gérer des équipes de support, utilises-tu des systèmes pour gagner du temps ? 
 - Avec toutes ces années d'expérience, est-ce que tu vois des erreurs que les gens commettent encore et encore avec les bases de données ?
-- Comment gère t-on une équipe ?
 - Comment rejoint-on une entreprise de base de données ?
 
 ## Intelligence artificielle
