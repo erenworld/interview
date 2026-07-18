@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flora Barriele</title>
+  <script>
+    (() => {
+      const stored = localStorage.getItem("databasestory-theme");
+      const theme =
+        stored ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css?v=20260515a" />
+</head>
+
+<body>
+  <div class="site-shell article-page">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <a class="brand" href="../index.html">DatabaseStory</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-lines"><span></span></span>
+      </button>
+      <div class="topbar-tools">
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="../about.html">About</a>
+          <a class="menu-card" href="../index.html#interviews">Interviews</a>
+          <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+          <a class="menu-card" href="../index.html#podcast">Podcast</a>
+          <a class="menu-card" href="../jobs.html">Jobs</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <main>
+        <a class="back-link" href="../index.html">&larr; Back</a>
+
+        <div class="article-header">
+          <h1>Flora Barriele</h1>
+          <p class="article-meta">
+            July 18, 2026 by <a href="../index.html">Eren Turkoglu</a>
+          </p>
+          <div class="tag-row">
+            <span class="tag">Interviews</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">AI</span>
+            <span class="tag">Databases</span>
+          </div>
+        </div>
+
+        <div class="article-body">
+          <h2>Can you introduce yourself?</h2>
+          <p>
+            My name is Flora, I'm 38 years old. I'm the mother of a 5-year-old little girl. I got my baccalaureate in
+            2005. I did a bachelor's degree in mathematics and computer science at Aix-Marseille University. Then a
+            master's degree in computer science, specializing in networks, at Université Pierre et Marie Curie in Paris.
+          </p>
+          <p>
+            After that, I got my first job at Orange, where I worked for six years without ever doing networking: I was
+            an application administrator and system administrator.
+          </p>
+          <p>
+            Toward the end of my time at Orange, I started getting into databases, because I had DBA colleagues sitting
+            right next to me in the office who were really nice. That's how I got into the world of databases. At one
+            point, they had a lot of work and were looking for help. I was pretty junior, and I offered to help even
+            though I didn't know anything about it.
+          </p>
+          <p>
+            They gave me small tasks that were easy for them but not for me, and that's how I got my foot in the door
+            with databases.
+          </p>
+          <p>
+            Then, I wanted to move to Switzerland. I wanted to move to Switzerland following a personal life choice. I
+            told myself I'd look for a position similar to what I was doing, in application and system administration,
+            but I also looked for database positions, thinking that I liked that and wanted to get into it, but without
+            experience. Nobody wanted me.
+          </p>
+          <p>
+            There was only one organization willing to take me: actually, it wasn't really a company, it was the State.
+            A public institution. Switzerland is divided into cantons, and each canton has its own government.
+          </p>
+          <p>
+            This government body was looking for a DBA with ten years of experience, which I absolutely didn't have. I wrote
+            to them saying I had no experience but wanted to learn. They were very open, they interviewed me, and it
+            went well. That's how I got my first DBA position, by presenting myself in "teach me" mode. It went very
+            well, I stayed there for four years.
+          </p>
+          <p>
+            This institution is called the État de Vaud, it's the local government of the canton of Vaud. That's also
+            where I met Franck Pachot, by the way.
+          </p>
+          <p>
+            After four years, I wanted a change. I was approached by a fairly well-known trading bank in Switzerland
+            called Swissquote. It attracted me right away, because it was a very dynamic environment, and on top of that
+            they were five minutes from my home. It was an interesting company with exciting technical projects, and I
+            clicked well with the recruitment team.
+          </p>
+          <p>
+            The transition was easier, because I already had four years of database experience thanks to the État de
+            Vaud, to whom I'll always be grateful for giving me my chance to become a DBA.
+          </p>
+
+          <h2>How did you end up in IT?</h2>
+          <p>
+            I've always liked it since I was a kid. As a teenager, I had a computer in my room, I played the Sims and
+            games like that. I was simply drawn to playing on the computer. Quite young, around 13-14 years old, I said
+            I wanted to do something in programming. As a little girl, I was convinced I wanted to make video games.
+          </p>
+          <p>
+            My father told me he supported me, that I could do whatever I wanted, but that if I wanted to make video
+            games,
+            I needed to study either the graphics side or, as he called it at the time, programming. I thought
+            programming sounded cool. So it really comes from a kid thing, having a computer available.
+          </p>
+
+          <h2>Today you're at Oracle. What exactly do you do at Oracle?</h2>
+          <p>
+            My job has a pretty funny title, it's called Black Belt. At Oracle, there are teams of people called Black
+            Belts, who are extremely sharp on one particular technology.
+          </p>
+          <p>
+            I've always had this side of me where I like to go very deep technically on a subject, I like to specialize,
+            I'm not comfortable when asked to be good at everything, I prefer to be strong in one specific area. The
+            Black Belt role suits me well, even though it's demanding.
+          </p>
+          <p>
+            I'm a Black Belt on an Oracle service called "Oracle AI Database@AWS." Basically, the Oracle database is
+            available on-premises, customers can install it themselves on their own servers. It can also run in Oracle's
+            cloud through various services.
+          </p>
+          <p>
+            And now, Oracle has partnered with major cloud providers, Azure, Google Cloud, and AWS, to offer the Oracle
+            database service directly through these other providers. My team is made up of the Black Belts for this
+            service at Azure, AWS, and Google Cloud, and we're split by specialty: those specialized in Azure, those
+            specialized in AWS, and those specialized in Google Cloud. I'm on AWS.
+          </p>
+          <p>
+            My job is to support the Oracle teams and the customers who want to implement these services, it's technical
+            support.
+          </p>
+
+          <h2>How did the move from Swissquote to Oracle happen?</h2>
+          <p>
+            Things were going very well at Swissquote. Oracle contacted me on LinkedIn saying they were looking for
+            someone with my skills in the Switzerland-France region, because they needed someone who spoke French.
+            That's what made me switch.
+          </p>
+          <p>
+            I was lucky, as with Swissquote, these companies actually came looking for me, which is quite flattering. I
+            don't know if I'm overselling it, but my LinkedIn profile was very well filled out, with all my experiences
+            detailed. I think that's a piece of advice I'd give to young people: a well-filled-out LinkedIn profile.
+          </p>
+          <p>
+            Companies come across profiles like that, and even with their AI search tools, they first find the
+            candidates who have provided their information thoroughly. That helped me a lot. That's how the transition
+            from Swissquote to Oracle happened, Oracle came looking for me with a very interesting offer.
+          </p>
+
+          <h2>What does a typical day at Oracle look like?</h2>
+          <p>
+            That's the interesting part, my job has two sides. There's the client side, where I'm in contact with
+            clients and their projects, I help them set up the service, understand it, solve their technical problems.
+          </p>
+          <p>
+            And there's a side I love, a bit of evangelism: promoting Oracle services, producing content (YouTube
+            videos, articles to publish online), training myself so I can then train others. It's not a huge part of my
+            time, but I really enjoy it. So there are really these two sides, which makes my days quite varied.
+          </p>
+          <p>
+            I don't really do development, it's more design, architecture, troubleshooting. I support clients at any
+            stage of their project: some have no idea what this service is and want to understand what it's about,
+            others already have the service up and running, but they have technical issues to solve. So my days are
+            never really the same.
+          </p>
+
+          <h2>That's a common thread I notice in everyone I've interviewed, giving talks, writing articles, there's a teaching aspect in everyone, especially among seniors. How do you explain that?</h2>
+          <p>
+            It's very interesting that you bring that up, because I got into that too. Why? Because I was told that the
+            best way to learn is to try to understand it yourself, then explain it back. And it's clear that it works.
+          </p>
+
+          <h2>Have you given talks? Do you still give them?</h2>
+          <p>
+            Yes, I gave quite a few before becoming a mom, it's not the child's fault, it's just that life changed.
+            Those were things I did in my free time, and now my free time is spent differently, temporarily, which is
+            normal. But yes, there was a time when I blogged a lot and gave quite a few talks.
+          </p>
+
+          <h2>I saw you also started a community or association</h2>
+          <p>
+            Yes, that's part of it too. It wasn't related to databases, it was more general, more around women in tech.
+          </p>
+
+          <h2>Do you remember a project or an issue, something you solved in your career, a pattern of problem-solving you often come back to?</h2>
+          <p>
+            Yes. I'm someone who's very lazy, and I love automation. That comes from my first internship supervisor at
+            Orange, who told me, jokingly, that the goal of our job was to stop working.
+          </p>
+          <p>
+            But in these jobs as a database or application administrator, real added value comes from automating
+            processes so you don't have to keep redoing the same manual tasks over and over. That lets you move on to
+            other things, more motivating and interesting things, and you keep building automations like that. I love
+            automation.
+          </p>
+          <p>
+            In my current job, I don't necessarily always have an automation project, because I've somewhat changed
+            roles. But for example, at Swissquote, I took part in a big automation project: we automated tasks that took
+            up a huge amount of our time in the team, and that nobody wanted to do, when it was our turn we'd grumble.
+          </p>
+          <p>
+            I think it was one of my most rewarding projects: identifying what's repetitive and tedious but important for
+            the company, and setting up something automated that runs with just monitoring. That frees up a lot of time
+            to do more interesting things. I've had the chance to do that several times in my career, and those are
+            really my favorite projects.
+          </p>
+
+          <h2>Speaking of automation, that brings us to AI. What do you think about everything that's happening?</h2>
+          <p>
+            I use AI a lot on a daily basis. I don't claim to be an AI expert or to do AI-oriented development. The
+            first thing that comes to mind is the productivity angle, if that's the right term. I'm a fairly organized
+            person, I like having my little notes, my little notebooks, organizing my things.
+          </p>
+          <p>
+            With AI, for example with Codex, I use it like a personal assistant: I talk to it, tell it what I have to do
+            this week, what's being
+            added, that I'm waiting for a reply from someone who hasn't answered yet, and I let it, with oversight from
+            me, make my to-do lists. It's a bit like Dumbledore's pensieve in Harry Potter, it's my organized pensieve.
+            That's a use of AI I really appreciate.
+          </p>
+          <p>
+            I'm French by birth, so my English isn't perfect. When I have to write emails, anything related to checking
+            the language, the phrasing, making sure I'm clear, I use AI for that. Those are pretty classic use cases I
+            think: summarizing meetings, projects, or sometimes reporting for executives who need information distilled
+            down as much as possible. It also helps me prepare presentations, internal or external, to get to the point
+            and cut out anything unnecessary.
+          </p>
+
+          <h2>What are your predictions about AI and databases?</h2>
+          <p>
+            On the automation side, I think there are already great things in place and available. I'll talk about
+            Oracle, because that's what I know: Oracle already provides AI tools to improve the lives of developers,
+            DBAs, and to improve the use and exploitation of data stored in databases by customers, by companies.
+          </p>
+          <p>
+            We can really modernize, secure, and speed up decision-making, break down certain barriers, for example no longer
+            having tons of heterogeneous systems where you constantly have to re-extract and ingest data in different
+            places. We can really recentralize and reduce complexity.
+          </p>
+          <p>
+            In terms of predictions, it's more complicated, I'm a bit cautious on that point. But I think AI can make
+            daily life easier for a lot of professions.
+          </p>
+
+          <h2>Does AI replace juniors?</h2>
+          <p>
+            It's funny you ask it that way. I have a stepson who's your age, I feel old! He's 21, he's a computer
+            science student like you, he's also going into his third year. I'm very interested in what he's learning in
+            class, and I see that AI is taught, guided in the right way at his university.
+          </p>
+          <p>
+            I find that AI is well integrated into learning, and it's a strength for you, the juniors. I'm convinced that AI won't replace you,
+            but that, on the contrary, you're a generation that knows how to juggle it, that knows how to make the most
+            of it, that knows, I hope, when and how to use it well.
+          </p>
+          <p>
+            One thing I have reservations about is everything related to technical learning. I hope that when a junior
+            wants to learn something, they can use AI as a tool, but without relying on it exclusively: going to the
+            source, cross-checking information, everything the brain does very well.
+          </p>
+          <p>
+            I hope juniors are already being trained in a world where AI is present, that they're taught to live with
+            it, to navigate with it, and to get the best out of it. I don't think you'll be replaced. I think you'll
+            skip past certain tasks that I, as a junior fresh out of university, had to do tediously for a year or two,
+            things you'll probably never know, and that will be all the better for you.
+          </p>
+          <p>
+            It's a bit like when I started working in databases: some things were already automated by technologies like
+            Oracle, and old DBA colleagues, twenty years older than me, told me I hadn't known such-and-such constraint
+            from the past. True, I hadn't known it, that's the normal evolution of our professions.
+          </p>
+
+          <h2>A few books that helped you?</h2>
+          <p>
+            Yes. For books, I have a few classics I could give you the references for.
+          </p>
+          <ul>
+            <li>Troubleshooting Oracle Performance &mdash; Christian Antognini</li>
+            <li>OCA: Oracle Database 12c Administrator Certified Associate Study Guide &mdash; Biju Thomas</li>
+          </ul>
+          <p>
+            But those are starting to get dated :-)
+          </p>
+          <p>
+            What helped me enormously was mainly content produced by the community. I did almost my entire career on
+            Oracle, so when I talk about community, it's mostly the Oracle community, but a lot of other communities,
+            like the PostgreSQL community for example, are also very well developed.
+          </p>
+          <p>
+            It was a lot of blogs, for things that were easy to access. Of course, as with AI, you have to keep a
+            critical eye on what's published, but
+            you learn a lot by relying on other people's experience, and by testing things yourself.
+          </p>
+          <p>
+            I really enjoyed going to local meetups, when I had the time and means, which isn't always practical for
+            everyone, but it's interesting. There's also a huge amount of good community content available on YouTube,
+            for those who prefer video format.
+          </p>
+          <p>
+            It's really the sharing of concrete experiences that helped me, and it made me want to produce content
+            myself. At first, it was purely selfish, just to learn, then it was to help
+            others.
+          </p>
+
+          <h2>What are some traits or habits you've noticed in top profiles?</h2>
+          <p>
+            I like this question. It's a somewhat personal answer, but I think they're curious people, curious about
+            technology of course, but also curious about people, in the sense that they're good listeners and empathetic.
+          </p>
+          <p>
+            I feel like a therapist saying this, but what always bothered me a bit in my career, especially when I was
+            young, was the "prison door" DBA stereotype: you ask him a question, he doesn't put himself in your shoes,
+            doesn't try to understand where you're at, what you're struggling with.
+          </p>
+          <p>
+            There's often this classic case where someone on the development side needs help with the database, and the
+            DBA gets defensive, saying that's not
+            how it should be done, instead of listening to the other person's problem, trying to put themselves in their
+            shoes and understand how to help them. So the qualities I remember are curiosity, listening, empathy. Those
+            are the things I'd remember more than technical skills, because technical skills can be learned, and nobody
+            can know all the technical details.
+          </p>
+          <p>
+            And also, one last thing, I think they're people who constantly question themselves, not in a negative way,
+            but who always ask themselves whether what they know today is still valid, whether the answer might have
+            changed since, whether their way of seeing things has evolved.
+          </p>
+          <p>
+            I always have this mindset: I'm 38 and I still feel like I'm junior. I always ask my colleagues what they
+            think, whether they'd change something, whether they have advice for me. I never see myself as having the
+            definitive answer.
+          </p>
+
+          <h2>If you went back to being 18-19, would you have done anything differently for your career?</h2>
+          <p>
+            Honestly, no, I'm good. I think I was lucky, I came across kind people. One thing I might not have done
+            differently, but that I would have done more, is ask more questions. When you're young, at least for certain
+            personalities, maybe like mine, you start out at a company, you don't know anyone, you don't have your
+            bearings, your habits, the codes. I was in "I don't want to bother people, I don't dare ask the question"
+            mode.
+          </p>
+          <p>
+            So I'd search for answers on my own for three days, and I'd ask the question only when I'd exhausted
+            all my resources. People answered me very kindly, there was no problem.
+          </p>
+          <p>
+            But sometimes, you shouldn't hesitate to ask questions, there's no such thing as a stupid question. We all
+            start somewhere, and we all
+            have a range of knowledge that isn't the same as our neighbor's.
+          </p>
+
+          <h2>You're in a fairly male-dominated field, IT and databases. How have you experienced that over the course of your career?</h2>
+          <p>
+            At the beginning, it was hard. Now, I don't care, but I've become a pretty blunt person about it, meaning
+            that with age and experience, I put up with a lot less bad behavior. But when you're a 19-year-old girl
+            showing up at a company, it's hard.
+          </p>
+          <p>
+            What was difficult is when I started being a somewhat established DBA, just because of my appearance, I
+            wasn't taken seriously. It's awful. And it doesn't just happen to women, it happens to a lot of people, in
+            plenty of job categories. That was really the heaviest thing to deal with.
+          </p>
+
+          <h2>How can a woman experiencing this problem handle it?</h2>
+          <p>
+            First, try not to take it personally: it's the other person's problem, it's not ours. Then, you shouldn't be
+            afraid, it's hard to say, but you shouldn't be afraid to assert yourself, to speak up, and to earn respect.
+          </p>
+          <p>
+            Possibly, interrupting in meetings, or saying clearly "no, I'm the DBA, I'll help you with this project, you
+            don't need to go see the colleague next door." But it's very difficult. What helped me was gaining
+            experience over time. Now, I couldn't care less about those people, but at the beginning, it wasn't easy.
+          </p>
+          <p>
+            So I'd say you need to have confidence in your own abilities, because the person in question knows their job
+            and is fully capable of doing it. Don't hesitate to put people in their place.
+          </p>
+          <p>
+            It's a field I find extremely intellectually motivating, everyone has a place in it. You also have to
+            realize that people in these communities are often open people, very happy to have more women, more
+            diversity.
+          </p>
+          <p>
+            It's a huge topic for me, I worked on it a lot, especially a few years ago. Women also have their
+            own contribution to make, as in every field. I found that somewhat mixed, somewhat diverse teams were the
+            ones with the most abundance of ideas. That's maybe an important thing to highlight for women: when they're
+            present, the range of possibilities takes on a different shape.
+          </p>
+          <p>
+            These are jobs where you're recognized, where you earn a good living, where you can have flexibility. I think
+            about that for moms, or people who want to become moms, we know very well what kind of society we live in,
+            the burden is still quite heavy for mothers, and you can't do everything.
+          </p>
+          <p>
+            When I compare with friends who
+            work in medicine, banking, or sales, in IT we have more flexibility, and that's an asset. That's maybe
+            something for younger girls to consider when they're asking themselves questions about their careers.
+          </p>
+
+          <h2>How do we join Oracle?</h2>
+          <p>
+            Trick question, because I admit I was lucky that Oracle came looking for me. But I can tell you why that
+            happened: it's because I had made a bit of a name for myself in the community, at the time, by publishing
+            blog articles, taking part in conferences.
+          </p>
+          <p>
+            At conferences, like you, I like meeting people. You meet people
+            from Oracle as well as people from plenty of other companies, you build a big network, even if it's just a
+            friendly network where you go have a coffee with people with no promise of a job. But I think it's thanks to
+            that networking that I was noticed. I'm not a big star, far from it, but I think that's what helped me, being
+            visible, on LinkedIn, on the internet.
+          </p>
+          <p>
+            One piece of advice I'd give, and that was given to me, it's not originally mine: every time you find a
+            solution to a technical problem you've run into, don't be selfish, share it.
+          </p>
+          <p>
+            If you faced this problem, there
+            are probably dozens of people going through the same thing, so you can share your solution. The simplest
+            way, I think, is a blog post for example, and that's what will increase your visibility, almost without
+            meaning to, but really with the goal of sharing your experience and knowledge, and getting these things
+            circulating.
+          </p>
+          <p>
+            I don't know if that exactly answers your question, but I'd say you don't have to jump into some massive
+            project. Just tell yourself that all the little challenges you run into day to day are maybe also the quiet
+            little challenges of the person next to you.
+          </p>
+
+          <h2>What's your toolbox?</h2>
+          <p>
+            I've tried tons of things, and I always come back to basics, a file open in Notepad. In the end, I use Codex
+            as a layer on top of my little notes in Notepad++. It's not very elegant, but I'm very much a
+            plain-text-file-and-terminal person. I keep it very simple.
+          </p>
+
+          <h2>Would you recommend Switzerland to a developer?</h2>
+          <p>
+            Yes. I really like this country, I've been here for eleven years, I live there, not right at the border.
+            Switzerland often looks for IT people, people in databases, networking, cybersecurity, and we often bring in
+            people from abroad because there's a shortage. That can be very interesting for a young person.
+          </p>
+          <p>
+            Switzerland
+            is a wonderful country that adopted me and that I've adopted, I really like the quality of life here. I've
+            now started a family here, I'm not going anywhere anytime soon. I love this country, its nature, its culture.
+          </p>
+          <p>
+            That said, it's very personal. Switzerland is divided into regions with different languages, it's sometimes
+            like little countries within the country. I live in French-speaking Switzerland, like Franck, we're kind of
+            neighbors. Our geographic region is fairly small, so we run into each other a lot, but there are still
+            opportunities.
+          </p>
+
+          <h2>How do you spend your free time?</h2>
+          <p>
+            I spend time with my family, I love music and going to concerts, so I travel quite a bit for concerts. A bit
+            of travel, a bit of concerts, a lot of family.
+          </p>
+
+          <h2>Is there something you'd like to share with the project, a thought, a message?</h2>
+          <p>
+            Yes, some fairly general things, maybe aimed at juniors. It would be to not hesitate to ask questions,
+            there's no such thing as a stupid question. To stay curious and open to other people's points of view.
+          </p>
+          <p>
+            The other thing, it ties back a bit to what we said about women, is to stay true to yourself. It might sound
+            a bit trite to put it that way, but we all have our own way of being, our own way of thinking, our own kind
+            of personality, and you shouldn't try to change yourself to fit into a corporate mold.
+          </p>
+          <p>
+            Me, for example, I'm someone very outgoing, I like to joke around, connect with people, I'm not very formal,
+            I'm not a cold person. There were moments in my career when everyone was more formal, and I forced myself to
+            be like that, but honestly it didn't suit me at all.
+          </p>
+          <p>
+            Staying true to yourself, with your quirks, I think that's really important for navigating your professional
+            life. If you're a joker, keep being like that, if you're reserved, keep being like that, if you're someone
+            who gets straight to the point, keep being like that. Everyone brings their own contribution, and it's a
+            shame to try to fit into a mold when it brings us nothing, and it can constrain us more than anything else.
+          </p>
+        </div>
+
+        <div class="article-nav" aria-label="Article navigation">
+          <div class="article-nav-card">
+            <a href="./yves-colin.html">
+              <span class="article-nav-label">Previous interview</span>
+              <span class="article-nav-title">Yves Colin</span>
+            </a>
+          </div>
+          <div class="article-nav-card">
+            <a href="./bertrand-drouvot.html">
+              <span class="article-nav-label">Next interview</span>
+              <span class="article-nav-title">Bertrand Drouvot</span>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../site.js"></script>
+</body>
+
+</html>
