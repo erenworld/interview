@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elisa Usai</title>
+  <script>
+    (() => {
+      const stored = localStorage.getItem("databasestory-theme");
+      const theme =
+        stored ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css?v=20260515a" />
+</head>
+
+<body>
+  <div class="site-shell article-page">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <a class="brand" href="../index.html">DatabaseStory</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-lines"><span></span></span>
+      </button>
+      <div class="topbar-tools">
+        <nav class="topnav" aria-label="Main navigation">
+          <a class="menu-card" href="../about.html">About</a>
+          <a class="menu-card" href="../index.html#interviews">Interviews</a>
+          <a class="menu-card" href="../index.html#newsletter">Newsletter</a>
+          <a class="menu-card" href="../index.html#podcast">Podcast</a>
+          <a class="menu-card" href="../jobs.html">Jobs</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <main>
+        <a class="back-link" href="../index.html">&larr; Back</a>
+
+        <div class="article-header">
+          <h1>Elisa Usai</h1>
+          <p class="article-meta">
+            August 3, 2026 by <a href="../index.html">Eren Turkoglu</a>
+          </p>
+          <div class="tag-row">
+            <span class="tag">Interviews</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">AI</span>
+            <span class="tag">Databases</span>
+          </div>
+        </div>
+
+        <div class="article-body">
+          <h2>Can you introduce yourself?</h2>
+          <p>
+            Yes, with pleasure. So, Elisa Usai, I'm 42 years old, I live in Switzerland, in the French-speaking part,
+            next to Lausanne. I arrived there in 2010 but originally I'm Italian. Now I have dual nationality, but I
+            was born, I grew up, I did my studies and I even started working in Italy. I have two children, 12 and 14
+            years old, and I live half the time with them. Roughly, that's a very short summary. And I work in
+            databases, but that, I don't even need to say, since you already know it. Currently I manage two teams: an
+            Oracle DB team, and an Open Infrastructure team, with databases that are open source, such as MySQL,
+            MariaDB, Postgres, and even operating systems, such as Linux.
+          </p>
+
+          <h2>Did you study in Italy?</h2>
+          <p>
+            Yes, exactly. Like a lot of things in my life that you'll see, my path is quite varied. In terms of
+            studies, at the beginning I think I was more inclined toward literary things. I did a scientific high
+            school, but with languages in addition. I love foreign languages. It was a scientific track, but with
+            French, English and German, so we had a bit fewer hours of math and science compared to a standard
+            scientific high school, but on the other hand we had these three languages. It was quite varied. I found
+            that nice.
+          </p>
+
+          <h2>And after high school?</h2>
+          <p>
+            After finishing high school, I switched to computer engineering. My philosophy and languages
+            teachers at the time, when I told them my choice, looked at me like "are you sure? Why??" But that's it,
+            I switched to something else entirely. And honestly, I don't know why, or maybe there are reasons, but a
+            bit unconscious ones too.
+          </p>
+          <p>
+            There's also the fact that I grew up in a city called <a href="https://fr.wikipedia.org/wiki/Ivr%C3%A9e">Ivrea</a>, which, if you pass by on the highway, you
+            still see the sign "city of computing," because it was the headquarters of Olivetti. It was typewriters, and then the first PCs, a company recognized at
+            a global level. Even now you sometimes find Olivetti machines in small company museums or things like
+            that. So I was born in this city. Maybe that's part of why, at some point, my path shifted. I also had, in
+            my family, an uncle and an aunt, who were married, and who still work today in computing, both of them.
+            So maybe I had a few examples like that in my family too.
+          </p>
+          <p>
+            I did the first part, the three years to get a first-level diploma. I finished that, and I had started
+            the specialization.
+          </p>
+
+          <h2>And that's when Atos came in?</h2>
+          <p>
+            When I started the specialization, I had a great opportunity from a company known at an international
+            level, that you probably know, based mainly in France. It was Atos Origin. I started working for them,
+            and that's really where I started working in databases. What's crazy is that the internship I did right
+            after finishing the first three years of engineering was an internship in development. In the small
+            company where I did it, they would have wanted to keep me on, but I understood that development and
+            programming were not really my thing. So I thought, "I got it wrong in my studies, what do I do now?" And
+            then afterwards I discovered there was a whole other world. There's the whole infrastructure side. You
+            don't have to do programming, you can work on a lot of other aspects at the computing level such as
+            databases, and I saw that this was what interested me. So this job opportunity was something really
+            interesting, and that's why I decided to stop my studies: I didn't continue the two additional years to
+            reach the end of the university degree, and I started working directly in that field.
+          </p>
+
+          <h2>Did you learn on the job, or was it also a lot of what you learned at university?</h2>
+          <p>
+            No, I learned a lot on the job. At university, in the first three years, there were a lot of courses such
+            as maths, physics, chemistry, all sorts of things, but there weren't yet that many computing ones, except
+            programming and maybe two courses about databases. I did have some data courses, a bit basic, to
+            understand a little the architecture and the modeling, etc. But afterwards, I really learned on the job.
+            I was trained, for example, on Oracle directly at work, with colleagues, on real client systems, etc.
+          </p>
+
+          <h2>What are a bit the key moments of your career?</h2>
+          <p>
+            I think the key moments are really, when I had challenges and new opportunities, and the moments of
+            trusting yourself and telling yourself "there's maybe something new coming, and if it feels like it can
+            be something good, I have to let myself go for it." So, the key points: already, apart from my studies,
+            Atos Origin was a huge experience. I think it's the basics for me, because there were so many different
+            customers, so many technologies, you understand a little how companies work, all the processes, etc. It
+            trained me enormously. The on-call rotation devastated me a bit, but it shaped me too, to be prepared for
+            what came next.
+          </p>
+          <p>
+            Second thing: it's also the fact of having moved to Switzerland, and working again for a big company
+            here, Nespresso, where, by chance, I was able, at the beginning, to switch toward monitoring. That let me
+            discover a whole other set of systems and technologies, and it let me start having a bit more of a global
+            vision of everything that was happening, all the interactions between the different teams and the
+            business processes of a big company. That continued until I arrived at dbi services, where I made
+            another jump, and added management to everything I had already done before.
+          </p>
+
+          <h2>Why Switzerland?</h2>
+          <p>
+            At the time, it was because of my ex. We worked together at Atos Origin in Italy. He had an opportunity
+            in Switzerland at the Olympic Committee, and we moved here together at the time. I thought I'd spend a
+            quiet summer to discover this new country, but in the end I quickly found this job at Nespresso after a
+            month or two and I started working here quickly too. We're not together anymore, but I stayed because I
+            feel like home here.
+          </p>
+
+          <h2>You have quite a multicultural path, you're Italian, you speak French, you come to Switzerland. Did that help you? How did that affect your decision making, for example?</h2>
+          <p>
+            Yes, I think it did influence my way of working. When I arrived in Switzerland, I saw this working
+            culture which is, I find, personally, different from Italy, which is a lot more organized from what I
+            see. There's more respect given to a lot of things, already within the company. And also this balance of
+            professional life and personal life, which is really important. That's something I really appreciated.
+          </p>
+
+          <h2>Was it difficult at the beginning?</h2>
+          <p>
+            At the beginning it was a lot of adaptation. I already spoke French, because as I said before, I already
+            learned it at school, but that's school-level French, even if we did literature and so on. When I
+            arrived here, at the beginning, during lunch and coffee breaks, the colleagues' jokes, I was a bit in
+            "laugh mode" when I saw others laughing, but I felt a bit out of place in all that. It took me some time
+            for the meetings where I heard a lot of people talking, and when it was talking with several people at
+            once, it wasn't easy, because now it comes naturally, but at the time I still had to translate in my
+            head, from Italian to French, from French to Italian, to speak. So it wasn't easy. I think all this also
+            allows me to focus, to put more energy into communication, to understand that communication is also very
+            important in our profession. And also the fact of gaining confidence, understanding a bit the habits,
+            these habits at the work level which are different, all as part of communication: listening, being
+            attentive to people, to context, etc.
+          </p>
+
+          <h2>What does a typical day as senior delivery manager consist of?</h2>
+          <p>
+            So, we're getting into what I was telling you before. What I like about all that is that there isn't
+            really a typical day. Each day is different, and that's what I love. You'll see later too that it's
+            really a trait I have myself, because on a personal level, I'm like that too. I currently spend part of
+            my time exchanging with clients to understand their technical needs, translating them afterwards into
+            something understandable, and making sure the projects move forward correctly. I also take care of the
+            whole workload side: sizing, knowing how much time projects take. I support the sales team too, for the
+            production of offers. In parallel, and it's a big part of the work too, I support the technical DBA teams
+            to organize their planning, their priorities. I also make the link between our management and the teams,
+            I'm a bit of a filter: I try to make sure management's expectations reach the ground level, but at the
+            same time that the team can work in good conditions, to work efficiently.
+          </p>
+
+          <h2>So it's a lot of communication?</h2>
+          <p>
+            Yes, it's a lot of communication in all that. What I like about it, in fact, is that I think I couldn't
+            go back to a 100% technical position anymore, like a few years ago. What I like now is this mix of
+            technical and management tasks. It's this diversity that pleases me, that I'm passionate about. I also
+            like to learn a lot of things, in several aspects, because I still have to keep up to date technically,
+            but at the same time I learn a lot every day about management too, and how to manage teams correctly. And
+            again, it's always about adapting, solving problems, supporting people in different contexts. That's
+            where I want to put my energy too, this link between people, the technical side, and moving things
+            forward at the management level, at the company direction level too.
+          </p>
+
+          <h2>How do you learn to manage a team?</h2>
+          <p>
+            It's something I did gradually, because when I arrived at dbi services, they trusted me and gave me the
+            chance to start directly in this position. And again it was a challenge, so I decided to take this
+            opportunity.
+          </p>
+          <p>
+            What happened is that at Nespresso I had already had to reorganize things, but it wasn't really
+            formalized. So I arrived at dbi services almost without any management-level skills. I think several
+            things helped: on one hand, the company trusted me. Secondly, the company also offered, and this was for
+            all managers, small workshops with a consultant who's an expert in management, who coached us a little,
+            to give us some pointers to understand certain key aspects of the role. And then the teams too, they
+            trusted me. It was all-male teams, and they welcomed me well, they trusted me. I grew and evolved with
+            them, and I learned this profession, again maybe like at the time in the technical field, in databases, I
+            learned this profession really by working, and by taking an interest on my own side, by trying to make
+            sure I had all the skills needed for this profession.
+          </p>
+
+          <h2>Do you have systems that you used to save time?</h2>
+          <p>
+            Not necessarily systems, but the fact is, I think you still need to organize yourself. Because it's
+            great to have days like that, varied, with a lot of things to do, different hats, juggling with all
+            that, but at the same time, if you're not organized in an efficient way, you risk getting a bit lost and
+            wasting time. I try to standardize where I can, everything I can: process level, documentation, tools,
+            follow-ups, ….
+          </p>
+          <p>
+            And at the planning level, to know where we're going, the priorities, etc. Saving time doesn't mean going
+            faster, it means, I'd say, going maybe a bit slower at the beginning, to try to understand well, to avoid
+            misunderstandings, to anticipate needs, problems, and then let the teams focus on what has value for
+            them. On the technical side, I use project management tools, follow-ups, to-do lists, etc. But I think
+            the most important part, generally speaking, is organization. That's how you really save time, because
+            otherwise you have to go back and correct things afterwards, because you went too fast and did it a bit
+            any old way.
+          </p>
+
+          <h2>You have DBAs under your responsibility. Do you see mistakes that are made again and again in databases?</h2>
+          <p>
+            Tons! How much time do you have?
+          </p>
+          <p>
+            The mistakes, I think, are more at a global level. They're not necessarily tied to a specific technology.
+            The mistakes are especially, I'd say, around good practices.
+          </p>
+          <p>
+            What happens often is the lack of documentation. That's always explained by "oh, but we're technicians,
+            we like technique, and documentation, we don't care about it." Well, that's not really it, because it's
+            super important at the knowledge level for the profession: the architecture, the dependencies, the
+            operating procedures, the technical choices, etc. If you don't have that, if you or colleagues have to
+            come back to it, you start again from zero.
+          </p>
+
+          <h2>What else?</h2>
+          <p>
+            Resilience. We often think of setting up backups for databases, but how many people think of testing not
+            just the backups, but also the restores? You can be able to back up databases, but if you haven't tested
+            a restore, maybe the restore doesn't work, and so you don't really have a guarantee of being able to
+            restore your database.
+          </p>
+          <p>
+            Another thing is system updates, which are often pushed back out of caution, sometimes out of lack of
+            time, because at the application level, "we don't know if we support such and such version," so people
+            prefer to stay on old versions that work. But there are risks, because you risk losing the vendor's
+            support, you're exposed to vulnerabilities, and that's happening more and more, and it will keep
+            increasing anyway. The bigger the gap gets, the more, afterwards, when you have to migrate or upgrade, it
+            accumulates, and it will take more time to migrate, to upgrade. So I think a strategy of regularly moving
+            up versions is also important, but it's often underestimated, because we often think about emergencies
+            instead.
+          </p>
+
+          <h2>And on the technology-choice side?</h2>
+          <p>
+            There's also the technology choice, which is sometimes guided, according to me, by the wrong criteria:
+            the fashion effect, commercial pressure, a preference for a supplier, a political decision, or other
+            things like that. But you have to go look at the needs, the constraints, the resources you have
+            available, the skills, the overall costs. That's a whole analysis that takes time.
+          </p>
+          <p>
+            And rather on the delivery side, stepping outside the case of databases and DBAs, it's what I was
+            telling you before: the fact of going a bit too fast, and not taking the time to have a bit of hindsight,
+            to analyze and anticipate the risks, the impacts, etc. According to me, everything comes down to good
+            practices, whether it's on the DBA side, broadly speaking, or on the delivery side too.
+          </p>
+
+          <h2>Do you see common points among the top players in your teams?</h2>
+          <p>
+            According to me, yes. Afterwards, it's not just that point. What I see in my teams is that it's also
+            expertise, quite deep, especially in consulting companies like ours, quite fine, it goes very, very into
+            detail, and that's what's also cool about it: at the technical level, you can manage to become a real
+            expert in your domain, in your technology, and there's a lot to do. It's great. You have to think not
+            only about administration, but there are a lot of things that revolve around it: security, capacity
+            planning, modeling too, performance, backup, restoration, etc. It's fascinating. They're passionate
+            people.
+          </p>
+
+          <h2>Are you mainly in consulting?</h2>
+          <p>
+            Yes, for the moment. So, small parenthesis, since it's official already. I'm still working for dbi
+            services until the end of August. In September, I decided to accept a new challenge for myself. I'm
+            going to a final client, I'm going to the hospital of Lausanne, the CHUV, as head of the database team.
+          </p>
+
+          <h2>Why leave consulting, then?</h2>
+          <p>
+            Consulting was great from the beginning of my career till now, and I learned a lot of things thanks to
+            it! At the same time, I maybe don't see as much value in it anymore, because you're on one-off projects,
+            you don't follow a project really from A to Z, you don't see the follow-up, and you don't see all the
+            impact you have.
+          </p>
+          <p>
+            Now, at this point in my life, I needed maybe, a bit more, to feel "useful", in quotes, in what I do. One
+            of the things I will value most about working in IT for a hospital is the sense of purpose it brings.
+            Even though I'm not directly involved in patient care, I know that the systems I will support help
+            healthcare professionals do their jobs more effectively. That will make my work feel both meaningful and
+            rewarding.
+          </p>
+          <p>
+            Apart from consulting, I also spent quite a few years being a speaker and giving technical talks at
+            conferences abroad and in Switzerland and I was also involved in the community a little bit around
+            databases. I'm still part of a user group in Italy for organizing events around Oracle in Italy. Again,
+            it was really amazing, but now I maybe needed to settle down a bit and see more value in my job.
+          </p>
+
+          <h2>Do you think consulting is a good entry point for juniors, for example?</h2>
+          <p>
+            Yes! I think it precisely lets you understand how different companies are organized, the processes, not
+            just the processes of your own company, but the processes at the company level across different, varied
+            companies. That comes from Atos Origin and dbi services too: working for banks, insurance companies,
+            private and public sector, small companies, bigger companies. And you see a lot of technologies, very
+            different ones, database technologies, but also based on different operating systems. The on-call
+            rotation, you don't sleep at night anymore, you cry, but you also learn to manage stress. So it's very,
+            very formative in a lot of ways.
+          </p>
+
+          <h2>How do you get into a database company?</h2>
+          <p>
+            I think it's important to first build a broad understanding of databases rather than focusing too early
+            on a single technology. You may already know a specific database platform, but it's just as important to
+            understand the bigger picture&mdash;things like migrations, best practices, performance optimization, and
+            what it takes to keep databases running reliably for the applications that depend on them.
+          </p>
+          <p>
+            Later on, you can absolutely become a specialist in a particular technology. But having that broader
+            perspective first helps you understand the needs of the applications, the expectations of users, and the
+            operational constraints you'll face.
+          </p>
+          <p>
+            In my view, it's difficult to fully understand the role or solve problems effectively without that
+            foundation, regardless of whether you're an expert in PostgreSQL or any other database technology.
+          </p>
+
+          <h2>How have you used AI?</h2>
+          <p>
+            To be transparent, I don't yet use AI enormously in my work. I'm still a little bit in a phase of
+            exploration. Now I'm starting a little bit to use it if I need to summarize faster, to synthesize
+            information. But not much more than that. Afterwards, if I think about our role, whether it's DBA or
+            delivery manager, I can see a potential in relation to certain things: log analysis, the automation of
+            certain tasks, etc. I've already had the occasion to have confirmation that it doesn't replace the
+            human, it doesn't replace expertise. Especially in domains like that, databases, depending on certain
+            clients and certain professions, it can be very critical, hospitals precisely: a bad recommendation can
+            still have important impacts on availability, security, or the integrity of data. According to me, it's
+            really about seeing that as a tool to accelerate certain things, but behind it, there always has to be
+            expertise and validation, real people.
+          </p>
+
+          <h2>And the juniors, so, does that come back to the same thing?</h2>
+          <p>
+            No, I don't think it replaces them. If junior professionals stop learning and rely entirely on AI, then
+            in a few years we'll have a real problem. Experienced people won't be around forever. Personally, I'd
+            like to retire in a few years&mdash;I have plenty of interests outside of work. So we need the next
+            generation to develop the knowledge and experience to take over.
+          </p>
+          <p>
+            AI is a great tool, and it can make us much more productive, but it shouldn't replace learning or
+            critical thinking. If we become too dependent on it, we risk losing the skills we need to understand
+            problems and solve them ourselves. Trying to rebuild those skills later would be much harder than
+            developing them in the first place.
+          </p>
+
+          <h2>I have the impression you're a bit against AI and everything I think.</h2>
+          <p>
+            Well, there you go. I know I probably shouldn't say this because AI is evolving so quickly, and I don't
+            want to be left behind. That's why I'm making an effort to explore it and understand how to use it. But I
+            still don't trust it completely.
+          </p>
+          <p>
+            A good example is something I do regularly: estimating the effort required for customer projects. A few
+            months ago, a customer challenged one of our estimates. They said, "That seems like too many days. I
+            asked ChatGPT, and it said it should only take about X days." A colleague and I decided to test it
+            ourselves. We gave ChatGPT the same prompt: upgrading an Oracle appliance from one version to another. At
+            first, it gave exactly the same estimate the customer had quoted.
+          </p>
+          <p>
+            The problem was that, as Oracle specialists, we knew something important was missing. You can't upgrade
+            directly between those two versions because Oracle doesn't support that path. You first have to upgrade
+            to an intermediate version. That's clearly documented in the official Oracle documentation.
+          </p>
+          <p>
+            When we pointed that out and explicitly asked ChatGPT to take the Oracle documentation into account, it
+            corrected itself and produced a new estimate&mdash;which matched the one we had originally made.
+          </p>
+          <p>
+            For me, that's a good illustration of both the strengths and the limitations of AI. It's a very useful
+            tool, but it doesn't replace expertise. If you don't already understand the technology, you may not
+            realize that a critical piece of information is missing, and you won't know when the answer is
+            incorrect. AI can help experts work more efficiently, but it can't replace the judgment that comes from
+            experience.
+          </p>
+          <p>
+            So no, it won't replace the juniors.
+          </p>
+
+          <h2>Do you have a piece of advice that struck you since the beginning?</h2>
+          <p>
+            Trust yourself.
+          </p>
+          <p>
+            Not because we necessarily always have all the answers, but because we have the capacity to learn, to
+            progress, to adapt. And a lot of great opportunities, sometimes, as my own path maybe proves a little,
+            arrive when you step out of your comfort zone. So you have to believe a little in your path, in your
+            skills, and sometimes in your capacity to take on new challenges.
+          </p>
+
+          <h2>You evolved in an environment that's very male-dominated, and you still work in one today. How did you experience that?</h2>
+          <p>
+            That's the question I'd been looking forward to. It's a subject that really matters to me. I don't know
+            if you've already seen a bit of this on LinkedIn or elsewhere. I was in this environment even before
+            working, because already at university, the polytechnic school, out of 100 students at the start, we
+            were three girls. That's a reality we still find, unfortunately, in IT, in technical fields generally. I
+            experienced it as an environment that was sometimes a bit challenging, but also, I don't stop there, I
+            don't stop just at saying, "I'm just diving into the situation," I'd like to see that as an opportunity
+            to help mentalities evolve.
+          </p>
+
+          <h2>How did you deal with it in practice?</h2>
+          <p>
+            So over the years I learned, a little, to find my place, to have my expertise recognized, and not let
+            myself get dragged into stereotypes, the idea that we can't do this or that because we're a woman. We
+            shouldn't deny that these stereotypes still exist, and that they're tied to these technical professions.
+            There's a lack of visible female role models. Certain company cultures can still sometimes discourage
+            women from starting or advancing in these fields.
+          </p>
+
+          <h2>Can you tell us about Swiss Tech Ladies?</h2>
+          <p>
+            It's for this reason that I'm very involved, and that this subject matters to me. I'm part of a program
+            in Switzerland called Swiss TecLadies, as a mentor. I also developed, a few years ago, a talk that I
+            present at technical conferences around women in IT, to raise a bit of awareness about all that. To
+            understand, or try to understand, the origin of this imbalance, identify the stereotypes and the bad
+            habits, and think about what everyone can do to improve the situation, because we can all bring
+            something to improve it. At a company level, I've also tried to contribute a little, by raising
+            awareness on the importance of pay equality, encouraging participation in equal-pay programs too. That
+            was important too.
+          </p>
+          <p>
+            I think that at the global level, there are things we can do, but we really have to act as a society.
+            It's not just women, it's not just people in companies, it's really about education. I think that's the
+            basics. Schools, education, families, etc. By showing young girls that technological professions are
+            accessible, that they have the skills, and that they can trust themselves. And afterwards, within
+            companies, with mentoring, these somewhat female roles, and all the communities that provide support and
+            favor equity. The fact of saying "there are fewer women in IT," I think, like in a lot of other fields,
+            when a representative part of society is missing, we reduce the possibilities we have. We end up with
+            perspectives that aren't so different, whereas we could have more variety, we could improve
+            collaboration, and have teams that are richer and more effective because we bring in another way of
+            working too. So I think it's a change and a responsibility that's really at the collective level.
+            Otherwise it can't evolve.
+          </p>
+
+          <h2>What could encourage more women to get into IT?</h2>
+          <p>
+            I'd really say basic education, whether in schools or in families. Avoid stereotypes. Work in a mode
+            that's more about collaboration and not competition. Having programs and support like mentoring and
+            communities, to help young women, or women, to trust themselves and feel like they have the capabilities
+            to do it. We don't have brains that are coded pink or blue. We can code, or we can't code, that has
+            nothing to do with it, that's nonsense.
+          </p>
+
+          <h2>Are there concrete initiatives already in place?</h2>
+          <p>
+            For mentoring and communities, there are several initiatives such as "Swiss TecLadies" that I already
+            mentioned, "Women in Digital Switzerland" and others (I can share some other names with you if you want).
+          </p>
+          <p>
+            In Switzerland, we also have a nice day, called "Dare All Trades Day", where schools encourage boys and
+            girls to go see, through a parent or someone in their family or their circle, professions that are a bit
+            stereotypically the opposite. I brought, for example, my daughter to my job. My son went to see something
+            more stereotypically male, in the other direction.
+          </p>
+          <p>
+            We need more programs like that, more awareness starting really young, very young. Afterwards, you can
+            keep building on it later, but that's more of a follow-up thing, because if it already gets coded into
+            the heads of girls and boys, in either direction, that such a profession is stereotyped, "it's for
+            women" or "it's for men," afterwards, it's fixed, and they start orienting their studies toward something
+            else entirely.
+          </p>
+
+          <h2>How do you spend your free time?</h2>
+          <p>
+            My free time is just as varied as my professional time. There's no ambiguity there, at least. I need
+            diversity there too, to discover new things and keep learning, a little bit like in my job. I've
+            practiced a lot of dance since I was very little, that's probably the central foundation. I do yoga,
+            singing, volleyball, indoor climbing. I also really like being outdoors, so I have a van, I travel around
+            with the van in nature, and hiking. Nature is very important. I need, since I'm quite hyper-connected for
+            my job, to disconnect afterwards, to take a step back, and reconnect instead with nature and other kinds
+            of places, people, sharing.
+          </p>
+          <p>
+            I also devote a lot of time to my family, my friends, my children, who also let me see life from
+            different perspectives. And like in my job, I also love new challenges, stepping outside my comfort
+            zone. I tried to learn the accordion as an adult, even though I'd never done music before. I'm currently
+            trying to learn Spanish, and I recently discovered, just a few weeks ago, diving and rope caving, so I'd
+            also like to get more into that now. Ultimately, what ties all that together is this curiosity, and
+            wanting to experiment, to learn new skills, and meeting people and sharing it with them. It needs to stay
+            dynamic, a bit like my job.
+          </p>
+
+          <h2>Is there a book or resource that particularly shaped you?</h2>
+          <p>
+            Not really. I think, in our profession, sure, there's always the certification "Bible", and it's cool,
+            it's interesting, and it teaches you technically. But again, coming back to everything I said before, I
+            think our profession is learned especially through experience. When there are difficult projects, tricky
+            migrations, production incidents, being on call, waking up in the middle of the night, having to think
+            fast, architecture choices, trade-offs between performance, security, cost, deadline, whatever, I think
+            that's what really makes a good professional. There's no recipe like that, in any case, if there is one,
+            I'd love someone to share it with us too, but I'd say it's really about experience.
+          </p>
+
+          <h2>Is there something you'd like to share? A project, a reflection, a message?</h2>
+          <p>
+            Yes, I will try to summarize everything that matters to me.
+          </p>
+          <p>
+            To young women and women who are considering a career in technology, or in fields that are still very
+            male-dominated, I'd say: dare. Don't impose limits on yourselves because of stereotypes, because of what
+            people think is "meant for you." You can do everything you want, on the condition of believing in
+            yourself, working with passion, and surrounding yourself with people who support you.
+          </p>
+          <p>
+            And more broadly, for everyone: stay curious, step outside your comfort zone, dare, try new things,
+            accept not knowing everything, and keep learning. And the best opportunities often come from a challenge
+            you wouldn't necessarily have dared to take on at the start. My path has shown me that it's possible to
+            evolve, to change roles, to learn new skills, to build your own path. There isn't a single way to
+            succeed.
+          </p>
+          <p>
+            Finally, I believe a lot in the importance of sharing, sharing your knowledge, supporting others,
+            creating connections, collaborating, being part of a community, rather than seeking only competition.
+            That's what makes us grow.
+          </p>
+          <p>
+            Life is really made of experiences, encounters, discoveries, dare to live your projects with passion,
+            keep that curiosity, and enjoy the journey.
+          </p>
+        </div>
+
+        <div class="article-nav" aria-label="Article navigation">
+          <div class="article-nav-card">
+            <a href="./flora-barriele.html">
+              <span class="article-nav-label">Previous interview</span>
+              <span class="article-nav-title">Flora Barriele</span>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../site.js"></script>
+</body>
+
+</html>
