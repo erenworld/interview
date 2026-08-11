@@ -26,7 +26,7 @@
 
 ## Reflections & Advice
 - A piece of advice that stuck with you?
-- What would you tell someone who wants to get into Big Data / distributed systems / databases but doesn't know where to start?
+- What would you tell someone who wants to get into distributed systems / databases but doesn't know where to start?
 - With your experience, what traits or habits do you think the best engineers in this space share?
 
 ## Personal
