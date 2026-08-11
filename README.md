@@ -1,32 +1,37 @@
-# Interview avec Elisa
+# Eren Avşaroğulları
 
-## Parcours
-- Peux-tu te présenter ?
-- As-tu fait des études universitaires ?
-- Comment es-tu arrivée vers les bases de données ?
-- Quels sont les moments clés de ta carrière ?
-- Est-ce que ce ton parcours multiculturel a influencé ta façon de travailler, de communiquer avec les clients ou de prendre des décisions ?
-  
-## Carrière
-- À quoi ressemble une journée typique ?
-- Tu es passée d'un rôle de DBA à la gestion d'équipes : qu'est-ce qui a motivé cette évolution ?
-- Après plusieurs années à mettre en place des services de monitoring et à gérer des équipes de support, utilises-tu des systèmes pour gagner du temps ? 
-- Avec toutes ces années d'expérience, est-ce que tu vois des erreurs que les gens commettent encore et encore avec les bases de données ?
-- Comment rejoint-on une entreprise de base de données ?
+## Background
+- Can you introduce yourself?
+- When did you write code for the first time?
+- Did your family have a background in computers?
+- Did you study at university?
+- How did you get into Big Data and distributed systems?
 
-## Intelligence artificielle
-- Comment utilises-tu les outils d'IA dans ton travail au quotidien ?
-- L'IA va-t-elle remplacer les juniors ?
+## Career
+- What have been the key moments in your career?
+- What does a typical day look like for you on the Spark Platform team?
+- With your experience across Spark internals and distributed systems, do you see mistakes that people still make over and over?
+- How does one go about joining a company like Workday in 2026, or breaking into Big Data / distributed systems roles?
 
-## Réflexions & conseils
-- Un conseil qui t'a marqué ?
-- Que dirais-tu à quelqu'un qui veut se lancer dans les bases de données sans savoir par où commencer ?
-- Avec plus de 18 ans d'expérience, quels sont selon toi les traits ou habitudes que partagent les meilleurs DBA ?
-- Tu évolues dans un milieu très masculin : comment as-tu vécu ça au fil de ta carrière, et qu'est-ce qui pourrait encourager plus de femmes à se lancer dans ce domaine ?
+## Open Source & Apache
+- How did you first get started with open source?
+- What drew you to becoming an open-source contributor at the Apache Software Foundation, and what keeps you involved?
+- Looking back at your contributions to Spark, Pulsar, and Heron, what's the biggest or most challenging problem you've solved?
+- Is there a bug or issue you fixed that you're especially proud of, or that taught you the most?
 
-## Personnel
-- Des livres ou ressources à recommander pour maîtriser les bases de données ?
-- Comment occupes-tu ton temps libre ?
+## Artificial Intelligence
+- How do you use AI tools in your day-to-day work?
+- Will AI replace junior engineers?
+- What technical advice would you give to a junior engineer in this era?
+
+## Reflections & Advice
+- A piece of advice that stuck with you?
+- What would you tell someone who wants to get into Big Data / distributed systems / databases but doesn't know where to start?
+- With your experience, what traits or habits do you think the best engineers in this space share?
+
+## Personal
+- Any books or resources you'd recommend for mastering distributed systems, or programming in general?
+- How do you spend your free time?
 
 ## Conclusion
-- Y a-t-il quelque chose que tu voudrais partager avec les lecteurs : un projet, une réflexion, un message ?
+- Is there anything you'd like to share with readers — a project, a reflection, a message?
