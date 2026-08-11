@@ -16,7 +16,7 @@
 ## Open Source & Apache
 - How did you first get started with open source?
 - What drew you to becoming an open-source contributor at the Apache Software Foundation, and what keeps you involved?
-- Looking back at your contributions to Spark, Pulsar, and Heron, what's the biggest or most challenging problem you've solved?
+- Looking back at your contributions to Spark, DataFusion, Pulsar, Heron, what's the biggest or most challenging problem you've solved?
 - Is there a bug or issue you fixed that you're especially proud of, or that taught you the most?
 
 ## Artificial Intelligence
