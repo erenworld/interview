@@ -1,0 +1,418 @@
+<main class="library-main">
+  <div class="library-head">
+    <p class="section-label">Library</p>
+    <h1 class="page-title">The Bookshelf</h1>
+    <p class="page-intro">Every book my guests recommended, with their own words on why it mattered. Pick one up.</p>
+  </div>
+
+  <div class="shelf-controls" id="shelf">
+    <div class="chip-row" role="group" aria-label="Filter by topic"><button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button><button class="chip" type="button" data-filter="databases" aria-pressed="false">Databases</button><button class="chip" type="button" data-filter="systems" aria-pressed="false">Systems</button><button class="chip" type="button" data-filter="craft" aria-pressed="false">Craft</button><button class="chip" type="button" data-filter="life" aria-pressed="false">Life & fiction</button></div>
+    <div class="shelf-guests" role="group" aria-label="Filter by guest"><button class="shelf-guest" type="button" data-guest="cedric-villemain" aria-pressed="false" title="Cedric Villemain"><img src="./assets/faces/cedric-villemain.jpg" alt="" loading="lazy" /><span>Cedric</span></button><button class="shelf-guest" type="button" data-guest="cornelia-biacsics" aria-pressed="false" title="Cornelia Biacsics"><img src="./assets/faces/cornelia-biacsics.jpg" alt="" loading="lazy" /><span>Cornelia</span></button><button class="shelf-guest" type="button" data-guest="ege-gunes" aria-pressed="false" title="Ege Güneş"><img src="./assets/faces/ege-gunes.jpg" alt="" loading="lazy" /><span>Ege</span></button><button class="shelf-guest" type="button" data-guest="flora-barriele" aria-pressed="false" title="Flora Barriele"><img src="./assets/faces/flora-barriele.jpg" alt="" loading="lazy" /><span>Flora</span></button><button class="shelf-guest" type="button" data-guest="mikael-francoeur" aria-pressed="false" title="Mikaël Francoeur"><img src="./assets/faces/mikael-francoeur.jpg" alt="" loading="lazy" /><span>Mikaël</span></button><button class="shelf-guest" type="button" data-guest="yves-colin" aria-pressed="false" title="Yves Colin"><img src="./assets/faces/yves-colin.jpg" alt="" loading="lazy" /><span>Yves</span></button></div>
+  </div>
+
+  <ul class="bookshelf" aria-live="polite">
+    <li class="book" id="designing-data-intensive-applications" data-cat="databases" data-guests="yves-colin ege-gunes" style="--i:0; --ar:0.762">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Designing Data-Intensive Applications by Martin Kleppmann, recommended by Yves Colin, Ege Güneş"
+        data-title="Designing Data-Intensive Applications" data-author="Martin Kleppmann" data-year="2017" data-cat-label="Databases"
+        data-cover="./assets/books/designing-data-intensive-applications.jpg" data-ar="0.762" data-picks="[{&quot;guest&quot;: &quot;yves-colin&quot;, &quot;name&quot;: &quot;Yves Colin&quot;, &quot;role&quot;: &quot;Customer Engineer Data Management @Google&quot;, &quot;href&quot;: &quot;./articles/yves-colin.html#outside-of-your-studies-were-there-resources-that-helped-you&quot;, &quot;quote&quot;: &quot;On the architecture side, more recent books left a strong mark on me. I’m thinking of course of Designing Data-Intensive Applications by Martin Kleppmann.&quot;}, {&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#how-did-you-develop-yourself&quot;, &quot;quote&quot;: &quot;There’s also a book called “Designing Data-Intensive Applications”. It was more about distributed systems.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/designing-data-intensive-applications.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span><span class="book-badge">Recommended twice</span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Designing Data-Intensive Applications</p>
+        <p class="book-author">Martin Kleppmann</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/yves-colin.jpg" alt="Yves Colin" title="Yves Colin" loading="lazy" /><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Yves &amp; Ege</span></p>
+      </div>
+    </li>
+    <li class="book" id="database-internals" data-cat="databases" data-guests="yves-colin" style="--i:1; --ar:0.762">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Database Internals by Alex Petrov, recommended by Yves Colin"
+        data-title="Database Internals" data-author="Alex Petrov" data-year="2019" data-cat-label="Databases"
+        data-cover="./assets/books/database-internals.jpg" data-ar="0.762" data-picks="[{&quot;guest&quot;: &quot;yves-colin&quot;, &quot;name&quot;: &quot;Yves Colin&quot;, &quot;role&quot;: &quot;Customer Engineer Data Management @Google&quot;, &quot;href&quot;: &quot;./articles/yves-colin.html#if-someone-wants-to-get-into-databases-and-doesnt-know-where&quot;, &quot;quote&quot;: &quot;It teaches you how a database is designed in general: the algorithms, the difference between B-Trees and LSM-Trees, how a NoSQL engine is built.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/database-internals.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Database Internals</p>
+        <p class="book-author">Alex Petrov</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/yves-colin.jpg" alt="Yves Colin" title="Yves Colin" loading="lazy" /></span><span>Yves</span></p>
+      </div>
+    </li>
+    <li class="book" id="database-system-concepts" data-cat="databases" data-guests="mikael-francoeur" style="--i:2; --ar:0.6926">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Database System Concepts by Silberschatz, Korth &amp; Sudarshan, recommended by Mikaël Francoeur"
+        data-title="Database System Concepts" data-author="Silberschatz, Korth &amp; Sudarshan" data-year="1986" data-cat-label="Databases"
+        data-cover="./assets/books/database-system-concepts.jpg" data-ar="0.6926" data-picks="[{&quot;guest&quot;: &quot;mikael-francoeur&quot;, &quot;name&quot;: &quot;Mikaël Francoeur&quot;, &quot;role&quot;: &quot;Software Engineer @Turso&quot;, &quot;href&quot;: &quot;./articles/mikael-francoeur.html#do-you-publish-your-reading-list-somewhere-like-an-online&quot;, &quot;quote&quot;: &quot;The book I’m deeply into right now is Database System Concepts, and it’s massive… I’m only about 400 pages in.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/database-system-concepts.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Database System Concepts</p>
+        <p class="book-author">Silberschatz, Korth &amp; Sudarshan</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/mikael-francoeur.jpg" alt="Mikaël Francoeur" title="Mikaël Francoeur" loading="lazy" /></span><span>Mikaël</span></p>
+      </div>
+    </li>
+    <li class="book" id="art-of-postgresql" data-cat="databases" data-guests="cedric-villemain" style="--i:3; --ar:0.68">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Art of PostgreSQL by Dimitri Fontaine, recommended by Cedric Villemain"
+        data-title="The Art of PostgreSQL" data-author="Dimitri Fontaine" data-year="2017" data-cat-label="Databases"
+        data-cover="./assets/books/art-of-postgresql.jpg" data-ar="0.68" data-note="First published as Mastering PostgreSQL in Application Development." data-picks="[{&quot;guest&quot;: &quot;cedric-villemain&quot;, &quot;name&quot;: &quot;Cedric Villemain&quot;, &quot;role&quot;: &quot;President / CEO @Data bene&quot;, &quot;href&quot;: &quot;./articles/cedric-villemain.html#do-you-have-resources-to-recommend-for-learning-postgresql&quot;, &quot;quote&quot;: &quot;It’s worth reading Dimitri Fontaine’s book, Mastering PostgreSQL… It’s a very good book for people oriented toward development.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/art-of-postgresql.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Art of PostgreSQL</p>
+        <p class="book-author">Dimitri Fontaine</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/cedric-villemain.jpg" alt="Cedric Villemain" title="Cedric Villemain" loading="lazy" /></span><span>Cedric</span></p>
+      </div>
+    </li>
+    <li class="book" id="troubleshooting-oracle-performance" data-cat="databases" data-guests="flora-barriele" style="--i:4; --ar:0.812">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Troubleshooting Oracle Performance by Christian Antognini, recommended by Flora Barriele"
+        data-title="Troubleshooting Oracle Performance" data-author="Christian Antognini" data-year="2008" data-cat-label="Databases"
+        data-cover="./assets/books/troubleshooting-oracle-performance.jpg" data-ar="0.812" data-picks="[{&quot;guest&quot;: &quot;flora-barriele&quot;, &quot;name&quot;: &quot;Flora Barriele&quot;, &quot;role&quot;: &quot;Oracle Database@AWS EMEA Black Belt&quot;, &quot;href&quot;: &quot;./articles/flora-barriele.html#a-few-books-that-helped-you&quot;, &quot;quote&quot;: &quot;For books, I have a few classics… But those are starting to get dated :-)&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/troubleshooting-oracle-performance.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Troubleshooting Oracle Performance</p>
+        <p class="book-author">Christian Antognini</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/flora-barriele.jpg" alt="Flora Barriele" title="Flora Barriele" loading="lazy" /></span><span>Flora</span></p>
+      </div>
+    </li>
+    <li class="book" id="oca-oracle-12c" data-cat="databases" data-guests="flora-barriele" style="--i:5; --ar:0.7975">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="OCA Oracle Database 12c Administrator Study Guide by Biju Thomas, recommended by Flora Barriele"
+        data-title="OCA Oracle Database 12c Administrator Study Guide" data-author="Biju Thomas" data-year="2014" data-cat-label="Databases"
+        data-cover="./assets/books/oca-oracle-12c.jpg" data-ar="0.7975" data-picks="[{&quot;guest&quot;: &quot;flora-barriele&quot;, &quot;name&quot;: &quot;Flora Barriele&quot;, &quot;role&quot;: &quot;Oracle Database@AWS EMEA Black Belt&quot;, &quot;href&quot;: &quot;./articles/flora-barriele.html#a-few-books-that-helped-you&quot;, &quot;quote&quot;: &quot;What helped me enormously was mainly content produced by the community.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/oca-oracle-12c.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">OCA Oracle Database 12c Administrator Study Guide</p>
+        <p class="book-author">Biju Thomas</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/flora-barriele.jpg" alt="Flora Barriele" title="Flora Barriele" loading="lazy" /></span><span>Flora</span></p>
+      </div>
+    </li>
+    <li class="book" id="systems-performance" data-cat="systems" data-guests="yves-colin" style="--i:6; --ar:0.766">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Systems Performance by Brendan Gregg, recommended by Yves Colin"
+        data-title="Systems Performance" data-author="Brendan Gregg" data-year="2013" data-cat-label="Systems"
+        data-cover="./assets/books/systems-performance.jpg" data-ar="0.766" data-picks="[{&quot;guest&quot;: &quot;yves-colin&quot;, &quot;name&quot;: &quot;Yves Colin&quot;, &quot;role&quot;: &quot;Customer Engineer Data Management @Google&quot;, &quot;href&quot;: &quot;./articles/yves-colin.html#outside-of-your-studies-were-there-resources-that-helped-you&quot;, &quot;quote&quot;: &quot;It’s a true bible for understanding how the operating system interacts with hardware and databases.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/systems-performance.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Systems Performance</p>
+        <p class="book-author">Brendan Gregg</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/yves-colin.jpg" alt="Yves Colin" title="Yves Colin" loading="lazy" /></span><span>Yves</span></p>
+      </div>
+    </li>
+    <li class="book" id="apue" data-cat="systems" data-guests="ege-gunes" style="--i:7; --ar:0.8">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Advanced Programming in the UNIX Environment by W. Richard Stevens &amp; Stephen Rago, recommended by Ege Güneş"
+        data-title="Advanced Programming in the UNIX Environment" data-author="W. Richard Stevens &amp; Stephen Rago" data-year="1992" data-cat-label="Systems"
+        data-cover="./assets/books/apue.jpg" data-ar="0.8" data-picks="[{&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#how-did-you-develop-yourself&quot;, &quot;quote&quot;: &quot;The most critical book I probably read… It explains all the system calls of Linux, all the file structures, and so on. Reading that book from cover to cover was important.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/apue.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Advanced Programming in the UNIX Environment</p>
+        <p class="book-author">W. Richard Stevens &amp; Stephen Rago</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Ege</span></p>
+      </div>
+    </li>
+    <li class="book" id="system-design-interview" data-cat="systems" data-guests="yves-colin" style="--i:8; --ar:0.666">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="System Design Interview by Alex Xu, recommended by Yves Colin"
+        data-title="System Design Interview" data-author="Alex Xu" data-year="2020" data-cat-label="Systems"
+        data-cover="./assets/books/system-design-interview.jpg" data-ar="0.666" data-picks="[{&quot;guest&quot;: &quot;yves-colin&quot;, &quot;name&quot;: &quot;Yves Colin&quot;, &quot;role&quot;: &quot;Customer Engineer Data Management @Google&quot;, &quot;href&quot;: &quot;./articles/yves-colin.html#outside-of-your-studies-were-there-resources-that-helped-you&quot;, &quot;quote&quot;: &quot;…very interesting for understanding how to design a resilient system capable of operating at scale, and why architecture is always a matter of trade-offs.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/system-design-interview.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">System Design Interview</p>
+        <p class="book-author">Alex Xu</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/yves-colin.jpg" alt="Yves Colin" title="Yves Colin" loading="lazy" /></span><span>Yves</span></p>
+      </div>
+    </li>
+    <li class="book" id="design-patterns" data-cat="craft" data-guests="cedric-villemain" style="--i:9; --ar:0.756">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Design Patterns by Gamma, Helm, Johnson &amp; Vlissides, recommended by Cedric Villemain"
+        data-title="Design Patterns" data-author="Gamma, Helm, Johnson &amp; Vlissides" data-year="1994" data-cat-label="Craft"
+        data-cover="./assets/books/design-patterns.jpg" data-ar="0.756" data-picks="[{&quot;guest&quot;: &quot;cedric-villemain&quot;, &quot;name&quot;: &quot;Cedric Villemain&quot;, &quot;role&quot;: &quot;President / CEO @Data bene&quot;, &quot;href&quot;: &quot;./articles/cedric-villemain.html#do-you-read-tech-books&quot;, &quot;quote&quot;: &quot;Computing is actually very simple. It’s zeros and ones. And at the software and developer level, there are just a few development patterns.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/design-patterns.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Design Patterns</p>
+        <p class="book-author">Gamma, Helm, Johnson &amp; Vlissides</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/cedric-villemain.jpg" alt="Cedric Villemain" title="Cedric Villemain" loading="lazy" /></span><span>Cedric</span></p>
+      </div>
+    </li>
+    <li class="book" id="goos" data-cat="craft" data-guests="mikael-francoeur" style="--i:10; --ar:0.8">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Growing Object-Oriented Software, Guided by Tests by Steve Freeman &amp; Nat Pryce, recommended by Mikaël Francoeur"
+        data-title="Growing Object-Oriented Software, Guided by Tests" data-author="Steve Freeman &amp; Nat Pryce" data-year="2009" data-cat-label="Craft"
+        data-cover="./assets/books/goos.jpg" data-ar="0.8" data-picks="[{&quot;guest&quot;: &quot;mikael-francoeur&quot;, &quot;name&quot;: &quot;Mikaël Francoeur&quot;, &quot;role&quot;: &quot;Software Engineer @Turso&quot;, &quot;href&quot;: &quot;./articles/mikael-francoeur.html#do-you-have-a-top-3-books&quot;, &quot;quote&quot;: &quot;I read it after already working professionally as a developer for around five years, and I still learned an enormous amount from it.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/goos.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Growing Object-Oriented Software, Guided by Tests</p>
+        <p class="book-author">Steve Freeman &amp; Nat Pryce</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/mikael-francoeur.jpg" alt="Mikaël Francoeur" title="Mikaël Francoeur" loading="lazy" /></span><span>Mikaël</span></p>
+      </div>
+    </li>
+    <li class="book" id="crafting-interpreters" data-cat="craft" data-guests="mikael-francoeur" style="--i:11; --ar:0.8">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Crafting Interpreters by Robert Nystrom, recommended by Mikaël Francoeur"
+        data-title="Crafting Interpreters" data-author="Robert Nystrom" data-year="2021" data-cat-label="Craft"
+        data-cover="./assets/books/crafting-interpreters.jpg" data-ar="0.8" data-picks="[{&quot;guest&quot;: &quot;mikael-francoeur&quot;, &quot;name&quot;: &quot;Mikaël Francoeur&quot;, &quot;role&quot;: &quot;Software Engineer @Turso&quot;, &quot;href&quot;: &quot;./articles/mikael-francoeur.html#do-you-have-a-top-3-books&quot;, &quot;quote&quot;: &quot;One book that took me probably a year and a half to finish was Crafting Interpreters. It’s an incredibly accessible and well-written book.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/crafting-interpreters.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Crafting Interpreters</p>
+        <p class="book-author">Robert Nystrom</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/mikael-francoeur.jpg" alt="Mikaël Francoeur" title="Mikaël Francoeur" loading="lazy" /></span><span>Mikaël</span></p>
+      </div>
+    </li>
+    <li class="book" id="cracking-the-coding-interview" data-cat="craft" data-guests="mikael-francoeur" style="--i:12; --ar:0.666">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Cracking the Coding Interview by Gayle Laakmann McDowell, recommended by Mikaël Francoeur"
+        data-title="Cracking the Coding Interview" data-author="Gayle Laakmann McDowell" data-year="2008" data-cat-label="Craft"
+        data-cover="./assets/books/cracking-the-coding-interview.jpg" data-ar="0.666" data-picks="[{&quot;guest&quot;: &quot;mikael-francoeur&quot;, &quot;name&quot;: &quot;Mikaël Francoeur&quot;, &quot;role&quot;: &quot;Software Engineer @Turso&quot;, &quot;href&quot;: &quot;./articles/mikael-francoeur.html#do-you-have-a-top-3-books&quot;, &quot;quote&quot;: &quot;It’s not really a book you read cover to cover, but it’s stayed with me over the years.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/cracking-the-coding-interview.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Cracking the Coding Interview</p>
+        <p class="book-author">Gayle Laakmann McDowell</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/mikael-francoeur.jpg" alt="Mikaël Francoeur" title="Mikaël Francoeur" loading="lazy" /></span><span>Mikaël</span></p>
+      </div>
+    </li>
+    <li class="book" id="how-to-win-friends" data-cat="life" data-guests="cornelia-biacsics" style="--i:13; --ar:0.606">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="How to Win Friends and Influence People by Dale Carnegie, recommended by Cornelia Biacsics"
+        data-title="How to Win Friends and Influence People" data-author="Dale Carnegie" data-year="1936" data-cat-label="Life & fiction"
+        data-cover="./assets/books/how-to-win-friends.jpg" data-ar="0.606" data-picks="[{&quot;guest&quot;: &quot;cornelia-biacsics&quot;, &quot;name&quot;: &quot;Cornelia Biacsics&quot;, &quot;role&quot;: &quot;Principal Program Manager @Microsoft&quot;, &quot;href&quot;: &quot;./articles/cornelia-biacsics.html#on-the-personal-side-are-there-any-books-or-resources-youd&quot;, &quot;quote&quot;: &quot;It’s a really, really good book about collaborating with people, with a lot of examples… It’s one of my favorite books.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/how-to-win-friends.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">How to Win Friends and Influence People</p>
+        <p class="book-author">Dale Carnegie</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/cornelia-biacsics.jpg" alt="Cornelia Biacsics" title="Cornelia Biacsics" loading="lazy" /></span><span>Cornelia</span></p>
+      </div>
+    </li>
+    <li class="book" id="the-black-swan" data-cat="life" data-guests="cornelia-biacsics" style="--i:14; --ar:0.65">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Black Swan by Nassim Nicholas Taleb, recommended by Cornelia Biacsics"
+        data-title="The Black Swan" data-author="Nassim Nicholas Taleb" data-year="2007" data-cat-label="Life & fiction"
+        data-cover="./assets/books/the-black-swan.jpg" data-ar="0.65" data-picks="[{&quot;guest&quot;: &quot;cornelia-biacsics&quot;, &quot;name&quot;: &quot;Cornelia Biacsics&quot;, &quot;role&quot;: &quot;Principal Program Manager @Microsoft&quot;, &quot;href&quot;: &quot;./articles/cornelia-biacsics.html#on-the-personal-side-are-there-any-books-or-resources-youd&quot;, &quot;quote&quot;: &quot;I don’t agree with all of its content, but it gives some good ideas and examples of how to look at certain challenges.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/the-black-swan.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Black Swan</p>
+        <p class="book-author">Nassim Nicholas Taleb</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/cornelia-biacsics.jpg" alt="Cornelia Biacsics" title="Cornelia Biacsics" loading="lazy" /></span><span>Cornelia</span></p>
+      </div>
+    </li>
+    <li class="book" id="hitchhikers-guide" data-cat="life" data-guests="cornelia-biacsics" style="--i:15; --ar:0.64">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Hitchhiker&#x27;s Guide to the Galaxy by Douglas Adams, recommended by Cornelia Biacsics"
+        data-title="The Hitchhiker&#x27;s Guide to the Galaxy" data-author="Douglas Adams" data-year="1979" data-cat-label="Life & fiction"
+        data-cover="./assets/books/hitchhikers-guide.jpg" data-ar="0.64" data-picks="[{&quot;guest&quot;: &quot;cornelia-biacsics&quot;, &quot;name&quot;: &quot;Cornelia Biacsics&quot;, &quot;role&quot;: &quot;Principal Program Manager @Microsoft&quot;, &quot;href&quot;: &quot;./articles/cornelia-biacsics.html#on-the-personal-side-are-there-any-books-or-resources-youd&quot;, &quot;quote&quot;: &quot;Something that has no professional connection… But I think this is at the top of many people’s reading lists.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/hitchhikers-guide.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Hitchhiker&#x27;s Guide to the Galaxy</p>
+        <p class="book-author">Douglas Adams</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/cornelia-biacsics.jpg" alt="Cornelia Biacsics" title="Cornelia Biacsics" loading="lazy" /></span><span>Cornelia</span></p>
+      </div>
+    </li>
+    <li class="book" id="unsong" data-cat="life" data-guests="ege-gunes" style="--i:16; --ar:0.666">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="Unsong by Scott Alexander, recommended by Ege Güneş"
+        data-title="Unsong" data-author="Scott Alexander" data-year="2017" data-cat-label="Life & fiction"
+        data-cover="./assets/books/unsong.jpg" data-ar="0.666" data-link="https://unsongbook.com/" data-picks="[{&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#can-you-share-your-three-favorite-books&quot;, &quot;quote&quot;: &quot;It’s available online and can be read through a website. That’s probably my all-time favorite book.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/unsong.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">Unsong</p>
+        <p class="book-author">Scott Alexander</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Ege</span></p>
+      </div>
+    </li>
+    <li class="book" id="the-dark-tower" data-cat="life" data-guests="ege-gunes" style="--i:17; --ar:0.674">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Dark Tower by Stephen King, recommended by Ege Güneş"
+        data-title="The Dark Tower" data-author="Stephen King" data-year="1982" data-cat-label="Life & fiction"
+        data-cover="./assets/books/the-dark-tower.jpg" data-ar="0.674" data-picks="[{&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#can-you-share-your-three-favorite-books&quot;, &quot;quote&quot;: &quot;That series has had a lasting impact on me and has remained one of my favorites for years.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/the-dark-tower.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Dark Tower</p>
+        <p class="book-author">Stephen King</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Ege</span></p>
+      </div>
+    </li>
+    <li class="book" id="death-gate-cycle" data-cat="life" data-guests="ege-gunes" style="--i:18; --ar:0.75">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Death Gate Cycle by Margaret Weis &amp; Tracy Hickman, recommended by Ege Güneş"
+        data-title="The Death Gate Cycle" data-author="Margaret Weis &amp; Tracy Hickman" data-year="1990" data-cat-label="Life & fiction"
+        data-cover="./assets/books/death-gate-cycle.jpg" data-ar="0.75" data-picks="[{&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#can-you-share-your-three-favorite-books&quot;, &quot;quote&quot;: &quot;It’s another series that has always been very special to me.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/death-gate-cycle.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Death Gate Cycle</p>
+        <p class="book-author">Margaret Weis &amp; Tracy Hickman</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Ege</span></p>
+      </div>
+    </li>
+    <li class="book" id="brothers-karamazov" data-cat="life" data-guests="ege-gunes" style="--i:19; --ar:0.666">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Brothers Karamazov by Fyodor Dostoevsky, recommended by Ege Güneş"
+        data-title="The Brothers Karamazov" data-author="Fyodor Dostoevsky" data-year="1880" data-cat-label="Life & fiction"
+        data-cover="./assets/books/brothers-karamazov.jpg" data-ar="0.666" data-picks="[{&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#can-you-share-your-three-favorite-books&quot;, &quot;quote&quot;: &quot;A book I deeply admire.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/brothers-karamazov.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Brothers Karamazov</p>
+        <p class="book-author">Fyodor Dostoevsky</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Ege</span></p>
+      </div>
+    </li>
+    <li class="book" id="time-regulation-institute" data-cat="life" data-guests="ege-gunes" style="--i:20; --ar:0.652">
+      <button class="book-open" type="button" aria-haspopup="dialog" aria-label="The Time Regulation Institute by Ahmet Hamdi Tanpınar, recommended by Ege Güneş"
+        data-title="The Time Regulation Institute" data-author="Ahmet Hamdi Tanpınar" data-year="1961" data-cat-label="Life & fiction"
+        data-cover="./assets/books/time-regulation-institute.jpg" data-ar="0.652" data-picks="[{&quot;guest&quot;: &quot;ege-gunes&quot;, &quot;name&quot;: &quot;Ege Güneş&quot;, &quot;role&quot;: &quot;Team Lead, Kubernetes Operators @Percona&quot;, &quot;href&quot;: &quot;./articles/ege-gunes.html#can-you-share-your-three-favorite-books&quot;, &quot;quote&quot;: &quot;Another one that I love very much.&quot;}]">
+        <span class="book-drop"><span class="book-3d">
+          <span class="book-back" aria-hidden="true"></span>
+          <span class="book-pages" aria-hidden="true"></span>
+          <span class="book-cover"><img src="./assets/books/time-regulation-institute.jpg" alt="" loading="lazy" width="300" height="450" /><span class="book-shine"></span></span>
+        </span></span>
+      </button>
+      <div class="book-meta">
+        <p class="book-title">The Time Regulation Institute</p>
+        <p class="book-author">Ahmet Hamdi Tanpınar</p>
+        <p class="book-by"><span class="book-faces"><img src="./assets/faces/ege-gunes.jpg" alt="Ege Güneş" title="Ege Güneş" loading="lazy" /></span><span>Ege</span></p>
+      </div>
+    </li>
+  </ul>
+  <p class="shelf-empty" hidden>No book on this shelf yet.</p>
+
+  <section class="library-section">
+    <div class="home-section-head">
+      <p class="section-label">Beyond books</p>
+      <h2 class="section-title">Courses, papers, podcasts</h2>
+    </div>
+    <ul class="resource-grid">
+    <li class="resource" style="--i:0" data-guests="mikael-francoeur">
+      <p class="resource-kind">Course</p>
+      <a class="resource-title" href="https://15445.courses.cs.cmu.edu/" target="_blank" rel="noopener noreferrer">CMU Database Systems <span aria-hidden="true">↗</span></a>
+      <p class="resource-by">Andy Pavlo, Carnegie Mellon</p>
+      <blockquote class="resource-quote"><p>“A very good introduction, not only to databases themselves, but also to the level of rigor the field requires.”</p><footer><img src="./assets/faces/mikael-francoeur.jpg" alt="" loading="lazy" /><a href="./articles/mikael-francoeur.html#if-someone-has-no-background-in-databases-and-wants-to">Mikaël Francoeur</a></footer></blockquote>
+    </li>
+    <li class="resource" style="--i:1" data-guests="franck-pachot ege-gunes">
+      <p class="resource-kind">Documentation <span class="resource-count">Recommended twice</span></p>
+      <a class="resource-title" href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreferrer">The official docs <span aria-hidden="true">↗</span></a>
+      <p class="resource-by">PostgreSQL, MySQL, and the rest</p>
+      <blockquote class="resource-quote"><p>“When I really want to understand something, I go and read the official documentation from beginning to end.”</p><footer><img src="./assets/faces/franck-pachot.jpg" alt="" loading="lazy" /><a href="./articles/franck-pachot.html#do-you-have-any-books-to-recommend">Franck Pachot</a></footer></blockquote><blockquote class="resource-quote"><p>“My primary sources are the official MySQL and PostgreSQL documentation.”</p><footer><img src="./assets/faces/ege-gunes.jpg" alt="" loading="lazy" /><a href="./articles/ege-gunes.html#how-do-you-find-answers-to-technical-questions">Ege Güneş</a></footer></blockquote>
+    </li>
+    <li class="resource" style="--i:2" data-guests="cedric-villemain">
+      <p class="resource-kind">Website</p>
+      <a class="resource-title" href="https://modern-sql.com/" target="_blank" rel="noopener noreferrer">Modern SQL <span aria-hidden="true">↗</span></a>
+      <p class="resource-by">Markus Winand</p>
+      <blockquote class="resource-quote"><p>“If you want to get into SQL, Modern SQL is probably one of the best entry points.”</p><footer><img src="./assets/faces/cedric-villemain.jpg" alt="" loading="lazy" /><a href="./articles/cedric-villemain.html#do-you-have-resources-to-recommend-for-learning-postgresql">Cedric Villemain</a></footer></blockquote>
+    </li>
+    <li class="resource" style="--i:3" data-guests="cedric-villemain">
+      <p class="resource-kind">Website</p>
+      <a class="resource-title" href="https://use-the-index-luke.com/" target="_blank" rel="noopener noreferrer">Use the Index, Luke <span aria-hidden="true">↗</span></a>
+      <p class="resource-by">Markus Winand</p>
+      <blockquote class="resource-quote"><p>“Use the Index is about optimization… His courses are excellent.”</p><footer><img src="./assets/faces/cedric-villemain.jpg" alt="" loading="lazy" /><a href="./articles/cedric-villemain.html#do-you-have-resources-to-recommend-for-learning-postgresql">Cedric Villemain</a></footer></blockquote>
+    </li>
+    <li class="resource" style="--i:4" data-guests="cornelia-biacsics">
+      <p class="resource-kind">Podcast</p>
+      <a class="resource-title" href="https://talkingpostgres.com/" target="_blank" rel="noopener noreferrer">Talking Postgres <span aria-hidden="true">↗</span></a>
+      <p class="resource-by">Claire Giordano</p>
+      <blockquote class="resource-quote"><p>“A very, very useful podcast to get to know community people and people who work with PostgreSQL.”</p><footer><img src="./assets/faces/cornelia-biacsics.jpg" alt="" loading="lazy" /><a href="./articles/cornelia-biacsics.html#on-the-personal-side-are-there-any-books-or-resources-youd">Cornelia Biacsics</a></footer></blockquote>
+    </li>
+    </ul>
+  </section>
+
+  <section class="library-section">
+    <div class="home-section-head">
+      <p class="section-label">And the others</p>
+      <h2 class="section-title">Not big readers</h2>
+    </div>
+    <div class="nonreaders"><figure class="nonreader" style="--i:0"><blockquote>“I’ve never read a tech book from cover to cover.”</blockquote><figcaption><img src="./assets/faces/cedric-villemain.jpg" alt="" loading="lazy" /><a href="./articles/cedric-villemain.html#do-you-read-tech-books">Cedric Villemain</a></figcaption></figure><figure class="nonreader" style="--i:1"><blockquote>“My thing has always been to get hands-on. I do not know the topic, I want to build something, and I will do everything I can to make it work.”</blockquote><figcaption><img src="./assets/faces/matt-cornillon.jpg" alt="" loading="lazy" /><a href="./articles/matt-cornillon.html#how-did-you-train-yourself-on-postgresql">Matt Cornillon</a></figcaption></figure><figure class="nonreader" style="--i:2"><blockquote>“Our profession is learned especially through experience.”</blockquote><figcaption><img src="./assets/faces/elisa-usai.jpg" alt="" loading="lazy" /><a href="./articles/elisa-usai.html#is-there-a-book-or-resource-that-particularly-shaped-you">Elisa Usai</a></figcaption></figure><figure class="nonreader" style="--i:3"><blockquote>“Go find the zones that interest you. Each little world has its own resources.”</blockquote><figcaption><img src="./assets/faces/damien-clochard.jpg" alt="" loading="lazy" /><a href="./articles/damien-clochard.html#are-there-resources-books-blogs-that-helped-you-master">Damien Clochard</a></figcaption></figure></div>
+  </section>
+</main>
+
+<dialog class="book-dialog" aria-labelledby="book-dialog-title">
+  <div class="book-dialog-inner">
+    <button class="book-dialog-close" type="button" aria-label="Close">×</button>
+    <div class="book-stage" aria-hidden="true">
+      <div class="book-big">
+        <div class="book-big-cover"><img alt="" /></div>
+      </div>
+    </div>
+    <div class="book-dialog-text">
+      <p class="section-label book-dialog-cat"></p>
+      <h2 id="book-dialog-title" class="book-dialog-title"></h2>
+      <p class="book-dialog-author"></p>
+      <p class="book-dialog-note"></p>
+      <div class="book-dialog-picks"></div>
+      <a class="btn book-dialog-link" target="_blank" rel="noopener noreferrer" hidden>Read it online ↗</a>
+    </div>
+  </div>
+</dialog>

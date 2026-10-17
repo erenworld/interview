@@ -1,0 +1,326 @@
+---
+name: "Mikaël Francoeur"
+role: Software Engineer @Turso
+published: 2026-05-16
+modified: 2026-05-16
+excerpt: "Mikaël talks about his unusual path from musicology to databases, how open source helped him join Turso, and why reliability matters even more in the AI era."
+tags: [Interviews, Databases, Open Source, SQLite]
+photo: assets/mikael.jpg
+face: assets/faces/mikael-francoeur.jpg
+ogImage: assets/og/mikael-francoeur.jpg
+voice: male
+quote: Sometimes in life, a door opens, and when it closes, it doesn’t reopen.
+links:
+  - kind: LinkedIn
+    url: https://www.linkedin.com/in/mika%C3%ABl-francoeur
+  - kind: GitHub
+    url: https://github.com/LeMikaelF
+---
+
+## Can you introduce yourself?
+
+My name is Mikaël. I've been working at Turso for six months now. I have an atypical background. I started as a musician. I did a master's in piano. Then I did a PhD in musicology. I finished at 29. And in parallel I was a semi-professional musician. I worked in the naval reserve in Canada. I was a reservist from age 16 to 32, for 16 years part-time. I also had occasional short-term contracts, often during the summer.
+
+## How did you go from being a musician to becoming a programmer?
+
+During my PhD, I needed a digital tool, so I decided to build it myself. I already knew some programming from teaching myself as a kid, but that project is what really got me hooked.
+
+I realized I loved solving problems, constantly learning, and the puzzle-like aspect of programming. At the same time, I already saw my PhD as a finishing point rather than the start of an academic career in musicology.
+
+When I finished my PhD, the pandemic hit a few months later. I was working as a musician for the navy, but suddenly there wasn't much work anymore. So I decided to fully commit to a career transition. I studied from morning to night for months, and seven months later, someone hired me for my first programming job after finding my resume in the trash.
+
+## They found your resume in the trash?
+
+Yes, literally in the trash. What I think happened is that I had sent my resume and the HR person must have printed all the resumes and thrown them in the trash when it wasn't the profile they expected. Naturally, at the time, nobody wanted to hire a musicology PhD to do web development.
+
+## What was your first job in tech?
+
+My first job was at a small medical equipment manufacturer. That's where I started.
+
+## Did you have any regrets about your musicology PhD?
+
+No, my life is already very full. People often ask me what would have happened if I had studied computer science from the start, but I don’t think you can really answer “what if” questions.
+
+In Quebec, we say those questions can take you around the world, because once you start imagining different paths, the possibilities become endless.
+
+## You said you took seven months to train intensively in development. How did you organize your learning?
+
+My strategy was: I'm going to get my Spring certification. Spring, which is the most widely used development framework in Java. So I did everything I could to get that. It's called Spring Certified Professional. It's a very substantial certification. I was lucky because it's a really well-designed certification. Because beyond learning the Spring product itself, it also covers everything around it: HTTP, how to write tests, things like that.
+
+My introduction to Spring development was a Udemy course that was, from memory, 60 hours long, which I completed from start to finish. It was by a guy who calls himself Spring Framework Guru. For me, it was a great introduction.
+
+## After your first web development job, did you join Ticketmaster directly?
+
+No, I joined them directly, there was no gap in between. At Ticketmaster, I worked on back-end systems and microservices, mainly using Java and Go, with very little front-end work.
+
+I also worked with technologies like Kafka, Elasticsearch, Redis, MySQL, and DynamoDB, tools that are more adapted to large-scale systems. Compared to my previous company, the scale was much bigger.
+
+## How old were you when you became a developer?
+
+30 years old.
+
+## How did you end up in databases?
+
+When I was working at Ticketmaster, we had pretty strict performance constraints on our MySQL databases. So I started reading as much of the MySQL documentation as I could to understand transaction isolation, query plans, `EXPLAIN`, query optimization, and how data is structured on disk.
+
+At some point, I submitted a talk about MySQL transactions to a conference in Montreal called ConFoo. Preparing for that talk pushed me to study even more.
+
+There was also a well-known person from the database world there who told me, “You should submit this talk to SCALE in Los Angeles.” So I did, and I got accepted there as well. For that conference, I kept digging deeper: reading source code, exploring internals, and trying to really understand how things worked. That’s roughly how I became deeply interested in databases.
+
+What attracted me most was the level of complexity and technical depth. I don’t want to speak badly about enterprise applications because they can also be extremely complex and meaningful. But I once heard an analogy that resonated with me: some domains are broad and shallow, like web or mobile development, while others are narrow but very deep, like databases or distributed systems. Those deep technical domains are what really interested me.
+
+<Place
+  image="assets/places/montreal.jpg"
+  title="Montreal, Canada"
+  text="Where Mikaël gave his first database talk, on MySQL transactions, at ConFoo."
+  credit="Quintin Soloviev"
+  creditUrl="https://commons.wikimedia.org/wiki/File:Montreal,_Quebec_skyline.jpg"
+  license="CC BY 4.0"
+/>
+
+## Did books also play an important role in your learning journey?
+
+Yes. I'm somewhat self-taught by accident, but it's also in my personality. I like to go find information on my own. So yes, books are a very good source of knowledge.
+
+## Do you publish your reading list somewhere, like an online bookshelf?
+
+No, not really. The book I’m deeply into right now is *Database System Concepts*, and it’s massive, around pages. I’m only about 400 pages in, so it’s going to take me a long time to finish.
+
+That’s also part of the downside of going deep into a narrow field: you’re less likely to read a 300-page book over a weekend and move on. These subjects require a lot more time and depth.
+
+## Have any side projects or experiments helped you deepen your understanding of databases?
+
+Yes, actually. Recently, I built a B-Tree visualizer because we had a real issue to investigate at Turso.
+
+A database had become corrupted because of a bug we’ve since fixed, and I wanted to inspect the exact structure of the B-Trees: where pages were located, how cells were organized inside them, and how everything was laid out.
+
+That project was also one of the ways I experimented with AI. I often use AI for proofs of concept or disposable tools: things that don’t need to be perfect and that you might even throw away the next day.
+
+So I opened Anthropic’s Claude and asked it to generate a visualization tool for the B-Tree with all my specific requirements. Surprisingly, it worked really well. If there are bugs, either I haven’t noticed them or they haven’t affected the functionality. We’ve actually reused that tool several times since then.
+
+## So it's kind of a debugging tool?
+
+Exactly. And honestly, I think this is something a lot of people are realizing right now with AI coding agents: they’re incredibly good for experimentation and rapid prototyping because they drastically reduce the cost of trying things.
+
+For example, at Turso, we have many fuzz tests that work in a loop. Inside that loop, we take the modulo of a random number, and depending on the result, we execute different actions. If the modulo is 1, maybe we do an insert; if it’s 2, we do a delete, and so on.
+
+Recently, I read about something called swarm testing. The idea is that for these kinds of randomized tests, you can sometimes find bugs more effectively by disabling certain branches during a given execution. For example, one run might randomly allow only inserts, while another allows only deletes.
+
+So I asked Anthropic’s Claude to build a prototype that could transform our fuzz tests into swarm tests. I let it work in the background while I focused on other tasks.
+
+It generated a few thousand lines of code that I only skimmed through, but that wasn’t really the point. The important part was that, with very little effort, I quickly had a proof of concept that helped me determine whether the idea was feasible and whether we could integrate an API for it without heavily impacting our existing tests.
+
+## What is Turso?
+
+Turso is building a SQLite-compatible database, which in our case happens to be written in Rust, although it could have been implemented in another language as well.
+
+The goal is to push beyond some of SQLite’s current limitations. We also provide a cloud platform that lets users host SQLite-compatible databases and synchronize them with clients.
+
+The database itself is fully open source. Last time I checked, the project had more than 18,000 GitHub stars and over 230 open source contributors, so it’s a very active ecosystem.
+
+One thing we’re especially proud of is support for multi-writer capabilities. That means multiple users can write to the database simultaneously, which SQLite does not support. That limitation is one of the main reasons SQLite can be difficult to adopt for certain larger-scale use cases.
+
+<Projects>
+  <Project
+    href="https://github.com/tursodatabase/turso"
+    logo="assets/projects/turso.png"
+    name="Turso"
+    description="A SQLite-compatible database written in Rust."
+    tags={["GitHub", "Rust"]}
+  />
+</Projects>
+
+## How did you join Turso?
+
+I need to go back about three years, because what I really want to show with this story is that there’s definitely an element of luck, but there’s also a huge part about putting yourself in a position where luck can happen, giving yourself opportunities to get lucky.
+
+Around 2022 or 2023, I attended QCon San Francisco in San Francisco. During the conference, I went to an Ask Me Anything session with people from Microsoft’s Cosmos DB team.
+
+There were only two attendees there: me, and a director from another company. We started talking and exchanged contact information.
+
+A couple of years later, that company’s CEO made a typical anniversary post on LinkedIn saying how proud he was of what the company had achieved. I commented on the post saying that I really admired what they were building and wished them success.
+
+A little later, the director I had met at QCon reached out to me and said: “Thanks for your message. I forwarded it to our CEO, and he really appreciated it. Would you be interested in attending a conference we’re organizing called Bug Bash?”
+
+Of course, I accepted. And during that conference, I met Glauber Costa, the CEO of Turso.
+
+One evening during the conference, Glauber and I went for a walk around the city and talked about many different things. That’s when he started telling me more about Turso’s open source project. I already knew about it from places like Hacker News, but during that conversation he told me something that really stayed with me:
+
+> “I can’t promise anything, but if we ever hire more people, we’ll probably hire from among our contributors.”
+
+I kept that in the back of my mind.
+
+A few months later, I was starting to feel a bit too comfortable in my current job. I wanted to challenge myself and explore something new. So I quit my job and went back into intense study mode, just like I had done years earlier. I didn’t really know what would happen next, but I felt that whatever came after would be more interesting than staying where I was.
+
+At that point, I decided to focus heavily on contributing to Turso. First, because it was a highly visible open source project, and contributing to a database project like that would be an incredible learning opportunity and a strong signal on my resume. Second, because I knew that if they ever decided to hire, contributors would naturally be the first people they looked at.
+
+So for about five months, I was unemployed and studying full time, contributing and learning as much as I could without really knowing where it would lead.
+
+Eventually, Turso hired me.
+
+It was definitely my number one goal, but I think it would have been reckless to make it my only possible outcome. What I knew for sure was that contributing to Turso would open many doors, and Turso itself just happened to be one of them.
+
+## So before receiving the offer, you had already been contributing to Turso?
+
+Yes. Before being hired, I had already contributed quite a bit to Turso.
+
+For example, I was the person who added the table-valued functions `JSON_EACH` and `JSON_TREE`. I also extended the table-valued functions API and contributed to both the JavaScript and Rust bindings.
+
+At the time, the database was still very much in beta, so it was easier to uncover issues. I also started using artificial intelligence to help find bugs in Turso, and before joining the company, I had already identified over one hundred bugs.
+
+## What does a typical day look like at Turso today?
+
+We work with a tremendous amount of autonomy. I don't have set hours. Nobody does. Nobody either… we're all aware of the company's direction. We're all aware of the company's priorities. And it's each person's responsibility to spend their time on what has the most impact.
+
+## Do you think open source is still a good path today to get hired at a company?
+
+Absolutely. What I'd add, though, is that contributing to open source specifically to get hired by that project, I think that's putting blinders on. I think the best way to use open source, whether you're learning or job searching, is to contribute in a way that puts your capabilities in the spotlight, by doing things that require a lot of knowledge and skill.
+
+Especially now with AI, it's so easy to open a pull request that fixes a non-trivial problem that in itself, paradoxically, it becomes trivial. So what I'd suggest to someone who wants to use open source to position themselves on the job market is to do things that aren't yet accessible through that trivial mode of contribution. For example, things that require a lot of expertise. At Turso, for instance, we know there are parts of the database we'd like to verify using formal verification languages, and do model testing to ensure our database has certain safety properties. Those are things AI isn't yet capable of doing.
+
+And if I were still in the position of thinking: "I want to prove my worth," I'd make it my business to become an expert in that area, and have a positive impact on the project my name is going to be attached to.
+
+## I noticed your frustration lately around open source, about AI PRs flooding Turso. What are your predictions for open source?
+
+Yes. I know that Glauber Costa published an article on this exact topic, explaining that there’s still plenty of room for open source contributions, but that the definition of a valuable contribution is changing.
+
+In the past, simply writing code had a lot of intrinsic value because it was harder to produce than it is today.
+
+I think open source has always fundamentally been about adding value. If writing code alone becomes less valuable, then the way people contribute also has to evolve. What still matters are contributions that demonstrate real effort and expertise.
+
+There’s actually a proposal currently being discussed in the Rust ecosystem called “No low effort contributions.” It explores whether projects should stop accepting contributions that require little to no effort.
+
+It’s similar to what I was saying earlier about formal verification. I think the future of open source will increasingly revolve around contributions that not only create value, but also reflect genuine technical depth and professional expertise.
+
+## What do you think of Rust?
+
+I’m interested in Rust because it’s my main professional tool today.
+
+My perspective is probably biased, though, because most of the work I did in Java was enterprise application development, while most of my work in Rust has been systems programming. So the complexity often comes more from the domain itself than from the language.
+
+What I can say is that Rust introduces a lot of ceremony around memory management, lifetimes, and ownership. Sometimes that can feel frustrating when the problem you’re trying to solve isn’t specifically low-level or technical in nature.
+
+But I can also phrase that more positively: in my opinion, Java is a beautiful language for enterprise applications. It’s simply designed for different kinds of problems, and that’s perfectly fine.
+
+That said, as projects like Apache Cassandra have shown, Java can also reach certain limits when you start building very low-level systems software.
+
+## How do you use AI?
+
+There’s something Kris Jenkins once posted on LinkedIn that really stuck with me. He said that when something becomes twice as easy to do, it often becomes ten times more useful. I think that idea applies very well to AI.
+
+Where AI really shines is in automating tedious and time-consuming tasks. Once those tasks become easier, you naturally start doing them more often because the cognitive barrier becomes much lower.
+
+For example, I built a skill, which I shared on Discord and will probably publish soon on GitHub, that asks an AI to automatically create a GitHub issue. It goes through the documentation, builds a minimal reproducer, and even suggests where the bug might come from.
+
+Several times a week, I’ll notice a small issue in Turso: maybe a compatibility problem, maybe behavior that feels incorrect. Instead of manually writing everything myself, I run the skill in the background. It opens the issue, I quickly verify that everything is accurate, and then I submit it.
+
+At this point, I think I have more than 500 issues under my name in the Turso repository. And I’d say they’re high-quality issues, actionable reports that engineers can genuinely work from.
+
+## Does AI replace juniors?
+
+I don't know. I don't think I'm the best person to answer that. But what I can say is that what has always had a lot of value, and I think will have even more, is reliability, a sense of initiative, taking a problem and saying: "I'm going to solve this." Becoming someone who is dependable, responsible, someone people can count on. I think that's maybe a quality that was more associated with leadership positions before.
+
+In my opinion, that will continue to be important, or even become more important, for someone who wants to prove their worth. And again, going back to open source: going into an open source project and working with the mindset of: "I'm going to solve this problem, I'm going to see it through to the end, regardless of the tools, whether that's AI, asking colleagues, reading books. I'm going to become the reliable person this project can depend on, and I'm going to see it through." I say project, but it can be something smaller. I think for a professional, that will continue to matter and perhaps matter even more.
+
+## What's the specific advice for juniors?
+
+It would be to become the reliable person. The person people can say: "We have a problem, we'll hand it to them and they'll see it through." Becoming someone who is responsible, who projects a professional image. I'm not talking about wearing a suit and tie, but being the person on whom non-trivial things can rest.
+
+## Have you received advice that changed you, that really helped you in life?
+
+My number one piece of advice, something someone told me that has stayed with me for the last ten years, is: sometimes in life, a door opens, and when it closes, it doesn't reopen. It doesn't reopen after that. So that's how I live my life. I live by seeing doors open and saying: "Oh, I'm going to go see what's behind that door." For me, it's always been a quality I try to develop, the quality of serendipity, of finding things you weren't looking for. And saying: "Look, there's something interesting in that direction. Let me go see what it is.”
+
+## Do you have a top 3 books?
+
+One book that took me probably a year and a half to finish was *Crafting Interpreters*. It’s an incredibly accessible and well-written book. Much like the formal verification material I mentioned earlier, it’s not just about interpreters or programming languages. It also takes many interesting detours into how computers and programming work in general. I really loved that aspect of it.
+
+The second one is *Cracking the Coding Interview*. It’s not really a book you read cover to cover, but it’s stayed with me over the years. It’s basically a classic for interview preparation. If you don’t want to spend a lot of money on LeetCode Premium, this book contains a huge amount of very well-explained material on algorithms and data structures. I think there’s even a section related to databases.
+
+The third book is *Growing Object-Oriented Software, Guided by Tests* by Steve Freeman and Nat Pryce. It focuses more on software engineering and how to properly build applications. It covers topics like test-driven development, software design philosophy, encapsulation, and modularization.
+
+I read it after already working professionally as a developer for around five years, and I still learned an enormous amount from it. That’s why I think it’s valuable both for beginners and for more experienced engineers.
+
+<Shelf books={[
+  { cover: "database-system-concepts.jpg", title: "Database System Concepts" },
+  { cover: "goos.jpg", title: "Growing Object-Oriented Software, Guided by Tests" },
+  { cover: "crafting-interpreters.jpg", title: "Crafting Interpreters" },
+  { cover: "cracking-the-coding-interview.jpg", title: "Cracking the Coding Interview" },
+]} />
+
+## How do you spend your free time?
+
+Not much free time lately. But otherwise, in my free time, I try to improve, to keep studying databases. That's what's occupying me right now. Soon I'm going to start learning a new language. This year, it'll be Georgian.
+
+## How do you organize yourself to learn a new language?
+
+It takes work, it takes time. You need to work every single day. If you or anyone else ever wants to learn another language, I would advise against apps like Duolingo because they're games. They're good for knowing how to say a meal in Arabic, but after that, to be able to get by in a conversation, you need something more engaging.
+
+## What's your toolbox?
+
+I'm on Mac because that's what works for me. Otherwise, I use the JetBrains suite. I have IntelliJ Ultimate. But I think that's something you shouldn't attach too much importance to. I have colleagues who… in fact, all the developers at Turso are extremely competent. We have people on VS Code. People on NeoVim. People on JetBrains. Everyone has their own way of working. Everyone manages to be productive. So I wouldn't tell someone to use my tools because they'll be more productive with them.
+
+## If someone has no background in databases and wants to become a database or systems developer, where would you recommend they start?
+
+I think the Andy Pavlo CMU database course is a very good introduction, not only to databases themselves, but also to the level of rigor the field requires. It’s a demanding domain.
+
+Even today, there are still many things I haven’t mastered yet, things I’ll eventually learn and become more comfortable with. To become a database developer, you really need to build knowledge across many different areas. Honestly, that’s also one of the things that attracted me to the field.
+
+But there’s no single way to learn. I once asked someone who ran their own database company how they learned, and they simply told me: “I read code.” They said they didn’t really read books or follow courses. They just read code.
+
+Another person told me almost the same thing: “I barely read technical books. I just read code.”
+
+That said, I still think there’s a foundational knowledge base you need first. Courses and books can help build that foundation, and after that, reading real production code becomes much more valuable.
+
+## We briefly mentioned conferences. Do you think it's a good way to meet people?
+
+Absolutely. Over the past few years, I’ve attended maybe three, four, sometimes five conferences a year, conferences, congresses, events like that, and not always as a speaker.
+
+One thing I’ve realized over time is that most conference talks end up on YouTube a week later anyway. So when you pay $1,000 or €600 for a ticket, you have to ask yourself what you’re really going there for.
+
+Are you expecting the same experience you’d get sitting on your couch for three days watching videos online? Probably not.
+
+What conferences really provide is a community experience. You meet people you would probably never encounter otherwise. You build connections, discuss technical problems, exchange ideas, and ask questions like: “How do you handle this problem on your side?”
+
+Those relationships can become incredibly valuable later in your career. Sometimes you meet people who can help you in the future, and sometimes you become useful to them as well. That human aspect is, in my opinion, one of the most valuable parts of conferences.
+
+## You also give talks. You did one recently on SQLite. How do you prepare for a talk? Do you have tips, a system, a methodology?
+
+When you teach something, you really have to master the material deeply. If your understanding is only partial, sooner or later, maybe thirty minutes into the talk, someone will ask a question you can’t answer.
+
+For me, giving talks is a way of forcing myself to grow. I think, like most people, I can be lazy if I don’t have a concrete goal. So I give myself deadlines and tell myself: “By this date, I need to truly understand this subject.” Preparing a conference talk forces me to reach that level.
+
+And presenting something well also requires a lot of practice. Usually, I start by rehearsing the talk while timing myself. If it’s supposed to be a 45-minute presentation, the first rehearsal often lasts an hour and a half because I still don’t know exactly what to say, how to phrase things, or how to transition smoothly between topics.
+
+Then I repeat it over and over, the next day, the day after that. And with each repetition, I refine and condense the material until it fits perfectly within the allotted time while still delivering as much value as possible to the audience.
+
+## How do you know when you've reached that level? How do you know you're truly in mastery?
+
+It’s a bit philosophical, but how do you discover the things you don’t even know you’re missing?
+
+There have been several times when I was discussing a topic and someone asked me a question that made me realize: “Actually, I don’t know the answer to that.” And that happens to everyone, even very experienced people.
+
+But those moments are valuable because they expose blind spots you weren’t aware of before. Once you realize there’s something you don’t understand, you go learn it. And usually, while learning that specific thing, you also end up exploring the surrounding concepts and expanding your understanding of the whole area.
+
+So maybe that’s part of the process: putting yourself out there and saying, “I’m going to share the things I understand well.” And if someone asks a question you can’t answer, that’s fine too. At least you’ve created an opportunity to improve and pushed yourself into situations that expand your knowledge further.
+
+## Is there anything you'd like to share?
+
+Last year, I was having dinner with someone whose specialty was databases, a university professor. At one point during the conversation, I told him: “I’d really love to work in databases.”
+
+Right there at the table, he opened his laptop and said: “Let me show you how to work inside the PostgreSQL source code.”
+
+In about fifteen minutes, he walked me through the codebase. He showed me where specific functions were implemented and said: “Look, this function does this. Try modifying it, then recompile the database and you’ll see the behavior change.”
+
+For me, that moment was incredibly inspiring. First, because it reminded me that in this field there are people who are both extremely skilled and genuinely willing to share their knowledge. Second, because it made me realize that experimenting with database internals is actually far more accessible than people imagine.
+
+There’s often this perception that working on databases requires exceptional technical ability or that the barrier to entry is impossibly high. But honestly, that’s not really true.
+
+You can simply clone a project, modify the code, refactor things, experiment, and see what happens. And if it breaks? It doesn’t matter. Nobody’s going to know. That freedom to explore is incredibly valuable.
+
+I think the entry barrier is much lower than people believe. Playing with source code, trying things, observing the results, all of that builds autonomy and curiosity. It exposes you to concepts and ideas you would never encounter otherwise. It’s one of the best ways to learn.
+
+There’s a phrase people often say in English: “You can just do things.” And honestly, that mindset matters a lot. Just try it. The worst-case scenario is that it doesn’t work, but even then, you’ll still have learned something valuable. That’s how we grow as engineers.
+
+## What's the best way to reach you if someone wants to get in touch?
+
+LinkedIn.

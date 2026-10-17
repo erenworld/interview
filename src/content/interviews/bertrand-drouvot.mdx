@@ -1,0 +1,182 @@
+---
+name: Bertrand Drouvot
+role: Senior Database Engineer @AWS
+published: 2026-03-23
+modified: 2026-03-23
+excerpt: Bertrand talks about his career, his move from Oracle to PostgreSQL, and how he joined AWS.
+tags: [Interviews, PostgreSQL, Open Source, AWS]
+photo: assets/bertrand.jpeg
+face: assets/faces/bertrand-drouvot.jpg
+ogImage: assets/og/bertrand-drouvot.jpg
+voice: male
+quote: The important thing is not whether you use AI or not. The important thing is being able to understand what you submit or review.
+links:
+  - kind: X
+    url: https://x.com/BertrandDrouvot
+  - kind: LinkedIn
+    url: https://www.linkedin.com/in/bdrouvot/
+  - kind: GitHub
+    url: https://github.com/bdrouvot
+  - kind: Website
+    url: https://bdrouvot.github.io/
+---
+
+## Can you introduce yourself?
+
+My name is Bertrand Drouvot. I have been working around databases for about 25 years. I spent a long time with Oracle, then fell in love with PostgreSQL around 6 or 7 years ago. Since then, I joined an AWS team fully dedicated to PostgreSQL contributions, and that is now my main activity.
+
+## What is your academic background?
+
+I first studied mathematics, then continued in mathematics and computer science through a postgraduate degree.
+
+## Do you still use things you learned at university?
+
+Yes. During that program, I learned database fundamentals, and that still matters a lot today. I also learned C, which is useful because PostgreSQL is written in C.
+
+## How did you discover databases?
+
+Databases were actually my first assignment when I started working at a services company. I enjoyed it, so I stayed in that field.
+
+What makes databases interesting is that they touch everything: operating systems, networking, security, and software development. It is a very cross-functional domain where you can invest yourself in several areas at once. You never really get bored.
+
+## Did PostgreSQL contributions help you join AWS?
+
+No. I initially joined AWS as a consultant helping customers migrate their databases to AWS. Then I moved into an RDS service team.
+
+About three and a half years ago, a dedicated PostgreSQL contribution team was created internally. I applied and got accepted into the team.
+
+## How did you get into open source?
+
+It happened through both chance and interest.
+
+I worked with Oracle for a very long time, but eventually I got tired of the black-box aspect of it. I already enjoyed sharing scripts with the Oracle community before moving to PostgreSQL.
+
+When I discovered PostgreSQL, I became much more serious about it and started building extensions.
+
+Later at AWS, I worked in database engineering, which was basically the last line of support. Sometimes we would directly encounter PostgreSQL bugs, and I became interested in trying to fix them.
+
+My first PostgreSQL contribution was a bug fix. Most of my work ended up being around logical decoding.
+
+> “One advantage of starting with bug fixes is that you do not really have to justify the idea itself. A bug obviously needs to be fixed.”
+
+<Projects>
+  <Project
+    href="https://www.postgresql.org/developer/"
+    logo="assets/projects/postgres.png"
+    name="PostgreSQL"
+    description="The PostgreSQL source tree, where Bertrand contributes full time."
+    tags={["postgresql.org", "C"]}
+  />
+</Projects>
+
+## What impact does open source have on your work?
+
+Today, it represents 100% of my work.
+
+I only contribute to PostgreSQL. Sometimes I also contribute to Linux when we identify bugs elsewhere in the stack, but overall my work is entirely centered around open source software.
+
+## What is your advice for getting started in open source?
+
+The most important thing is to find a domain you genuinely care about, not to contribute just for the sake of contributing.
+
+If you work enough with a product, you will inevitably run into bugs or things you would like to improve. That is usually the best place to start.
+
+> “If you do not care about the subject, you probably will not have the motivation to keep going.”
+
+## What was one of the hardest problems you had to solve?
+
+The hardest problems are usually the ones where you do not have a reproducible case.
+
+When you already have a reproduction, debugging becomes much easier. Without it, the first challenge is creating one.
+
+I worked on an issue related to logical decoding where we had to analyze WAL logs, event sequences, and checkpoint timing in order to finally reproduce the issue. Once we had the reproduction, fixing the bug became much easier.
+
+> “The hardest part is usually the repro itself.”
+
+## What does your debugging toolbox look like?
+
+I use `git bisect` a lot to identify which commit introduced a bug.
+
+For memory issues, Valgrind is extremely useful.
+
+I also use GDB with breakpoints and especially watchpoints. Watchpoints are very useful when a bug comes from an incorrect variable value because they let you see exactly when that value changes.
+
+My environment is pretty simple overall:
+
+- `tmux`
+- Provisioning scripts
+- `NeoVim`
+- Clang tooling
+- `GDB`
+- `Valgrind`
+
+## What skills matter the most for database engineering?
+
+The most important thing is probably the mindset.
+
+You need a scientific approach based on facts. You need curiosity and the willingness to investigate problems deeply.
+
+Technically, fundamentals matter a lot. Understanding systems, networking, debugging, and being able to challenge assumptions is extremely important.
+
+## What do you think about the impact of AI?
+
+There are positives and negatives.
+
+On the positive side, AI can significantly improve productivity for small functions, test scripts, or even reading assembly code. I personally use it for small C experiments and testing ideas quickly.
+
+For performance investigations, it can also help interpret assembly better than I can in some cases.
+
+The negative side is that we now see patches generated without real understanding behind them. In open source, that can become a problem.
+
+> “The important thing is not whether you use AI or not. The important thing is being able to understand what you submit or review.”
+
+## Do you think AI impacts junior developers?
+
+I think it currently impacts juniors more than seniors.
+
+Senior engineers are still often viewed as the people validating and reviewing what AI generates. For juniors, however, I do think there is a real impact on hiring today.
+
+What matters more than ever is having strong fundamentals and being able to distinguish between hallucinations and correct information.
+
+## What do you think can help young developers today?
+
+Experience matters, but even without experience, people should focus on understanding fundamentals and learning how to challenge AI-generated content.
+
+I also think AI can help people create their own products or companies more easily now. It has become much faster to build something and validate whether an idea works or not.
+
+## Have you worked on projects outside PostgreSQL?
+
+Yes. I worked on a project called Biflix with a friend.
+
+The idea was to build a monitoring platform capable of aggregating multiple database systems into a single interface.
+
+We also added tagging systems so companies could group database resources by products or internal departments and potentially use that information for cost allocation and billing.
+
+## What is your opinion on remote work?
+
+For me, remote work is great.
+
+Before that, I spent around 20 years commuting between places like Luxembourg and Paris, so working remotely feels much better now.
+
+That said, remote work is not for everyone. You need to be comfortable with the social aspect of it and staying organized.
+
+## How do you spend your free time?
+
+I enjoy TV series quite a lot.
+
+I also watch a lot of basketball, especially European and French leagues.
+
+And I enjoy motorcycle rides with friends.
+
+## Any final advice?
+
+Stay curious.
+
+Find something you genuinely care about and go deep into it. That curiosity is what gives you the energy to keep learning and contributing over time.
+
+## Where can people find your work online?
+
+- [GitHub](https://github.com/bdrouvot)
+- [LinkedIn](https://www.linkedin.com/in/bdrouvot/)
+- [Blog](https://bdrouvot.github.io/)
+- [Twitter](https://x.com/BertrandDrouvot)

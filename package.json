@@ -1,0 +1,21 @@
+{
+  "name": "databasestory",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "new": "node tools/new-interview.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.3",
+    "@astrojs/mdx": "^8.1.0",
+    "astro": "^7.3.8",
+    "github-slugger": "^2.0.0",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

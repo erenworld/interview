@@ -1,0 +1,40 @@
+---
+import { SUBSTACK } from "../data/site";
+
+interface Props {
+  base: string;
+}
+const { base } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="footer-cta" id="newsletter">
+    <p class="footer-label">Finished an interview?</p>
+    <h2 class="footer-cta-title">Never miss a story</h2>
+    <p>New DatabaseStory interviews, notes, and database links, straight to your inbox.</p>
+    <a class="btn" href={`${SUBSTACK}/subscribe`} target="_blank" rel="noreferrer">Subscribe</a>
+  </div>
+  <div class="footer-content">
+    <div>
+      <p class="footer-brand">DatabaseStory</p>
+      <p class="footer-tagline">The people behind databases and distributed systems.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Read</p>
+      <a href={`${base}index.html#interviews`}>Interviews</a>
+      <a href={`${base}people.html`}>People</a>
+      <a href={`${base}books.html`}>Books</a>
+      <a href={`${base}about.html`}>About</a>
+      <a href={`${base}sponsor.html`}>Sponsor</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Follow</p>
+      <a href={`${SUBSTACK}/`} target="_blank" rel="noreferrer">Newsletter</a>
+      <a href={`${base}index.html#podcast`}>Podcast</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© {year} Eren Turkoglu. All rights reserved.</span>
+    <a href={`${base}legal.html`}>Legal notice</a>
+  </div>
+</footer>

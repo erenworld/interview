@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import content from "../content/pages/sponsor.html?raw";
+import jsonLd from "../content/pages/sponsor.ld.json";
+---
+<Base
+  title={"Sponsor | DatabaseStory"}
+  description={"Sponsor DatabaseStory and reach database engineers, DBAs, and infrastructure developers through podcast ad slots, homepage placement, and sponsored interviews."}
+  path="sponsor.html"
+  base="./"
+  jsonLd={jsonLd}
+  shellClass="sponsor-page"
+>
+  <Fragment set:html={content} />
+</Base>

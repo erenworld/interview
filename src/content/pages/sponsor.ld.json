@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Sponsor DatabaseStory",
+      "url": "https://databasestory.com/sponsor.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "DatabaseStory",
+        "url": "https://databasestory.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://databasestory.com/icon-512.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://databasestory.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sponsor",
+          "item": "https://databasestory.com/sponsor.html"
+        }
+      ]
+    }
+  ]
+}

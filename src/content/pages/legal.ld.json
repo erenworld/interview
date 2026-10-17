@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Legal notice",
+      "url": "https://databasestory.com/legal.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "DatabaseStory",
+        "url": "https://databasestory.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://databasestory.com/icon-512.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://databasestory.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Legal notice",
+          "item": "https://databasestory.com/legal.html"
+        }
+      ]
+    }
+  ]
+}

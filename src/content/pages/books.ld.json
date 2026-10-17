@@ -1,0 +1,264 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "The DatabaseStory library",
+  "url": "https://databasestory.com/books.html",
+  "description": "21 books, courses, papers and podcasts recommended by the database engineers, DBAs and founders interviewed on DatabaseStory.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Book",
+          "name": "Designing Data-Intensive Applications",
+          "author": {
+            "@type": "Person",
+            "name": "Martin Kleppmann"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Book",
+          "name": "Database Internals",
+          "author": {
+            "@type": "Person",
+            "name": "Alex Petrov"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Book",
+          "name": "Database System Concepts",
+          "author": {
+            "@type": "Person",
+            "name": "Silberschatz, Korth & Sudarshan"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Book",
+          "name": "The Art of PostgreSQL",
+          "author": {
+            "@type": "Person",
+            "name": "Dimitri Fontaine"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Book",
+          "name": "Troubleshooting Oracle Performance",
+          "author": {
+            "@type": "Person",
+            "name": "Christian Antognini"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Book",
+          "name": "OCA Oracle Database 12c Administrator Study Guide",
+          "author": {
+            "@type": "Person",
+            "name": "Biju Thomas"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Book",
+          "name": "Systems Performance",
+          "author": {
+            "@type": "Person",
+            "name": "Brendan Gregg"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Book",
+          "name": "Advanced Programming in the UNIX Environment",
+          "author": {
+            "@type": "Person",
+            "name": "W. Richard Stevens & Stephen Rago"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Book",
+          "name": "System Design Interview",
+          "author": {
+            "@type": "Person",
+            "name": "Alex Xu"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "Book",
+          "name": "Design Patterns",
+          "author": {
+            "@type": "Person",
+            "name": "Gamma, Helm, Johnson & Vlissides"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "Book",
+          "name": "Growing Object-Oriented Software, Guided by Tests",
+          "author": {
+            "@type": "Person",
+            "name": "Steve Freeman & Nat Pryce"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "Book",
+          "name": "Crafting Interpreters",
+          "author": {
+            "@type": "Person",
+            "name": "Robert Nystrom"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "Book",
+          "name": "Cracking the Coding Interview",
+          "author": {
+            "@type": "Person",
+            "name": "Gayle Laakmann McDowell"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "Book",
+          "name": "How to Win Friends and Influence People",
+          "author": {
+            "@type": "Person",
+            "name": "Dale Carnegie"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "Book",
+          "name": "The Black Swan",
+          "author": {
+            "@type": "Person",
+            "name": "Nassim Nicholas Taleb"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "item": {
+          "@type": "Book",
+          "name": "The Hitchhiker's Guide to the Galaxy",
+          "author": {
+            "@type": "Person",
+            "name": "Douglas Adams"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "item": {
+          "@type": "Book",
+          "name": "Unsong",
+          "author": {
+            "@type": "Person",
+            "name": "Scott Alexander"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "item": {
+          "@type": "Book",
+          "name": "The Dark Tower",
+          "author": {
+            "@type": "Person",
+            "name": "Stephen King"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "item": {
+          "@type": "Book",
+          "name": "The Death Gate Cycle",
+          "author": {
+            "@type": "Person",
+            "name": "Margaret Weis & Tracy Hickman"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "item": {
+          "@type": "Book",
+          "name": "The Brothers Karamazov",
+          "author": {
+            "@type": "Person",
+            "name": "Fyodor Dostoevsky"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "item": {
+          "@type": "Book",
+          "name": "The Time Regulation Institute",
+          "author": {
+            "@type": "Person",
+            "name": "Ahmet Hamdi Tanpınar"
+          }
+        }
+      }
+    ]
+  }
+}

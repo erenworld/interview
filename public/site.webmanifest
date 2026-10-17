@@ -1,0 +1,26 @@
+{
+  "name": "DatabaseStory",
+  "short_name": "DatabaseStory",
+  "description": "Interviews with the people who build databases.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#151410",
+  "theme_color": "#151410",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

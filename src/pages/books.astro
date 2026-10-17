@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import content from "../content/pages/books.html?raw";
+import jsonLd from "../content/pages/books.ld.json";
+---
+<Base
+  title={"The Library | DatabaseStory"}
+  description={"21 books, courses, papers and podcasts recommended by the database engineers, DBAs and founders interviewed on DatabaseStory."}
+  path="books.html"
+  base="./"
+  jsonLd={jsonLd}
+  shellClass="library-page"
+>
+  <Fragment set:html={content} />
+</Base>

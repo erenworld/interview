@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import content from "../content/pages/about.html?raw";
+import jsonLd from "../content/pages/about.ld.json";
+---
+<Base
+  title={"About | DatabaseStory"}
+  description={"DatabaseStory is a project by Eren Turkoglu that puts the people behind databases and distributed systems forward through in-depth interviews."}
+  path="about.html"
+  base="./"
+  jsonLd={jsonLd}
+  shellClass="article-page about-page"
+>
+  <Fragment set:html={content} />
+</Base>

@@ -1,0 +1,148 @@
+---
+import Base from "../../layouts/Base.astro";
+import { ORG, SITE_URL, absolute, breadcrumb } from "../../data/site";
+import { render } from "astro:content";
+import Place from "../../components/mdx/Place.astro";
+import Project from "../../components/mdx/Project.astro";
+import Projects from "../../components/mdx/Projects.astro";
+import Shelf from "../../components/mdx/Shelf.astro";
+import { formatDate, getInterviews, type Interview } from "../../data/interviews";
+import { optimized, shareUrl } from "../../lib/images";
+
+export async function getStaticPaths() {
+  const interviews = await getInterviews();
+  return interviews.map((interview, index) => ({
+    params: { slug: interview.slug },
+    // interviews is newest first: the previous one is older, the next one newer
+    props: { interview, previous: interviews[index + 1], next: interviews[index - 1] },
+  }));
+}
+
+interface Props {
+  interview: Interview;
+  previous?: Interview;
+  next?: Interview;
+}
+const { interview: i, previous, next } = Astro.props;
+const { Content } = await render(i.entry);
+const face = await optimized(i.face, { width: 44, densities: [1, 2] });
+
+const path = `articles/${i.slug}.html`;
+const url = absolute(path);
+const headline = `Interview with ${i.name}, ${i.role}`;
+const person = {
+  "@type": "Person",
+  name: i.name,
+  jobTitle: i.role,
+  image: await shareUrl(i.photo),
+  ...(i.alternateName && { alternateName: i.alternateName }),
+  sameAs: i.links.map((link) => link.url),
+  ...(i.worksFor && { worksFor: { "@type": "Organization", ...i.worksFor } }),
+};
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline,
+      description: i.excerpt,
+      image: [absolute(i.ogImage ?? "assets/og-default.jpg")],
+      datePublished: i.published,
+      dateModified: i.modified,
+      author: { "@type": "Person", name: "Eren Turkoglu", url: `${SITE_URL}/about.html` },
+      publisher: ORG,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      about: person,
+      mentions: person,
+      inLanguage: "en",
+    },
+    breadcrumb([
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Interviews", url: `${SITE_URL}/index.html#interviews` },
+      { name: i.name, url },
+    ]),
+  ],
+};
+
+const enc = encodeURIComponent;
+const share = [
+  { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}` },
+  { label: "X", href: `https://x.com/intent/post?url=${enc(url)}&text=${enc(headline)}` },
+  { label: "Hacker News", href: `https://news.ycombinator.com/submitlink?u=${enc(url)}&t=${enc(headline)}` },
+  { label: "Reddit", href: `https://www.reddit.com/submit?url=${enc(url)}&title=${enc(headline)}` },
+];
+---
+<Base
+  title={`Interview with ${i.name} | DatabaseStory`}
+  description={i.excerpt}
+  path={path}
+  base="../"
+  ogType="article"
+  ogImage={i.ogImage}
+  published={i.published}
+  jsonLd={jsonLd}
+  shellClass="article-page"
+  shellAttrs={{ "data-guest": i.name, "data-voice": i.voice }}
+>
+  <div class="page-layout">
+    <main>
+      <a class="back-link" href="../index.html">← Back</a>
+
+      <div class="article-header">
+        <h1>{i.name}</h1>
+        <p class="article-meta">
+          {formatDate(i.published)} by <a href="../index.html">Eren Turkoglu</a>
+        </p>
+        <Fragment set:html="<!-- ds:extra -->" />
+        <button class="listen-btn" type="button" data-listen hidden><span class="listen-icon" aria-hidden="true"></span><span class="listen-label">Listen to this interview</span><span class="listen-time"></span></button>
+        <Fragment set:html="<!-- /ds:extra -->" />
+        <div class="tag-row">
+          {i.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+      </div>
+      {i.quote && (
+        <Fragment>
+          <Fragment set:html="<!-- ds:extra -->" />
+          <figure class="pull-quote">
+            <blockquote><p>{i.quote}</p></blockquote>
+            <figcaption>
+              <img src={face.src} srcset={face.srcset} alt="" width="44" height="44" />
+              <span><strong>{i.name}</strong></span>
+            </figcaption>
+          </figure>
+          <Fragment set:html="<!-- /ds:extra -->" />
+        </Fragment>
+      )}
+
+      <div class="article-body">
+        <Content components={{ Place, Project, Projects, Shelf }} />
+      </div>
+      <div class="share-row" aria-label="Share this interview">
+        <p class="section-label">Share this interview</p>
+        <div class="share-links">
+          {share.map((link) => <a class="share-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>)}
+          <button class="share-link" type="button" data-copy-link={url}>Copy link</button>
+        </div>
+      </div>
+
+      <div class="article-nav" aria-label="Article navigation">
+        {previous && (
+          <div class="article-nav-card">
+            <a href={`./${previous.slug}.html`}>
+              <span class="article-nav-label">Previous interview</span>
+              <span class="article-nav-title">{previous.name}</span>
+            </a>
+          </div>
+        )}
+        {next && (
+          <div class="article-nav-card">
+            <a href={`./${next.slug}.html`}>
+              <span class="article-nav-label">Next interview</span>
+              <span class="article-nav-title">{next.name}</span>
+            </a>
+          </div>
+        )}
+      </div>
+    </main>
+  </div>
+</Base>

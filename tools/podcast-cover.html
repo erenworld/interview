@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- DatabaseStory podcast cover, 3000x3000. Render:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+    --force-device-scale-factor=1 --window-size=3000,3000 --virtual-time-budget=8000 \
+    --screenshot=cover.png file://$PWD/tools/podcast-cover.html
+  then: sips -s format jpeg -s formatOptions 75 cover.png --out assets/podcast-cover.jpg -->
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@72,700&display=block">
+<style>
+  html, body { margin: 0; width: 3000px; height: 3000px; overflow: hidden; }
+  body {
+    background: linear-gradient(180deg, #0c3b3a 0%, #0f5a52 30%, #17a88a 66%, #5ff7d2 92%, #b8fbe6 100%);
+    position: relative;
+  }
+  .title {
+    position: absolute; left: 230px; top: 210px; margin: 0;
+    font-family: "Newsreader", Georgia, serif; font-weight: 700; font-optical-sizing: auto;
+    font-size: 400px; line-height: 0.9; letter-spacing: -0.02em;
+    color: #fffcf5;
+  }
+  .logo {
+    position: absolute; left: 240px; bottom: 240px;
+    width: 300px; height: 300px; border-radius: 64px; background: #151410;
+  }
+</style>
+</head>
+<body>
+  <h1 class="title">Database<br>Story</h1>
+  <div class="logo"></div>
+</body>
+</html>

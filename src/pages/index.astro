@@ -1,0 +1,140 @@
+---
+import Base from "../layouts/Base.astro";
+import InterviewCard from "../components/InterviewCard.astro";
+import { ORG, SITE_URL, SUBSTACK, absolute } from "../data/site";
+import { formatDate, getInterviews } from "../data/interviews";
+import { optimized } from "../lib/images";
+
+const interviews = await getInterviews();
+
+const [latest] = interviews;
+const filters = ["PostgreSQL", "MongoDB", "Open Source", "Cloud", "Databases"];
+const logos = [
+  { file: "google.png", name: "Google", cls: "logo-google" },
+  { file: "microsoft.png", name: "Microsoft", cls: "logo-microsoft" },
+  { file: "aws.png", name: "AWS", cls: "logo-aws" },
+  { file: "turso-logo-dark.svg", name: "Turso", cls: "logo-rds" },
+  { file: "MongoDB-Logo.svg.png", name: "MongoDB", cls: "logo-mongodb" },
+  { file: "yuga.svg", name: "Yuga", cls: "logo-yuga" },
+  { file: "oracle.svg", name: "Oracle", cls: "logo-oracle" },
+  { file: "percona.svg", name: "Percona", cls: "logo-percona" },
+  { file: "dalibo.png", name: "Dalibo", cls: "logo-dalibo" },
+  { file: "databene.svg", name: "Data Bene", cls: "logo-databene" },
+];
+const faces = await Promise.all(interviews.map((i) => optimized(i.face, { width: 44, densities: [1, 2] })));
+const logoImages = await Promise.all(logos.map((logo) => optimized(`assets/logos/${logo.file}`, { width: 185, densities: [1, 2] })));
+const featured = await optimized(latest.photo, { widths: [400, 603, 900, 1206] });
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "DatabaseStory",
+      url: `${SITE_URL}/`,
+      description: "Interviews with the people who build databases.",
+      publisher: { "@id": `${SITE_URL}/#org` },
+      inLanguage: "en",
+    },
+    { ...ORG, "@id": `${SITE_URL}/#org`, sameAs: [`${SUBSTACK}/`] },
+    {
+      "@type": "ItemList",
+      name: "DatabaseStory interviews",
+      itemListElement: interviews.map((interview, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absolute(`articles/${interview.slug}.html`),
+        name: `Interview with ${interview.name}`,
+      })),
+    },
+  ],
+};
+---
+<Base
+  title="DatabaseStory | Interviews with the people who build databases"
+  description="In-depth interviews with the engineers, open-source contributors, and founders behind PostgreSQL, MongoDB, Oracle, and distributed systems."
+  path=""
+  base="./"
+  jsonLd={jsonLd}
+  bodyClass="home-page"
+>
+  <main class="home-main">
+    <section class="home-hero">
+      <div class="hero-avatars" aria-label="Guests interviewed on DatabaseStory">
+        {interviews.map((i, index) => (
+          <a class="hero-avatar" href={`./articles/${i.slug}.html`} title={i.name}><img src={faces[index].src} srcset={faces[index].srcset} alt={i.name} width="44" height="44" decoding="async" /></a>
+        ))}
+      </div>
+      <h1 class="home-title">The <em>people</em> behind the databases</h1>
+      <p class="home-description">
+        Long-form interviews with the people who build databases and the
+        tools around them: how they got here, and what they have learned.
+      </p>
+      <div class="hero-actions">
+        <a class="hero-button primary" href="./index.html#interviews">Read interviews</a>
+        <a class="hero-button" href="./about.html">About the project</a>
+      </div>
+      <p class="hero-subscribe-status" data-beehiiv-status aria-live="polite"></p>
+    </section>
+
+    <section class="logo-section" aria-label="Companies my guests work at">
+      <p class="section-label logo-section-label">Guests from teams at</p>
+      <ul class="logo-grid">
+        {logos.map((logo, index) => (
+          <li class="logo-cell"><img class={`logo-img ${logo.cls}`} src={logoImages[index].src} srcset={logoImages[index].srcset} alt={`${logo.name} logo`} loading="lazy" /></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="home-section" id="latest">
+      <div class="home-section-head">
+        <p class="section-label">Latest interview</p>
+      </div>
+      <a class="featured" href={`./articles/${latest.slug}.html`}>
+        <div class="featured-media">
+          <img src={featured.src} srcset={featured.srcset} sizes="(max-width: 760px) calc(100vw - 32px), 603px" alt={`Portrait of ${latest.name}`} fetchpriority="high" />
+          <span class="featured-badge">New</span>
+        </div>
+        <div class="featured-copy">
+          <div>
+            <p class="featured-meta">New release · {formatDate(latest.published)}</p>
+            <h2 class="featured-title">{latest.name}</h2>
+            <p class="featured-role">{latest.role}</p>
+            <p class="featured-excerpt">{latest.excerpt}</p>
+          </div>
+          <span class="btn">Read interview <span class="btn-arrow" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    </section>
+
+    <section class="home-section" id="interviews">
+      <div class="home-section-head">
+        <h2 class="section-title">All interviews</h2>
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {filters.map((filter) => <button class="filter-btn" data-filter={filter}>{filter}</button>)}
+      </div>
+      <div class="article-list">
+        {interviews.map((interview) => <InterviewCard interview={interview} />)}
+      </div>
+    </section>
+
+    <section class="home-section" id="podcast">
+      <div class="cta-card">
+        <div>
+          <p class="section-label">Podcast · Coming soon</p>
+          <h2 class="section-title">Long-form audio</h2>
+          <p class="cta-text">
+            Audio conversations are on the way, centered on database
+            engineering, systems work, and the people behind them.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="hero-button primary" href={`${SUBSTACK}/subscribe`} target="_blank" rel="noreferrer">Get notified</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

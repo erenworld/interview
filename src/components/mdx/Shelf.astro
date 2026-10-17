@@ -1,0 +1,23 @@
+---
+// The guest's book picks, linking to their shelf on the Books page.
+//   <Shelf books={[{ cover: "art-of-postgresql.jpg", title: "The Art of PostgreSQL" }]} />
+// Covers are in src/assets/books/.
+import { getInterviews } from "../../data/interviews";
+import { optimized } from "../../lib/images";
+
+interface Props {
+  books: { cover: string; title: string }[];
+}
+const { books } = Astro.props;
+const slug = Astro.params.slug;
+const guest = (await getInterviews()).find((interview) => interview.slug === slug);
+if (!guest) throw new Error(`<Shelf> used outside an interview (${slug})`);
+const firstName = guest.name.split(" ")[0];
+const covers = await Promise.all(books.map((book) => optimized(`assets/books/${book.cover}`, { height: 96, densities: [1, 2] })));
+---
+<Fragment set:html="<!-- ds:extra -->" />
+<a class="shelf-card" href={`../books.html?guest=${slug}#shelf`}>
+  <span class="shelf-covers">{books.map((book, index) => <img src={covers[index].src} srcset={covers[index].srcset} alt={book.title} loading="lazy" style={`--i:${index}`} />)}</span>
+  <span class="shelf-text"><span class="section-label">The Library</span><span class="shelf-title">{books.length} book{books.length === 1 ? "" : "s"} from {firstName}’s shelf</span><span class="shelf-cta">Browse every guest’s picks →</span></span>
+</a>
+<Fragment set:html="<!-- /ds:extra -->" />

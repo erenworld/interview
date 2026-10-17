@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import content from "../content/pages/legal.html?raw";
+import jsonLd from "../content/pages/legal.ld.json";
+---
+<Base
+  title={"Legal notice | DatabaseStory"}
+  description={"Legal notice, intellectual property and privacy policy for DatabaseStory."}
+  path="legal.html"
+  base="./"
+  robots="noindex, follow"
+  jsonLd={jsonLd}
+  shellClass="article-page about-page"
+>
+  <Fragment set:html={content} />
+</Base>

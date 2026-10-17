@@ -1,0 +1,20 @@
+---
+// A project the guest works on, inside <Projects>. The logo is in src/assets/.
+import { optimized } from "../../lib/images";
+
+interface Props {
+  href: string;
+  logo: string; // square, shown at 56x56
+  name: string;
+  description: string;
+  tags: string[];
+}
+const { href, logo, name, description, tags } = Astro.props;
+const image = await optimized(logo, { width: 56, densities: [1, 2] });
+---
+<a class="project-card" href={href} target="_blank" rel="noopener noreferrer">
+  <img class="project-logo" src={image.src} srcset={image.srcset} alt="" loading="lazy" width="56" height="56" />
+  <span class="project-body"><span class="project-name">{name}</span><span class="project-desc">{description}</span>
+  <span class="project-tags">{tags.map((tag) => <span>{tag}</span>)}</span></span>
+  <span class="project-arrow" aria-hidden="true">↗</span>
+</a>

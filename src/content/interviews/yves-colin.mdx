@@ -1,0 +1,187 @@
+---
+name: Yves Colin
+role: Customer Engineer Data Management @Google
+published: 2026-07-03
+modified: 2026-07-03
+excerpt: Yves talks about thirty years in databases, his path from DBA and architecture roles to AWS and Google, his involvement with PostgreSQL France, AI, and advice for juniors.
+tags: [Interviews, Google, AWS, PostgreSQL, Databases]
+photo: assets/yvess.jpeg
+face: assets/faces/yves-colin.jpg
+ogImage: assets/og/yves-colin.jpg
+voice: male
+quote: We’ve all made mistakes at some point, even on production databases. So don’t be afraid to jump in.
+links:
+  - kind: LinkedIn
+    url: https://www.linkedin.com/in/yvescolin/
+---
+
+## Can you introduce yourself?
+
+My name is Yves Colin and I've been working in the database field for about 30 years.
+
+I started as a DBA in IT services companies, before joining Infovista, a network monitoring software vendor for major telecom players. At the time, I joined their R&D team to design database architecture with a very strong focus on scalability.
+
+After alternating between DBA and database architect roles for several years, I moved into a Solutions Architect role. That's what brought me to AWS, with the mission of helping customers choose the database solutions best suited to their needs.
+
+Still at AWS, I then joined engineering for two years, within the RDS (Relational Database Service) teams. My role involved designing new features (design and technical implementation) and operating fleets of managed databases at very large scale.
+
+More recently, I made another transition to join Google, still in a Database Solutions Architect role.
+
+## You went to CNAM. Did everything you learned there prove useful?
+
+Originally, I didn't have a traditional computer science education. My background is in geomatics, that is, computer science applied to cartography.
+
+Later, I went back to school at CNAM to get a Bac+4 (Master's degree equivalent) level diploma specialized in systems and networks. And yes, it served me a lot! First, on the whole systems design and conception side. But above all, this training instilled in me a very methodical approach.
+
+That turned out to be very useful in my career, because I worked a lot on performance analysis. At AWS, in the RDS teams, it was even one of my specialties. A big part of my role was validating the performance of solutions: running benchmarks, analyzing load tests, and investigating to resolve complex bugs.
+
+## What attracted you to the world of databases?
+
+Honestly, at the start, I got into this field somewhat by chance. But what quickly drew me in was that it really touches everything.
+
+There's the architectural vision, system design, on one side, and understanding the deep mechanisms, the famous internals, on the other. I loved digging into how a database is really managed under the hood, whether transactional or NoSQL: the complexity of the algorithms, ACID property management, etc.
+
+The idea is to understand how to design the best possible system. That's really what appeals to me: the overall system vision combined with being able to rely on very deep knowledge of internals to improve and optimize an architecture as a whole.
+
+## Outside of your studies, were there resources that helped you master this area, the engines, the analysis?
+
+Yes, a lot of books inspired me, whether recent or older.
+
+Back then, on Oracle RAC for example, there were gurus like Tom Kyte or Jonathan Lewis. Their books were really well made and went well beyond the Oracle product itself: they truly explained the underlying concepts in detail, like how MVCC (Multi-Version Concurrency Control) works, what it actually is and how it's handled in the engine.
+
+Then, for everything related to system performance analysis, an essential resource for me is [Systems Performance](https://www.brendangregg.com/systems-performance-2nd-edition-book.html) by Brendan Gregg. It's a true bible for understanding how the operating system interacts with hardware and databases.
+
+On the architecture side, more recent books left a strong mark on me. I'm thinking of course of [Designing Data-Intensive Applications](https://dataintensive.net/) by Martin Kleppmann. [System Design Interview](https://www.amazon.fr/System-Design-Interview-insiders-Second/dp/B08CMF2CQF) by Alex Xu is also very interesting for understanding how to design a resilient system capable of operating at scale, and why architecture is always a matter of trade-offs, with pros and cons to weigh.
+
+Finally, to really dive under the hood, there's [Database Internals](https://www.oreilly.com/library/view/database-internals/9781492040330/) by Alex Petrov. It teaches you how a database is designed in general: the algorithms, the difference between B-Trees and LSM-Trees, how a NoSQL engine is built, and the technical trade-offs behind those choices.
+
+<Shelf books={[
+  { cover: "designing-data-intensive-applications.jpg", title: "Designing Data-Intensive Applications" },
+  { cover: "database-internals.jpg", title: "Database Internals" },
+  { cover: "systems-performance.jpg", title: "Systems Performance" },
+  { cover: "system-design-interview.jpg", title: "System Design Interview" },
+]} />
+
+## What were the key moments that allowed you to join this kind of company? Was it mainly your experience in consulting firms that made the difference?
+
+I think that experience is indeed what laid the groundwork. Then there was a real turning point when the cloud started taking off.
+
+I saw the market shifting toward that approach and I wanted to prepare for it. It really came from curiosity and a thirst for learning: I taught myself. While I was still very oriented toward traditional infrastructure, I took the time to train as much as possible and passed my AWS Solutions Architect certification, even before going through a single interview.
+
+And looking back, what made the difference when I applied to AWS was precisely that combination. That's exactly what they were looking for: people who had trained in the cloud, of course, but especially people who had real field experience, who understood the reality and challenges of databases at customer sites.
+
+## Do you think ESNs (IT services companies) are a good entry point for juniors?
+
+Yes, absolutely. Though I'll add a small caveat: my view is a bit dated since it's been a long time since I left that world, so I don't know if it's still fully accurate today.
+
+But fundamentally, yes, it's an excellent entry point. It's the best way to quickly be exposed to a multitude of problems and discover very different client environments, both technically and functionally. It lets you experience a very wide range of situations from the very start of your career, which is extremely formative.
+
+## How does recruitment work at AWS and Google?
+
+It was really having already planned things out that let me get in. I had already checked a number of boxes before applying. That meant already having the certifications, knowing the products, having tested and validated them, knowing the offering well. And also having the background already tied to the subject. Afterward, I do think my experience at AWS helped with my recruitment at Google.
+
+## What's a typical day like as a Customer Engineer at Google?
+
+There's not really a typical day. Mostly, the idea is to help customers use Google's products. Either informing them about new features, but also really understanding their needs and being able to guide them, understanding the technical, financial, and functional issues of different customers and being able to point them toward the best approach for their context. An approach that's right for one customer isn't necessarily the best for another, even if they're in the same type of business.
+
+## You were also involved in PostgreSQL France. Did that play a role in your career?
+
+Yes, definitely. Even before that, early in my career, I was already very involved as a speaker, notably at Oracle conferences. That kind of involvement really helps amplify your visibility. Since we're talking to young graduates, I think joining communities is one of the best entry points to get known in the field.
+
+Today, I've shifted roles a bit. I've helped, modestly, organize PGDay, I'm not the one doing most of the heavy lifting, but I try to do my part! The idea for me is to keep this community alive, whether by attending new conferences, giving talks, or helping with organization.
+
+## Any tips for giving a talk?
+
+I think the only tip I have to give is to pick a topic that interests you. I think that's where you'll be at your best, even if it's not the sexiest topic.
+
+A topic you want to learn about, potentially even if you don't know much about it at first, lets you both learn, and if it interests you, you'll be better at it than if it's a topic that ultimately doesn't really interest you.
+
+## Do you also contribute to open source?
+
+Not directly at the code level. As an anecdote, I do have one tiny line in a PostgreSQL commit, but that was through Bertrand! It was for a feature where I'd suggested a few ideas to him.
+
+Ideally, I'd like to actually free up more time in the future to get more involved and contribute more.
+
+## Would PostgreSQL be the project you'd most like to contribute to?
+
+Yes, PostgreSQL is really the project that interests me the most, since it's tied to my core profession and it's the best relational database in my view.
+
+## What's your AI workflow?
+
+I use it very often day to day, with two main use cases.
+
+The first is to organize my work: summarizing emails, tracking the tasks I still have to do, that kind of thing. That's the fairly classic use.
+
+I also use AI a lot to build useful demos that really fit the customer's context. It definitely speeds things up, because before, preparing a relevant demo could take a huge amount of time.
+
+The third use case is more for testing edge case features, setting up test plans or designing tests that match use cases a customer wants to implement.
+
+And on that kind of topic, it speeds up the work enormously.
+
+## What are your predictions for AI and databases in general?
+
+I think there are two areas, actually three.
+
+The first is accelerating database development with AI. Across all IDE type tools, it's going to massively accelerate database usage, as well as the development of applications built on top of them.
+
+It's also going to lower the barrier to entry, since you need less understanding of internals, or at least, you can produce more easily.
+
+The second aspect is going to be everything around automation in database management: autonomous systems that will potentially adapt on their own, repair themselves, take actions on their own, scale on their own.
+
+And the third area is the impact on legacy databases. In the past, migration projects could take years. I think AI can massively accelerate this kind of project, at a much lower cost.
+
+## What do you think about the idea that AI will replace juniors?
+
+I don't think it's going to replace them, but they will have to adapt.
+
+Their role is going to evolve, the goal will be to provide specs to autonomous systems or AI agents that will handle developing the application.
+
+Where a junior early in their career used to tend to generate lines of code, I think they're going to have to rise above that and focus more on the functional and architectural side.
+
+## How can a junior stand out in your view? What makes a good junior versus a bad one?
+
+I think they need to understand market trends and adapt quickly.
+
+They need to understand that they also need to have an architect's mindset, since they'll be judged less on the volume of code they produce than on how they use the tools.
+
+They're going to have to rise above and stay curious. But that's always been true, I think.
+
+## Is there an encounter or piece of advice that really marked you since the start of your career?
+
+It's not one particular encounter, but rather interacting as a database expert, going to conferences and building relationships with people working in this field, that let me broaden my perspective, see what people are doing in the field, the different tools they use, and try to dig deeper because you see different points of view.
+
+It's about integrating into these conferences, sharing. When I mentioned Bertrand, he's the kind of person who helped me grow. It's about letting encounters happen naturally over time. We actually met on Twitter, discussing databases.
+
+## Is attending conferences or giving talks a habit everyone should have?
+
+Yes, or it can take other forms. I do think it's always better to network, to know people in person, since that can help you spot different opportunities that may come up. But it can also be sharing code on GitHub or writing blogs. Getting known, I think that's even more important when you're junior.
+
+## If someone wants to get into databases and doesn't know where to start, what would be the first step, the first project to do?
+
+I'd say start with the books I mentioned. It might be a bit hardcore, but I'd say read Database Internals, or at least build solid foundations on database internals.
+
+For me, that's more than just a nice to have. You need to at least understand how a transaction works, what isolation levels are, what MVCC is, and then move on to the algorithms.
+
+## Do you have a favorite database?
+
+It's PostgreSQL. I'm more relational oriented. I come from the Oracle world, but the closest thing to it is PostgreSQL.
+
+And the fact that you can have an extensible database like PostgreSQL, where you can add extensions, read the code, that kind of thing, that's great.
+
+## Have you noticed particular traits or habits among top performers?
+
+Yes, it's really about experimenting and being curious. People who push systems to their limits, or into contexts that no one has really fully validated yet, generally.
+
+## How do you spend your free time?
+
+Outside of databases, I try to clear my head a bit by doing sports, mountain biking in particular. Otherwise, spending time with my family.
+
+## Is there anything you'd like to share with readers, a project, a thought, a message?
+
+I think that for a junior, building your network and staying curious is essential.
+
+You also have to accept making mistakes. We've all made mistakes at some point, even on production databases. So don't be afraid to jump in, experiment, ask questions, and learn by doing.
+
+## Links
+
+- [LinkedIn](https://www.linkedin.com/in/yvescolin/)

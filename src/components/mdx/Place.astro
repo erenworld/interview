@@ -1,0 +1,26 @@
+---
+// A photo of a place mentioned in the interview. Images are in src/assets/.
+//   <Place image="assets/places/toulouse.jpg" title="Toulouse, France" text="..."
+//     credit="Author" creditUrl="https://commons.wikimedia.org/..." license="CC BY-SA 3.0" />
+import { optimized } from "../../lib/images";
+
+interface Props {
+  image: string; // 1600x900
+  title: string;
+  alt?: string; // defaults to the title
+  text: string;
+  link?: string;
+  linkLabel?: string;
+  credit: string;
+  creditUrl: string;
+  license: string;
+}
+const { image, title, alt = title, text, link, linkLabel, credit, creditUrl, license } = Astro.props;
+const photo = await optimized(image, { widths: [480, 800, 1200, 1600], quality: 65 });
+---
+<Fragment set:html="<!-- ds:extra -->" />
+<figure class="place-card">
+  <div class="place-frame"><img src={photo.src} srcset={photo.srcset} sizes="(min-width: 1100px) 1000px, calc(100vw - 32px)" alt={alt} loading="lazy" width="1600" height="900" /></div>
+  <figcaption><span class="place-pin" aria-hidden="true"></span><span class="place-text"><strong>{title}</strong> {text}{link && <Fragment> <a class="place-link" href={link} target="_blank" rel="noopener noreferrer">{linkLabel} ↗</a></Fragment>}</span><span class="place-credit">Photo: <a href={creditUrl} target="_blank" rel="noopener noreferrer">{credit}</a>, {license}</span></figcaption>
+</figure>
+<Fragment set:html="<!-- /ds:extra -->" />

@@ -1,0 +1,25 @@
+---
+import { formatDate, type Interview } from "../data/interviews";
+import { optimized } from "../lib/images";
+
+interface Props {
+  interview: Interview;
+}
+const { interview: i } = Astro.props;
+const photo = await optimized(i.photo, { width: 120, densities: [1, 2] });
+---
+<a class="article-card" href={`./articles/${i.slug}.html`}>
+  <div class="article-card-header">
+    <span class="article-media"><img class="article-avatar" loading="lazy" decoding="async" width="400" height="400" src={photo.src} srcset={photo.srcset} alt={`Portrait of ${i.name}`} /></span>
+    <div>
+      <h2>{i.name}</h2>
+      <p class="article-role">{i.role}</p>
+      <p class="article-meta">{formatDate(i.published)} by Eren Turkoglu</p>
+    </div>
+  </div>
+  <p class="article-excerpt">{i.excerpt}</p>
+  <div class="tag-row">
+    {i.tags.map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+  <span class="btn article-cta">Read interview <span class="btn-arrow" aria-hidden="true">→</span></span>
+</a>

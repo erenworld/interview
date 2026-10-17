@@ -1,0 +1,74 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE_URL, absolute } from "../data/site";
+import { ICONS } from "../data/icons";
+import { getInterviews } from "../data/interviews";
+import { optimized, shareUrl } from "../lib/images";
+
+const interviews = await getInterviews();
+
+const guests = [...interviews].sort((a, b) => a.name.localeCompare(b.name));
+const faces = await Promise.all(guests.map((guest) => optimized(guest.face, { width: 140, densities: [1, 2] })));
+const photos = await Promise.all(guests.map((guest) => shareUrl(guest.photo)));
+const count = (n: number) => `Appears in ${n} interview${n === 1 ? "" : "s"}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "DatabaseStory guests",
+  url: `${SITE_URL}/people.html`,
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: guests.map((guest, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Person",
+        name: guest.name,
+        jobTitle: guest.role,
+        image: photos[index],
+        url: absolute(`articles/${guest.slug}.html`),
+        sameAs: guest.links.map((link) => link.url),
+      },
+    })),
+  },
+};
+---
+<Base
+  title="Guests | DatabaseStory"
+  description="Meet the database engineers, DBAs, founders, and open-source contributors interviewed on DatabaseStory, with links to their interviews and profiles."
+  path="people.html"
+  base="./"
+  jsonLd={jsonLd}
+  shellClass="people-page"
+>
+  <main class="people-main">
+    <div class="people-head">
+      <p class="section-label">People</p>
+      <h1 class="page-title">Guests</h1>
+      <p class="page-intro">The engineers, founders, and community builders who have shared their stories on DatabaseStory.</p>
+    </div>
+    <ul class="people-grid">
+      {guests.map((guest, index) => (
+        <li class="person">
+          <div class="person-photo">
+            <span class="person-photo-inner"><img src={faces[index].src} srcset={faces[index].srcset} alt={`Portrait of ${guest.name}`} loading="lazy" /></span>
+            <span class="person-badge">Guest</span>
+          </div>
+          <div class="person-info">
+            <a class="person-name" href={`./articles/${guest.slug}.html`}>{guest.name}</a>
+            <p class="person-role" title={guest.role}>{guest.role}</p>
+            <p class="person-count">{count(1)}</p>
+            <div class="person-links">
+              {guest.links.map((link) => (
+                <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={`${guest.name} on ${link.kind}`} title={link.kind}>
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" set:html={ICONS[link.kind] ?? ICONS.Website} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Base>
