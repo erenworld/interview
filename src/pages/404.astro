@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import { getInterviews } from "../data/interviews";
+
+// GitHub Pages serves 404.html for any missing URL, at any depth: links start with "/".
+const latest = (await getInterviews()).slice(0, 3);
+---
+<Base
+  title="Page not found | DatabaseStory"
+  description="This page does not exist. Browse the DatabaseStory interviews instead."
+  path="404.html"
+  base="/"
+  robots="noindex, follow"
+  jsonLd={{ "@context": "https://schema.org", "@type": "WebPage", name: "Page not found" }}
+  shellClass="article-page about-page"
+>
+  <div class="page-layout">
+    <main>
+      <div class="article-header">
+        <p class="section-label">404</p>
+        <h1>Page not found</h1>
+      </div>
+      <div class="article-body">
+        <p>This page does not exist or has moved. Here are the latest interviews:</p>
+        <ul>
+          {latest.map((i) => <li><a href={`/articles/${i.slug}.html`}>Interview with {i.name}</a>, {i.role}</li>)}
+        </ul>
+        <p><a href="/#interviews">Browse all interviews</a> or <a href="/people.html">meet the guests</a>.</p>
+      </div>
+    </main>
+  </div>
+</Base>

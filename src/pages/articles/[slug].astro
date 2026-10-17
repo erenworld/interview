@@ -58,7 +58,7 @@ const jsonLd = {
     },
     breadcrumb([
       { name: "Home", url: `${SITE_URL}/` },
-      { name: "Interviews", url: `${SITE_URL}/index.html#interviews` },
+      { name: "Interviews", url: `${SITE_URL}/#interviews` },
       { name: i.name, url },
     ]),
   ],
@@ -86,12 +86,12 @@ const share = [
 >
   <div class="page-layout">
     <main>
-      <a class="back-link" href="../index.html">← Back</a>
+      <a class="back-link" href="../#interviews">← All interviews</a>
 
       <div class="article-header">
         <h1>{i.name}</h1>
         <p class="article-meta">
-          {formatDate(i.published)} by <a href="../index.html">Eren Turkoglu</a>
+          {formatDate(i.published)} by <a href="../about.html">Eren Turkoglu</a>
         </p>
         <Fragment set:html="<!-- ds:extra -->" />
         <button class="listen-btn" type="button" data-listen hidden><span class="listen-icon" aria-hidden="true"></span><span class="listen-label">Listen to this interview</span><span class="listen-time"></span></button>

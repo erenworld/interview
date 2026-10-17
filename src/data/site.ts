@@ -7,10 +7,10 @@ export const DEFAULT_OG = "assets/og-default.jpg";
 
 export const NAV = [
   { label: "About", href: "about.html" },
-  { label: "Interviews", href: "index.html#interviews" },
+  { label: "Interviews", href: "#interviews" },
   { label: "People", href: "people.html" },
   { label: "Books", href: "books.html" },
-  { label: "Podcast", href: "index.html#podcast" },
+  { label: "Podcast", href: "#podcast" },
   { label: "Sponsor", href: "sponsor.html" },
 ];
 

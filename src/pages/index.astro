@@ -31,7 +31,9 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
+      // The site name Google shows in results, instead of the bare domain
       name: "DatabaseStory",
+      alternateName: ["Database Story", "databasestory.com"],
       url: `${SITE_URL}/`,
       description: "Interviews with the people who build databases.",
       publisher: { "@id": `${SITE_URL}/#org` },
@@ -53,7 +55,7 @@ const jsonLd = {
 ---
 <Base
   title="DatabaseStory | Interviews with the people who build databases"
-  description="In-depth interviews with the engineers, open-source contributors, and founders behind PostgreSQL, MongoDB, Oracle, and distributed systems."
+  description="DatabaseStory publishes in-depth interviews with engineers, open-source contributors and founders behind PostgreSQL, MongoDB, Oracle and distributed systems."
   path=""
   base="./"
   jsonLd={jsonLd}
@@ -72,7 +74,7 @@ const jsonLd = {
         tools around them: how they got here, and what they have learned.
       </p>
       <div class="hero-actions">
-        <a class="hero-button primary" href="./index.html#interviews">Read interviews</a>
+        <a class="hero-button primary" href="./#interviews">Read interviews</a>
         <a class="hero-button" href="./about.html">About the project</a>
       </div>
       <p class="hero-subscribe-status" data-beehiiv-status aria-live="polite"></p>

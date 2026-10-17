@@ -9,7 +9,7 @@ interface Props {
   title: string;
   description: string;
   path: string; // URL path without leading slash, "" for the home page
-  base: "./" | "../"; // relative prefix from this page to the site root
+  base: "./" | "../" | "/"; // prefix from this page to the site root ("/" where the URL is unknown, as on the 404 page)
   ogType?: "website" | "article";
   ogImage?: string | null;
   robots?: string;
@@ -52,10 +52,13 @@ const ld = JSON.stringify(jsonLd, null, 2).replace(/<\//g, "<\\/");
     <link rel="canonical" href={url} />
     <meta name="theme-color" content="#151410" />
     <meta name="color-scheme" content="dark" />
+    <meta name="google-site-verification" content="PYvdLfvQTmTyrYSIMaSIEzh_1ivh-MyN-sFsYylgiag" />
     <script is:inline>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
 
     <link rel="icon" href={`${base}favicon.ico`} sizes="any" />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    {/* Google Search shows a favicon only if it is a multiple of 48px */}
+    <link rel="icon" href={`${base}favicon-96x96.png`} sizes="96x96" type="image/png" />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
     <link rel="manifest" href={`${base}site.webmanifest`} />
     <link rel="alternate" type="application/rss+xml" title="DatabaseStory" href={`${SUBSTACK}/feed`} />
