@@ -430,11 +430,12 @@ p {
   border-left: 1px solid var(--fg-20);
 }
 
-/* Stretch every cell to its row so borders line up; the image is taken out of
-   flow so its intrinsic size can never push one cell taller than its neighbour */
+/* Height comes from aspect-ratio alone; the image is taken out of flow so its
+   intrinsic size can never push one cell taller than its neighbour. No
+   align-self: stretch here: Safari then ignores aspect-ratio and the cells
+   collapse to the (empty) content height */
 .logo-cell {
   position: relative;
-  align-self: stretch;
   min-width: 0;
   aspect-ratio: 8 / 5;
   border-right: 1px solid var(--fg-20);
