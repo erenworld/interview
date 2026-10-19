@@ -199,6 +199,24 @@ p {
   display: contents;
 }
 
+/* Home page announcement, above the top bar: it scrolls away and the bar sticks */
+.site-banner {
+  margin: 0;
+  padding: 10px var(--pad);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--foreground);
+  background: var(--media-bg);
+  border-bottom: 1px solid var(--fg-10);
+}
+
+.site-banner a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
 .topbar {
   position: sticky;
   top: 0;

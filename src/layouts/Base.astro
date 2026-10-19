@@ -90,6 +90,7 @@ const ld = JSON.stringify(jsonLd, null, 2).replace(/<\//g, "<\\/");
   </head>
   <body class={bodyClass}>
     <div class:list={["site-shell", shellClass]} {...shellAttrs}>
+      <slot name="banner" />
       <Header base={base} />
       <slot />
     </div>
