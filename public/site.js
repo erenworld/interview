@@ -260,7 +260,11 @@ document.querySelectorAll(".brand").forEach((brand) => {
 // Sticky audio player. Set it to the episode to play, e.g.
 //   { title: "Name, Role @Company", src: "assets/audio/<slug>.mp3", page: "articles/<slug>.html" }
 // (paths relative to the site root), or null for no player.
-const audioEpisode = null;
+const audioEpisode = {
+  title: "Alex Padula, Founder & Architect @TidesDB",
+  src: "assets/audio/alex-padula.mp3",
+  page: "articles/alex-padula.html",
+};
 
 (() => {
   if (!audioEpisode) {

@@ -1,0 +1,450 @@
+{
+ "duration": 3431.83,
+ "segments": [
+  {
+   "t": 0.17,
+   "role": "host",
+   "id": null
+  },
+  {
+   "t": 14.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 121.52,
+   "role": "host",
+   "id": "how-did-you-get-into-computers"
+  },
+  {
+   "t": 170.69,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 203.01,
+   "role": "host",
+   "id": "you-also-worked-many-jobs-like-carpenter-construction-worker"
+  },
+  {
+   "t": 217.72,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 263.79,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 263.79,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 332.51,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 332.51,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 393.82,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 452.15,
+   "role": "host",
+   "id": "at-what-moment-did-you-make-the-switch-to-being-a-founder"
+  },
+  {
+   "t": 463.26,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 511.75,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 544.1,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 571.11,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 605.87,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 717.44,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 750.57,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 812.15,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 852.14,
+   "role": "host",
+   "id": "you-mention-building-from-first-principles-what-is-your"
+  },
+  {
+   "t": 862.93,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 879.31,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 943.47,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 989.34,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 989.34,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1090.31,
+   "role": "host",
+   "id": "in-simple-terms-what-is-tidesdb-and-what-problem-does-it"
+  },
+  {
+   "t": 1095.5,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1109.28,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1167.84,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1277.57,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1352.55,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1415.7,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1465.84,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1511.51,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1511.51,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1535.46,
+   "role": "host",
+   "id": "all-of-your-work-is-open-source-why"
+  },
+  {
+   "t": 1542.48,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1620.1,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1654.73,
+   "role": "host",
+   "id": "will-tidesdb-become-more-enterprise-oriented"
+  },
+  {
+   "t": 1658.71,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1716.8,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1716.8,
+   "role": "host",
+   "id": "you-started-programming-at-12-or-13-how-does-ai-change"
+  },
+  {
+   "t": 1778.11,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1807.56,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1885.27,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 1966.91,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2009.4,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2009.4,
+   "role": "host",
+   "id": "how-do-you-balance-the-creative-part-with-using-ai-for"
+  },
+  {
+   "t": 2048.16,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2048.16,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2239.2,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2277.29,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2277.29,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2356.17,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2381.91,
+   "role": "host",
+   "id": "will-ai-replace-junior-engineers"
+  },
+  {
+   "t": 2387.78,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2514.29,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2589.65,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2650.76,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2747.43,
+   "role": "host",
+   "id": "what-would-you-tell-someone-who-wants-to-get-into-databases"
+  },
+  {
+   "t": 2759.12,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2759.12,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2836.02,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2836.02,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2894.91,
+   "role": "host",
+   "id": "do-you-have-any-book-recommendations"
+  },
+  {
+   "t": 2958.04,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 2958.04,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3133.83,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3200.4,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3200.4,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3216.3,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3249.03,
+   "role": "host",
+   "id": "how-do-you-spend-your-free-time"
+  },
+  {
+   "t": 3258.49,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3304.41,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3304.41,
+   "role": "host",
+   "id": "people-listen-more-than-they-read-today-thats-why-i-also"
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "host",
+   "id": "what-are-your-thoughts-on-postgres-mysql-and-mariadb"
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "guest",
+   "id": null
+  },
+  {
+   "t": 3326.67,
+   "role": "host",
+   "id": "is-there-anything-youd-like-to-share-with-readers-a-project"
+  },
+  {
+   "t": 3333.89,
+   "role": "guest",
+   "id": null
+  }
+ ]
+}

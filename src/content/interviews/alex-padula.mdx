@@ -1,0 +1,221 @@
+---
+name: Alex Padula
+role: Founder & Architect @TidesDB
+published: 2026-10-09
+modified: 2026-10-09
+excerpt: Alex talks about teaching himself to code after a difficult childhood, building storage engines from first principles, creating TidesDB, and why you shouldn't lose your skills to AI.
+tags: [Interviews, TidesDB, Storage Engines, Open Source, AI, Databases]
+photo: assets/alex.jpeg
+face: assets/faces/alex-padula.jpg
+ogImage: assets/og/alex-padula.jpg
+voice: male
+quote: Don’t lose your skills. That’s the only thing I have to say.
+links:
+  - kind: LinkedIn
+    url: https://www.linkedin.com/in/alex-padula-82b05b185/
+  - kind: GitHub
+    url: https://github.com/guycipher
+  - kind: Website
+    url: https://alexpadula.com/
+---
+
+*Alex Padula is the founder and architect of [TidesDB](https://github.com/tidesdb/tidesdb), an open source transactional storage engine. Self-taught, he worked as a carpenter and a locomotive engineer before getting into databases at a payment company and building storage engines from first principles.*
+
+## How did you get into computers?
+
+As a kid, I learned to exploit games through sniffing the network packets and understanding how those work. I don't want to say too much about it. I was very fascinated as a kid by those things, and it just stemmed from there. You get into web applications, mobile applications, you get into so many different things from there. When you're passionate about something, you really get into it.
+
+## You also worked many jobs, like carpenter, construction worker or music producer. What was the moment when you decided to focus on computers?
+
+Well, it was more that growing up, I didn't have a really strong, stable family household. So I didn't have the ability to go to school. I didn't have too much growing up, and it demotivated me to even go to school. In elementary school I didn't really have pencils or a backpack, so I went to school mainly not prepared. It was not a good childhood: not having a roof a lot, and having to go to work really young and help my family. So that messed my path up.
+
+When I was in high school, I had to leave early. I would have probably gone to the University of Waterloo or U of T if I had kept going.
+
+Working so young is where the carpenter thing came from: I learned to work with my hands to make money. I worked a lot of different careers. I even worked as a locomotive engineer and conductor, driving the train. Eventually I got laid off at one point. There were a few points in my life where I had a business and I was doing contract work, but that never stuck for more than a few years.
+
+Then I ended up getting a really good opportunity at a payment company through a friend. I had a discussion with him and he told me, "You're really technical, I can tell. We'll hire you." And I worked there for a few years.
+
+That's where my curiosity in databases started. I used MySQL and Postgres for many years prior, but when I was working for the payment company, with Oracle relational databases, I saw at large scale the amount of databases you can actually have. You're not just using one relational database, you're using InfluxDB, Snowflake, a lot of different systems. I was fascinated by the bottlenecks that I would see in the regular systems. So that got me curious, and I started to get into storage systems and databases.
+
+I didn't get the opportunity to go to school, so I had to teach myself, as I had been passionate about it since I was a kid. That whole time I had a lot of different websites. I had a GIF website early on, and a freelance company where I was doing a lot of WordPress and front-end websites. In rough times you sometimes can't do the thing you love. That's what makes it hard sometimes. But over time I got more opportunities and I slowly got to where I wanted to be, and today I'm doing exactly what I love to do.
+
+## At what moment did you make the switch to being a founder and building a database from scratch?
+
+At the payment company, I did a few open source projects over the years. With that curiosity that I have, I wanted to build a database from scratch. There were a few different applications before I even had the idea of a database company. I built a transactional email platform, I got a good Google Cloud kind of deal, I had a good startup going, and I had this bottleneck with MySQL.
+
+At the time I really liked the model of MongoDB, document-oriented, and I looked at it like: it's easier to make a distributed system when it's a document-oriented system. I didn't know too much about databases, but I knew that I could probably solve this problem. So I ended up writing a database called [CursusDB](https://github.com/cursusdb/cursusdb).
+
+I sometimes say "first principles". What I mean by that is based on what you think. You can read a few different things online, maybe know how MongoDB or MySQL work at a high level. But instead of following a guideline, like a paper... You see a lot of people go rewrite things in Rust, that's not first principles. First principles is: I know sort of the theory and how these systems work, let me write it from what I think it is. CursusDB was that. I look back at it today and there are so many ideas in there: I came up with the protocol, the sharding, how the cluster and the nodes work. Everything was based on what I thought it would be, without having read any papers.
+
+> “First principles is: I know sort of the theory and how these systems work, let me write it from what I think it is.”
+
+Then I got an email from [Andy Pavlo](https://www.cs.cmu.edu/~pavlo/), he mentioned CMU, and I got to the lectures. From there my curiosity took off. I had so many questions as I was writing that system. The whole system was in memory, with snapshots like Redis. If I did it today it would be completely different. When you start learning relational theory and how the different data structures work for indexing (B-trees, B+ trees, LSM trees), you go down this path. I implemented a lot of different storage engines, and also a relational database called AriaSQL, maybe three years ago. That's where I learned about execution, the optimizer and indexing.
+
+From there I learned that the LSM tree was a really good data structure. When I read the paper I had a vision in my head of so many ways you could write it. So over the past two years I wrote a lot of different LSM trees, and from each one I learned different approaches: a hierarchical structure with multiple levels, or a single level with pairwise merging.
+
+Eventually I built up to TidesDB 1. TidesDB existed for a long time, but it was always a beta written in Go, because in Go you can prototype a lot faster than in C. In C, for a basic data structure you really have to write it. Even nowadays with AI, it takes longer. Go is so close to C that you can write a Go program and convert it to C rather well, even a library. In C you just have to take care of your allocations and know where everything is.
+
+When I did TidesDB 1, that's where I left my job. Well, I didn't leave, I got fired, probably because I was working on so many databases and engines and publicly writing about them, and not sleeping much. I don't think it ever affected my work, but I guess companies want you to always be on one thing, and you're never supposed to work on your own things after five.
+
+## You mention building from first principles. What is your process for building a feature like MVCC without knowing anything about it?
+
+That came over time. If you look at my earlier systems, they didn't have a concept of MVCC.
+
+The first concept of MVCC I came up with was timestamped MVCC, where each key-value pair had a timestamp. When you created a transaction it would pin a timestamp, and in the LSM tree you would see your snapshot: everything less than or equal to that timestamp. You could time travel in the LSM tree. In a normal B-tree, you have to find the page of a key-value pair or a row and update it in place, so you have to lock that row or that page. Sometimes you have to shift things around, it's a lot more complicated. In my earlier versions I would just lock the tree to update a key.
+
+Then I created a system called [WildcatDB](https://github.com/wildcatdb/wildcat), which implemented timestamp MVCC. TidesDB didn't have MVCC at that point, it was single writer for a long time. It was an embedded LSM tree with one level and pairwise merging: a skip list with a write-ahead log tied to it. Writes would accumulate in the skip list and then flush to disk as an SSTable file. There was no key-value separation, it was very simple. It's in the Go systems where I innovated with key-value separation and MVCC.
+
+That's called snapshot isolation today, but I didn't know that back then. Now I know how to implement all the isolation levels, from read uncommitted to serializable. Everything comes with time. You do things in steps. You build one system: single writer, no MVCC. Then you think: how do I have a writer going, with multiple readers never blocking it? Then: how can I have multiple writers and multiple readers with no blocking at all? It was continuously solving those problems. Now in TidesDB you can have multiple writers, depending on the isolation level. Step by step, "piano piano", as they say in Italian.
+
+Today TidesDB is my most active project. The others, like WildcatDB, Starskey, CursusDB or ChromoDB, were steps along the way. There are many of them.
+
+## In simple terms, what is TidesDB and what problem does it solve?
+
+[TidesDB](https://github.com/tidesdb/tidesdb) is a storage engine. I always compare it to a game engine: it gives you all the tools for building a database system, or for when you need a storage component to store keys and get values back.
+
+It's a transactional storage library, portable and multiplatform. It works on BSD, macOS and Windows. You can create a database on BSD and move it to Windows, the files are portable like that. You have transactions, backups, multiple column families, which are isolated key-value stores, recovery, range iteration, range deletes. You have every capability you would need to build an efficient database system, or to embed it into an application. And because TidesDB is an LSM tree, the architecture is tiered: some things live in a very fast block cache, others in your column families through the multiple levels.
+
+As for the problem: most systems you see today, like LevelDB, InnoDB and RocksDB, were designed in a different time. Since the 90s and early 2000s, hardware has gotten much faster. When these systems don't parallelize, when they serialize under a lock or don't use atomic operations, you're leaving a lot of resources on the table. If you pay a lot of money for a server but you're not getting everything out of the server or the drive, then what's the point? So designing it to be effective on modern hardware was an important piece, and transactional, as effective as possible for OLTP.
+
+A lot of people might think that it's not a problem, but it really is. If you look at our benchmarks, which are fairly honest, in some of them it's 90 times more effective than InnoDB in MariaDB and MySQL. That's huge. And it's not that we're killing the hardware, we're actually utilizing it. Postgres or InnoDB are killers for hard drives: the same bytes move through the system so many times that it kills the SSDs. In TidesDB, if you write to the write-ahead log, that value never moves. We're just copying a reference around. That's how we show write amplification much lower than mostly any other engine out there.
+
+There's a lot to this though. Postgres MVCC is rather old school. It hasn't evolved that much. There's the vacuum, which is very slow. In LSM trees, MVCC is just built in. The way we did it in TidesDB, with sequence numbers and garbage collection, is a lot more effective than what you can do with a B-tree, a heap, or a redo log like MySQL or MariaDB.
+
+In the last version of TidesDB we had this problem of multiple write-ahead logs, and we solved it with a unified write-ahead log and a unified memtable. Now we also have a shared vlog. When we commit a transaction, a large value lives as a reference inside the write-ahead log. Then a flush occurs, it goes into a column family, L1, and compactions occur, and it's always referencing a logical ID. The reduction in write amplification is massive. It already saves so much lifetime of your hard drives.
+
+I understand that with an LSM tree you have read amplification, and we solve that with a lot of different things. In RocksDB, for example, block indexes can consume a lot of memory. In TidesDB we have klogs, and they're B+ trees. When we know which file to look in, we just traverse it like InnoDB would, and we link the interior nodes so we can seek and traverse very effectively.
+
+Every 10 or 20 years there's a new engine that comes out: Berkeley DB, InnoDB, WiredTiger. I think TidesDB is kind of the progression. We're just trying to solve these problems: reads, writes, compression, write amplification.
+
+> “Every 10 or 20 years there's a new engine that comes out. I think TidesDB is kind of the progression.”
+
+<Projects>
+  <Project
+    href="https://github.com/tidesdb/tidesdb"
+    logo="assets/projects/tidesdb.png"
+    name="TidesDB"
+    description="High-performance write and space optimized transactional storage engine."
+    tags={["GitHub", "C"]}
+  />
+</Projects>
+
+## All of your work is open source. Why?
+
+It's just nice to share your work. People can read it, maybe think it's not good, but have an idea to do something else with it. That's the beauty of it. When you keep it to yourself, nobody else sees it, nobody else can learn from it. Without other open source projects, I probably wouldn't have learned that much either. It's like a chain. And the feeling of somebody using something you wrote is a nice feeling. It's nice when it solves problems, when it helps other people, when you get to work with other people. You have your own ideas, somebody else can build on them, and we can innovate even further in the same project.
+
+I see a lot of people create a proprietary database, do a SaaS project, it's hype at the time, and it's fine, but those won't live forever. When you write a project, think about whether you want it to live forever, or to live two, three years, make some money, and then die.
+
+## Will TidesDB become more enterprise-oriented?
+
+No, I don't think so. For us it's all open source. We work with companies through POCs, revenue sharing, and different ways like that, using the engine and the integrations that we do. All open source. What's the benefit of keeping something closed?
+
+If I gave you a website with a product on it, where you have to do a free trial and you never get to see what's inside, it's a black box. I feel a lot less good about a black box than about something where I know what's powering it. And with AI being so powerful nowadays, you can go ask questions against whatever project it is. People might think, "They'll copy this and steal it." But if it was that easy, there could be a DuckDB and then a, I don't know, a GooseDB.
+
+## You started programming at 12 or 13. How does AI change things for you?
+
+I think it impacts everybody. Even though I love programming, it's very easy to just go and use AI. I find myself doing that more and more, and I don't fully like it.
+
+It's becoming artisan to write nice code and think about each line you write, but it's also way slower. I compare it to cutting grass: you can use the push mower with no gas, or scissors, or you can get the machine you sit on and ride. It's easy to grab the tool that makes it easy for you. I fight that urge to give an AI a task that I could do myself, and I'm pretty sure a lot of people do too. Because I like thinking about problems. You can innovate from thinking about problems and come up with another solution. AI is so fixed and robotic, it's not as authentic to me.
+
+I use it, because it's so fast to iterate. But it's like you're losing the humanity in programming. Coming from being so young, just losing yourself in the code, hours flying... The house could be on fire and I'd still be there typing. Now it's like working with somebody, and I'm still adjusting to it. I want to continue my artisan programming, and use AI where it's faster: iterating on ideas, debugging, automated tasks.
+
+But if you're learning programming, you should write the code. That's 110%. Open a book, open a reference, write the code. It's so easy to lose that. If you don't use it, you lose it. I was a carpenter, but if you told me, "Alex, go form something right now," I wouldn't have that hand skill anymore, not after five years. That's what I'm worried about, for myself. Don't lose your skills. That's the only thing I have to say. There's something about solving a problem with code, or having a vision in your head of how a system should look and writing it.
+
+> “Don't lose your skills. That's the only thing I have to say.”
+
+## How do you balance the creative part with using AI for repetitive tasks?
+
+It's hard not to use it for any task. I'll give you an example of how good it is. You can go on a server and write a prompt: pull this version of MySQL, use this configuration, run these sysbench workloads with these tables and this number of users, collect the results, plot them as a PNG, and use this engine. It automates all of that. You can even say: attach a profiler and tell me the hottest methods while the workloads are running. That's more what I use it for. Debugging too: if you know of a bottleneck in a specific workload, you can ask the AI for specific profiles, and then review them as a human.
+
+The AI can definitely write code. But the piece is knowing what it writes, reviewing it as it writes it. A lot of people I talk to aren't writing code at work anymore. They know what code is being written and what has to be reviewed and modified, because they know the language. That's only been the case for the last few months. I got Claude Code maybe seven, eight months ago, and I was blown away. It's gotten incredibly good.
+
+C is a small language, like Go, so the basics are hard to forget. It's different with abstractions like C++, where you always have to be on point. If you look at my C++ today, a lot of it looks like C, because I like procedural code and I like reading it that way.
+
+When you don't have to write a lot of the code, it's easy to lose your image as a programmer. If you know what you want, the AI can do it. So write code and don't lose yourself. But also don't slow yourself down: if you're already a good engineer and you have ideas you really want to build, go build them. It's balancing that.
+
+For myself, I always write prototypes by hand, often in Go. I'll have an idea of how an algorithm or a system can work, I'll visualize it in my brain and write it as fast as I can, then improve on it from there. That's a very common process for me, so I don't lose that skill. I have a Rust book and a MacBook with no AI on it, and it's nice to just go and program. But when you're working for a company, people are not going to be doing that.
+
+There are benefits to AI though. Let's say you want to know how a project works. As a human, it can take you weeks or months to find even the entry point of a huge system and branch out from there. You can use AI to accelerate that understanding, and that's a very good thing. I do that with a lot of big projects. If I'm in Postgres and I want to know how something works, it's great for that. That's a phenomenal usage of AI.
+
+## Will AI replace junior engineers?
+
+No, no, no. You have so much foundational knowledge. If you're studying database internals, you can use AI to your advantage and do good work. I don't think an AI can do things on its own like that, ever.
+
+I see a lot of alarmist things online, people trying to scare you, but the AI isn't that smart. It's not like a human. We can architect things, we can get creative with problem solving. If I tell my mother to go build a key-value store, she can type that into an AI and build something. But she doesn't understand database internals, the different data structures, how bytes get stored on disk and retrieved from disk. It's not just one thing, it's from the kernel level up. Being a computer scientist, you're ahead already. You can build better systems and prompt AI to do better work.
+
+Another example: a good engineer finds problems with a system. If I give you a system and you give me five pages of problems, I think: you're pretty good at finding problems, now let's solve them. That's a skill. You can tell an AI "go find me the bugs", but that's not a good prompt. You need to guide it, to know where the errors are. And you know that from running a lot of analysis and workloads, from learning, education and experience. So I don't think engineers are going anywhere.
+
+You can tell me I'm wrong, but even in 10 years, maybe the models will get much better and some tasks will be fully automated in some workplaces. The regular programmer, maybe. I used to write a lot of Ruby on Rails applications, and PHP, all by hand. I don't think a lot of people do that nowadays. But there'll be artisan programmers. You can buy chemical bread with 20 ingredients at the store, or you can go to a good baker who gives you a nice sourdough. It's the same thing, but maybe one is a little bit healthier.
+
+## What would you tell someone who wants to get into databases but doesn't know where to start?
+
+See what you know already. Go try to store some bytes on disk and read them back, and go from there. Open up a `package main`, write a `func main`, figure out how to open a file, write bytes to disk, read them back, and evolve from there. Once I write the bytes, maybe they're in the page cache. What if I `fsync`? What are the different ways to do that, `fdatasync`, `O_DSYNC`? Then learn about block storage, page storage, how to store fixed pages on disk and read a page back, the difference between `pwrite` and `pread`, and then how to build a B-tree.
+
+Then you learn how to turn this into an index, where you read one page and walk from that page, building some kind of tree. If you're curious enough, your curiosity will drive you. If you're not interested, you'll lose interest right away. But if you are, you'll keep expanding: pager, B-tree, LSM tree, hash table. Then you write a storage engine with multiple indexes and a write-ahead log.
+
+> “If you're curious enough, your curiosity will drive you.”
+
+I've seen people start by writing a write-ahead log. That's not bad, but the write-ahead log comes after. It's useful when you have a data structure tied to it, so you can recover it, and for transactions. Sometimes you don't even need one: you can do shadow paging. When you want to write to a page, you write a copy to another page, and once the new page is safe, durable and referenced everywhere, the old one can be released and reused. It's essentially using pages as the write-ahead log. It's fascinating. That's what [LMDB](https://www.symas.com/mdb) does.
+
+## Do you have any book recommendations?
+
+Mostly papers. Going through a paper is probably the best thing you can do. And for me, lectures. And actually getting in and trying to write it. You can read a book or follow a tutorial, but if you don't sit there and try to write it, you're probably not going to fully understand it. You can also grab a whiteboard and draw how a B-tree or an LSM tree works, teach out loud, write out loud. What you read is easy to forget. It doesn't stick as much as hitting problems in real time. Read the LSM tree paper, or get a gist of how LevelDB works, then open your IDE, think about how it looks, start writing it and hit those problems. It sticks way more.
+
+When I went to the [University of Toronto](https://www.utoronto.ca/) recently for a round table with PhD students, I saw how the PhD students explain their work on the whiteboard, and they're learning by doing that. When I explain things at the school, the students are learning, and so am I. Something just connects. And now, if a paper is too complicated with the maths, AI can break it down for you, then you go back to your code. You can even write an article by hand explaining what you learned. It'll stick better than just reading.
+
+And I have to say, the [Carnegie Mellon lectures](https://15445.courses.cs.cmu.edu/) are absolutely great for database internals. There's probably not much better. You learn from storing bytes on disk all the way up. That's where your curiosity will fire up, and you'll start digging into all the publications from 1989 forward. Andy Pavlo is a really good teacher. I've never met him in person, but I know he's a good guy.
+
+Also, by writing code based on what you think, you'll hit a lot of problems and find things naturally, like the single writer problem or MVCC, and go down those rabbit holes. But you have to be really into it. If it's very complex, it's probably not for everybody. You'll know.
+
+- [CMU Database Systems](https://15445.courses.cs.cmu.edu/) lectures by Andy Pavlo
+- [*The Log-Structured Merge-Tree (LSM-Tree)*](https://www.cs.umb.edu/~poneil/lsmtree.pdf) by O'Neil et al. (1996)
+
+<Place
+  image="assets/places/cmu.jpg"
+  title="Gates Hillman Center, Carnegie Mellon University"
+  text="Pittsburgh, where Andy Pavlo teaches the database course Alex keeps recommending."
+  link="https://15445.courses.cs.cmu.edu/"
+  linkLabel="Watch the CMU Database Systems lectures"
+  credit="Dllu"
+  creditUrl="https://commons.wikimedia.org/wiki/File:Carnegie_Mellon_University_Gates_Hillman_Complex_west_side.jpg"
+  license="CC BY-SA 4.0"
+/>
+
+## How do you spend your free time?
+
+I like to bake bread and pastries, and to spend time with my dog. To be honest, programming was always my hobby in my free time, and now it's a full-time thing. Having a database startup is very intensive work. I'm trying to not program so much, but I've been doing this for so long that after work, in my free time, I still do the same thing.
+
+I'm starting to fill my free time with cooking good food, baking, spending more time with family and animals, and going outdoors more. I live in such a nice area, with the water, and I don't go outside enough.
+
+## People listen more than they read today. That's why I also publish these interviews in audio. What do you think?
+
+It's true. But reading is still such a stimulating thing to do as a human being. Reading, and writing too. There's so much AI writing now that it's hard to tell what's AI and what's not. I think a human tone and voice is better. I know I stutter a lot, and I'm not always the best at explaining things, but it's authentic.
+
+I heard about a guy, I think from [Antithesis](https://antithesis.com/), who writes an article in one shot, clicks enter, and doesn't even read it back. I couldn't believe it. I'd love to try that, but I'm not trained like these guys are. I didn't get to go through high school and university, where you get a lot of that skill. How do you just trust your mind like that? That's a good skill.
+
+## What are your thoughts on Postgres, MySQL and MariaDB?
+
+Everyone says "use Postgres", but it's not true for everything. Postgres is a phenomenal system. It's been around since the 1980s, a lot of people have worked on it, and the community is huge. But just a few years ago there was a huge corruption bug in Postgres. People jumped on Postgres when MySQL changed hands: MySQL was acquired by Sun Microsystems, then Sun by Oracle, which had already bought InnoDB. People lost trust in MySQL, the developers too, and then came the MariaDB fork. You saw the same thing with the DuckDB acquisition: people lost trust. Even I wonder what's going to happen.
+
+So Postgres got a lot of attention, even though it might not be the best for every workload. Its MVCC is based on the heap and vacuuming old values, which isn't as effective as a modern LSM tree, where MVCC is built into the structure. It's slower and costly. If you have one key in a row that's updated a lot, that's going to kill Postgres, kill your disk, and take long to garbage collect. In InnoDB, in MySQL and MariaDB, it's updates in place, more of an MV2PL kind of thing, two-phase locking with in-place updates, which is a lot more effective.
+
+And then there are other storage engines in MySQL and MariaDB, like TidesDB, which is optimized for writes and deletes, with optimistic concurrency. With two-phase locking, which is what Postgres and InnoDB do, you take row locks depending on the isolation level, and transactions sometimes have to wait when there's a lot of concurrency. In TidesDB it's the opposite: if there are a lot of writes to one key, it's a conflict. One writer wins and the others fail and retry. That's optimistic concurrency. Most people I talk to say optimistic is way better. The old school people say no, the new school people say optimistic.
+
+Optimistic is generally faster, but you have to handle conflicts at the application level, so it's a different model to get used to. For distributed systems and very large scale systems with multiple writers, it's the best. TidesDB doesn't have these locks, it's atomic operations and very fast swaps. It's a completely different kind of system.
+
+People go to Postgres for the extensibility. They don't care if it's expensive on disk or about write amplification, even though they don't use many extensions. Most huge deployments are on MySQL. You'll hear about Postgres at OpenAI, but MySQL can shard, and we're just starting to see Postgres sharding.
+
+We tried to put TidesDB into Postgres, and its storage engine model isn't there yet. We'd have to handle MVCC and indexing ourselves. In MySQL and MariaDB, the storage engine handles tables, rows, secondary indexes, two-phase commit. It's the brain. Without the engine, it's like a car with no engine, or no battery. Postgres is like a car where, if you need to fix something, you have to bring it back to the manufacturer. MySQL is so customizable: we have our own handler, we can expand it and support it. Postgres is so intertwined that you can't detach the storage.
+
+It depends on the use case, and people just go for the latest thing. I've seen someone ask, "Should I use Postgres or DuckDB for OLTP?" The answer should be obvious. There's a benefit to MySQL and MariaDB: one database with many types of engines. An OLAP engine, a TidesDB engine for fast logging and events, a DuckDB engine, all in the same database, which you can shard. It depends on the architect.
+
+Most people I talk to find Postgres harder to set up than MySQL and MariaDB. There are more configurations, and it's easy to shoot yourself in the foot, especially if you're doing a lot of deletes and updates. Even InnoDB inside MariaDB would be better: less space, and you can compress.
+
+## Is there anything you'd like to share with readers: a project, a reflection, a message?
+
+There's a lot coming. I appreciate everybody using the system, trying to break it, benchmarking it and reporting their problems, and contributions are great. There's a lot coming with getting TidesDB into MariaDB and MySQL, and I'm excited to see where that goes. There are other integrations too, like the language bindings and Kafka Streams. And I saw RocksDB is part of [FoundationDB](https://www.foundationdb.org/), so I'd like to maybe put a TidesDB plugin in there, because of the optimistic concurrency. I think that would be really cool. So just getting it into as many places and to as many people as possible, and keep learning and expanding the project and the knowledge.
+
+## Where can people find your work online?
+
+- [TidesDB on GitHub](https://github.com/tidesdb/tidesdb)
+- [tidesdb.com](https://tidesdb.com/)
