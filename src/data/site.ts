@@ -4,11 +4,16 @@ import { readFileSync } from "node:fs";
 export const SITE_URL = "https://databasestory.com";
 export const SUBSTACK = "https://databasestory.substack.com";
 export const DEFAULT_OG = "assets/og-default.jpg";
+// Audience stats: the site code chosen when creating the GoatCounter account.
+export const GOATCOUNTER = "databasestory";
+// Episode downloads: OP3 counts each MP3 request from the podcast apps.
+export const OP3_PREFIX = "https://op3.dev/e/";
 
 export const NAV = [
   { label: "About", href: "about.html" },
   { label: "Interviews", href: "#interviews" },
   { label: "People", href: "people.html" },
+  { label: "Questions", href: "questions.html" },
   { label: "Books", href: "books.html" },
   { label: "Podcast", href: "#podcast" },
   { label: "Sponsor", href: "sponsor.html" },

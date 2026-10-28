@@ -1,0 +1,18 @@
+---
+import { PLATFORMS } from "../data/podcast";
+---
+<ul class="podcast-badges">
+  {
+    PLATFORMS.map((platform, index) => (
+      <li>
+        <a class="podcast-badge" href={platform.url} target="_blank" rel="noopener noreferrer" data-platform={platform.name}>
+          <svg viewBox={platform.viewBox} aria-hidden="true" set:html={platform.icon(`badge-logo-${index}`)} />
+          <span class="podcast-badge-text">
+            <span class="podcast-badge-kicker">Listen on</span>
+            <span class="podcast-badge-name">{platform.name}</span>
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

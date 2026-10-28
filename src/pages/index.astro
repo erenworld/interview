@@ -1,8 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
 import InterviewCard from "../components/InterviewCard.astro";
+import PodcastBadges from "../components/PodcastBadges.astro";
+import ListenMenu from "../components/ListenMenu.astro";
 import { ORG, SITE_URL, SUBSTACK, absolute } from "../data/site";
 import { formatDate, getInterviews } from "../data/interviews";
+import { PODCAST_FEED } from "../data/podcast";
 import { optimized } from "../lib/images";
 
 const interviews = await getInterviews();
@@ -78,7 +81,7 @@ const jsonLd = {
       </p>
       <div class="hero-actions">
         <a class="hero-button primary" href="./#interviews">Read interviews</a>
-        <a class="hero-button" href="./about.html">About the project</a>
+        <ListenMenu />
       </div>
       <p class="hero-subscribe-status" data-beehiiv-status aria-live="polite"></p>
     </section>
@@ -129,16 +132,15 @@ const jsonLd = {
     <section class="home-section" id="podcast">
       <div class="cta-card">
         <div>
-          <p class="section-label">Podcast · Coming soon</p>
+          <p class="section-label">Podcast · Listen anywhere</p>
           <h2 class="section-title">Long-form audio</h2>
           <p class="cta-text">
-            Audio conversations are on the way, centered on database
-            engineering, systems work, and the people behind them.
+            The full conversations, centered on database engineering, systems
+            work, and the people behind them.
           </p>
+          <p class="podcast-feed"><a href={PODCAST_FEED}>RSS feed</a></p>
         </div>
-        <div class="cta-actions">
-          <a class="hero-button primary" href={`${SUBSTACK}/subscribe`} target="_blank" rel="noreferrer">Get notified</a>
-        </div>
+        <PodcastBadges />
       </div>
     </section>
   </main>

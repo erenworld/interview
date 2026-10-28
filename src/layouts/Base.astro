@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { ASSET_VERSION, DEFAULT_OG, SUBSTACK, absolute } from "../data/site";
+import { ASSET_VERSION, DEFAULT_OG, GOATCOUNTER, SUBSTACK, absolute } from "../data/site";
 import "../styles/fonts.css";
 import "../styles/style.css";
 
@@ -61,7 +61,8 @@ const ld = JSON.stringify(jsonLd, null, 2).replace(/<\//g, "<\\/");
     <link rel="icon" href={`${base}favicon-96x96.png`} sizes="96x96" type="image/png" />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
     <link rel="manifest" href={`${base}site.webmanifest`} />
-    <link rel="alternate" type="application/rss+xml" title="DatabaseStory" href={`${SUBSTACK}/feed`} />
+    <link rel="alternate" type="application/rss+xml" title="DatabaseStory interviews" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="DatabaseStory newsletter" href={`${SUBSTACK}/feed`} />
     <link rel="alternate" type="application/rss+xml" title="DatabaseStory Podcast" href="/podcast.xml" />
 
     <meta property="og:site_name" content="DatabaseStory" />
@@ -83,11 +84,7 @@ const ld = JSON.stringify(jsonLd, null, 2).replace(/<\//g, "<\\/");
     <link rel="preload" href="/assets/fonts/newsreader-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/geist-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin />
     <script type="application/ld+json" set:html={ld} />
-    <script is:inline async src="https://plausible.io/js/pa-srCjeYLgKjR6NLzibJJuc.js"></script>
-    <script is:inline>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
+    <script is:inline async data-goatcounter={`https://${GOATCOUNTER}.goatcounter.com/count`} src="https://gc.zgo.at/count.js"></script>
   </head>
   <body class={bodyClass}>
     <div class:list={["site-shell", shellClass]} {...shellAttrs}>

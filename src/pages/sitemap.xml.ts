@@ -1,5 +1,6 @@
 import { SITE_URL, absolute } from "../data/site";
 import { getInterviews } from "../data/interviews";
+import { TOPICS } from "../data/questions";
 import { shareUrl } from "../lib/images";
 
 // Static pages: bump `lastmod` by hand when you edit one of them.
@@ -15,6 +16,8 @@ export async function GET() {
   const urls = [
     { loc: `${SITE_URL}/`, lastmod: latest, changefreq: "weekly", priority: "1.0" },
     { loc: absolute("people.html"), lastmod: latest, changefreq: "weekly", priority: "0.7" },
+    { loc: absolute("questions.html"), lastmod: latest, changefreq: "weekly", priority: "0.7" },
+    ...TOPICS.map((topic) => ({ loc: absolute(`questions/${topic.slug}.html`), lastmod: latest, changefreq: "weekly", priority: "0.6" })),
     ...PAGES.map((page) => ({ ...page, loc: absolute(page.path) })),
     ...(await Promise.all(
       interviews.map(async (i) => ({

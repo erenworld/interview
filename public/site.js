@@ -69,6 +69,18 @@ document.querySelectorAll(".nav-toggle").forEach((toggle) => {
   });
 });
 
+// Hero "Listen" menu (a <details>): close it on a click outside or on Escape.
+document.addEventListener("click", (event) => {
+  document.querySelectorAll(".listen-menu[open]").forEach((menu) => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    document.querySelectorAll(".listen-menu[open]").forEach((menu) => (menu.open = false));
+  }
+});
+
 // Smooth scroll to same-page anchors (1.6s, power2.inOut like acquired.fm).
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 document.addEventListener("click", (event) => {
@@ -520,9 +532,11 @@ const articlePage = document.querySelector(".article-page");
 const articleBody = document.querySelector(".article-body");
 const guestName = articlePage ? articlePage.dataset.guest || "" : "";
 
+// GoatCounter event: the name and its details make the path, e.g. "Listen / Spotify".
 const track = (name, props) => {
-  if (typeof window.plausible === "function") {
-    window.plausible(name, props ? { props } : undefined);
+  if (window.goatcounter && typeof window.goatcounter.count === "function") {
+    const path = [name, ...Object.values(props || {})].join(" / ");
+    window.goatcounter.count({ path, title: name, event: true });
   }
 };
 
@@ -1085,6 +1099,24 @@ const reader = (() => {
         render();
         highlight();
       };
+      // Every recorded question gets its start time: a click plays the answer from there.
+      const timed = new Set();
+      meta.segments.forEach((seg) => {
+        const heading = seg.id && !timed.has(seg.id) && document.getElementById(seg.id);
+        if (!heading || heading.tagName !== "H2") return;
+        timed.add(seg.id);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "q-time";
+        button.innerHTML = `<span aria-hidden="true">▶</span> ${formatTime(seg.t)}`;
+        button.setAttribute("aria-label", `Listen from ${formatTime(seg.t)}`);
+        heading.insertBefore(button, heading.querySelector(".q-anchor"));
+        button.addEventListener("click", () => {
+          audio.currentTime = seg.t;
+          play();
+          track("Question play", { question: seg.id });
+        });
+      });
       ["play", "pause", "timeupdate", "seeked", "ended", "loadedmetadata"].forEach((type) => audio.addEventListener(type, sync));
       audio.addEventListener("ended", () => (audio.currentTime = 0));
       audio.addEventListener("pause", () => {
@@ -1388,6 +1420,15 @@ if (articleBody) {
   }
 })();
 
+// Which platform visitors pick from the "Listen" menu and badges.
+if (!window.__dsListenTrack) {
+  window.__dsListenTrack = true;
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-platform]");
+    if (link) track("Listen", { platform: link.dataset.platform });
+  });
+}
+
 // ---------------------------------------------------------------
 // Keep the audio playing across pages: while something plays, internal
 // links swap the page content in place instead of reloading, so the
@@ -1435,7 +1476,7 @@ if (!window.__dsNav) {
     } catch (error) {
       console.error(error);
     }
-    if (typeof window.plausible === "function") window.plausible("pageview");
+    if (window.goatcounter && typeof window.goatcounter.count === "function") window.goatcounter.count();
   };
 
   document.addEventListener("click", (event) => {

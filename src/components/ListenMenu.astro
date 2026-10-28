@@ -1,0 +1,32 @@
+---
+import { PLATFORMS } from "../data/podcast";
+---
+<!-- Hero "Listen" button: the platform logos stacked in the button fan out on
+     hover; a click opens the list (closed by site.js on outside click / Escape). -->
+<details class="listen-menu">
+  <summary class="hero-button">
+    <span class="listen-logos" aria-hidden="true">
+      {
+        PLATFORMS.map((platform, index) => (
+          <span class="listen-logo" style={`--i:${index}`}>
+            <svg viewBox={platform.viewBox} set:html={platform.icon(`listen-chip-${index}`)} />
+          </span>
+        ))
+      }
+    </span>
+    Listen
+  </summary>
+  <ul class="listen-list">
+    {
+      PLATFORMS.map((platform, index) => (
+        <li style={`--i:${index}`}>
+          <a href={platform.url} target="_blank" rel="noopener noreferrer" data-platform={platform.name}>
+            <svg viewBox={platform.viewBox} aria-hidden="true" set:html={platform.icon(`listen-item-${index}`)} />
+            {platform.name}
+            <span class="listen-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</details>

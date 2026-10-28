@@ -1,0 +1,84 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SITE_URL, absolute, breadcrumb } from "../../data/site";
+import { getTopics } from "../../data/questions";
+import { optimized } from "../../lib/images";
+
+export async function getStaticPaths() {
+  const topics = await getTopics();
+  return topics.map((topic, index) => ({
+    params: { slug: topic.slug },
+    props: { topic, others: topics.filter((_, i) => i !== index) },
+  }));
+}
+
+type Topic = Awaited<ReturnType<typeof getTopics>>[number];
+interface Props {
+  topic: Topic;
+  others: Topic[];
+}
+const { topic, others } = Astro.props;
+const faces = await Promise.all(topic.answers.map((a) => optimized(a.interview.face, { width: 56, densities: [1, 2] })));
+const path = `questions/${topic.slug}.html`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: topic.title,
+      description: topic.intro,
+      url: absolute(path),
+      hasPart: topic.answers.map((a) => ({
+        "@type": "Article",
+        headline: `Interview with ${a.interview.name}`,
+        url: absolute(`articles/${a.interview.slug}.html#${a.id}`),
+      })),
+    },
+    breadcrumb([
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Questions", url: `${SITE_URL}/questions.html` },
+      { name: topic.title, url: absolute(path) },
+    ]),
+  ],
+};
+---
+<Base
+  title={`${topic.title} ${topic.answers.length} answers | DatabaseStory`}
+  description={`${topic.intro} Answers from ${topic.answers.map((a) => a.interview.name).join(", ")}.`}
+  path={path}
+  base="../"
+  jsonLd={jsonLd}
+  shellClass="questions-page"
+>
+  <main class="people-main">
+    <a class="back-link" href="../questions.html">← All questions</a>
+    <div class="people-head">
+      <p class="section-label">{topic.answers.length} answers</p>
+      <h1 class="page-title">{topic.title}</h1>
+      <p class="page-intro">{topic.intro}</p>
+    </div>
+    <ol class="answer-list">
+      {topic.answers.map((a, index) => (
+        <li class="answer-card">
+          <div class="answer-who">
+            <img src={faces[index].src} srcset={faces[index].srcset} alt="" width="56" height="56" loading="lazy" />
+            <span>
+              <a class="answer-name" href={`../articles/${a.interview.slug}.html`}>{a.interview.name}</a>
+              <span class="answer-role">{a.interview.role}</span>
+            </span>
+          </div>
+          <p class="answer-question">{a.question}</p>
+          <p class="answer-text">{a.excerpt}</p>
+          <a class="answer-more" href={`../articles/${a.interview.slug}.html#${a.id}`}>Read the full answer →</a>
+        </li>
+      ))}
+    </ol>
+    <div class="topic-more">
+      <p class="section-label">More questions</p>
+      <ul>
+        {others.map((other) => <li><a href={`./${other.slug}.html`}>{other.title}</a></li>)}
+      </ul>
+    </div>
+  </main>
+</Base>

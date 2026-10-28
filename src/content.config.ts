@@ -31,6 +31,8 @@ const interviews = defineCollection({
     ogImage: publicFile.nullable().default(null), // share image, falls back to the default one
     voice: z.enum(["male", "female"]), // voice used by tools/voices/generate.py
     quote: z.string().nullable().default(null),
+    // Where the guest lives (city, country), shown next to their links on the People page.
+    location: z.string().optional(),
     links: z.array(z.object({ kind: z.enum(Object.keys(ICONS) as [string, ...string[]]), url: z.string().url() })),
     // Extra schema.org Person fields
     alternateName: z.string().optional(),

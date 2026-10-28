@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, statSync } from "node:fs";
-import { SITE_URL, absolute } from "../data/site";
+import { OP3_PREFIX, SITE_URL, absolute } from "../data/site";
 import { getInterviews } from "../data/interviews";
+import { chaptersOf, timestamp } from "../lib/questions";
 
 // Podcast RSS feed, submitted once to Apple Podcasts, Spotify, Deezer and Amazon Music.
 // An interview becomes an episode as soon as public/assets/audio/<slug>.mp3 exists
@@ -26,23 +27,29 @@ export async function GET() {
       const json = `public/assets/audio/${i.slug}.json`;
       const duration = existsSync(json) ? Math.round(JSON.parse(readFileSync(json, "utf8")).duration) : null;
       const page = absolute(`articles/${i.slug}.html`);
+      // Chapters twice: podcast:chapters for the apps that read it, timestamps in
+      // the description for Spotify and the others, which build chapters from them.
+      const chapters = chaptersOf(i.slug, i.entry.body ?? "");
+      const toc = chapters ? `\n\n${chapters.map((c) => `${timestamp(c.startTime)} ${c.title}`).join("\n")}` : "";
       return `    <item>
       <title>${escape(`${i.name}, ${i.role}`)}</title>
-      <description>${escape(`${i.excerpt}\n\nRead the interview: ${page}`)}</description>
+      <description>${escape(`${i.excerpt}\n\nRead the interview: ${page}${toc}`)}</description>
       <link>${page}</link>
       <guid isPermaLink="false">databasestory-${i.slug}</guid>
       <pubDate>${rfc822(i.published)}</pubDate>
-      <enclosure url="${absolute(`assets/audio/${i.slug}.mp3`)}" length="${statSync(mp3).size}" type="audio/mpeg" />${
+      <enclosure url="${OP3_PREFIX}${absolute(`assets/audio/${i.slug}.mp3`).replace(/^https:\/\//, "")}" length="${statSync(mp3).size}" type="audio/mpeg" />${
         duration ? `\n      <itunes:duration>${duration}</itunes:duration>` : ""
       }
-      <itunes:episodeType>full</itunes:episodeType>
+${
+        chapters ? `      <podcast:chapters url="${absolute(`chapters/${i.slug}.json`)}" type="application/json+chapters" />\n` : ""
+      }      <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
     </item>`;
     });
 
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>${SHOW.title}</title>
     <link>${SITE_URL}/</link>

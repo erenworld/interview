@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE_URL, absolute, breadcrumb } from "../data/site";
+import { getTopics } from "../data/questions";
+import { optimized } from "../lib/images";
+
+const topics = await getTopics();
+const MAX_FACES = 4; // then "+N"
+const faces = await Promise.all(
+  topics.map((topic) => Promise.all(topic.answers.map((a) => optimized(a.interview.face, { width: 32, densities: [1, 2] }))))
+);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: "Same question, different answers",
+      url: `${SITE_URL}/questions.html`,
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: topics.map((topic, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: absolute(`questions/${topic.slug}.html`),
+          name: topic.title,
+        })),
+      },
+    },
+    breadcrumb([
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Questions", url: `${SITE_URL}/questions.html` },
+    ]),
+  ],
+};
+---
+<Base
+  title="Same question, different answers | DatabaseStory"
+  description="The questions every DatabaseStory guest answers, side by side: AI and junior engineers, getting into databases, open source, advice, books."
+  path="questions.html"
+  base="./"
+  jsonLd={jsonLd}
+  shellClass="questions-page"
+>
+  <main class="people-main">
+    <div class="people-head">
+      <p class="section-label">Questions</p>
+      <h1 class="page-title">Same question, different answers</h1>
+      <p class="page-intro">Every guest hears some of the same questions. Here are their answers side by side.</p>
+    </div>
+    <ul class="topic-grid">
+      {topics.map((topic, t) => (
+        <li class="topic-card">
+          <a href={`./questions/${topic.slug}.html`}>
+            <span class="topic-count">{topic.answers.length} answers</span>
+            <span class="topic-title">{topic.title}</span>
+            <span class="topic-faces" aria-hidden="true">
+              {faces[t].slice(0, MAX_FACES).map((face) => <img src={face.src} srcset={face.srcset} alt="" width="32" height="32" loading="lazy" />)}
+              {faces[t].length > MAX_FACES && <span class="topic-faces-more">+{faces[t].length - MAX_FACES}</span>}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Base>
