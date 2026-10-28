@@ -13,6 +13,8 @@ const SHOW = {
   description:
     "Long-form conversations with the engineers, open-source contributors and founders behind PostgreSQL, MongoDB, Oracle, storage engines and distributed systems.",
   cover: absolute("assets/podcast-cover.jpg"), // 3000×3000, Apple wants 1400–3000 square
+  // podcast:guid, UUIDv5 of "databasestory.com/podcast.xml" (Podcasting 2.0 namespace): never change it.
+  guid: "48fcd006-2190-5cc5-8afd-64b1dc578509",
 };
 
 const escape = (text: string) =>
@@ -58,6 +60,7 @@ ${
     <description>${escape(SHOW.description)}</description>
     <copyright>© ${new Date().getFullYear()} ${SHOW.author}</copyright>
     <itunes:author>${SHOW.author}</itunes:author>
+    <podcast:guid>${SHOW.guid}</podcast:guid>
     <itunes:owner>
       <itunes:name>${SHOW.author}</itunes:name>
       <itunes:email>${SHOW.email}</itunes:email>
