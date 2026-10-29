@@ -1,5 +1,5 @@
 {
- "duration": 3431.83,
+ "duration": 3429.71,
  "segments": [
   {
    "t": 0.17,
@@ -332,117 +332,117 @@
    "id": "do-you-have-any-book-recommendations"
   },
   {
-   "t": 2958.04,
+   "t": 2955.92,
    "role": "guest",
    "id": null
   },
   {
-   "t": 2958.04,
+   "t": 2955.92,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3133.83,
+   "t": 3131.71,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3200.4,
+   "t": 3198.28,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3200.4,
+   "t": 3198.28,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3216.3,
+   "t": 3214.18,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3249.03,
+   "t": 3246.91,
    "role": "host",
    "id": "how-do-you-spend-your-free-time"
   },
   {
-   "t": 3258.49,
+   "t": 3256.37,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3304.41,
+   "t": 3302.29,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3304.41,
+   "t": 3302.29,
    "role": "host",
    "id": "people-listen-more-than-they-read-today-thats-why-i-also"
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "host",
    "id": "what-are-your-thoughts-on-postgres-mysql-and-mariadb"
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "guest",
    "id": null
   },
   {
-   "t": 3326.67,
+   "t": 3324.55,
    "role": "host",
    "id": "is-there-anything-youd-like-to-share-with-readers-a-project"
   },
   {
-   "t": 3333.89,
+   "t": 3331.77,
    "role": "guest",
    "id": null
   }
